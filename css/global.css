@@ -1,0 +1,47 @@
+/* 공통 */
+/* 폰트 케이스 */
+/* title case */
+.TC-01{font-size: 54px; line-height: 1.33; font-weight: 700;}
+.TC-02{font-size: 42px; line-height: 1.43; font-weight: 700;}
+.TC-03{font-size: 32px; font-weight: 700;}
+    
+/* font case 일반글자 */
+.FC-01{font-size: 20px; line-height: 1.5; letter-spacing: -0.1px;}
+
+/* 포인트 색상 */
+mark{color: #fa5014;}
+/* mark 접근성 */
+mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
+mark::before {content: attr('title');}
+
+/* contents width 컨텐츠 크기*/
+.CW{width: calc(100% - 40px); max-width: 1180px; margin: 0 auto;}
+
+/* 해더 */
+header{position: fixed; left: 0; top: 0; width: 100%; padding-top: 55px; z-index: 100; transition-duration: 0.5s; background-color: white; transition-property: padding , box-shadow;}
+header div h1{position: absolute; left: 60px; top: 50px; width: 60px; transition-duration: 0.5s; transition-property: top , left , width;}
+header div h1 img{width: 100%;}
+header div nav ul{display: flex;}
+header div nav ul li:not(:last-child){margin-right: 60px;}
+header div nav ul li a{padding: 10px 0;}
+header div nav ul li:not(.active) a{font-weight: 500;}
+header div nav ul li.active a{font-weight: 700; position: relative;}
+header div nav ul li.active a::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
+header div > a{text-indent: -9999px; width: 36px; height: 36px; background: url('../images/common/back.png') no-repeat center / cover;}
+header div button{display: none;}
+header div > p{display: none;}
+.mainPage header div nav ul li:not(.active) a{opacity: 0.3;}
+.mainPage header div nav ul li:hover a{opacity: 1;}
+
+
+/* 메인페이지 공통 */
+[data-scroll="fullPege"] > *{height: 100vh; box-sizing: border-box;}
+[data-scroll="fullPege"] > *:not(.topArea){display: flex; justify-content: center; align-items: center;}
+
+/* 메인페이지 상단 */
+[data-scroll="fullPege"] .topArea{padding-top: 190px; background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}
+[data-scroll="fullPege"] .topArea > div{height: 100%; max-width: 1650px; margin: 0 auto; background-repeat: no-repeat; background-position: center bottom 140px , right bottom 8%; background-size: 100% 192px , 65%;}
+[data-scroll="fullPege"] .topArea > div div{height: 100%; padding: 0 235px;}
+
+/* 배달대행 이미지 */
+.deliveryPage .topArea > div{background-image:  url('../images/common/main-bg2.png') , url('../images/delivery/top-delivery.png');}
