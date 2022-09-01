@@ -72,6 +72,8 @@ header.active h1{top: 30px; left: 60px; width: 35px;}
 .deliveryPage .topBox > div{background-image:  url('../images/delivery/top-delivery.png') ,url('../images/common/main-bg2.png') ;}
 /* 라이더 상단 이미지 */
 .riderPage .topBox > div{background-image:  url('../images/rider/top-rider.png') ,url('../images/common/main-bg2.png') ;}
+/* 허브창업 상단 이미지 */
+.foundedPage .topBox > div{background-image:  url('../images/founded/top-founded.png') ,url('../images/common/main-bg2.png') ;}
 
 /* full page 안 progress */
 .progressArea{position: relative; padding-left: 100px;}

@@ -96,3 +96,35 @@
 .riderPage .bannerArea{background: url('../images/rider/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
 .riderPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
 .riderPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
+
+
+/* ! 허브 창업 */
+/* 바로고와 함께하는 이유 */
+.foundedPage .reasonArea .CW{position: relative;}
+.foundedPage .reasonArea .CW .textArea h2{margin-bottom: 100px;}
+.foundedPage .reasonArea .CW .imgArea{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+
+/* 놀라운 바로고의 성장세 */
+.foundedPage .growthArea .CW{display: flex; justify-content: space-between;}
+.foundedPage .growthArea .CW div{order: 1;}
+.foundedPage .growthArea .CW div h2{margin-bottom: 30px;}
+.foundedPage .growthArea .CW ul{display: flex; flex-wrap: wrap; width: 480px;}
+.foundedPage .growthArea .CW ul li:nth-child(2n + 1){width: 335px;}
+.foundedPage .growthArea .CW ul li:not(:nth-last-child(-n + 2)){margin-bottom: 50px;}
+.foundedPage .growthArea .CW ul li mark{font-weight: 700; display: block; margin-bottom: 20px;}
+
+/* 허브 성장의 동반자 */
+.foundedPage .companionArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.foundedPage .companionArea .CW .textArea h2{width: 350px; margin-bottom: 25px;}
+.foundedPage .companionArea .CW .imgArea{width: 61.86%;} 
+.foundedPage .companionArea .CW ul{width: 100%; display: flex; text-align: center; margin-top: 120px;}
+.foundedPage .companionArea .CW ul li{flex: 1;}
+.foundedPage .companionArea .CW ul li:not(:nth-child(3n)){border-right: 1px solid rgba(0, 0, 0, 0.1);}
+.foundedPage .companionArea .CW ul li strong{font-weight: 700; display: block; margin-bottom: 30px;}
+.foundedPage .companionArea .CW ul li mark{font-weight: 700; display: block; min-height: 60px; margin-bottom: 10px;}
+.foundedPage .companionArea .CW ul li p{font-size: 18px; line-height: 1.67; color: #666;}
+
+/* 배너 */
+.foundedPage .bannerArea{padding: 85px 0; box-sizing: border-box; background: url('../images/founded/banner.png') no-repeat center / cover;}
+.foundedPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
+.foundedPage .bannerArea div p{font-size: 24px; font-weight: 700; line-height: 1.5; color: white; width: 535px;}

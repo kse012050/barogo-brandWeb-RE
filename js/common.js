@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     // 슬라이더
     $('*').hasClass('mySwiper') && swiperSlider();
-    $('*').hasClass('mainPage') && test();
+    $('*').hasClass('mainPage') && fullPage();
 });
 
 function swiperSlider(){
@@ -15,7 +15,7 @@ function swiperSlider(){
     });
 }
 
-function test(){
+function fullPage(){
     $('body').css('overflow','hidden');
     $('[data-scroll="fullPage"] > *').on('mousewheel',function(e){
         let delta = e.originalEvent.wheelDelta;
