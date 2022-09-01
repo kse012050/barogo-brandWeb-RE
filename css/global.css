@@ -59,17 +59,19 @@ header.active h1{top: 30px; left: 60px; width: 35px;}
 
 
 /* 메인페이지 공통 */
-[data-scroll="fullPege"] > *{height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
-[data-scroll="fullPege"] > *:not(.topBox){display: flex; justify-content: center; align-items: center;}
+[data-scroll="fullPage"] > *{height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+[data-scroll="fullPage"] > *:not(.topBox){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
 
 /* 메인페이지 상단 */
-[data-scroll="fullPege"] > .topBox{padding-top: 190px; background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}
-[data-scroll="fullPege"] > .topBox > div{height: 100%; max-width: 1650px; margin: 0 auto; background-repeat: no-repeat; background-position: right bottom 8% ,center bottom 140px; background-size: 65% , 100% 192px;}
-[data-scroll="fullPege"] > .topBox > div div{height: 100%; padding: 0 235px;}
-[data-scroll="fullPege"] > .topBox > div div h2{margin-bottom: 40px;}
+[data-scroll="fullPage"] > .topBox{padding-top: 190px; background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}
+[data-scroll="fullPage"] > .topBox > div{height: 100%; max-width: 1650px; margin: 0 auto; background-repeat: no-repeat; background-position: right bottom 8% ,center bottom 140px; background-size: 65% , 100% 192px;}
+[data-scroll="fullPage"] > .topBox > div div{height: 100%; padding: 0 235px;}
+[data-scroll="fullPage"] > .topBox > div div h2{margin-bottom: 40px;}
 
-/* 배달대행 이미지 */
+/* 배달대행 상단 이미지 */
 .deliveryPage .topBox > div{background-image:  url('../images/delivery/top-delivery.png') ,url('../images/common/main-bg2.png') ;}
+/* 라이더 상단 이미지 */
+.riderPage .topBox > div{background-image:  url('../images/rider/top-rider.png') ,url('../images/common/main-bg2.png') ;}
 
 /* full page 안 progress */
 .progressArea{position: relative; padding-left: 100px;}
@@ -97,13 +99,13 @@ header.active h1{top: 30px; left: 60px; width: 35px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
 /* 후원 */
-.supportArea{padding: 130px 0 70px; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
-.supportArea::after{content: ''; position: absolute; left: 50%; top: 220px; width: 100%; min-width: 1920px; transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;}
-.supportArea div{}
-.supportArea div mark{display: block; margin-bottom: 100px;}
-.supportArea div b{display: block; font-weight: 700; color: white; margin-bottom: 30px;}
-.supportArea div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
-.supportArea div span:not(:last-of-type){margin-bottom: 30px;}
-.supportArea div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
-.supportArea div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
-.supportArea div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}
+.supportArea > div{width: 100%; height: 100%; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+.supportArea > div::after{content: ''; position: absolute; left: 50%; top: 180px; width: 100%; min-width: 1920px;  transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;}
+.supportArea > div div{padding-bottom: 40px;}
+.supportArea > div div mark{display: block; margin-bottom: 70px;}
+.supportArea > div div b{display: block; font-weight: 700; color: white; margin-bottom: 30px;}
+.supportArea > div div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
+.supportArea > div div span:not(:last-of-type){margin-bottom: 30px;}
+.supportArea > div div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
+.supportArea > div div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
+.supportArea > div div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}

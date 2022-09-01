@@ -1,17 +1,17 @@
 
-/* 배달대행 */
-
+/* ! 배달대행 */
 /* 사장님의 정성 그대로 빠르고 확실하게 */
 .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
 .deliveryPage .qualitativeArea .CW div h2{margin-bottom: 100px;}
 .deliveryPage .qualitativeArea .CW div h2 mark{display: block;}
-.deliveryPage .qualitativeArea .CW > ul li{width: 580px;}
+.deliveryPage .qualitativeArea .CW > ul{width: 49.15%;}
+.deliveryPage .qualitativeArea .CW > ul li{width: 100%;}
 .deliveryPage .qualitativeArea .CW > ul li img{width: 100%;}
 
 /* 사장님의 따뜻한 마음 그대로 */
 .deliveryPage .mindArea{background-color: #f6f6f6;}
 .deliveryPage .mindArea .CW{display: flex; justify-content: space-between; align-items: center;}
-.deliveryPage .mindArea .CW .imgArea{width: 480px;}
+.deliveryPage .mindArea .CW .imgArea{width: 40.67%;}
 .deliveryPage .mindArea .CW .textArea h2{margin-bottom: 30px;}
 .deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 30px;}
 .deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 50px;}
@@ -22,11 +22,11 @@
 .deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 50px;}
 .deliveryPage .knowHowArea .CW .textArea ul{display: flex;}
 .deliveryPage .knowHowArea .CW .textArea ul li:not(:last-child){margin-right: 20px;}
-.deliveryPage .knowHowArea .CW .imgArea{width: 580px;}
+.deliveryPage .knowHowArea .CW .imgArea{width: 49.15%;}
 
 /* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
 .deliveryPage .distributionArea .CW{position: relative;}
-.deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 630px; z-index: -1;}
+.deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 53.38%; z-index: -1;}
 .deliveryPage .distributionArea .CW .textArea{width: 570px; margin-left: auto;}
 .deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 100px;}
 .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 80px;}
@@ -37,3 +37,62 @@
 .deliveryPage .bannerArea{background: url('../images/delivery/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
 .deliveryPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
 .deliveryPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
+
+
+/* ! 라이더 지원 */
+/* 프로를 프로답게 바로고 라이더 라이프 */
+.riderPage .lifeArea .CW{position: relative;}
+.riderPage .lifeArea .CW .textArea > *:not(h2){padding-left: 100px;}
+.riderPage .lifeArea .CW .textArea mark{display: block;}
+.riderPage .lifeArea .CW .textArea h2{margin-bottom: 100px;}
+.riderPage .lifeArea .CW .textArea > mark{margin-bottom: 25px;}
+.riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
+.riderPage .lifeArea .CW .imgArea{width: 52.54%; position: absolute; right: 0; top: 0;}
+
+/* 라이더님만을 위한 놀이터 바로고 플레이 */
+.riderPage .playgroundArea .CW{position: relative;}
+.riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 200px;}
+.riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2{margin-bottom: 25px;}
+.riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2 mark{display: block;}
+.riderPage .playgroundArea .CW .textArea .progressArea{width: 375px; margin-left: auto; box-sizing: border-box;}
+.riderPage .playgroundArea .CW .imgArea{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 43.64%;}
+
+/* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
+.riderPage .revenueArea{background-color: #f6f6f6;}
+.riderPage .revenueArea .CW{display: flex; justify-content: space-between; align-items: flex-end;}
+.riderPage .revenueArea .CW > div:first-child small{display: block; margin-bottom: 40px;}
+.riderPage .revenueArea .CW > div:first-child > div div{display: inline-block; position: relative;}
+.riderPage .revenueArea .CW > div:first-child > div div button{display: flex;  align-items: center; }
+.riderPage .revenueArea .CW > div:first-child > div div button::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
+.riderPage .revenueArea .CW > div:first-child > div div button::after{content: ''; width: 48px; height: 48px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
+.riderPage .revenueArea .CW > div:first-child > div div ul{position: absolute; left: 0;  top: 100%; width: 100%; z-index: 1; display: none;}
+.riderPage .revenueArea .CW > div:first-child > div div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
+.riderPage .revenueArea .CW > div:first-child > div div ul li:hover{background-color: black;}
+.riderPage .revenueArea .CW > div:last-child{position: relative;}
+.riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 30px; top: -85px; width: 240px; height: 70px; padding: 15px 30px; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 240px;}
+.riderPage .revenueArea .CW > div:last-child span{font-size: 90px; font-weight: 700;}
+
+/* 망설이지 바로 시작하세요! */
+.riderPage .startArea .CW{position: relative;}
+.riderPage .startArea .CW .textArea h2{margin-bottom: 100px;}
+.riderPage .startArea .CW .imgArea{position: absolute; right: 0; top: 50%; width: 54.23%; transform: translateY(-50%);}
+
+/* 라이더에게 최적화된 바로고 기능성 굿즈 */
+.riderPage .goodsArea div h2{display: inline-block; margin-bottom: 50px;}
+.riderPage .goodsArea div ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.riderPage .goodsArea div ul li{width: 31.77%; height: 300px;}
+.riderPage .goodsArea div ul li img{width: 100%;}
+.riderPage .goodsArea div ul li:not(:nth-last-child(-n + 3)){margin-bottom: 2.345%;}
+.riderPage .goodsArea div ul li p{font-size: 48px; line-height: 1.46; font-weight: 700; color: rgba(0, 0, 0, 0.22);}
+.riderPage .goodsArea div ul li p::before{content: '#';}
+.riderPage .goodsArea div ul li:not(:first-child){background-repeat: no-repeat; background-position: center; background-size: cover;}
+.riderPage .goodsArea div ul li:nth-child(2){background-image: url('../images/rider/goods01.png');}
+.riderPage .goodsArea div ul li:nth-child(3){background-image: url('../images/rider/goods02.png');}
+.riderPage .goodsArea div ul li:nth-child(4){background-image: url('../images/rider/goods03.png');}
+.riderPage .goodsArea div ul li:nth-child(5){background-image: url('../images/rider/goods04.png');}
+.riderPage .goodsArea div ul li:nth-child(6){background-image: url('../images/rider/goods05.png');}
+
+/* 배너 */
+.riderPage .bannerArea{background: url('../images/rider/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
+.riderPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
+.riderPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}

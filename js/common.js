@@ -17,7 +17,7 @@ function swiperSlider(){
 
 function test(){
     $('body').css('overflow','hidden');
-    $('[data-scroll="fullPege"] > *').on('mousewheel',function(e){
+    $('[data-scroll="fullPage"] > *').on('mousewheel',function(e){
         let delta = e.originalEvent.wheelDelta;
         let scrollTopValue;
         let target = $(this).find('[data-scroll="target"]');
