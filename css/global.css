@@ -95,3 +95,15 @@ header.active h1{top: 30px; left: 60px; width: 35px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide img{width: 100%; margin-bottom: 20px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 5px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
+
+/* 후원 */
+.supportArea{padding: 130px 0 70px; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+.supportArea::after{content: ''; position: absolute; left: 50%; top: 220px; width: 100%; min-width: 1920px; transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;}
+.supportArea div{}
+.supportArea div mark{display: block; margin-bottom: 100px;}
+.supportArea div b{display: block; font-weight: 700; color: white; margin-bottom: 30px;}
+.supportArea div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
+.supportArea div span:not(:last-of-type){margin-bottom: 30px;}
+.supportArea div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
+.supportArea div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
+.supportArea div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}
