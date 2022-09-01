@@ -1,0 +1,39 @@
+
+/* 배달대행 */
+
+/* 사장님의 정성 그대로 빠르고 확실하게 */
+.deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
+.deliveryPage .qualitativeArea .CW div h2{margin-bottom: 100px;}
+.deliveryPage .qualitativeArea .CW div h2 mark{display: block;}
+.deliveryPage .qualitativeArea .CW > ul li{width: 580px;}
+.deliveryPage .qualitativeArea .CW > ul li img{width: 100%;}
+
+/* 사장님의 따뜻한 마음 그대로 */
+.deliveryPage .mindArea{background-color: #f6f6f6;}
+.deliveryPage .mindArea .CW{display: flex; justify-content: space-between; align-items: center;}
+.deliveryPage .mindArea .CW .imgArea{width: 480px;}
+.deliveryPage .mindArea .CW .textArea h2{margin-bottom: 30px;}
+.deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 30px;}
+.deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 50px;}
+
+/* 성공하는 매장의 노하우 */
+.deliveryPage .knowHowArea .CW{display: flex; justify-content: space-between; }
+.deliveryPage .knowHowArea .CW .textArea h2{margin-bottom: 30px;}
+.deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 50px;}
+.deliveryPage .knowHowArea .CW .textArea ul{display: flex;}
+.deliveryPage .knowHowArea .CW .textArea ul li:not(:last-child){margin-right: 20px;}
+.deliveryPage .knowHowArea .CW .imgArea{width: 580px;}
+
+/* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
+.deliveryPage .distributionArea .CW{position: relative;}
+.deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 630px; z-index: -1;}
+.deliveryPage .distributionArea .CW .textArea{width: 570px; margin-left: auto;}
+.deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 100px;}
+.deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 80px;}
+.deliveryPage .distributionArea .CW .textArea mark{display: block; margin-bottom: 25px;}
+.deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
+
+/* 배너 */
+.deliveryPage .bannerArea{background: url('../images/delivery/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
+.deliveryPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
+.deliveryPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
