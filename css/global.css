@@ -78,7 +78,7 @@ header.active h1{top: 30px; left: 60px; width: 35px;}
 /* full page 안 progress */
 .progressArea{position: relative; padding-left: 100px;}
 .progressArea .progressBar{position: absolute; left: 0; top: 0; width: 6px; height: 100%; background-color: rgba(0, 0, 0, 0.1);}
-.progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 100%; height: 33.33%; background-color: #fa5014;}
+.progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 100%; height: 33.33%; background-color: #fa5014; }
 
 /* full page 안 scroll 공통 */
 [data-scroll="target"]{position: relative;}

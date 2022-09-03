@@ -128,3 +128,48 @@
 .foundedPage .bannerArea{padding: 85px 0; box-sizing: border-box; background: url('../images/founded/banner.png') no-repeat center / cover;}
 .foundedPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
 .foundedPage .bannerArea div p{font-size: 24px; font-weight: 700; line-height: 1.5; color: white; width: 535px;}
+
+
+/* ! 회사소개 */
+/* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
+/* .aboutUsPage{overflow: auto; height: 100vh;} */
+/* .aboutUsPage main{padding-top: 190px;} */
+.aboutUsPage .makeArea{margin-bottom: 200px; padding-top: 190px;}
+.aboutUsPage .makeArea h2{margin-bottom: 60px;}
+.aboutUsPage .makeArea > div{max-width: 1600px; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 80px;}
+.aboutUsPage .makeArea > div div{height: 585px; display: flex; justify-content: flex-end;}
+.aboutUsPage .makeArea > div div p{font-size: 22px; color: white; line-height: 1.64; width: 540px; padding: 90px 0;}
+.aboutUsPage .makeArea > p{font-size: 20px; line-height: 1.5; color: #111; text-align: center; max-width: 625px; width: calc(100% - 40px); margin: auto auto;}
+.aboutUsPage .makeArea > p:not(:last-of-type){margin-bottom: 30px;}
+.aboutUsPage .makeArea > p:nth-of-type(2){margin-bottom: 120px;}
+.aboutUsPage .makeArea ul{max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;}
+.aboutUsPage .makeArea ul li{width: 32%; padding-top: 125px; background-repeat: no-repeat; background-position: center top; background-size: 94px;}
+.aboutUsPage .makeArea ul li:nth-child(1){background-image: url('../images/aboutUs/platform01.png');}
+.aboutUsPage .makeArea ul li:nth-child(2){background-image: url('../images/aboutUs/platform02.png');}
+.aboutUsPage .makeArea ul li:nth-child(3){background-image: url('../images/aboutUs/platform03.png');}
+.aboutUsPage .makeArea ul li strong{display: block; font-size: 24px; font-weight: 700; margin-bottom: 20px;}
+.aboutUsPage .makeArea ul li p{font-size: 20px; line-height: 1.5; color: #111;}
+
+/* META LOGISTIS UNIVERSE */
+.aboutUsPage .scrollArea > div > p{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;}
+.aboutUsPage .scrollArea > div > p span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
+
+
+.aboutUsPage .scrollArea{height: 100vh; width: calc(100% + 17px); overflow: auto; }
+.aboutUsPage .scrollArea.active{overflow: hidden; width: 100%;}
+.aboutUsPage{overflow: hidden; height: 100vh;}
+.aboutUsPage.active{overflow: auto; width: calc(100% + 17px);}
+/* [data-scroll="fixed"]{padding: 200px 0;} */
+
+.aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;}
+.aboutUsPage .toDoArea .CW{}
+.aboutUsPage .toDoArea .CW{}
+.aboutUsPage .toDoArea .CW h2{margin-bottom: 30px;}
+.aboutUsPage .toDoArea .CW > p{margin-bottom: 120px;}
+.aboutUsPage .toDoArea .CW > div{display: flex; justify-content: space-between; align-items: center;}
+.aboutUsPage .toDoArea .CW > div .progressArea{position: relative; box-sizing: border-box;}
+.aboutUsPage .toDoArea .CW > div .progressArea .progressBar{position: absolute; left: 0; top: 0; height: 100%;}
+.aboutUsPage .toDoArea .CW > div .progressArea ul li{}
+.aboutUsPage .toDoArea .CW > div .progressArea ul li div mark{display: block; margin-bottom: 20px;}
+.aboutUsPage .toDoArea .CW > div .progressArea ul li div p{color: #666;}
+.aboutUsPage .toDoArea .CW > div > ul{}
