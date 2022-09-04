@@ -57,6 +57,37 @@ header div > p{display: none;}
 header.active{padding: 20px 0; box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1)}
 header.active h1{top: 30px; left: 60px; width: 35px;}
 
+/* 푸터 */
+footer .topArea{background-color: black; padding: 50px 0;}
+footer .topArea div{display: flex; justify-content: space-between;}
+footer .topArea div .linkArea{display: flex; color: white;}
+footer .topArea div .linkArea > li:not(:last-of-type){margin-right: 130px;}
+footer .topArea div .linkArea > li b{display: block; font-size: 14px; font-weight: 700; margin-bottom: 15px;}
+footer .topArea div .linkArea > li ul li a{font-size: 12px; line-height: 2.17; font-weight: 500; display: flex;}
+footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 40px;}
+footer .topArea div .SNSArea{display: flex; gap: 20px;}
+footer .topArea div .SNSArea li a{display: block; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
+footer .topArea div .SNSArea li:nth-child(1) a{background-image: url('../images/common/facebook.png');}
+footer .topArea div .SNSArea li:nth-child(2) a{background-image: url('../images/common/youtube.png');}
+footer .topArea div .SNSArea li:nth-child(3) a{background-image: url('../images/common/blog.png');}
+footer .topArea div .SNSArea li:nth-child(4) a{background-image: url('../images/common/insta.png');}
+
+/* 바텀 공통 */
+footer .bottomArea{padding: 50px 0;}
+footer .bottomArea p{font-size: 12px; color: #999;}
+footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-end;}
+footer .bottomArea div:first-of-type h2{margin-bottom: 10px;}
+footer .bottomArea div:first-of-type address{display: flex; margin-bottom: 5px;}
+footer .bottomArea div:first-of-type address p:not(:last-of-type){margin-right: 5px;}
+footer .bottomArea div:first-of-type > p{margin-bottom: 20px;}
+footer .bottomArea div:first-of-type ul{display: flex;}
+footer .bottomArea div:first-of-type ul li:not(:last-of-type){margin-right: 20px;}
+footer .bottomArea div:first-of-type ul li a{font-size: 14px; font-weight: 700;}
+footer .bottomArea div:nth-of-type(2){text-align: right;}
+footer .bottomArea div:nth-of-type(2) b{display: block; font-size: 12px; margin-bottom: 10px;}
+footer .bottomArea div:nth-of-type(2) a{font-size: 26px; font-weight: 700; line-height: 1.19; margin-bottom: 10px;}
+footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
+
 
 /* 메인페이지 공통 */
 [data-scroll="fullPage"] > *{height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}

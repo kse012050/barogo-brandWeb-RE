@@ -123,7 +123,6 @@ function scrollFix(){
 
 
     $('[data-scroll="wrap"]').scroll(function(){
-        // console.log(1);
         $('[data-scroll="fixed"]').each(function(){
             let fixedHeight = $(this).height();
             if($(this).offset().top < $(this).find('[data-scroll="target2"]').innerHeight() - fixedHeight){
@@ -143,6 +142,31 @@ function scrollFix(){
                 });
             }
 
+        })
+    })
+
+    $('.yearArea li').click(function(){
+        // $(this).addClass('active').siblings().removeClass('active');
+        let liHeight = 0;
+        for(let a = 0; a < $(this).index(); a++){
+            liHeight += $('.monthArea > li').eq(a).outerHeight(true)
+        }
+        $('[data-scroll="wrap"]').animate({scrollTop : 
+            $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + liHeight
+        })
+        
+    })
+    let liHeightArray = [
+        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')),
+        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + $('.monthArea > li').eq(0).outerHeight(true),
+        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + $('.monthArea > li').eq(0).outerHeight(true) + $('.monthArea > li').eq(1).outerHeight(true)
+    ];
+    $('[data-scroll="wrap"]').scroll(function(){
+        let test = $(this).scrollTop();
+        liHeightArray.map(function(a , i){
+            if(test > a - 10){
+                $('.yearArea li').eq(i).addClass('active').siblings().removeClass('active');
+            }
         })
     })
 
