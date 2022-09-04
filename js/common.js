@@ -123,6 +123,7 @@ function scrollFix(){
             console.log(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) );
             console.log($('.scrollArea').scrollTop());
             if(targetIdx < (targetLength - 1) && Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $('.scrollArea').scrollTop()){ 
+                e.preventDefault();
                 scrollAniBool = targetActive(targetLi, ++targetIdx , progress)
             }else if(targetIdx == (targetLength - 1)){
                 $('main').addClass('active');
