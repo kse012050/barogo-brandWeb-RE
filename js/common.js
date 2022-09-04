@@ -10,7 +10,7 @@ $(document).ready(function(){
     $('[data-scroll="fullPage"]').length > 0 && fullPage();
 
     // 회사소개 스크롤 이벤트
-    $('[data-scroll="fixed"]').length > 0 && scrollFix();
+    $('[data-scroll="area"]').length > 0 && scrollFix();
 });
 
 function swiperSlider(){
@@ -73,17 +73,11 @@ function targetActive(list , idx , progress){
 
 function scrollFix(){
     $('body').css('overflow','hidden');
-    $('.scrollArea').scroll(function(){
+    $('[data-scroll="wrap"] > .scrollArea').scroll(function(){
         $(this).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
-        // console.log($('.scrollArea > div').height() - $('.scrollArea').height());
-        // console.log($(this).scrollTop());
-        // if(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $(this).scrollTop()){
-           
-        // }
     })
 
-    $('.toDoArea').on('mousewheel',function(e){
-                
+    $('[data-scroll="area"]').on('mousewheel',function(e){
         if($('.progressBar span').is(':animated')) {
             e.preventDefault()
             return
@@ -106,11 +100,8 @@ function scrollFix(){
         })
         if(delta > 0){
             // 휠을 위로
-            // console.log(targetIdx);
-            console.log(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $(this).scrollTop());
             if($('.aboutUsPage').scrollTop() == 0){
                 if(targetIdx > 0){
-                    console.log(1);
                     e.preventDefault();
                     scrollAniBool = targetActive(targetLi, --targetIdx , progress)
                 }else{
@@ -120,16 +111,39 @@ function scrollFix(){
             }
         }else{
             // 휠을 아래로
-            console.log(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) );
-            console.log($('.scrollArea').scrollTop());
             if(targetIdx < (targetLength - 1) && Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $('.scrollArea').scrollTop()){ 
                 e.preventDefault();
                 scrollAniBool = targetActive(targetLi, ++targetIdx , progress)
             }else if(targetIdx == (targetLength - 1)){
                 $('main').addClass('active');
                 $('.scrollArea').addClass('active');
-
             }
         }
     })
+
+
+    $('[data-scroll="wrap"]').scroll(function(){
+        // console.log(1);
+        $('[data-scroll="fixed"]').each(function(){
+            let fixedHeight = $(this).height();
+            if($(this).offset().top < $(this).find('[data-scroll="target2"]').innerHeight() - fixedHeight){
+                $(this).find('[data-scroll="target2"]').css({
+                    'position' : 'absolute',
+                    'top' :fixedHeight - $(this).find('[data-scroll="target2"]').innerHeight()
+                });
+            }else if($(this).offset().top < 0){
+                $(this).find('[data-scroll="target2"]').css({
+                    'position' : 'fixed',
+                    'top' : 0
+                });
+            }else{
+                $(this).find('[data-scroll="target2"]').css({
+                    'position' : 'absolute',
+                    'top' : 0
+                });
+            }
+
+        })
+    })
+
 }

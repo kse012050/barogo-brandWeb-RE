@@ -173,3 +173,20 @@
 .aboutUsPage .toDoArea .CW > div .progressArea ul li div mark{display: block; margin-bottom: 20px;}
 .aboutUsPage .toDoArea .CW > div .progressArea ul li div p{color: #666;}
 .aboutUsPage .toDoArea .CW > div > ul{}
+
+
+
+/* 숫자로 보는 바로고 */
+.aboutUsPage .numberArea > .CW{padding: 200px 0; position: relative;}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"]{position: absolute; left: 0; top: 0; width: 100%; padding-top: inherit; padding-bottom: inherit; pointer-events: none;}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"] div{max-width: 1180px; margin: 0 auto; /* pointer-events: all; */}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"] div h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"] div p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
+.aboutUsPage .numberArea > .CW ol{max-width: 680px; margin-left: auto;}
+.aboutUsPage .numberArea > .CW ol li{display: flex; position: relative;}
+.aboutUsPage .numberArea > .CW ol li::before{content: attr(title); position: absolute; top: 70px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
+.aboutUsPage .numberArea > .CW ol li:not(:last-child){margin-bottom: 330px;}
+.aboutUsPage .numberArea > .CW ol li p{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
+.aboutUsPage .numberArea > .CW ol li p:not(:last-of-type){margin-right: 50px;}
+.aboutUsPage .numberArea > .CW ol li p::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 30px;}
+.aboutUsPage .numberArea > .CW ol li p[data-percent]::after{align-self: flex-start; content: attr(data-percent) '%'; font-size: 20px; font-weight: 700; color: #fa5014; padding-right: 25px; background: url('../images/common/arrow-up.png') no-repeat right center / 20px; margin-top: 25px; }
