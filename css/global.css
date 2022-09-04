@@ -40,7 +40,9 @@ mark::before {content: attr('title');}
 
 /* 해더 */
 header{position: fixed; left: 0; top: 0; width: 100%; padding-top: 55px; z-index: 100; transition-duration: 0.5s; background-color: white; transition-property: padding , box-shadow;}
+header div{display: flex; align-items: center;}
 header div h1{position: absolute; left: 60px; top: 50px; width: 60px; transition-duration: 0.5s; transition-property: top , left , width;}
+header div h1.active{position: static; margin-right: 50px;}
 header div h1 img{width: 100%;}
 header div nav ul{display: flex;}
 header div nav ul li:not(:last-child){margin-right: 60px;}
@@ -51,8 +53,8 @@ header div nav ul li.active a::after{content: ''; position: absolute; left: 0; b
 header div > a{text-indent: -9999px; width: 36px; height: 36px; background: url('../images/common/back.png') no-repeat center / cover;}
 header div button{display: none;}
 header div > p{display: none;}
-.mainPage header div nav ul li:not(.active) a{opacity: 0.3;}
-.mainPage header div nav ul li:hover a{opacity: 1;}
+:is(.mainPage , .aboutUsPage) header div nav ul li:not(.active) a{opacity: 0.3;}
+:is(.mainPage , .aboutUsPage) header div nav ul li:hover a{opacity: 1;}
 
 header.active{padding: 20px 0; box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1)}
 header.active h1{top: 30px; left: 60px; width: 35px;}

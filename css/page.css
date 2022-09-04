@@ -132,8 +132,6 @@
 
 /* ! 회사소개 */
 /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
-/* .aboutUsPage{overflow: auto; height: 100vh;} */
-/* .aboutUsPage main{padding-top: 190px;} */
 .aboutUsPage .makeArea{margin-bottom: 200px; padding-top: 190px;}
 .aboutUsPage .makeArea h2{margin-bottom: 60px;}
 .aboutUsPage .makeArea > div{max-width: 1600px; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 80px;}
@@ -155,11 +153,10 @@
 .aboutUsPage .scrollArea > div > p span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
 
 
-.aboutUsPage{overflow: hidden;}
-.aboutUsPage.active{overflow: auto; width: calc(100% + 17px); height: 100vh;}
-.aboutUsPage .scrollArea{height: 100vh; width: calc(100% + 17px); overflow: auto; }
-.aboutUsPage .scrollArea.active{overflow: hidden; width: 100%;}
-/* [data-scroll="fixed"]{padding: 200px 0;} */
+[data-scroll="wrap"]{overflow: hidden;}
+[data-scroll="wrap"].active{overflow: auto; width: calc(100% + 17px); height: 100vh;}
+[data-scroll="wrap"] [data-scroll="area"]{height: 100vh; width: calc(100% + 17px); overflow: auto; }
+[data-scroll="wrap"] [data-scroll="area"].active{overflow: hidden; width: 100%;}
 
 .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;}
 .aboutUsPage .toDoArea .CW h2{margin-bottom: 30px;}
@@ -177,11 +174,13 @@
 .aboutUsPage .numberArea{margin-bottom: 200px;}
 .aboutUsPage .numberArea > .CW{padding-top: 200px; position: relative; }
 .aboutUsPage .numberArea > .CW [data-scroll="target2"]{position: absolute; left: 0; top: 0; width: 100%; padding-top: inherit; padding-bottom: inherit; pointer-events: none;}
-.aboutUsPage .numberArea > .CW [data-scroll="target2"] div{max-width: 1180px; margin: 0 auto; /* pointer-events: all; */}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"] div{ max-width: 1180px; margin: 0 auto;}
 .aboutUsPage .numberArea > .CW [data-scroll="target2"] div h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
 .aboutUsPage .numberArea > .CW [data-scroll="target2"] div p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
+.aboutUsPage .numberArea > .CW [data-scroll="target2"][style*="fixed"] div{width: calc(100% - 40px);}
 .aboutUsPage .numberArea > .CW .numberArea{max-width: 680px; margin-left: auto;}
-.aboutUsPage .numberArea > .CW .numberArea .canvas{height: 300px; margin-bottom: 50px;}
+.aboutUsPage .numberArea > .CW .numberArea .canvas{margin-bottom: 200px;}
+.aboutUsPage .numberArea > .CW .numberArea .canvas img{width: 100%;}
 .aboutUsPage .numberArea > .CW .numberArea ol li{display: flex; position: relative;}
 .aboutUsPage .numberArea > .CW .numberArea ol li::before{content: attr(title); position: absolute; top: 70px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
 .aboutUsPage .numberArea > .CW .numberArea ol li:not(:last-child){margin-bottom: 330px;}
@@ -215,6 +214,7 @@
 .aboutUsPage .roadArea .CW .monthArea > li ol li img{max-width: 636px; margin-top: 50px;}
 
 /* BAROGO Breand identity */
+.aboutUsPage{margin-bottom: 200px;}
 .aboutUsPage .breandArea .CW h2{font-size: 42px; font-weight: 700; float: left; margin-right: 160px;}
 .aboutUsPage .breandArea .CW div{float: left; width: 550px; margin-bottom: 120px;}
 .aboutUsPage .breandArea .CW div p{font-size: 20px; line-height: 1.5; color: #111;}

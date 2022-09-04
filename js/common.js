@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    logo()
+    $(window).resize(function(){
+        logo()
+    })
     $(window).scroll(function(){
         ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active')
     })
@@ -12,6 +16,10 @@ $(document).ready(function(){
     // 회사소개 스크롤 이벤트
     $('[data-scroll="area"]').length > 0 && scrollFix();
 });
+
+function logo(){
+    $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
+}
 
 function swiperSlider(){
     var swiper = new Swiper(".mySwiper", {
@@ -100,12 +108,12 @@ function scrollFix(){
         })
         if(delta > 0){
             // 휠을 위로
-            if($('.aboutUsPage').scrollTop() == 0){
+            if($('[data-scroll="wrap"]').scrollTop() == 0){
                 if(targetIdx > 0){
                     e.preventDefault();
                     scrollAniBool = targetActive(targetLi, --targetIdx , progress)
                 }else{
-                    $('main').removeClass('active');
+                    $('[data-scroll="wrap"]').removeClass('active');
                     $('.scrollArea').removeClass('active');
                 }
             }
@@ -115,7 +123,7 @@ function scrollFix(){
                 e.preventDefault();
                 scrollAniBool = targetActive(targetLi, ++targetIdx , progress)
             }else if(targetIdx == (targetLength - 1)){
-                $('main').addClass('active');
+                $('[data-scroll="wrap"]').addClass('active');
                 $('.scrollArea').addClass('active');
             }
         }
