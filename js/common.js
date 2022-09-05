@@ -4,7 +4,8 @@ $(document).ready(function(){
         logo()
     })
     $(window).scroll(function(){
-        ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active')
+        ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
+        ($(window).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
     })
 
     // 슬라이더
@@ -13,14 +14,19 @@ $(document).ready(function(){
     // 풀페이지
     $('[data-scroll="fullPage"]').length > 0 && fullPage();
 
+    // 라이더 지원
+    $('*').hasClass('riderPage') && riderEvent()
+
     // 회사소개 스크롤 이벤트
     $('[data-scroll="area"]').length > 0 && scrollFix();
 });
 
+// 반응형 로고
 function logo(){
     $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
 }
 
+// 슬라이더
 function swiperSlider(){
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
@@ -28,10 +34,13 @@ function swiperSlider(){
     });
 }
 
+// 풀페이지
+let targetAni = false;
 function fullPage(){
     $('body').css('overflow','hidden');
     let scrollAniBool = true;
     $('[data-scroll="fullPage"] > *').on('mousewheel',function(e){
+        if(targetAni){ return;}
         if($('html').is(':animated') || $('.progressBar span').is(':animated')) return
         let delta = e.originalEvent.wheelDelta;
         let scrollTopValue;
@@ -53,29 +62,35 @@ function fullPage(){
 
         if(delta > 0){
             // 휠을 위로
-            (targetIdx > 0) ? scrollAniBool = targetActive(targetLi, --targetIdx , progress) : (scrollTopValue = $(this).prev());
+            (targetIdx > 0) ? scrollAniBool = targetActive(targetLi, --targetIdx , progress) : (scrollTopValue = $(this).prev(),count = $(this).prev().attr('data-count'));
         }else{
             // 휠을 아래로
-            (targetIdx < (targetLength - 1)) ? scrollAniBool = targetActive(targetLi, ++targetIdx , progress) : (scrollTopValue = $(this).next());
+            (targetIdx < (targetLength - 1)) ? scrollAniBool = targetActive(targetLi, ++targetIdx , progress) : (scrollTopValue = $(this).next(),count = $(this).next().attr('data-count'));
         }
-        scrollAniBool ? scrollAni(scrollTopValue) : 
+        scrollAniBool ? scrollAni(scrollTopValue , count) : 
         setTimeout(()=>{
             scrollAniBool = !scrollAniBool;
-        },500);
+        },1000);
     })
 
     function scrollAni(scrollTopValue){
         scrollTopValue.addClass('active').siblings().removeClass('active');
         $('html').stop().animate({scrollTop : scrollTopValue.offset().top} , 500)
+        count == 'area' && countAni($('[data-count="area"] [data-count="target"]'));
     }
 
 }
 
+// 스크롤 타겟
 function targetActive(list , idx , progress){
     progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
     list.map((t)=>{
         t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
     })
+    targetAni = !targetAni;
+    setTimeout(function(){
+        targetAni = !targetAni;
+    },1000)
     return false;
 }
 
@@ -86,6 +101,7 @@ function scrollFix(){
     })
 
     $('[data-scroll="area"]').on('mousewheel',function(e){
+        if(targetAni){ return;}
         if($('.progressBar span').is(':animated')) {
             e.preventDefault()
             return
@@ -178,4 +194,99 @@ function scrollFix(){
         })
     })
 
+}
+
+// 라이더 페이지 이벤트
+function riderEvent(){
+    clickDrop();
+    bikeAni();
+}
+
+// 라이더 수익 클릭 드랍
+function clickDrop(){
+    // 시간 넣기
+    for(let a = 1; a <= 24; a++){
+        $('[data-date="hour"]').append('<li class="FC-01">'+a+'</li>')
+    }
+    // 일 넣기
+    for(let a = 1; a <= 7; a++){
+        $('[data-date="week"]').append('<li class="FC-01">'+a+'</li>')
+    }
+    // 배경 클릭시 닫기
+    $('.revenueArea').click(function(){
+        $('[data-click="drop"] + div').stop().slideUp();
+    })
+
+    // 드랍 목록 스크롤 만들기 변수
+    let dropHeight = $('[data-click="drop"] + div').height();
+    let dropTotitleHeight;
+    // 클릭시 목록 나오기
+    $('[data-click="drop"]').click(function(e){
+        e.stopPropagation();
+        $('[data-click="drop"] + div').stop().slideUp();
+        $(this).next('div').stop().slideToggle();
+        dropTotitleHeight = $(this).next('div').find('li').height() * $(this).next('div').find('li').length;
+        $(this).next('div').children('.progressBar').css('height',(dropHeight / dropTotitleHeight * 100) + '%')
+    })
+    // 목록 클릭시 값 변경
+    $('[data-click="drop"] + div li').click(function(e){
+        $(this).parent().parent().stop().slideUp();
+        $(this).parent().parent().prev().html($(this).html())
+        countAni($('[data-date="hour"]').parent().prev().text() * $('[data-date="week"]').parent().prev().text() * 8095)
+    })
+    // 목록위에서 스크롤 막기
+    $('[data-click="drop"] + div').on('mousewheel',function(e){
+        e.stopPropagation();
+    })
+    // 드랍 목록 스크롤 움직이기
+    $('[data-click="drop"] + div ul').scroll(function(){
+        $(this).prev().css('top',($('[data-click="drop"] + div ul').scrollTop() / dropTotitleHeight) * 100 + '%');
+    })
+
+}
+
+// 카운트
+function countAni(list){
+    const countOptions = {
+        useEasing :true,
+        separator : ",",
+        decimal : ",",
+    };
+    list.each(function(){
+        var result = $(this).text().replace(/[^0-9]/g, "");	
+        let count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
+        count.start();
+    });
+}
+
+function bikeAni(){
+    let area;
+    let target;
+    let targetRight;
+    let scrollList;
+    let idx;
+
+    bikeInit();
+    target.css('right' , targetRight);
+
+    $('[data-bike="area"]').on('mousewheel',function(e){
+        bikeInit();
+        scrollList.each(function(i){
+            $(this).hasClass('active') && (idx = i);
+        })
+        if(idx == 0){
+            target.css('right',targetRight)
+        }else if(idx == 1 ){
+            target.css('right',targetRight / 2)
+        }else{
+            target.css('right',0)
+        }
+    })
+
+    function bikeInit(){
+        area = $('[data-bike="area"]');
+        target = area.find('[data-bike="target"]');
+        scrollList = area.find('[data-scroll="target"] li');
+        targetRight = -(parseInt($('.CW').css('margin-right')) + target.width() - 50);
+    }
 }

@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- countUp -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.5/countUp.min.js" integrity="sha512-1YM6bEc8uBWgHGLyQbBZyKgb6X6SKs3xR9aP8AwfyWPMf4plLM8g3r+769pGiebwOW3L8QPP0m3PWyiaHJ5rOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/common.js"></script>
 </head>
 <body>
@@ -110,7 +112,7 @@
                 </div>
             </section>
 
-            <div class="revenueArea">
+            <div class="revenueArea" data-count="area">
                 <div class="CW">
                     <div>
                         <small class="FC-01">나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요</small>
@@ -118,32 +120,37 @@
                             하루에 
                             <div>
                                 <button data-click="drop">24</button>
-                                <ul data-date="hour">
-                                    
-                                </ul>
+                                <div class="scrollHidden">
+                                    <div class="progressBar"></div>
+                                    <ul data-date="hour">
+                                        
+                                    </ul>
+                                </div>
                             </div>
                             시간, <br/>
                             일주일
                             <div>
                                 <button data-click="drop">7</button>
-                                <ul data-date="week">
-                                    
-                                </ul>
+                                <div>
+                                    <ul data-date="week">
+                                        
+                                    </ul>
+                                </div>
                             </div>
                             일 근무할 때 
                         </div>
                     </div>
                     <div>
                         <p class="FC-01">나의 한달 예상 수익은?</p>
-                        <span>₩ 1,360,000</span>
+                        <span id="revenue" data-count="target">1,360,000</span>
                     </div>
                 </div>
             </div>
 
-            <section class="startArea" data-scroll="fixed">
+            <section class="startArea" data-scroll="fixed" data-bike="area">
                 <div class="CW">
                     <div class="textArea">
-                        <h2 class="TC-02">망설이지 <mark>바로 시작하세요!</mark></h2>
+                        <h2 class="TC-02">망설이지 말고<mark>바로 시작하세요!</mark></h2>
                         <div class="progressArea">
                             <div class="progressBar">
                                 <span></span>
@@ -168,7 +175,7 @@
                         </div>
                     </div>
                     <div class="imgArea">
-                        <img src="images/rider/bike.png" alt="오토바이 이미지" data-scroll="rightLeft">
+                        <img src="images/rider/bike.png" alt="오토바이 이미지" data-bike="target">
                     </div>
                 </div>
             </section>
@@ -196,8 +203,8 @@
                 <div class="CW">
                     <p>
                         라이더의 라이프스타일을 존중하는 바로고.<br/>
-                        원하는 시간에, 원하는 지역 어디서나, 자유로운 라이딩이 가능하도록
-                        바로고가 지원하겠습니다.
+                        원하는 시간에, 원하는 지역 어디서나,<br/>
+                        자유로운 라이딩이 가능하도록 바로고가 지원하겠습니다.
                     </p>
                 </div>
             </div>
