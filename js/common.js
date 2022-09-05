@@ -125,10 +125,13 @@ function scrollFix(){
         if(delta > 0){
             // 휠을 위로
             if($('[data-scroll="wrap"]').scrollTop() == 0){
+                console.log(targetIdx);
                 if(targetIdx > 0){
                     e.preventDefault();
+                    console.log(1);
                     scrollAniBool = targetActive(targetLi, --targetIdx , progress)
                 }else{
+                    e.preventDefault();
                     $('[data-scroll="wrap"]').removeClass('active');
                     $('.scrollArea').removeClass('active');
                 }
@@ -146,7 +149,7 @@ function scrollFix(){
     })
 
 
-    $('[data-scroll="wrap"]').scroll(function(){
+    $('[data-scroll="wrap"]').scroll(function(e){
         $('[data-scroll="fixed"]').each(function(){
             let fixedHeight = $(this).height();
             if($(this).offset().top < $(this).find('[data-scroll="target2"]').innerHeight() - fixedHeight){
@@ -252,11 +255,16 @@ function countAni(list){
         separator : ",",
         decimal : ",",
     };
-    list.each(function(){
-        var result = $(this).text().replace(/[^0-9]/g, "");	
-        let count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
+    if(typeof(list) == 'number'){
+        let count = new CountUp(revenue,0000, list, 0, 2, countOptions);
         count.start();
-    });
+    }else{
+        list.each(function(){
+            var result = $(this).text().replace(/[^0-9]/g, "");	
+            let count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
+            count.start();
+        });
+    }
 }
 
 function bikeAni(){
