@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- countUp -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.5/countUp.min.js" integrity="sha512-1YM6bEc8uBWgHGLyQbBZyKgb6X6SKs3xR9aP8AwfyWPMf4plLM8g3r+769pGiebwOW3L8QPP0m3PWyiaHJ5rOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/common.js"></script>
 </head>
 <body>
@@ -159,40 +161,34 @@
                     </section>
                 </div>
 
-                <section class="numberArea">
+                <section class="numberArea" data-count="area">
                     <div class="CW">
-                        <div data-scroll="target2">
-                            <div>
-                                <h2>숫자로 보는 <mark>바로고</mark></h2>
-                                <p>
-                                    국내 최초 전국단위 배달대행 플랫폼으로<br/>
-                                    시작한 바로고는 오늘도 새로운 기록을<br/>
-                                    만들어 내고 있습니다.
-                                </p>
-                            </div>
+                        <div class="textArea">
+                            <h2>숫자로 보는 <mark>바로고</mark></h2>
+                            <p>
+                                국내 최초 전국단위 배달대행 플랫폼으로<br/>
+                                시작한 바로고는 오늘도 새로운 기록을<br/>
+                                만들어 내고 있습니다.
+                            </p>
                         </div>
-                        <div class="numberArea">
-                            <div class="canvas">
+                        <div class="countArea">
+                            <div class="graphArea">
                                 <img src="images/common/graph@3x.png" alt="">
                             </div>
-                            <ol>
-                                <li title="2016">
-                                    <p title="허브 수">190+</p>
-                                    <p title="활동 라이더 수">14,000+</p>
-                                    <p title="등록 상점 수">8,000+</p>
-                                </li>
-                                <li title="2022">
-                                    <p title="허브 수" data-percent="579">
-                                        1,100+
-                                    </p>
-                                    <p title="활동 라이더 수" data-percent="243">
-                                        34,000+
-                                    </p>
-                                    <p title="등록 상점 수" data-percent="1,450">
-                                        116,000+
-                                    </p>
-                                </li>
-                            </ol>
+                            <div class="yearArea">
+                                <h3 id="year" data-count="target" data-countUp="2022">2016</h3>
+                                <ul>
+                                    <li title="허브 수">
+                                        <p id="herbs" data-count="target" data-countUp="1,100">190</p>
+                                    </li>
+                                    <li title="활동 라이더 수">
+                                        <p id="riders" data-count="target" data-countUp="34,000">14,000</p>
+                                    </li>
+                                    <li title="등록 상점 수">
+                                        <p id="store" data-count="target" data-countUp="116,000">8,000</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>

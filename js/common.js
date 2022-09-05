@@ -35,7 +35,6 @@ function swiperSlider(){
 }
 
 // 풀페이지
-let targetAni = false;
 function fullPage(){
     $('body').css('overflow','hidden');
     let scrollAniBool = true;
@@ -82,6 +81,7 @@ function fullPage(){
 }
 
 // 스크롤 타겟
+let targetAni = false;
 function targetActive(list , idx , progress){
     progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
     list.map((t)=>{
@@ -101,6 +101,7 @@ function scrollFix(){
         ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
     })
   
+    let countBool = true;
     $('[data-scroll="area"]').each(function(){
         $(this).on('mousewheel',function(e){
             // if(!$(this).hasClass('active')) return;
@@ -131,9 +132,7 @@ function scrollFix(){
                 totalHeight += $(this).outerHeight(true);
             })
             if(delta > 0){
-                console.log($('[data-scroll="area"].active').scrollTop())
                 // 휠을 위로
-
                 if($('[data-scroll="area"].active').length == 0 && targetIdx > 0){
                     targetActive(targetLi, --targetIdx , progress);
                 }else if($('[data-scroll="area"].active').length == 0 && targetIdx == 0){
@@ -142,7 +141,6 @@ function scrollFix(){
 
                 
                 if($('[data-scroll="area"].active').scrollTop() == 0){
-                    console.log($(this));
                     $('[data-scroll="area"].active').removeClass('active');
                 }
             
@@ -155,7 +153,17 @@ function scrollFix(){
                     $(this).parent().addClass('active');
                 }
             }
-            if(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $('.scrollArea').scrollTop()){
+        })
+        
+        
+        $(this).scroll(function(){
+            if(!$(this).hasClass('active')) return;
+            if($('[data-count="area"]').offset().top <= 0 && countBool){
+                countBool = !countBool;
+                console.log($('[data-count="area"]').offset().top);
+                setTimeout(function(){
+                    countAni($('[data-count="area"] [data-count="target"]'));
+                },1000)
             }
         })
     })
@@ -272,7 +280,13 @@ function countAni(list){
     }else{
         list.each(function(){
             var result = $(this).text().replace(/[^0-9]/g, "");	
-            let count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
+            let count;
+            if($(this).attr('data-countUp')){
+                let result2 = $(this).attr('data-countUp').replace(/[^0-9]/g, "");
+                count = new CountUp($(this).attr('id'),result, result2, 0, 2, countOptions);
+            }else{
+                count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
+            }
             count.start();
         });
     }

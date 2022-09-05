@@ -179,8 +179,8 @@
 
 
     /* 숫자로 보는 바로고 */
-    .aboutUsPage .numberArea{margin-bottom: 200px;}
-    .aboutUsPage .numberArea > .CW{padding-top: 200px; position: relative; }
+    .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center; margin-bottom: 200px;}
+    /* .aboutUsPage .numberArea > .CW{padding-top: 200px; position: relative; }
     .aboutUsPage .numberArea > .CW [data-scroll="target2"]{position: absolute; left: 0; top: 0; width: 100%; padding-top: inherit; padding-bottom: inherit; pointer-events: none;}
     .aboutUsPage .numberArea > .CW [data-scroll="target2"] div{ max-width: 1180px; margin: 0 auto;}
     .aboutUsPage .numberArea > .CW [data-scroll="target2"] div h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
@@ -195,7 +195,21 @@
     .aboutUsPage .numberArea > .CW .numberArea ol li p{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
     .aboutUsPage .numberArea > .CW .numberArea ol li p:not(:last-of-type){margin-right: 50px;}
     .aboutUsPage .numberArea > .CW .numberArea ol li p::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 30px;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li p[data-percent]::after{align-self: flex-start; content: attr(data-percent) '%'; font-size: 20px; font-weight: 700; color: #fa5014; padding-right: 25px; background: url('../images/common/arrow-up.png') no-repeat right center / 20px; margin-top: 25px; }
+    .aboutUsPage .numberArea > .CW .numberArea ol li p[data-percent]::after{align-self: flex-start; content: attr(data-percent) '%'; font-size: 20px; font-weight: 700; color: #fa5014; padding-right: 25px; background: url('../images/common/arrow-up.png') no-repeat right center / 20px; margin-top: 25px; } */
+    .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
+    .aboutUsPage .numberArea .CW .textArea h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
+    .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
+    .aboutUsPage .numberArea .countArea{}
+    .aboutUsPage .numberArea .countArea .graphArea{width: 680px; margin-bottom: 100px;}
+    .aboutUsPage .numberArea .countArea .graphArea img{width: 100%;}
+    .aboutUsPage .numberArea .countArea .yearArea{position: relative;}
+    .aboutUsPage .numberArea .countArea .yearArea h3{position: absolute; top: 70px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
+    .aboutUsPage .numberArea .countArea .yearArea ul{display: flex; position: relative;}
+    .aboutUsPage .numberArea .countArea .yearArea ul li{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
+    .aboutUsPage .numberArea .countArea .yearArea ul li:not(:last-of-type){margin-right: 50px;}
+    .aboutUsPage .numberArea .countArea .yearArea ul li::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 25px;}
+    .aboutUsPage .numberArea .countArea .yearArea ul li p::after{content: '+';}
+
 
     /* 바로고가 걸어온길 */
     .aboutUsPage .roadArea{display: flex; justify-content: space-between; position: relative; margin-bottom: 200px;}
