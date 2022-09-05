@@ -96,56 +96,68 @@ function targetActive(list , idx , progress){
 
 function scrollFix(){
     $('body').css('overflow','hidden');
-    $('[data-scroll="wrap"] > .scrollArea').scroll(function(){
+    $('main[data-scroll="area"]').find('[data-scroll="area"]').eq(-1).scroll(function(){
         $(this).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
+        ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
     })
-
-    $('[data-scroll="area"]').on('mousewheel',function(e){
-        if(targetAni){ return;}
-        if($('.progressBar span').is(':animated')) {
-            e.preventDefault()
-            return
-        }
-        let delta = e.originalEvent.wheelDelta;
-        let target = $(this).find('[data-scroll="target"]');
-        let targetLi = [];
-        let targetIdx;
-        let targetLength;
-        let progress = $(this).find('.progressBar');
-        target.each(function(i){
-            targetLi.push(target.eq(i).find('li'))
-        })
-        targetLi.length > 0 && (targetLength = targetLi[0].length);
-        
-        targetLi.map(function(list){
-            list.each(function(i){
-                list.eq(i).hasClass('active') && (targetIdx = i);
+  
+    $('[data-scroll="area"]').each(function(){
+        $(this).on('mousewheel',function(e){
+            // if(!$(this).hasClass('active')) return;
+            e.stopPropagation();
+            if(targetAni){ return;}
+            if($('.progressBar span').is(':animated')) {
+                e.preventDefault()
+                return
+            }
+            let delta = e.originalEvent.wheelDelta;
+            let target = $(this).find('[data-scroll="target"]');
+            let targetLi = [];
+            let targetIdx;
+            let targetLength;
+            let progress = $(this).find('.progressBar');
+            target.each(function(i){
+                targetLi.push(target.eq(i).find('li'))
             })
-        })
-        if(delta > 0){
-            // 휠을 위로
-            if($('[data-scroll="wrap"]').scrollTop() == 0){
-                console.log(targetIdx);
-                if(targetIdx > 0){
-                    e.preventDefault();
-                    console.log(1);
-                    scrollAniBool = targetActive(targetLi, --targetIdx , progress)
-                }else{
-                    e.preventDefault();
-                    $('[data-scroll="wrap"]').removeClass('active');
-                    $('.scrollArea').removeClass('active');
+            targetLi.length > 0 && (targetLength = targetLi[0].length);
+            
+            targetLi.map(function(list){
+                list.each(function(i){
+                    list.eq(i).hasClass('active') && (targetIdx = i);
+                })
+            })
+            let totalHeight = 0;
+            $(this).children().each(function(){
+                totalHeight += $(this).outerHeight(true);
+            })
+            if(delta > 0){
+                console.log($('[data-scroll="area"].active').scrollTop())
+                // 휠을 위로
+
+                if($('[data-scroll="area"].active').length == 0 && targetIdx > 0){
+                    targetActive(targetLi, --targetIdx , progress);
+                }else if($('[data-scroll="area"].active').length == 0 && targetIdx == 0){
+                    $(this).addClass('active');
+                }
+
+                
+                if($('[data-scroll="area"].active').scrollTop() == 0){
+                    console.log($(this));
+                    $('[data-scroll="area"].active').removeClass('active');
+                }
+            
+            }else{
+                // 휠을 아래로
+                if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && targetIdx < (targetLength - 1)){
+                    $(this).removeClass('active');
+                    targetActive(targetLi, ++targetIdx , progress);
+                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && targetIdx == (targetLength - 1)){
+                    $(this).parent().addClass('active');
                 }
             }
-        }else{
-            // 휠을 아래로
-            if(targetIdx < (targetLength - 1) && Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $('.scrollArea').scrollTop()){ 
-                e.preventDefault();
-                scrollAniBool = targetActive(targetLi, ++targetIdx , progress)
-            }else if(targetIdx == (targetLength - 1)){
-                $('[data-scroll="wrap"]').addClass('active');
-                $('.scrollArea').addClass('active');
+            if(Math.floor($('.scrollArea > div').height() - $('.scrollArea').height()) <= $('.scrollArea').scrollTop()){
             }
-        }
+        })
     })
 
 
@@ -173,7 +185,6 @@ function scrollFix(){
     })
 
     $('.yearArea li').click(function(){
-        // $(this).addClass('active').siblings().removeClass('active');
         let liHeight = 0;
         for(let a = 0; a < $(this).index(); a++){
             liHeight += $('.monthArea > li').eq(a).outerHeight(true)

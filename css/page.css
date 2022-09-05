@@ -157,14 +157,14 @@
     .aboutUsPage .makeArea ul li p{font-size: 20px; line-height: 1.5; color: #111;}
 
     /* META LOGISTIS UNIVERSE */
-    .aboutUsPage .scrollArea > div > p{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;}
-    .aboutUsPage .scrollArea > div > p span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
+    .aboutUsPage .metaArea{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;}
+    .aboutUsPage .metaArea span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
 
 
     [data-scroll="wrap"]{overflow: hidden;}
     [data-scroll="wrap"].active{overflow: auto; width: calc(100% + 17px); height: 100vh;}
-    [data-scroll="wrap"] [data-scroll="area"]{height: 100vh; width: calc(100% + 17px); overflow: auto; }
-    [data-scroll="wrap"] [data-scroll="area"].active{overflow: hidden; width: 100%;}
+    [data-scroll="area"]{overflow: hidden; width: 100%; height: 100vh;}
+    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
 
     .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;}
     .aboutUsPage .toDoArea .CW h2{margin-bottom: 30px;}
