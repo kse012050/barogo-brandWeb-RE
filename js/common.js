@@ -3,6 +3,9 @@ $(document).ready(function(){
     $(window).resize(function(){
         logo()
     })
+
+    introAni()
+
     $(window).scroll(function(){
         ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
         ($(window).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
@@ -21,6 +24,23 @@ $(document).ready(function(){
     // 회사소개 스크롤 이벤트
     $('[data-scroll="area"]').length > 0 && scrollFix();
 });
+
+// 인트로
+function introAni(){
+    let introDuration = 1.3;
+    let introDelay = 1;
+    $('.introBox .BG').css({
+        'animationDuration' : introDuration + 's',
+        'animationDelay' : introDelay + 's'
+    });
+    $('.introBox .textArea span').css('animationDelay' , introDelay + 's');
+    $('.introBox .textArea span').eq(0).css('animationDuration' , + introDuration / 3 + introDuration / 10 +'s')
+    $('.introBox .textArea span').eq(1).css('animationDuration' , + introDuration / 2 +'s')
+    $('.introBox .textArea span').eq(2).css('animationDuration' , + introDuration / 3 * 2 +'s')
+    $('.introBox .BG').on('animationend', function(){
+        $('.introBox').css('display','none')
+    })
+}
 
 // 반응형 로고
 function logo(){
