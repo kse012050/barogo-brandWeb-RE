@@ -35,7 +35,7 @@
             ctx = canvas.getContext('2d');
             canvasSize();
             lines.push(new Line());
-            animationLoop();
+            // animationLoop();
         }
 
         function canvasSize(){
@@ -43,6 +43,10 @@
             h = canvas.height = document.querySelector('div').offsetHeight;
         }
         
+        function drawScene(){
+            animationLoop();
+        }
+
         function animationLoop(){
             ctx.clearRect(0,0,w,h);
             lines.map((l)=>{
@@ -55,70 +59,65 @@
         class Line{
             constructor(){
                 let test = h - 52;
-                console.log(test);
                 this.x = 40;
                 this.y = 329;
-                this.startX = this.x;
-                this.startY = this.y;
+                this.lineX = this.x;
+                this.lineY = this.y;
                 this.progress = 0;
-                // this.point = [
-                //     {x : 40 , y : 329},
-                //     {x : 139, y : 317},
-                //     {x : 249, y : 299},
-                //     {x : 360, y : 261},
-                //     {x : 470, y : 188},
-                //     {x : 585.5, y : 97},
-                // ]
                 this.point = [
                     {x : 40 , y : 329},
-                    {x : 140, y : 316},
-                    {x : 251, y : 298},
-                    {x : 364, y : 259},
-                    {x : 477, y : 185},
-                    {x : 593, y : 96},
+                    {x : 139, y : 317},
+                    {x : 249, y : 298},
+                    {x : 360, y : 261},
+                    {x : 469, y : 188},
+                    {x : 583, y : 97},
                 ]
+                this.line = [];
                 this.count = 0;
-                // this.balls = [new Ball(this.point[0].x , this.point[0].y , this.lastCheck)];
+                this.balls = [new Ball(this.point[0].x , this.point[0].y)];
                 this.lastCheck = false;
-                // 40 , h - 52 (329)
-                // 139 , h - 64 (317)
-                // 249 , h - 82 (299)
-                // 360 , h - 120 (261)
-                // 470 , h - 193 (188)
-                // 583.5 , h - 284(97)
+            
 
                 // 점사이즈 9
-                this.balls = [new Ball(583 , 96, true)]
+                // this.balls = [new Ball(583 , 96, true)]
             }
             draw(){
                 ctx.beginPath();
-                ctx.arc(this.x , this.y, 3 , 0 , Math.PI * 2);
-                ctx.fillStyle = 'red';
-                ctx.fill()
-            }
-            update(){
-                if(this.count < this.point.length - 1){
-                    if(this.count == this.point.length - 2){
-                        this.lastCheck = true;
-                    }
-
-                    if(this.progress <= 1){
-                        this.x = this.startX + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x));
-                        this.y = this.startY + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y));
-                        this.progress += 0.02;
-                    }else{
-                        this.progress = 0;
-                        this.startX = this.x;
-                        this.startY = this.y;
-                        this.count++;
-                        this.balls.push(new Ball(this.x , this.y , this.lastCheck))
-                    }
-                }
+                this.line.map((l , i)=>{
+                    console.log(i);
+                    ctx.moveTo(this.point[i].x , this.point[i].y);
+                    ctx.lineTo(l.x , l.y)
+                })
+                ctx.moveTo(this.point[this.count].x , this.point[this.count].y);
+                ctx.lineTo(this.lineX , this.lineY)
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 4
+                ctx.stroke();
 
                 this.balls.map((b)=>{
                     b.draw();
                     b.update();
                 })
+            }
+            update(){
+                if(this.count < this.point.length - 1){ 
+                    if(this.count == this.point.length - 2){
+                        this.lastCheck = true;
+                    }
+                    if(this.progress <= 1){
+                        this.lineX = this.point[this.count].x + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x))
+                        this.lineY = this.point[this.count].y + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y))
+                        this.progress += 0.02;
+                    }else{
+                        this.lineX = this.point[this.count + 1].x;
+                        this.lineY = this.point[this.count + 1].y;
+                        this.line.push({x : this.lineX , y : this.lineY});
+                        this.count++;
+                        this.progress = 0;
+                        this.balls.push(new Ball(this.lineX , this.lineY , this.lastCheck));
+                    }
+                }
+                
             }
         }
 
@@ -127,19 +126,17 @@
                 this.x = x;
                 this.y = y;
                 this.size = 0;
-                // this.color = 'black';
                 this.lastCheck = lastCheck;
             }
 
             draw(){
                 if(this.lastCheck){
-                    if(this.size <= 19){
-                        ctx.beginPath();
-                        ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
-                        ctx.fillStyle = 'rgba(250,80,20,1)';
-                        ctx.fillStyle = 'blue';
-                        ctx.fill()
-                    }
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size <=19 ? this.size : 19 , 0 , Math.PI * 2 );
+                    ctx.fillStyle = 'rgba(250,80,20,1)';
+                    ctx.fill()
+                    ctx.closePath();
+
                     ctx.beginPath();
                     ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
                     ctx.fillStyle = 'rgba(250,80,20,0.5)';
@@ -147,7 +144,7 @@
                 }else{
                     ctx.beginPath();
                     ctx.arc(this.x , this.y , this.size, 0 , Math.PI * 2);
-                    ctx.fillStyle = 'black';
+                    ctx.fillStyle = 'blue';
                     ctx.fill()
                 }
             }
@@ -166,6 +163,7 @@
         }
 
         canvasInit();
+        drawScene();
     </script>
 </body>
 </html>
