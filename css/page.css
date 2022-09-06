@@ -1,4 +1,4 @@
-@media screen and (min-width : 1220px) {
+/* @media screen and (min-width : 1220px) { */
     /* ! 배달대행 */
     /* 사장님의 정성 그대로 빠르고 확실하게 */
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
@@ -179,27 +179,10 @@
 
 
     /* 숫자로 보는 바로고 */
-    .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center; margin-bottom: 200px;}
-    /* .aboutUsPage .numberArea > .CW{padding-top: 200px; position: relative; }
-    .aboutUsPage .numberArea > .CW [data-scroll="target2"]{position: absolute; left: 0; top: 0; width: 100%; padding-top: inherit; padding-bottom: inherit; pointer-events: none;}
-    .aboutUsPage .numberArea > .CW [data-scroll="target2"] div{ max-width: 1180px; margin: 0 auto;}
-    .aboutUsPage .numberArea > .CW [data-scroll="target2"] div h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
-    .aboutUsPage .numberArea > .CW [data-scroll="target2"] div p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
-    .aboutUsPage .numberArea > .CW [data-scroll="target2"][style*="fixed"] div{width: calc(100% - 40px);}
-    .aboutUsPage .numberArea > .CW .numberArea{max-width: 680px; margin-left: auto;}
-    .aboutUsPage .numberArea > .CW .numberArea .canvas{margin-bottom: 200px;}
-    .aboutUsPage .numberArea > .CW .numberArea .canvas img{width: 100%;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li{display: flex; position: relative;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li::before{content: attr(title); position: absolute; top: 70px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
-    .aboutUsPage .numberArea > .CW .numberArea ol li:not(:last-child){margin-bottom: 330px;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li p{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li p:not(:last-of-type){margin-right: 50px;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li p::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 30px;}
-    .aboutUsPage .numberArea > .CW .numberArea ol li p[data-percent]::after{align-self: flex-start; content: attr(data-percent) '%'; font-size: 20px; font-weight: 700; color: #fa5014; padding-right: 25px; background: url('../images/common/arrow-up.png') no-repeat right center / 20px; margin-top: 25px; } */
+    .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center;}
     .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
     .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
-    .aboutUsPage .numberArea .countArea{}
     .aboutUsPage .numberArea .countArea .graphArea{width: 680px; margin-bottom: 100px;}
     .aboutUsPage .numberArea .countArea .graphArea img{width: 100%;}
     .aboutUsPage .numberArea .countArea .yearArea{position: relative;}
@@ -212,28 +195,27 @@
 
 
     /* 바로고가 걸어온길 */
-    .aboutUsPage .roadArea{display: flex; justify-content: space-between; position: relative; margin-bottom: 200px;}
-    .aboutUsPage .roadArea .CW{padding-top: 200px;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"]{padding-top: inherit; pointer-events: none;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .textArea{max-width: 355px; margin-bottom: 80px;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .textArea h2{font-size: 42px; font-weight: 700; margin-bottom: 30px;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .textArea p{font-size: 20px; line-height: 1.5;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .yearArea{pointer-events: all;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .yearArea li{font-size: 54px; font-weight: 700; color: rgba(0, 0, 0, 0.13);}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .yearArea li:not(:last-child){margin-bottom: 60px;}
-    .aboutUsPage .roadArea .CW [data-scroll="target2"] .yearArea li.active{color: black;}
-    .aboutUsPage .roadArea .CW .monthArea{max-width: 680px; margin-left: auto; padding-top: 80px;}
-    .aboutUsPage .roadArea .CW .monthArea > li strong{display: block; font-size: 30px; font-weight: 700; margin-bottom: 55px;}
-    .aboutUsPage .roadArea .CW .monthArea > li:not(:last-child){margin-bottom: 120px;}
-    .aboutUsPage .roadArea .CW .monthArea > li::before{content: attr(title);}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li{font-size: 20px; display: flex; flex-wrap: wrap; align-items: flex-end;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li:not(:last-child){margin-bottom: 55px;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li::before{content: attr(title); font-weight: 700; margin-right: 30px;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li mark{margin: 0 5px;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li mark::after{content: '*';}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li small{font-size: 16px; color: #666; margin-left: 5px;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li small::before{content: '*'; color: #fa5014;}
-    .aboutUsPage .roadArea .CW .monthArea > li ol li img{max-width: 636px; margin-top: 50px;}
+    .aboutUsPage .roadArea{height: 100vh; display: flex; align-items: center; overflow: hidden;}
+    .aboutUsPage .roadArea .CW{display: flex; justify-content: space-between;}
+    .aboutUsPage .roadArea .CW .textArea{max-width: 355px;}
+    .aboutUsPage .roadArea .CW .textArea h2{font-size: 42px; font-weight: 700; margin-bottom: 30px;}
+    .aboutUsPage .roadArea .CW .textArea p{font-size: 20px; line-height: 1.5; margin-bottom: 80px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li{font-size: 54px; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li:not(:last-child){margin-bottom: 60px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li.active{color: black;}
+    .aboutUsPage .roadArea .CW .monthArea{position: relative;}
+    .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 30px; font-weight: 700; margin-bottom: 55px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 120px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li::before{content: attr(title);}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 20px; display: flex; flex-wrap: wrap; align-items: flex-end;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 55px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li::before{content: attr(title); font-weight: 700; margin-right: 30px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark{margin: 0 5px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark::after{content: '*';}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small{font-size: 16px; color: #666; margin-left: 5px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small::before{content: '*'; color: #fa5014;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li img{max-width: 636px; margin-top: 50px;} */
 
     /* BAROGO Breand identity */
     .aboutUsPage{margin-bottom: 200px;}
@@ -259,4 +241,20 @@
     .aboutUsPage .sliderBox{margin-bottom: 300px;}
 
     .aboutUsPage .supportArea > div{min-height: 847px;}
-}
+/* } */
+
+/* 문의 */
+    /* 배달대행 문의 안내 */
+    .inquiryPage{padding: 230px 0 120px;}
+    .inquiryArea .guideArea{padding-top: 95px; display: flex; justify-content: space-between;}
+    .inquiryArea .guideArea li{width: 48.5%; border: 1px solid #ddd;}
+    .inquiryArea .guideArea li a{display: block; height: 370px; padding: 205px 40px 90px; box-sizing: border-box; font-size: 28px; font-weight: 700; line-height: 1.36; color: #111; background-position: left 40px top 50px , left 40px bottom 40px; background-repeat: no-repeat;}
+    .inquiryArea .guideArea li:nth-child(1) a{background-image: url('../images/inquiry/shop.png') , url('../images/common/arrow_black.png');}
+    .inquiryArea .guideArea li:nth-child(2) a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
+
+    /* 문의 완료 */
+    .inquiryPage.finArea{height: 100vh; box-sizing: border-box;}
+    .inquiryPage.finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .inquiryPage.finArea section h2{font-size: 36px; font-weight: 700; margin-bottom: 20px; padding-top: 130px; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 134px;}
+    .inquiryPage.finArea section p{font-size: 20px; line-height: 1.5; margin-bottom: 65px;}
+    .inquiryPage.finArea section a:not([class]){font-size: 18px; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 130px;}

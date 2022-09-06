@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Iphone 모바일 확대 방지 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"">
+    <title>라이더 지원 - 바로고</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/import.css">
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <div class="inquiryPage">
+        <header>
+            <div class="CW">
+                <h1><a href="index.html"><img src="images/common/logo.png" alt="barogo logo"></a></h1>
+                <a href="rider.html">뒤로가기</a>
+                <p>라이저 지원</p>
+            </div>
+        </header>
+
+        <div class="CW">
+            <form>
+                <fieldset class="inquiryArea">
+                    <div class="textArea">
+                        <legend class="TC-01">라이더 지원</legend>
+                        <p>1분이면 한번에 끝!</p>
+                    </div>
+                    <ul class="overLine-right inputArea">
+                        <li>
+                            <label for="">성함</label>
+                            <input type="text" placeholder="성함">
+                        </li>
+                        <li>
+                            <label for="">생년월일</label>
+                            <input type="text" placeholder="ex. 19991010">
+                        </li>
+                        <li>
+                            <label for="">연락처</label>
+                            <div>
+                                <select>
+                                    <option value="">010</option>
+                                </select>
+                                <input type="text" value="1234">
+                                <input type="text" value="5678">
+                                <button>인증번호 발송</button>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">인증번호</label>
+                            <div>
+                                <div>
+                                    <input type="text">
+                                    <time></time>
+                                </div>
+                                <button>인증하기</button>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">배달 경험</label>
+                            <div class="showThree">
+                                <input type="radio" checked>
+                                <label for="">없음</label>
+                                <input type="radio">
+                                <label for="">6개월 미만</label>
+                                <input type="radio">
+                                <label for="">6개월~1년</label>
+                                <input type="radio">
+                                <label for="">1년 이상</label>
+                                <input type="radio">
+                                <label for="">2년 이상</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">희망 근무 시간</label>
+                            <div>
+                                <input type="radio" checked>
+                                <label for="">풀타임</label>
+                                <input type="radio">
+                                <label for="">파트타임</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">바이크를 보유 여부</label>
+                            <div>
+                                <input type="radio" checked>
+                                <label for="">네, 보유하고 있습니다.</label>
+                                <input type="radio">
+                                <label for="">아니오, 없습니다.</label>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>희망 근무 지역</strong><small>희망지역 순으로 해당지역 바로고 허브 매칭</small>
+                            <label for="">1지망</label>
+                            <div>
+                                <select>
+                                    <option value="">시/도</option>
+                                </select>
+                                <select>
+                                    <option value="">시/군/구</option>
+                                </select>
+                                <select>
+                                    <option value="">읍/면/동</option>
+                                </select>
+                            </div>
+                            <label for="">2지망</label>
+                            <div>
+                                <select>
+                                    <option value="">시/도</option>
+                                </select>
+                                <select>
+                                    <option value="">시/군/구</option>
+                                </select>
+                                <select>
+                                    <option value="">읍/면/동</option>
+                                </select>
+                            </div>
+                            <label for="">3지망</label>
+                            <div>
+                                <select>
+                                    <option value="">시/도</option>
+                                </select>
+                                <select>
+                                    <option value="">시/군/구</option>
+                                </select>
+                                <select>
+                                    <option value="">읍/면/동</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset class="agreeArea">
+                    <legend>동의</legend>
+                    <input type="checkbox" checked>
+                    <label for="">전체동의</label>
+                    <ul>
+                        <li>
+                            <input type="checkbox">
+                            <label for="">개인정보 수집 및 이용 동의 <mark>(필수)</mark></label>
+                            <a href="">보기</a>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label for="">마케팅을 위한 개인정보 수집 이용 동의 <span>(선택)</span></label>
+                            <a href="">보기</a>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label for="">바로레터 구독 동의 <span>(선택)</span></label>
+                            <a href="">보기</a>
+                        </li>
+                    </ul>
+                </fieldset>
+                <input type="submit" value="제출" class="BTN-arrow">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

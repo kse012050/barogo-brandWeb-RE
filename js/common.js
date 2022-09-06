@@ -37,7 +37,7 @@ function swiperSlider(){
 // 풀페이지
 function fullPage(){
     $('body').css('overflow','hidden');
-    let scrollAniBool = true;
+    let fullAniBool = true;
     $('[data-scroll="fullPage"] > *').on('mousewheel',function(e){
         if(targetAni){ return;}
         if($('html').is(':animated') || $('.progressBar span').is(':animated')) return
@@ -61,18 +61,18 @@ function fullPage(){
 
         if(delta > 0){
             // 휠을 위로
-            (targetIdx > 0) ? scrollAniBool = targetActive(targetLi, --targetIdx , progress) : (scrollTopValue = $(this).prev(),count = $(this).prev().attr('data-count'));
+            (targetIdx > 0) ? fullAniBool = opacityAni(targetLi, --targetIdx , progress) : (scrollTopValue = $(this).prev(),count = $(this).prev().attr('data-count'));
         }else{
             // 휠을 아래로
-            (targetIdx < (targetLength - 1)) ? scrollAniBool = targetActive(targetLi, ++targetIdx , progress) : (scrollTopValue = $(this).next(),count = $(this).next().attr('data-count'));
+            (targetIdx < (targetLength - 1)) ? fullAniBool = opacityAni(targetLi, ++targetIdx , progress) : (scrollTopValue = $(this).next(),count = $(this).next().attr('data-count'));
         }
-        scrollAniBool ? scrollAni(scrollTopValue , count) : 
+        fullAniBool ? fullPageAni(scrollTopValue , count) : 
         setTimeout(()=>{
-            scrollAniBool = !scrollAniBool;
+            fullAniBool = !fullAniBool;
         },1000);
     })
 
-    function scrollAni(scrollTopValue){
+    function fullPageAni(scrollTopValue){
         scrollTopValue.addClass('active').siblings().removeClass('active');
         $('html').stop().animate({scrollTop : scrollTopValue.offset().top} , 500)
         count == 'area' && countAni($('[data-count="area"] [data-count="target"]'));
@@ -80,9 +80,9 @@ function fullPage(){
 
 }
 
-// 스크롤 타겟
+// opacity 애니메이션
 let targetAni = false;
-function targetActive(list , idx , progress){
+function opacityAni(list , idx , progress){
     progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
     list.map((t)=>{
         t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
@@ -92,6 +92,18 @@ function targetActive(list , idx , progress){
         targetAni = !targetAni;
     },1000)
     return false;
+}
+
+function scrollAni(list , idx){
+    console.log($('.yearArea li'));
+    $('.roadArea .yearArea li').eq(idx).addClass('active').siblings().removeClass('active');
+    list.eq(idx).addClass('active').siblings().removeClass('active');
+    $('[data-scrollAni="scroll"] [data-scroll="target"]').stop().animate({top : -(list.eq(idx).position().top)} , 500);
+    
+    targetAni = !targetAni;
+    setTimeout(function(){
+        targetAni = !targetAni;
+    },1000)
 }
 
 function scrollFix(){
@@ -112,15 +124,16 @@ function scrollFix(){
                 return
             }
             let delta = e.originalEvent.wheelDelta;
+            let aniName = $(this).children('[data-scrollAni]').attr('data-scrollAni');
             let target = $(this).find('[data-scroll="target"]');
             let targetLi = [];
             let targetIdx;
             let targetLength;
             let progress = $(this).find('.progressBar');
             target.each(function(i){
-                targetLi.push(target.eq(i).find('li'))
+                targetLi.push(target.eq(i).children('li'))
             })
-            targetLi.length > 0 && (targetLength = targetLi[0].length);
+            targetLi.length > 0 && (targetLength = targetLi[targetLi.length -1].length);
             
             targetLi.map(function(list){
                 list.each(function(i){
@@ -131,24 +144,31 @@ function scrollFix(){
             $(this).children().each(function(){
                 totalHeight += $(this).outerHeight(true);
             })
+
             if(delta > 0){
                 // 휠을 위로
                 if($('[data-scroll="area"].active').length == 0 && targetIdx > 0){
-                    targetActive(targetLi, --targetIdx , progress);
+                    if(aniName == 'opacity'){
+                        opacityAni(targetLi, --targetIdx , progress);
+                    }else if(aniName == 'scroll'){
+                        scrollAni(targetLi[targetLi.length-1], --targetIdx)
+                    }
                 }else if($('[data-scroll="area"].active').length == 0 && targetIdx == 0){
                     $(this).addClass('active');
                 }
-
                 
                 if($('[data-scroll="area"].active').scrollTop() == 0){
                     $('[data-scroll="area"].active').removeClass('active');
                 }
-            
             }else{
                 // 휠을 아래로
                 if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && targetIdx < (targetLength - 1)){
                     $(this).removeClass('active');
-                    targetActive(targetLi, ++targetIdx , progress);
+                    if(aniName == 'opacity'){
+                        opacityAni(targetLi, ++targetIdx , progress);
+                    }else if(aniName == 'scroll'){
+                        scrollAni(targetLi[targetLi.length-1] , ++targetIdx)
+                    }
                 }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && targetIdx == (targetLength - 1)){
                     $(this).parent().addClass('active');
                 }
@@ -160,60 +180,16 @@ function scrollFix(){
             if(!$(this).hasClass('active')) return;
             if($('[data-count="area"]').offset().top <= 0 && countBool){
                 countBool = !countBool;
-                console.log($('[data-count="area"]').offset().top);
-                setTimeout(function(){
+                 setTimeout(function(){
                     countAni($('[data-count="area"] [data-count="target"]'));
                 },1000)
             }
         })
     })
 
-
-    $('[data-scroll="wrap"]').scroll(function(e){
-        $('[data-scroll="fixed"]').each(function(){
-            let fixedHeight = $(this).height();
-            if($(this).offset().top < $(this).find('[data-scroll="target2"]').innerHeight() - fixedHeight){
-                $(this).find('[data-scroll="target2"]').css({
-                    'position' : 'absolute',
-                    'top' :fixedHeight - $(this).find('[data-scroll="target2"]').innerHeight()
-                });
-            }else if($(this).offset().top < 0){
-                $(this).find('[data-scroll="target2"]').css({
-                    'position' : 'fixed',
-                    'top' : 0
-                });
-            }else{
-                $(this).find('[data-scroll="target2"]').css({
-                    'position' : 'absolute',
-                    'top' : 0
-                });
-            }
-
-        })
-    })
-
-    $('.yearArea li').click(function(){
-        let liHeight = 0;
-        for(let a = 0; a < $(this).index(); a++){
-            liHeight += $('.monthArea > li').eq(a).outerHeight(true)
-        }
-        $('[data-scroll="wrap"]').animate({scrollTop : 
-            $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + liHeight
-        })
-        
-    })
-    let liHeightArray = [
-        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')),
-        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + $('.monthArea > li').eq(0).outerHeight(true),
-        $('.scrollArea').outerHeight(true) + $('.numberArea').outerHeight(true) + parseInt($('.monthArea').css('padding-top')) + $('.monthArea > li').eq(0).outerHeight(true) + $('.monthArea > li').eq(1).outerHeight(true)
-    ];
-    $('[data-scroll="wrap"]').scroll(function(){
-        let test = $(this).scrollTop();
-        liHeightArray.map(function(a , i){
-            if(test > a - 10){
-                $('.yearArea li').eq(i).addClass('active').siblings().removeClass('active');
-            }
-        })
+    $('.roadArea .yearArea li').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        scrollAni($('[data-scrollAni="scroll"] [data-scroll="target"] > li') , $(this).index());
     })
 
 }
