@@ -13,60 +13,159 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <style>
-        .foundedSlider{width: 500px; height: 488px;}
-        .foundedSlider .swiper-wrapper{padding: 0 20px; box-sizing: border-box;}
-        .foundedSlider .swiper-wrapper .swiper-slide{height: 88px; box-shadow: 0 8px 34px 0 rgb(8 11 21 / 7%);}
-        .foundedSlider .swiper-wrapper .swiper-slide span{display: block; /* height: 100%; */ background-color: white;}
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        div{width: 680px; height: 380px; font-family: 'Pretendard'; position: relative;}
+        div mark{position: absolute; left: 0; top: 60px; font-size: 80px; font-weight: 900;}
+        div img{width: 100%;}
+        div canvas{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);}
     </style>
-    <script>
-        $(document).ready(function(){
-            var swiper = new Swiper(".foundedSlider", {
-                direction: "vertical",
-                slidesPerView: 5,
-                spaceBetween: 12,
-                autoplay: {
-                    delay: 1000,
-                },
-                // height : 88
-            });
-        });
-    </script>
+
 </head>
 <body>
-    <li class="swiper foundedSlider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="images/founded/brand.png" alt="">
-                <div>
-                    <span>주문 금액 19.800원</span>
-                    <p>주문이 들어왔습니다</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <span>2</span>
-            </div>
-            <div class="swiper-slide">
-                <span>3</span>
-            </div>
-            <div class="swiper-slide">
-                <span>4</span>
-            </div>
-            <div class="swiper-slide">
-                <span>5</span>
-            </div>
-            <div class="swiper-slide">
-                <span>6</span>
-            </div>
-            <div class="swiper-slide">
-                <span>7</span>
-            </div>
-            <div class="swiper-slide">
-                <span>8</span>
-            </div>
-            <div class="swiper-slide">
-                <span>9</span>
-            </div>
-        </div>
-    </li>
+    <div>
+        <mark>1,893%</mark>
+        <img src="images/common/graph@3x.png" alt="">
+        <canvas id="graph"></canvas>
+    </div>
+
+    <script>
+        let canvas , ctx , w , h , lines = [];
+        function canvasInit(){
+            canvas = document.getElementById('graph');
+            ctx = canvas.getContext('2d');
+            canvasSize();
+            lines.push(new Line());
+            animationLoop();
+        }
+
+        function canvasSize(){
+            w = canvas.width = document.querySelector('div').offsetWidth;
+            h = canvas.height = document.querySelector('div').offsetHeight;
+        }
+        
+        function animationLoop(){
+            ctx.clearRect(0,0,w,h);
+            lines.map((l)=>{
+                l.draw();
+                l.update();
+            })
+            requestAnimationFrame(animationLoop)
+        }
+
+        class Line{
+            constructor(){
+                let test = h - 52;
+                console.log(test);
+                this.x = 40;
+                this.y = 329;
+                this.startX = this.x;
+                this.startY = this.y;
+                this.progress = 0;
+                // this.point = [
+                //     {x : 40 , y : 329},
+                //     {x : 139, y : 317},
+                //     {x : 249, y : 299},
+                //     {x : 360, y : 261},
+                //     {x : 470, y : 188},
+                //     {x : 585.5, y : 97},
+                // ]
+                this.point = [
+                    {x : 40 , y : 329},
+                    {x : 140, y : 316},
+                    {x : 251, y : 298},
+                    {x : 364, y : 259},
+                    {x : 477, y : 185},
+                    {x : 593, y : 96},
+                ]
+                this.count = 0;
+                // this.balls = [new Ball(this.point[0].x , this.point[0].y , this.lastCheck)];
+                this.lastCheck = false;
+                // 40 , h - 52 (329)
+                // 139 , h - 64 (317)
+                // 249 , h - 82 (299)
+                // 360 , h - 120 (261)
+                // 470 , h - 193 (188)
+                // 583.5 , h - 284(97)
+
+                // 점사이즈 9
+                this.balls = [new Ball(583 , 96, true)]
+            }
+            draw(){
+                ctx.beginPath();
+                ctx.arc(this.x , this.y, 3 , 0 , Math.PI * 2);
+                ctx.fillStyle = 'red';
+                ctx.fill()
+            }
+            update(){
+                if(this.count < this.point.length - 1){
+                    if(this.count == this.point.length - 2){
+                        this.lastCheck = true;
+                    }
+
+                    if(this.progress <= 1){
+                        this.x = this.startX + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x));
+                        this.y = this.startY + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y));
+                        this.progress += 0.02;
+                    }else{
+                        this.progress = 0;
+                        this.startX = this.x;
+                        this.startY = this.y;
+                        this.count++;
+                        this.balls.push(new Ball(this.x , this.y , this.lastCheck))
+                    }
+                }
+
+                this.balls.map((b)=>{
+                    b.draw();
+                    b.update();
+                })
+            }
+        }
+
+        class Ball{
+            constructor(x , y , lastCheck){
+                this.x = x;
+                this.y = y;
+                this.size = 0;
+                // this.color = 'black';
+                this.lastCheck = lastCheck;
+            }
+
+            draw(){
+                if(this.lastCheck){
+                    if(this.size <= 19){
+                        ctx.beginPath();
+                        ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
+                        ctx.fillStyle = 'rgba(250,80,20,1)';
+                        ctx.fillStyle = 'blue';
+                        ctx.fill()
+                    }
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
+                    ctx.fillStyle = 'rgba(250,80,20,0.5)';
+                    ctx.fill()
+                }else{
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size, 0 , Math.PI * 2);
+                    ctx.fillStyle = 'black';
+                    ctx.fill()
+                }
+            }
+
+            update(){
+                if(this.lastCheck){
+                    if(this.size < 45){
+                        this.size = this.size + 0.3; 
+                    }
+                }else{
+                    if(this.size < 8){
+                        this.size = this.size + 0.3; 
+                    }
+                }
+            }
+        }
+
+        canvasInit();
+    </script>
 </body>
 </html>
