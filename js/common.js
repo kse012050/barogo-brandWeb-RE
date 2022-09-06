@@ -257,8 +257,15 @@ function countAni(list){
         list.each(function(){
             var result = $(this).text().replace(/[^0-9]/g, "");	
             let count;
-            if($(this).attr('data-countUp')){
-                let result2 = $(this).attr('data-countUp').replace(/[^0-9]/g, "");
+            let result2 = $(this).attr('data-countUp').replace(/[^0-9]/g, "");
+            if($(this).attr('id') == 'year'){
+                count = new CountUp($(this).attr('id'),result, result2, 0, 2, {
+                    useEasing :true,
+                    separator : "",
+                    decimal : "",
+                });
+            }else if($(this).attr('data-countUp')){
+                // let result2 = $(this).attr('data-countUp').replace(/[^0-9]/g, "");
                 count = new CountUp($(this).attr('id'),result, result2, 0, 2, countOptions);
             }else{
                 count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
