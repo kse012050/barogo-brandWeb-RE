@@ -10,6 +10,7 @@ $(document).ready(function(){
 
     // 슬라이더
     $('*').hasClass('mySwiper') && swiperSlider();
+    $('*').hasClass('foundedSlider') && test();
 
     // 풀페이지
     $('[data-scroll="fullPage"]').length > 0 && fullPage();
@@ -31,6 +32,17 @@ function swiperSlider(){
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
         slidesPerView: 2,
+    });
+}
+function test(){
+    var swiper = new Swiper(".foundedSlider", {
+        direction: "vertical",
+        slidesPerView: 5,
+        spaceBetween: 12,
+        autoplay: {
+            delay: 1000,
+        },
+        loop: true
     });
 }
 

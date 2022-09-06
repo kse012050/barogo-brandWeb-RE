@@ -109,6 +109,16 @@
     .foundedPage .reasonArea .CW{position: relative;}
     .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 100px;}
     .foundedPage .reasonArea .CW .imgArea{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+    .foundedPage .foundedSlider{width: 400px; height: 488px; position: relative;}
+    .foundedPage .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 124px; z-index: 5;} 
+    .foundedPage .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .foundedPage .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
+    .foundedPage .foundedSlider .swiper-wrapper{padding: 0 20px; box-sizing: border-box;}
+    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide{height: 88px; box-shadow: 0 8px 34px 0 rgb(8 11 21 / 7%); background-color: white; display: flex; justify-content: space-between;}
+    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide img{width: auto; height: 100%;}
+    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div{display: flex; flex-direction: column; justify-content: center; padding-right: 40px; text-align: right;}
+    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div span{margin-bottom: 10px; color: #a2a2a2;}
+    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 17px;}
 
     /* 놀라운 바로고의 성장세 */
     .foundedPage .growthArea .CW{display: flex; justify-content: space-between;}
