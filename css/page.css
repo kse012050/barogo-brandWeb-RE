@@ -34,7 +34,7 @@
     .deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
 
     /* 배너 */
-    .deliveryPage .bannerArea{background: url('../images/delivery/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
+    .deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover; padding: 80px 0;}
     .deliveryPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
     .deliveryPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
 
@@ -99,7 +99,7 @@
     .riderPage .goodsArea div ul li:nth-child(6){background-image: url('../images/rider/goods05.png');}
 
     /* 배너 */
-    .riderPage .bannerArea{background: url('../images/rider/bannerBG.png') no-repeat center / cover; padding: 80px 0;}
+    .riderPage .bannerArea{background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 80px 0;}
     .riderPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
     .riderPage .bannerArea div p{width: 535px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
 
@@ -109,6 +109,7 @@
     .foundedPage .reasonArea .CW{position: relative;}
     .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 100px;}
     .foundedPage .reasonArea .CW .imgArea{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+    .foundedPage .reasonArea .CW .imgArea li{height: 100%; display: flex; align-items: center;}
     .foundedPage .foundedSlider{width: 400px; height: 488px; position: relative;}
     .foundedPage .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 124px; z-index: 5;} 
     .foundedPage .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
@@ -143,7 +144,7 @@
     .foundedPage .companionArea .CW ul li p{font-size: 18px; line-height: 1.67; color: #666;}
 
     /* 배너 */
-    .foundedPage .bannerArea{padding: 85px 0; box-sizing: border-box; background: url('../images/founded/banner.png') no-repeat center / cover;}
+    .foundedPage .bannerArea{padding: 85px 0; box-sizing: border-box; background: url('../images/founded/buttom-founded.png') no-repeat center / cover;}
     .foundedPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
     .foundedPage .bannerArea div p{font-size: 24px; font-weight: 700; line-height: 1.5; color: white; width: 535px;}
 
