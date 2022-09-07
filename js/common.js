@@ -4,11 +4,11 @@ $(document).ready(function(){
         logo()
     })
 
-    introAni()
+    $('*').hasClass('introBox') && introAni();
 
+    // 스크롤 공통
     $(window).scroll(function(){
         ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
-        ($(window).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
     })
 
     // 슬라이더
@@ -23,6 +23,10 @@ $(document).ready(function(){
 
     // 회사소개 스크롤 이벤트
     $('[data-scroll="area"]').length > 0 && scrollFix();
+
+    $('.topBtn').click(function(){
+        $('html').animate({scrollTop : 0})
+    })
 });
 
 // 인트로
@@ -54,6 +58,7 @@ function swiperSlider(){
         slidesPerView: 2,
     });
 }
+
 function test(){
     var swiper = new Swiper(".foundedSlider", {
         direction: "vertical",
@@ -69,6 +74,10 @@ function test(){
 // 풀페이지
 function fullPage(){
     $('body').css('overflow','hidden');
+    $(window).scroll(function(){
+        ($(window).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
+        ($(window).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
+    })
     let fullAniBool = true;
     $('[data-scroll="fullPage"] > *').on('mousewheel',function(e){
         if(targetAni){ return;}
@@ -115,6 +124,7 @@ function fullPage(){
 // opacity 애니메이션
 let targetAni = false;
 function opacityAni(list , idx , progress){
+    console.log(list);
     progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
     list.map((t)=>{
         t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
@@ -127,8 +137,7 @@ function opacityAni(list , idx , progress){
 }
 
 function scrollAni(list , idx){
-    console.log($('.yearArea li'));
-    $('.roadArea .yearArea li').eq(idx).addClass('active').siblings().removeClass('active');
+     $('.roadArea .yearArea li').eq(idx).addClass('active').siblings().removeClass('active');
     list.eq(idx).addClass('active').siblings().removeClass('active');
     $('[data-scrollAni="scroll"] [data-scroll="target"]').stop().animate({top : -(list.eq(idx).position().top)} , 500);
     
@@ -144,6 +153,17 @@ function scrollFix(){
     $('main[data-scroll="area"]').find('[data-scroll="area"]').eq(-1).scroll(function(){
         $(this).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
         ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
+        ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
+    })
+    $('.topBtn').click(function(){
+        $('[data-scroll="area"]').removeClass('active');
+        $('[data-scroll="area"]').eq(2).addClass('active');
+        $('[data-scroll="area"]').animate({scrollTop : 0});
+        let test = []
+        test.push($('[data-scrollAni] [data-scroll="target"] li'))
+        for(let a = 0 ; a < $('[data-scrollAni] [data-scroll="target"]').length; a++){
+        }
+        opacityAni(test , 0 , $('[data-scrollAni] [data-scroll="target"] .progressBar'))
     })
   
     let countBool = true;
@@ -169,6 +189,7 @@ function scrollFix(){
             targetLi.length > 0 && (targetLength = targetLi[targetLi.length -1].length);
             
             targetLi.map(function(list){
+                console.log(list);
                 list.each(function(i){
                     list.eq(i).hasClass('active') && (targetIdx = i);
                 })
@@ -291,7 +312,7 @@ function countAni(list){
         list.each(function(){
             var result = $(this).text().replace(/[^0-9]/g, "");	
             let count;
-            let result2 = $(this).attr('data-countUp').replace(/[^0-9]/g, "");
+            let result2 = $(this).attr('data-countUp') ? $(this).attr('data-countUp').replace(/[^0-9]/g, "") : false;
             if($(this).attr('id') == 'year'){
                 count = new CountUp($(this).attr('id'),result, result2, 0, 2, {
                     useEasing :true,
@@ -350,7 +371,6 @@ function canvasInit(){
     ctx = canvas.getContext('2d');
     canvasSize();
     lines.push(new Line());
-    // animationLoop();
 }
 
 function canvasSize(){

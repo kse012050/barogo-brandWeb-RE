@@ -25,9 +25,6 @@
     mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
     mark::before {content: attr('title');}
 
-    .fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition: transform 0.5s; }
-    .fixedLink::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
-    .fixedLink.active{transform: translateX(0);}
 
     /* 버튼 공통*/
     /* BTN (button) 배경이 들어가는 기본 버튼 */
@@ -41,6 +38,15 @@
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
     .BBTN-download::after{background-image: url('../images/common/download.png');}
+
+    /* 문의하기 링크 */
+    .fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition: transform 0.5s; }
+    .fixedLink::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
+    .fixedLink.active{transform: translateX(0);}
+
+    /* 탑 버튼 */
+    .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background: url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px;}
+
 
     /* 오버라인 */
     [class*="overLine"]{position: relative;}
