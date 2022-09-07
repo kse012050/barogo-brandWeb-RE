@@ -20,7 +20,7 @@ $(document).ready(function(){
 
     // 라이더 지원
     $('*').hasClass('riderPage') && riderEvent()
-
+ 
     // 회사소개 스크롤 이벤트
     $('[data-scroll="area"]').length > 0 && scrollFix();
 
