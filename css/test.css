@@ -1,4 +1,257 @@
-@media screen and (min-width : 1220px) {
+@media screen and (max-width : 1220px) {
+    /* 공통 */
+    /* 폰트 케이스 */
+    /* title case */
+    .TC-01{font-size: 54px; line-height: 1.33; font-weight: 700;}
+    .TC-02{font-size: 42px; line-height: 1.43; font-weight: 700;}
+    .TC-03{font-size: 32px; font-weight: 700;}
+        
+    /* font case 일반글자 */
+    .FC-01{font-size: 20px; line-height: 1.5; letter-spacing: -0.1px;}
+
+    /* 포인트 색상 */
+    mark{color: #fa5014;}
+    /* mark 접근성 */
+    mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
+    mark::before {content: attr('title');}
+
+
+    /* 버튼 공통*/
+    /* BTN (button) 배경이 들어가는 기본 버튼 */
+    [class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; font-weight: 700;}
+    .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none;}
+    .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
+    input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
+    /* BBTN (border button) 테두리가 들어가는 버튼*/
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box;}
+    [class |= "BBTN"]::after{content: ''; width: 20px; height: 20px; margin-left: 10px; background-repeat: no-repeat; background-position: center; background-size: cover;}
+    .BBTN-go::after{background-image: url('../images/common/go.png');}
+    .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
+    .BBTN-download::after{background-image: url('../images/common/download.png');}
+
+    /* 문의하기 링크 */
+    .fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition: transform 0.5s; }
+    .fixedLink::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
+    .fixedLink.active{transform: translateX(0);}
+
+    /* 탑 버튼 */
+    .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px;}
+
+
+    /* 오버라인 */
+    [class*="overLine"]{position: relative;}
+    [class*="overLine"]::before{content: ''; position: absolute; top: 0; width: calc(100% + ((100vw - 1180px - 17px) / 2)); min-width: 100%; height: 8px; background-color: black;}
+    .overLine-left::before{right: 0;}
+    .overLine-right::before{left: 0;}
+
+
+    /* 인트로 */
+    .introBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1000;}
+    .introBox .BG{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: black;
+        animation-name: introBG; 
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+    @keyframes introBG {
+        0%{clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 100%, 100% 100%, 100% 0%);}
+        33%{clip-path: polygon(0% 0%, 0% 100%, 30% 100%, 30% 45%, 70% 45%, 70% 55%, 0 55%, 0 100%, 100% 100%, 100% 0%);}
+        66%{clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 45%, 100% 45%, 100% 55%, 0 55%, 0 100%, 100% 100%, 100% 0%);}
+        100%{clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);}
+    }
+    .introBox .textArea{width: 100%; font-size: 100px; color: white; font-weight: 900; position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%); margin: 0; text-align: center;}
+    .introBox .textArea span{display: inline-block; position: relative; left: 0; text-align: center;  animation-timing-function: linear; animation-fill-mode: forwards;}
+    .introBox .textArea span:nth-of-type(1){animation-name: textLeftMove;}
+    .introBox .textArea span:nth-of-type(2){animation-name: textRightMove;}
+    .introBox .textArea span:nth-of-type(3){animation-name: textLeftMove;}
+
+    @keyframes textLeftMove {
+        0%{left: 0;  transform: translateX(0);}
+        100%{left: calc(-100% / 2);  transform: translateX(-50%);}
+    }
+    @keyframes textRightMove {
+        0%{left: 0;  transform: translateX(0);}
+        100%{left: calc(100% / 2);  transform: translateX(50%);}
+    }
+
+    /* 해더 */
+    header{position: fixed; left: 0; top: 0; width: 100%; padding-top: 55px; z-index: 100; transition-duration: 0.5s; background-color: white; transition-property: padding , box-shadow;}
+    header div{display: flex; align-items: center;}
+    header div h1{position: absolute; left: 60px; top: 50px; width: 60px; transition-duration: 0.5s; transition-property: top , left , width;}
+    header div h1.active{position: static; margin-right: 50px;}
+    header div h1 img{width: 100%;}
+    header div nav ul{display: flex;}
+    header div nav ul li:not(:last-child){margin-right: 60px;}
+    header div nav ul li a{padding: 10px 0;}
+    header div nav ul li:not(.active) a{font-weight: 500;}
+    header div nav ul li.active a{font-weight: 700; position: relative;}
+    header div nav ul li.active a::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
+    header div > a{text-indent: -9999px; width: 36px; height: 36px; background: url('../images/common/back.png') no-repeat center / cover;}
+    header div button{display: none;}
+    header div > p{display: none;}
+    :is(.mainPage , .aboutUsPage) header div nav ul li:not(.active) a{opacity: 0.3;}
+    :is(.mainPage , .aboutUsPage) header div nav ul li:hover a{opacity: 1;}
+
+    header.active{padding: 20px 0; box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1)}
+    header.active h1{top: 30px; left: 60px; width: 35px;}
+
+    /* 푸터 */
+    footer .topArea{background-color: black; padding: 50px 0;}
+    footer .topArea div{display: flex; justify-content: space-between;}
+    footer .topArea div .linkArea{display: flex; color: white;}
+    footer .topArea div .linkArea > li:not(:last-of-type){margin-right: 130px;}
+    footer .topArea div .linkArea > li b{display: block; font-size: 14px; font-weight: 700; margin-bottom: 15px;}
+    footer .topArea div .linkArea > li ul li a{font-size: 12px; line-height: 2.17; font-weight: 500; display: flex;}
+    footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 40px;}
+    footer .topArea div .SNSArea{display: flex; gap: 20px;}
+    footer .topArea div .SNSArea li a{display: block; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
+    footer .topArea div .SNSArea li:nth-child(1) a{background-image: url('../images/common/facebook.png');}
+    footer .topArea div .SNSArea li:nth-child(2) a{background-image: url('../images/common/youtube.png');}
+    footer .topArea div .SNSArea li:nth-child(3) a{background-image: url('../images/common/blog.png');}
+    footer .topArea div .SNSArea li:nth-child(4) a{background-image: url('../images/common/insta.png');}
+
+    /* 바텀 공통 */
+    footer .bottomArea{padding: 50px 0;}
+    footer .bottomArea p{font-size: 12px; color: #999;}
+    footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-end;}
+    footer .bottomArea div:first-of-type h2{margin-bottom: 10px;}
+    footer .bottomArea div:first-of-type address{display: flex; margin-bottom: 5px;}
+    footer .bottomArea div:first-of-type address p:not(:last-of-type){margin-right: 5px;}
+    footer .bottomArea div:first-of-type > p{margin-bottom: 20px;}
+    footer .bottomArea div:first-of-type ul{display: flex;}
+    footer .bottomArea div:first-of-type ul li:not(:last-of-type){margin-right: 20px;}
+    footer .bottomArea div:first-of-type ul li a{font-size: 14px; font-weight: 700;}
+    footer .bottomArea div:nth-of-type(2){text-align: right;}
+    footer .bottomArea div:nth-of-type(2) b{display: block; font-size: 12px; margin-bottom: 10px;}
+    footer .bottomArea div:nth-of-type(2) a{font-size: 26px; font-weight: 700; line-height: 1.19; margin-bottom: 10px;}
+    footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
+
+
+    /* 메인페이지 공통 */
+    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+    [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
+
+    /* 메인페이지 상단 */
+    [data-scroll="fullPage"] > .topBox{padding-top: 190px; background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}
+    [data-scroll="fullPage"] > .topBox > div{height: 100%; max-width: 1650px; margin: 0 auto; background-repeat: no-repeat; background-position: right bottom 8% ,center bottom 140px; background-size: 65% , 100% 192px;}
+    [data-scroll="fullPage"] > .topBox > div div{height: 100%; padding: 0 235px;}
+    [data-scroll="fullPage"] > .topBox > div div h2{margin-bottom: 40px;}
+
+    /* 배달대행 상단 이미지 */
+    .deliveryPage .topBox > div{background-image:  url('../images/delivery/top-delivery.png') ,url('../images/common/main-bg2.png') ;}
+    /* 라이더 상단 이미지 */
+    .riderPage .topBox > div{background-image:  url('../images/rider/top-rider.png') ,url('../images/common/main-bg2.png') ;}
+    /* 허브창업 상단 이미지 */
+    .foundedPage .topBox > div{background-image:  url('../images/founded/top-founded.png') ,url('../images/common/main-bg2.png') ;}
+
+    /* full page 안 progress */
+    .progressArea{position: relative; padding-left: 100px;}
+    .progressArea .progressBar{position: absolute; left: 0; top: 0; width: 6px; height: 100%; background-color: rgba(0, 0, 0, 0.1);}
+    .progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 100%; height: 33.33%; background-color: #fa5014; }
+
+    /* full page 안 scroll 공통 */
+    [data-scrollAni="opacity"] [data-scroll="target"]{position: relative;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 30px;}
+
+    /* 이미지 공통 */
+    .imgArea img{width: 100%;}
+
+    /* 슬라이더 공통 */
+    .sliderBox{overflow: hidden;}
+    .sliderBox h2{margin-bottom: 50px;}
+    .sliderBox .swiper{overflow: visible;}
+    .sliderBox .swiper .swiper-wrapper .swiper-slide{width: calc((100% - 25px) / 2); max-width: 575px; }
+    .sliderBox .swiper .swiper-wrapper .swiper-slide:not(:last-of-type){margin-right: 25px;}
+    .sliderBox .swiper .swiper-wrapper .swiper-slide img{width: 100%; margin-bottom: 20px;}
+    .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 5px;}
+    .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
+
+    /* 후원 */
+    .supportArea > div{width: 100%; height: 100%; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+    .supportArea > div::after{content: ''; position: absolute; left: 50%; top: 180px; width: 100%; min-width: 1920px;  transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;}
+    .supportArea > div div{padding-bottom: 40px;}
+    .supportArea > div div mark{display: block; margin-bottom: 70px;}
+    .supportArea > div div b{display: block; font-weight: 700; color: white; margin-bottom: 30px;}
+    .supportArea > div div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
+    .supportArea > div div span:not(:last-of-type){margin-bottom: 30px;}
+    .supportArea > div div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
+    .supportArea > div div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
+    .supportArea > div div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}
+
+
+    /* 문의 공통 */
+    .inquiryArea{display: flex; justify-content: space-between; margin-bottom: 150px; font-size: 18px;}
+    /* .inquiryArea .textArea{width: 295px;} */
+    .inquiryArea .textArea + *{width: 63%;}
+    .inquiryArea .textArea :is(h2 , legend){margin-bottom: 30px;}
+    .inquiryArea .textArea p{font-size: 22px; line-height: 1.45; color: #111;}
+    .inquiryArea .textArea mark{font-size: 20px; font-weight: 600;}
+    .inquiryArea .inputArea{padding-top: 120px;}
+    .inquiryArea .inputArea li{display: flex; flex-wrap: wrap; align-items: flex-end;}
+    .inquiryArea .inputArea li:not(:last-child){margin-bottom: 80px;}
+    .inquiryArea .inputArea li > label{width: 100%;  font-weight: 600; margin-bottom: 20px;} 
+    .inquiryArea .inputArea li :is(input , select){flex: 1; width: 100%; height: 60px;  border-width: 0 0 1px; border-color: #d4d4d4; border-style: solid; box-sizing: border-box;}
+    .inquiryArea .inputArea li input[type="radio"]{display: none;}
+    .inquiryArea .inputArea li select{background: url('../images/common/dropdown.png') no-repeat right center / 24px; }
+    .inquiryArea .inputArea li textarea{resize: none; width: 100%; height: 230px; padding: 30px; border: 1px solid #d4d4d4; box-sizing: border-box;}
+    .inquiryArea .inputArea li :is(input , textarea)::placeholder{color: rgba(0, 0, 0, 0.3);}
+    .inquiryArea .inputArea li div{width: 100%; display: flex;}
+    .inquiryArea .inputArea li div:not([class]) *:not(:last-child){margin-right: 15px;}
+    .inquiryArea .inputArea li div ~ *:not(button){margin-top: 40px;}
+    .inquiryArea .inputArea li div :is(button , input[type="radio"] + label){font-size: 16px; font-weight: 500; text-align: center; line-height: 60px; border: 1px solid #d4d4d4; box-sizing: border-box;}
+    .inquiryArea .inputArea li div:not([class]) label{flex: 1;}
+    .inquiryArea .inputArea li div.showThree{flex-wrap: wrap; align-items: flex-start;}
+    .inquiryArea .inputArea li div.showThree label{width: 31.6%;}
+    .inquiryArea .inputArea li div.showThree label:not(:nth-of-type(3n)){margin-right: 2.6%;}
+    .inquiryArea .inputArea li div.showThree label:not(:nth-last-of-type(-n + 3)){margin-bottom: 2.6%;}
+    .inquiryArea .inputArea li div input[type="radio"]:checked + label{background-color: rgba(250, 80, 20, 0.05); border: 1px solid #fa5014; color: #fa5014;}
+    .inquiryArea .inputArea li div button{min-width: 158px;}
+    .inquiryArea .inputArea li strong{font-size: 18px; font-weight: 600; margin-bottom: 60px;}
+    .inquiryArea .inputArea li small{font-size: 16px; font-weight: 400; color: #666; margin-bottom: 60px;}
+    .inquiryArea .inputArea li small::before{content: '*';}
+    .agreeArea{width: 63%; margin-left: auto; margin-bottom: 120px; font-size: 18px; }
+    .agreeArea legend{height: 0.001px; overflow: hidden;}
+    .agreeArea input[type="checkbox"]{display: none;}
+    .agreeArea label{ padding:2px 0 2px 37px; box-sizing: border-box; background-image: url('../images/common/chk_off.png'); background-repeat: no-repeat; background-position: left center; background-size: 24px;}
+    .agreeArea input[type="checkbox"]:checked + label{background-image: url('../images/common/chk_on.png');}
+    .agreeArea > label{display: block; font-weight: 700; margin-bottom: 30px;}
+    .agreeArea ul{border-top: 1px solid black; padding-top: 40px;}
+    .agreeArea ul li{display: flex; justify-content: space-between;}
+    .agreeArea ul li:not(:last-child){margin-bottom: 40px;}
+    .agreeArea ul li label span{color: #666;}
+    .agreeArea ul li a{text-decoration: underline; font-weight: 700;}
+    .inquiryPage input[type="submit"]{margin-left: auto;}
+
+    /* 게시판 공통 */
+    .boardPage section{padding: 220px 0 120px;}
+    .boardPage section h2{font-size: 36px; font-weight: 700; margin-bottom: 80px;}
+    .boardPage section h2 small{ display: block; font-size: 18px; font-weight: 400; margin-top: 10px;}
+    .boardPage section .listArea{display: flex; flex-wrap: wrap; margin-bottom: 45px;}
+    .boardPage section .listArea li:not(:last-child){margin-right: 10px;}
+    .boardPage section .listArea li a{font-size: 16px; font-weight: 700; color: #666; padding: 15px 30px; border-radius: 100px; background-color: #f0f0f0;}
+    .boardPage section .listArea li.active a{color: white; background-color: #fa5014;}
+    .boardPage section .boardArea{border-top: 4px solid black; margin-bottom: 50px;}
+    .boardPage section .boardArea li{border-bottom: 1px solid #d4d4d4;}
+    .boardPage section .boardArea li{display: flex; justify-content: flex-start; align-items: center; padding: 30px 0; position: relative;}
+    .boardPage section .boardArea li img{width: 160px; margin-right: 80px;}
+    .boardPage section .boardArea li div{padding: 5px 0;}
+    .boardPage section .boardArea li div mark{display: block; font-size: 16px; font-weight: 700; margin-bottom: 10px;}
+    .boardPage section .boardArea li div p{font-size: 22px; font-weight: 700; color: #111; margin-bottom: 15px;}
+    .boardPage section .boardArea li div time{font-size: 16px; color: #999;}
+    .boardPage section .boardArea li a:nth-of-type(1):not(:last-of-type){width: 110px; line-height: 42px;  font-size: 14px; font-weight: 500; text-align: center; border: 1px solid #d4d4d4; margin-left: auto; position: relative; z-index: 1;}
+    .boardPage section .boardArea li a:last-of-type{position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-indent: -9999px;}
+    .boardPage section .pageArea{display: flex; justify-content: center; align-items: center;}
+    .boardPage section .pageArea > a{width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
+    .boardPage section .pageArea > a:nth-of-type(1){background-image: url('../images/common/prev.png');}
+    .boardPage section .pageArea > a:nth-of-type(2){background-image: url('../images/common/next.png');}
+    .boardPage section .pageArea ol{display: flex; align-items: center; margin: 0 18px;}
+    .boardPage section .pageArea ol li:not(:last-child){margin-right: 26px;}
+    .boardPage section .pageArea ol li a{font-size: 18px; font-weight: 700; color: #d4d4d4;}
+    .boardPage section .pageArea ol li:is(.active, :hover) a{color: black; text-decoration: underline;}
+
+
     /* ! 배달대행 */
     /* 사장님의 정성 그대로 빠르고 확실하게 */
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
@@ -259,9 +512,8 @@
     .aboutUsPage .sliderBox{margin-bottom: 300px;}
 
     .aboutUsPage .supportArea > div{min-height: 847px;}
-/* } */
 
-/* 문의 */
+    /* 문의 */
     /* 배달대행 문의 안내 */
     .inquiryPage{padding: 230px 0 120px;}
     .inquiryArea .guideArea{padding-top: 95px; display: flex; justify-content: space-between;}

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     // 공통
     common()
     
