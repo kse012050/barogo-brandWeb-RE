@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <!-- countUp -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.5/countUp.min.js" integrity="sha512-1YM6bEc8uBWgHGLyQbBZyKgb6X6SKs3xR9aP8AwfyWPMf4plLM8g3r+769pGiebwOW3L8QPP0m3PWyiaHJ5rOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/common.js"></script>
+    <script src="js/test.js"></script>
 </head>
 <body>
     <div class="aboutUsPage">
@@ -41,7 +41,7 @@
 
         <main data-scroll="area">
             <div data-scroll="area" class="b">
-                <div class="active a" data-scroll="area">
+                <div data-scroll="area" class="active a">
                     <section class="makeArea">
                         <h2 class="CW TC-01">
                             세상에 활력을 더하는<br/>
@@ -161,7 +161,7 @@
                     </section>
                 </div>
 
-                <section class="numberArea" data-count="area">
+                <section class="numberArea" data-specialAni="graph" data-eventAni="count">
                     <div class="CW">
                         <div class="textArea">
                             <h2>숫자로 보는 <mark>바로고</mark></h2>
@@ -173,21 +173,21 @@
                         </div>
                         <div class="countArea">
                             <div class="graphArea">
-                                <mark id="percent" data-count="target" data-countUp="1893">0</mark>
+                                <mark id="percent" data-eventAni="target" data-startCount="0" data-endCount="1893">0</mark>
                                 <img src="images/common/graph.png" alt="그래프 배경">
                                 <canvas id="graph"></canvas>
                             </div>
                             <div class="yearArea">
-                                <h3 id="year" data-count="target" data-countUp="2022">2016</h3>
+                                <h3 id="year" data-eventAni="target" data-startCount="2016" data-endCount="2022">2016</h3>
                                 <ul>
                                     <li title="허브 수">
-                                        <p id="herbs" data-count="target" data-countUp="1,100">190</p>
+                                        <p id="herbs" data-eventAni="target" data-startCount="190" data-endCount="1100">190</p>
                                     </li>
                                     <li title="활동 라이더 수">
-                                        <p id="riders" data-count="target" data-countUp="34,000">14,000</p>
+                                        <p id="riders" data-eventAni="target" data-startCount="14,000" data-endCount="34000">14,000</p>
                                     </li>
                                     <li title="등록 상점 수">
-                                        <p id="store" data-count="target" data-countUp="116,000">8,000</p>
+                                        <p id="store" data-eventAni="target" data-startCount="8,000" data-endCount="116000">8,000</p>
                                     </li>
                                 </ul>
                             </div>
@@ -195,7 +195,7 @@
                     </div>
                 </section>
 
-                <section class="roadArea" data-scrollAni="scroll">
+                <section class="roadArea" data-scrollAni="move">
                     <div class="CW">
                         <div class="textArea">
                             <h2>바로고가 걸어온<mark>길</mark></h2>
@@ -204,7 +204,7 @@
                                 바로고의 역사는 그대로 대한민국 라스트마일 
                                 딜리버리의 역사가 됩니다. 
                             </p>
-                            <ol class="yearArea">
+                            <ol class="yearArea" data-scroll="target">
                                 <li class="active">2020 - 현재</li>
                                 <li>2018 - 2019</li>
                                 <li>2015 - 2017</li>

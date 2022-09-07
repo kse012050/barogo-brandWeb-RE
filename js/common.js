@@ -140,7 +140,7 @@ function opacityAni(list , idx , progress){
 function scrollAni(list , idx){
      $('.roadArea .yearArea li').eq(idx).addClass('active').siblings().removeClass('active');
     list.eq(idx).addClass('active').siblings().removeClass('active');
-    $('[data-scrollAni="scroll"] [data-scroll="target"]').stop().animate({top : -(list.eq(idx).position().top)} , 500);
+    $('[data-scrollAni="scroll"] [data-scroll="target"]').stop().animate({top : -(list.eq(idx).position().top)} , 500); 
     
     targetAni = !targetAni;
     setTimeout(function(){

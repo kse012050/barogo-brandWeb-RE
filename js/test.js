@@ -2,9 +2,6 @@ $(document).ready(function(){
 
     // 공통
     common()
-
-    
-
     
     // 라이더 페이지
     $('.riderPage').length > 0 && riderPage();
@@ -12,19 +9,11 @@ $(document).ready(function(){
     // 허브 창업 페이지
     $('.foundedPage').length > 0 && foundedPage();
 
+    // 허브 창업 페이지
+    $('.aboutUsPage').length > 0 && aboutUsPage();
+
     // 풀페이지
     $('[data-scroll="fullPage"]').length > 0 && fullPage();
-
-
-   
-    
-    
-
-    
-
-    
-    
-    
     
     function common(){
         // 인트로
@@ -34,14 +23,12 @@ $(document).ready(function(){
         resizeLogo()
         $(window).resize(function(){
             resizeLogo()
-        })
+        });
 
         // 스크롤 공통
-        $(window).scroll(function(){
-            // 스크롤시 해더
-            scrollHeader();
-        })
-
+        !$('.aboutUsPage').length ? scrollHeader($(window)) : scrollHeader($('main[data-scroll="area"]').find('[data-scroll="area"]').eq(1));
+     
+        // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
 
 
@@ -64,8 +51,10 @@ $(document).ready(function(){
         }   /* 인트로 fin */
 
         // 스크롤시 해더
-        function scrollHeader(){
-            ($(window).scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
+        function scrollHeader(selector){
+            selector.scroll(function(){
+                (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
+            })
         }   /* 스크롤시 해더 fin */
 
         // 반응형 로고
@@ -79,7 +68,8 @@ $(document).ready(function(){
                 slidesPerView: "auto",
                 slidesPerView: 2,
             });
-        }
+        }   /* 하단 슬라이더 fin */
+
     }   /* common fin */
 
 
@@ -112,10 +102,9 @@ $(document).ready(function(){
         })
         // 목록 클릭시 값 변경
         $('[data-click="drop"] + div li').click(function(e){
-            console.log(e);
             $(this).parent().parent().stop().slideUp();
             $(this).parent().parent().prev().html($(this).html())
-            $('#revenue').text($('[data-date="hour"]').parent().prev().text() * $('[data-date="week"]').parent().prev().text() * 8095)
+            $('#revenue').attr('data-endCount' ,($('[data-date="hour"]').parent().prev().text() * $('[data-date="week"]').parent().prev().text() * 8095))
             eventAni($(this).parents('[data-eventAni="count"]'));
         })
         // 목록위에서 스크롤 막기
@@ -142,6 +131,70 @@ $(document).ready(function(){
     }   /* 허브 창업 전용 fin */
 
 
+    // 회사소개 전용
+    function aboutUsPage(){
+        $('body').css('overflow','hidden');
+        $('[data-scroll="area"]').each(function(){
+            $(this).on('mousewheel',function(e){
+                e.stopPropagation();
+                let delta = e.originalEvent.wheelDelta;
+                let totalHeight = 0;
+                $(this).children().each(function(){
+                    totalHeight += $(this).outerHeight(true);
+                })
+
+                if($(this).parent().scrollTop() == 0 && Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta > 0){
+                    if(scrollAni($(this).children('[data-scrollAni]') , delta)){
+                        $(this).parent().removeClass('active');
+                    }else{
+                        $(this).addClass('active');
+                        $(this).parent().removeClass('active');
+                    }
+                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop()){
+                    if(scrollAni($(this).children('[data-scrollAni]') , delta)){
+                        $(this).removeClass('active');
+                    }else if(delta > 0){
+                        $(this).addClass('active');
+                        $(this).parent().removeClass('active');
+                    }else if(delta < 0){
+                        $(this).parent().addClass('active');
+                    }
+                }
+            })
+        })
+
+        
+        // 그래프
+        let graphArea = $('[data-specialAni="graph"]');
+        let graphBreak = true;
+        graphArea.parent().scroll(function(){
+            if(graphArea.offset().top < $(window).height() - graphArea.height() && graphBreak){
+                graphAni();
+                setTimeout(function(){
+                    eventAni(graphArea)
+                },1000)
+                graphBreak = !graphBreak;
+            }
+        })  /* 그래프 fin */
+
+        
+        $('.roadArea .yearArea li').click(function(){
+            let target = $('.roadArea').find('[data-scroll="target"]');
+            let targetList =[]
+            if(!target.length){return}
+            target.each(function(){
+                targetList.push($(this).children('li'));
+            })
+            
+            targetList[0].each(function(i){
+                targetList[0].eq(i).hasClass('active') && (idx = i);
+            })
+            $(this).addClass('active').siblings().removeClass('active');
+            moveAni(targetList ,target, $(this).index())
+        })
+    }   /* // 회사소개 전용 fin */
+    
+    
     // 풀페이지
     function fullPage(){
         $('body').css('overflow','hidden');
@@ -169,6 +222,7 @@ $(document).ready(function(){
                 nextTarget = $(this).next();
                 idx++;
             }
+     
 
             // 라이더 페이지 풀페이지 이동 했을 때
             if(nextTarget && nextTarget.attr('data-eventAni')){
@@ -185,97 +239,246 @@ $(document).ready(function(){
         }
     } /* 풀페이지 fin */
     
+    let aniBreak = false;
+    function scrollAni(targetArea , delta){
+        if(aniBreak){ return true}
+        
+        let target = targetArea.find('[data-scroll="target"]');
+        let targetList =[]
+        let idx;
+        if(!target.length){return}
+        target.each(function(){
+            targetList.push($(this).children('li'));
+        })
+        
+        targetList[0].each(function(i){
+            targetList[0].eq(i).hasClass('active') && (idx = i);
+        })
+
+        if(delta > 0 && idx > 0){
+            idx--;
+        }else if(delta < 0 && idx < targetList[0].length - 1){
+            idx++;
+        }else{
+            return false;
+        }
+
+        // 애니메이션이 끝나고 1초 동안 딜레이
+        aniBreak = !aniBreak;
+        setTimeout(()=>{
+            aniBreak = !aniBreak;
+        }, 1000)
+        
+        
+        targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
+        targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
+        targetArea.attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
+        return true;
+
+        // 투명도 효과
+        function opacityAni(list , idx , progress){
+            if(progress.find('span').is(':animated')) return;
+            progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
+            list.map((t)=>{
+                t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
+            })
+        } // 투명도 효과 fin
+        
+        // 라이더 오토바이 효과
+        function bikeAni(targetArea , idx){
+            targetList = targetArea.find('[data-special="target"]')
+            /* 바이크 이미지 */
+            let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
+            /* 바이크 위치 */
+
+            if(idx == 0){
+                targetList.css('right',targetRight)
+            }else if(idx == 1 ){
+                targetList.css('right',targetRight / 2)
+            }else{
+                targetList.css('right',0)
+            }
+        }   /* 라이더 오토바이 효과 fin */
+
+    } /* scroll event fin */
+    
+    // 클릭을 위해 밖으로..
+    function moveAni(targetList , target , idx){
+        targetList[0].eq(idx).addClass('active').siblings().removeClass('active');
+        targetList[1].eq(idx).addClass('active').siblings().removeClass('active');
+        target.eq(1).stop().animate({top : -(targetList[1].eq(idx).position().top)} , 500); 
+    }
+
+    function eventAni(t){
+        let target = t.find('[data-eventAni="target"]');
+
+        t.attr('data-eventAni') == 'count' && countAni(target , true);
+
+        function countAni(list , decimal){
+            const countOptions = {
+                useEasing :true,
+                separator : ",",
+                decimal : decimal ? "," : '',
+            };
+            list.each(function(){
+                var startCount;	
+                let count;
+                let endCount = $(this).attr('data-endCount').replace(/[^0-9]/g, "");
+                if(startCount){
+                    startCount = $(this).attr('data-startCount').replace(/[^0-9]/g, "");
+                }else{
+                    startCount = '';
+                    for(let a = 0; a < endCount.length; a++){
+                        startCount += '0'
+                    }
+                }
+
+                count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, countOptions);
+                count.start();
+            });
+        }
+    }
+
+// 그래프
+
+function graphAni(){
+    let canvas , ctx , w , h , lines = [];
+    function canvasInit(){
+        canvas = document.getElementById('graph');
+        ctx = canvas.getContext('2d');
+        canvasSize();
+        lines.push(new Line());
+    }
+
+    function canvasSize(){
+        w = canvas.width = document.querySelector('.graphArea').offsetWidth;
+        h = canvas.height = document.querySelector('.graphArea').offsetHeight;
+    }
+
+    function drawScene(){
+        animationLoop();
+    }
+
+    function animationLoop(){
+        ctx.clearRect(0,0,w,h);
+        lines.map((l)=>{
+            l.draw();
+            l.update();
+        })
+        requestAnimationFrame(animationLoop)
+    }
+
+    class Line{
+        constructor(){
+            this.x = 40;
+            this.y = 329;
+            this.lineX = this.x;
+            this.lineY = this.y;
+            this.progress = 0;
+            this.point = [
+                {x : 40 , y : 329},
+                {x : 139, y : 317},
+                {x : 249, y : 298},
+                {x : 360, y : 261},
+                {x : 469, y : 188},
+                {x : 583, y : 97},
+            ]
+            this.line = [];
+            this.count = 0;
+            this.balls = [new Ball(this.point[0].x , this.point[0].y)];
+            this.lastCheck = false;
+        }
+        draw(){
+            ctx.beginPath();
+            this.line.map((l , i)=>{
+                ctx.moveTo(this.point[i].x , this.point[i].y);
+                ctx.lineTo(l.x , l.y)
+            })
+            ctx.moveTo(this.point[this.count].x , this.point[this.count].y);
+            ctx.lineTo(this.lineX , this.lineY)
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 4
+            ctx.stroke();
+
+            this.balls.map((b)=>{
+                b.draw();
+                b.update();
+            })
+        }
+        update(){
+            if(this.count < this.point.length - 1){ 
+                if(this.count == this.point.length - 2){
+                    this.lastCheck = true;
+                }
+                if(this.progress <= 1){
+                    this.lineX = this.point[this.count].x + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x))
+                    this.lineY = this.point[this.count].y + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y))
+                    this.progress += 0.1;
+                }else{
+                    this.lineX = this.point[this.count + 1].x;
+                    this.lineY = this.point[this.count + 1].y;
+                    this.line.push({x : this.lineX , y : this.lineY});
+                    this.count++;
+                    this.progress = 0;
+                    this.balls.push(new Ball(this.lineX , this.lineY , this.lastCheck));
+                }
+            }
+            
+        }
+    }
+
+    class Ball{
+        constructor(x , y , lastCheck){
+            this.x = x;
+            this.y = y;
+            this.size = 0;
+            this.lastCheck = lastCheck;
+        }
+
+        draw(){
+            if(this.lastCheck){
+                ctx.beginPath();
+                ctx.arc(this.x , this.y , this.size <=19 ? this.size : 19 , 0 , Math.PI * 2 );
+                ctx.fillStyle = 'rgba(250,80,20,1)';
+                ctx.fill()
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.arc(this.x , this.y , this.size <=45 ? this.size : 45 , 0 , Math.PI * 2 );
+                ctx.fillStyle = 'rgba(250,80,20,0.3)';
+                ctx.fill()
+
+                ctx.beginPath();
+                ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
+                ctx.fillStyle = 'rgba(250,80,20,0.1)';
+                ctx.fill()
+            }else{
+                ctx.beginPath();
+                ctx.arc(this.x , this.y , this.size, 0 , Math.PI * 2);
+                ctx.fillStyle = 'black';
+                ctx.fill()
+            }
+        }
+
+        update(){
+            if(this.lastCheck){
+                if(this.size < 70){
+                    this.size = this.size + 0.5; 
+                }
+            }else{
+                if(this.size < 8){
+                    this.size = this.size + 0.5; 
+                }
+            }
+        }
+    }
+    canvasInit();
+    drawScene();
+}
+    
     
 })  /* document ready fin */
 
 
-let aniBreak = false;
-function scrollAni(targetArea , delta){
-    if(aniBreak) return true;
-    aniBreak = !aniBreak;
-    setTimeout(()=>{
-        aniBreak = !aniBreak;
-    }, 1000)
 
-
-    let target = targetArea.find('[data-scroll="target"]');
-    let targetList =[]
-    let idx;
-    target.each(function(){
-        targetList.push($(this).children('li'));
-    })
-    targetList[0].each(function(i){
-        targetList[0].eq(i).hasClass('active') && (idx = i);
-    })
-    if(delta > 0 && idx > 0){
-        idx--;
-    }else if(delta < 0 && idx < targetList[0].length - 1){
-        idx++;
-    }else{
-        return false;
-    }
- 
-
-    targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
-    targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
-    return true;
-
-    // 투명도 효과
-    function opacityAni(list , idx , progress){
-        if(progress.find('span').is(':animated')) return;
-        progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
-        list.map((t)=>{
-            t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
-        })
-    } // 투명도 효과 fin
-    
-
-    function bikeAni(targetArea , idx){
-        targetList = targetArea.find('[data-special="target"]')
-        /* 바이크 이미지 */
-        let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
-        /* 바이크 위치 */
-
-        if(idx == 0){
-            targetList.css('right',targetRight)
-        }else if(idx == 1 ){
-            targetList.css('right',targetRight / 2)
-        }else{
-            targetList.css('right',0)
-        }
-    }
-}
-
-function eventAni(t){
-    let target = t.find('[data-eventAni="target"]');
-
-    t.attr('data-eventAni') == 'count' && countAni(target , true);
-
-    function countAni(list , decimal){
-        const countOptions = {
-            useEasing :true,
-            separator : ",",
-            decimal : decimal ? "," : '',
-        };
-        list.each(function(){
-            var result = $(this).text().replace(/[^0-9]/g, "");	
-            let count;
-            let currnetCount = $(this).attr('data-currnetCount');
-            if(currnetCount){
-                $(this).attr('data-currnetCount').replace(/[^0-9]/g, "");
-            }else{
-                currnetCount = '';
-                for(let a = 0; a < result.length; a++){
-                    currnetCount += '0'
-                }
-            }
-            if($(this).attr('data-currnetCount')){
-                count = new CountUp($(this).attr('id'),currnetCount, result, 0, 2, countOptions);
-            }else{
-                count = new CountUp($(this).attr('id'),0000, result, 0, 2, countOptions);
-            }
-            count.start();
-        });
-    }
-}
 

@@ -177,9 +177,9 @@
     [data-scroll="area"]{overflow: hidden; width: 100%; height: 100vh;}
     [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
 
-    .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;}
+    .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
     .aboutUsPage .toDoArea .CW h2{margin-bottom: 30px;}
-    .aboutUsPage .toDoArea .CW > p{margin-bottom: 120px;}
+    .aboutUsPage .toDoArea .CW > p{margin-bottom: 0px;}
     .aboutUsPage .toDoArea .CW > div{display: flex; justify-content: space-between; align-items: center;}
     .aboutUsPage .toDoArea .CW > div .progressArea{position: relative; box-sizing: border-box;}
     .aboutUsPage .toDoArea .CW > div .progressArea .progressBar{position: absolute; left: 0; top: 0; height: 100%;}
@@ -190,7 +190,7 @@
 
 
     /* 숫자로 보는 바로고 */
-    .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center;}
+    /* .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center;} */
     .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
     .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
