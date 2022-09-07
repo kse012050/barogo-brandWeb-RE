@@ -53,6 +53,8 @@ $(document).ready(function(){
         function scrollHeader(selector){
             selector.scroll(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
+                ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
+                ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
             })
         }   /* 스크롤시 해더 fin */
 
@@ -191,13 +193,32 @@ $(document).ready(function(){
             $(this).addClass('active').siblings().removeClass('active');
             moveAni(targetList ,target, $(this).index())
         })
+
+        $('.topBtn').click(function(){
+            $('[data-scroll="area"]').removeClass('active');
+            $('[data-scroll="area"]').eq(-1).addClass('active');
+            $('[data-scroll="area"]').animate({scrollTop : 0});
+            $('main[data-scroll="area"]').find('[data-scroll="target"]').each(function(){
+                $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
+            })
+            $('main[data-scroll="area"]').find('[data-scrollAni]').each(function(){
+                scrollAni($(this) , 120)
+                let target = $('.roadArea').find('[data-scroll="target"]');
+                let targetList =[]
+                if(!target.length){return}
+                target.each(function(){
+                    targetList.push($(this).children('li'));
+                })
+                $('.roadArea .yearArea li').eq(0).addClass('active').siblings().removeClass('active');
+                moveAni(targetList ,target, 0)
+            })
+        })
     }   /* // 회사소개 전용 fin */
     
     
     // 풀페이지
     function fullPage(){
         $('body').css('overflow','hidden');
-    
         let fullPageList = $('[data-scroll="fullPage"] > *');
         let idx = 0;
         fullPageList.on('mousewheel',function(e){
@@ -236,6 +257,17 @@ $(document).ready(function(){
             nextTarge.addClass('active').siblings().removeClass('active');
             $('html').stop().animate({scrollTop : nextTarge.offset().top} , 500)
         }
+
+        $('.topBtn').click(function(){
+            $('html').animate({scrollTop : 0})
+            idx = 0;
+            fullPageList.find('[data-scroll="target"]').each(function(){
+                $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
+            })
+            fullPageList.each(function(){
+                scrollAni($(this) , 120)
+            })
+        })
     } /* 풀페이지 fin */
     
     let aniBreak = false;
@@ -254,6 +286,7 @@ $(document).ready(function(){
             targetList[0].eq(i).hasClass('active') && (idx = i);
         })
 
+
         if(delta > 0 && idx > 0){
             idx--;
         }else if(delta < 0 && idx < targetList[0].length - 1){
@@ -268,40 +301,44 @@ $(document).ready(function(){
             aniBreak = !aniBreak;
         }, 1000)
         
-        
+        // targetArea.each(function(){
+        //     $(this).attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
+        //     $(this).attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
+        //     $(this).attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
+        // })
         targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
         targetArea.attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
         return true;
 
-        // 투명도 효과
-        function opacityAni(list , idx , progress){
-            if(progress.find('span').is(':animated')) return;
-            progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
-            list.map((t)=>{
-                t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
-            })
-        } // 투명도 효과 fin
         
-        // 라이더 오토바이 효과
-        function bikeAni(targetArea , idx){
-            targetList = targetArea.find('[data-special="target"]')
-            /* 바이크 이미지 */
-            let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
-            /* 바이크 위치 */
-
-            if(idx == 0){
-                targetList.css('right',targetRight)
-            }else if(idx == 1 ){
-                targetList.css('right',targetRight / 2)
-            }else{
-                targetList.css('right',0)
-            }
-        }   /* 라이더 오토바이 효과 fin */
-
     } /* scroll event fin */
     
-    // 클릭을 위해 밖으로..
+    // 투명도 효과
+    function opacityAni(list , idx , progress){
+        if(progress.find('span').is(':animated')) return;
+        progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
+        list.map((t)=>{
+            t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
+        })
+    } // 투명도 효과 fin
+    
+    // 라이더 오토바이 효과
+    function bikeAni(targetArea , idx){
+        targetList = targetArea.find('[data-special="target"]')
+        /* 바이크 이미지 */
+        let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
+        /* 바이크 위치 */
+
+        if(idx == 0){
+            targetList.css('right',targetRight)
+        }else if(idx == 1 ){
+            targetList.css('right',targetRight / 2)
+        }else{
+            targetList.css('right',0)
+        }
+    }   /* 라이더 오토바이 효과 fin */
+
     function moveAni(targetList , target , idx){
         targetList[0].eq(idx).addClass('active').siblings().removeClass('active');
         targetList[1].eq(idx).addClass('active').siblings().removeClass('active');
