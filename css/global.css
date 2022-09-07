@@ -137,8 +137,8 @@
 
 
     /* 메인페이지 공통 */
-    [data-scroll="fullPage"] > *{height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
-    [data-scroll="fullPage"] > *:not(.topBox){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
+    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+    [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
     [data-scroll="fullPage"] > .topBox{padding-top: 190px; background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}

@@ -102,9 +102,11 @@ function fullPage(){
 
         if(delta > 0){
             // 휠을 위로
+            if(!$(this).prev().length) return;
             (targetIdx > 0) ? fullAniBool = opacityAni(targetLi, --targetIdx , progress) : (scrollTopValue = $(this).prev(),count = $(this).prev().attr('data-count'));
         }else{
             // 휠을 아래로
+            if(!$(this).next().length) return;
             (targetIdx < (targetLength - 1)) ? fullAniBool = opacityAni(targetLi, ++targetIdx , progress) : (scrollTopValue = $(this).next(),count = $(this).next().attr('data-count'));
         }
         fullAniBool ? fullPageAni(scrollTopValue , count) : 
@@ -124,7 +126,6 @@ function fullPage(){
 // opacity 애니메이션
 let targetAni = false;
 function opacityAni(list , idx , progress){
-    console.log(list);
     progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
     list.map((t)=>{
         t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
@@ -189,7 +190,6 @@ function scrollFix(){
             targetLi.length > 0 && (targetLength = targetLi[targetLi.length -1].length);
             
             targetLi.map(function(list){
-                console.log(list);
                 list.each(function(i){
                     list.eq(i).hasClass('active') && (targetIdx = i);
                 })
@@ -467,8 +467,13 @@ class Ball{
             ctx.closePath();
 
             ctx.beginPath();
+            ctx.arc(this.x , this.y , this.size <=45 ? this.size : 45 , 0 , Math.PI * 2 );
+            ctx.fillStyle = 'rgba(250,80,20,0.3)';
+            ctx.fill()
+
+            ctx.beginPath();
             ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
-            ctx.fillStyle = 'rgba(250,80,20,0.5)';
+            ctx.fillStyle = 'rgba(250,80,20,0.1)';
             ctx.fill()
         }else{
             ctx.beginPath();
@@ -480,12 +485,12 @@ class Ball{
 
     update(){
         if(this.lastCheck){
-            if(this.size < 45){
-                this.size = this.size + 0.3; 
+            if(this.size < 70){
+                this.size = this.size + 0.5; 
             }
         }else{
             if(this.size < 8){
-                this.size = this.size + 0.3; 
+                this.size = this.size + 0.5; 
             }
         }
     }
