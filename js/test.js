@@ -350,8 +350,10 @@ function graphAni(){
     }
 
     function canvasSize(){
-        w = canvas.width = document.querySelector('.graphArea').offsetWidth;
-        h = canvas.height = document.querySelector('.graphArea').offsetHeight;
+        // w = canvas.width = document.querySelector('.graphArea').offsetWidth;
+        // h = canvas.height = document.querySelector('.graphArea').offsetHeight;
+        w = canvas.width = 680;
+        h = canvas.height = 381;
     }
 
     function drawScene(){
