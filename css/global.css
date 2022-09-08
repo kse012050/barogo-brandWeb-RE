@@ -45,7 +45,7 @@
     .fixedLink.active{transform: translateX(0);}
 
     /* 탑 버튼 */
-    .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px;}
+    .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
 
 
     /* 오버라인 */

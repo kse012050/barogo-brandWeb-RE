@@ -110,7 +110,7 @@
     .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 100px;}
     .foundedPage .reasonArea .CW .imgArea{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
     .foundedPage .reasonArea .CW .imgArea li{height: 100%; display: flex; align-items: center;}
-    .foundedPage .foundedSlider{width: 400px; height: 488px; position: relative;}
+    .foundedPage .foundedSlider{width: 510px; height: 488px; position: relative;}
     .foundedPage .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 124px; z-index: 5;} 
     .foundedPage .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
     .foundedPage .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
@@ -245,11 +245,11 @@
     .aboutUsPage .breandArea .CW .logoArea li b{display: block; margin-bottom: 30px;}
     .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
     .aboutUsPage .breandArea .CW .colorArea{display: flex;}
-    .aboutUsPage .breandArea .CW .colorArea li{flex: 1; height: 480px; display: flex; justify-content: space-between; align-items: flex-start; padding: 30px; box-sizing: border-box;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6;}
+    .aboutUsPage .breandArea .CW .colorArea li{flex: 1; height: 480px; display: flex; justify-content: space-between; align-items: flex-start; padding: 30px; box-sizing: border-box; background-repeat: no-repeat; background-position: right 30px top 30px; background-size: 25px;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014; background-image: url('../images/aboutUs/color01.png');}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/color02.png');}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff; background-image: url('../images/aboutUs/color03.png');}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6; background-image: url('../images/aboutUs/color04.png');}
     .aboutUsPage .breandArea .CW .colorArea li img{width: 25px; order: 1;}
     .aboutUsPage .breandArea .CW .colorArea li p{font-size: 15px; line-height: 1.33; font-weight: 600;}
     .aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
@@ -259,9 +259,8 @@
     .aboutUsPage .sliderBox{margin-bottom: 300px;}
 
     .aboutUsPage .supportArea > div{min-height: 847px;}
-/* } */
 
-/* 문의 */
+    /* 문의 */
     /* 배달대행 문의 안내 */
     .inquiryPage{padding: 230px 0 120px;}
     .inquiryArea .guideArea{padding-top: 95px; display: flex; justify-content: space-between;}

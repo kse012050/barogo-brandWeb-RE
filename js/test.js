@@ -71,6 +71,19 @@ $(document).ready(function(){
             });
         }   /* 하단 슬라이더 fin */
 
+
+        $('header div button').click(function(){
+            $(this).toggleClass('active');
+            $('header div nav').toggleClass('active');
+        })
+        // 푸터 메뉴 클릭
+        $('footer .topArea div .linkArea > li b').click(function(){
+            if($(window).width() < 600){
+                $(this).toggleClass('active')
+                $(this).next().stop().slideToggle();
+            }
+        })
+
     }   /* common fin */
 
 
@@ -127,7 +140,15 @@ $(document).ready(function(){
             autoplay: {
                 delay: 1000,
             },
-            loop: true
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 5,
+                }
+            }
         });
     }   /* 허브 창업 전용 fin */
 
@@ -139,6 +160,49 @@ $(document).ready(function(){
             $(this).on('mousewheel',function(e){
                 e.stopPropagation();
                 let delta = e.originalEvent.wheelDelta;
+                let totalHeight = 0;
+                $(this).children().each(function(){
+                    totalHeight += $(this).outerHeight(true);
+                })
+
+                if($(this).parent().scrollTop() == 0 && Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta > 0){
+                    if(scrollAni($(this).children('[data-scrollAni]') , delta)){
+                        $(this).parent().removeClass('active');
+                    }else{
+                        $(this).addClass('active');
+                        $(this).parent().removeClass('active');
+                    }
+                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop()){
+                    if(scrollAni($(this).children('[data-scrollAni]') , delta)){
+                        $(this).removeClass('active');
+                    }else if(delta > 0){
+                        $(this).addClass('active');
+                        $(this).parent().removeClass('active');
+                    }else if(delta < 0){
+                        $(this).parent().addClass('active');
+                    }
+                }
+            })
+
+            let touchstartX; 
+            let touchstartY; 
+            let touchendX; 
+            let touchendY; 
+
+            $(this).on('touchstart',function(e){
+                e.stopPropagation();
+                touchstartX = e.touches[0].clientX;
+                touchstartY = e.touches[0].clientY;
+            })
+
+            $(this).on('touchend',function(e){
+                e.stopPropagation();
+                touchendX = e.changedTouches[0].clientX;
+                touchendY = e.changedTouches[0].clientY;
+                if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
+                    return;
+                }
+                let delta = -(touchstartY - touchendY);
                 let totalHeight = 0;
                 $(this).children().each(function(){
                     totalHeight += $(this).outerHeight(true);
@@ -224,6 +288,54 @@ $(document).ready(function(){
         fullPageList.on('mousewheel',function(e){
             if($('html').is(':animated')) return;
             let delta = e.originalEvent.wheelDelta;
+            let targetArea = $(this);
+            let nextTarget;
+            
+            // 해당 영역에 투명도 이벤트가 있을 때
+            if(targetArea.attr('data-scrollAni')){
+                if(scrollAni(targetArea , delta)){
+                    return; 
+                }
+            }
+
+            // 풀페이지 이동 넘버 설정
+            if(delta > 0 && 0 < idx){
+                nextTarget = $(this).prev();
+                idx--;
+            }else if(delta < 0 && idx < fullPageList.length - 1){
+                nextTarget = $(this).next();
+                idx++;
+            }
+     
+
+            // 라이더 페이지 풀페이지 이동 했을 때
+            if(nextTarget && nextTarget.attr('data-eventAni')){
+                eventAni(nextTarget , delta)
+            }
+
+    
+            fullPageAni(fullPageList.eq(idx))
+        })
+        let touchstartX; 
+        let touchstartY; 
+        let touchendX; 
+        let touchendY; 
+
+        fullPageList.on('touchstart',function(e){
+            touchstartX = e.touches[0].clientX;
+            touchstartY = e.touches[0].clientY;
+        })
+
+        fullPageList.on('touchend',function(e){
+            touchendX = e.changedTouches[0].clientX;
+            touchendY = e.changedTouches[0].clientY;
+            if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
+                return;
+            }
+
+            if($('html').is(':animated')) return;
+            let delta = -(touchstartY - touchendY);
+
             let targetArea = $(this);
             let nextTarget;
             
@@ -368,8 +480,15 @@ $(document).ready(function(){
                         startCount += '0'
                     }
                 }
-
-                count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, countOptions);
+                if($(this).attr('id') == 'year'){
+                    count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, {
+                        useEasing :true,
+                        separator : "",
+                        decimal : '',
+                    });
+                }else{
+                    count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, countOptions);
+                }
                 count.start();
             });
         }
