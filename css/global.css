@@ -46,6 +46,7 @@
 
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
+    .topBtn.active{display: block;}
 
 
     /* 오버라인 */
@@ -137,7 +138,7 @@
 
 
     /* 메인페이지 공통 */
-    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box;}
     [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
 
     /* 메인페이지 상단 */

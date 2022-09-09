@@ -1,5 +1,6 @@
+
 @media screen and (max-width : 767px) {
-    
+    html{font-size: 2.5vw;}
     /* 공통 */
     /* 폰트 케이스 */
     /* title case */
@@ -31,10 +32,11 @@
     .BBTN-download::after{background-image: url('../images/common/download.png');}
 
     /* 문의하기 링크 */
-    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
+    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 60px; font-size: 16px;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
 
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 30px; bottom: 85px; width: 30px; height: 30px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
+    .topBtn.active{display: block;}
 
 
     /* 오버라인 */
@@ -57,7 +59,7 @@
         66%{clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 45%, 100% 45%, 100% 55%, 0 55%, 0 100%, 100% 100%, 100% 0%);}
         100%{clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);}
     }
-    .introBox .textArea{width: 100%; font-size: 100px; color: white; font-weight: 900; position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%); margin: 0; text-align: center;}
+    .introBox .textArea{width: 100%; font-size: 50px; color: white; font-weight: 900; position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%); margin: 0; text-align: center;}
     .introBox .textArea span{display: inline-block; position: relative; left: 0; text-align: center;  animation-timing-function: linear; animation-fill-mode: forwards;}
     .introBox .textArea span:nth-of-type(1){animation-name: textLeftMove;}
     .introBox .textArea span:nth-of-type(2){animation-name: textRightMove;}
@@ -108,7 +110,6 @@
     }
 
     /* 푸터 */
-    footer{padding-bottom: 60px;}
     footer .topArea{background-color: black; padding: 20px 0;}
     footer .topArea div .linkArea{color: white; margin-bottom: 40px;}
     footer .topArea div .linkArea > li b{display: flex; justify-content: space-between; align-items: center; font-size: 14px; line-height: 50px; font-weight: 700;}
@@ -140,20 +141,21 @@
 
 
     /* 메인페이지 공통 */
-    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+    [data-scroll="fullPage"]{position: fixed; left: 0; top: 0; width: 100%;}
+    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box;}
     [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 70px; padding-bottom: 60px; box-sizing: border-box;}
 
-    [data-scroll="fullPage"] > .topBox{background-repeat: no-repeat; background-position: center bottom 60px; background-size: 100%;}
-    [data-scroll="fullPage"] > .topBox > div{height: 100%;  padding-top: 190px; box-sizing: border-box;} 
+    [data-scroll="fullPage"] > .topBox{}
+    [data-scroll="fullPage"] > .topBox > div{padding-top: 190px;padding-bottom: 25.000rem; box-sizing: border-box; background-repeat: no-repeat; background-position: center bottom; background-size: 100%;} 
     [data-scroll="fullPage"] > .topBox > div div{height: 100%;}
     [data-scroll="fullPage"] > .topBox > div div h2{margin-bottom: 40px;}
     [data-scroll="fullPage"] > .topBox > div div a{display: none;}
     /* 배달대행 상단 이미지 */
-    .deliveryPage .topBox{background-image:  url('../images/delivery/m-top-delivery.png');}
+    .deliveryPage .topBox > div{background-image:  url('../images/delivery/m-top-delivery.png');}
     /* 라이더 상단 이미지 */
-    .riderPage .topBox{background-image:  url('../images/rider/m-top-rider.png');}
+    .riderPage .topBox > div{background-image:  url('../images/rider/m-top-rider.png');}
     /* 허브창업 상단 이미지 */
-    .foundedPage .topBox{background-image:  url('../images/founded/m-top-founded.png');}
+    .foundedPage .topBox > div{background-image:  url('../images/founded/m-top-founded.png');}
 
     /* full page 안 progress */
     .progressArea{position: relative;}
@@ -165,7 +167,7 @@
     [data-scrollAni="opacity"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
     [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
     [data-scrollAni="opacity"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0; width: 100%;}
-    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 30px;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 10px;}
 
     /* 이미지 공통 */
     .imgArea img{width: 100%;}
@@ -175,17 +177,14 @@
     .sliderBox h2{margin-bottom: 50px;}
     .sliderBox .swiper{overflow: visible;}
     .sliderBox .swiper .swiper-wrapper{gap: 10px;}
-    /* .sliderBox .swiper .swiper-wrapper .swiper-slide{width: calc((100% - 25px));} */
-    /* .sliderBox .swiper .swiper-wrapper .swiper-slide:not(:last-of-type){margin-right: 25px;} */
     .sliderBox .swiper .swiper-wrapper .swiper-slide img{width: 100%; margin-bottom: 20px;}
     .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 5px;}
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
     /* 후원 */
-    .supportArea{ background: #1a1a1a;}
-    .supportArea > div{width: 100%; height: 100%; display: flex; align-items: flex-end; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
-    /* .supportArea > div::after{content: ''; position: absolute; left: 50%; top: 110px; width: 100%; min-width: 1920px;  transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;} */
-    .supportArea > div div{max-width: 380px; padding-bottom: 40px;}
+    .supportArea{ background: #1a1a1a; border-bottom: 1px solid #fa5014; padding-bottom: 0;}
+    .supportArea > div{width: 100%; height: 100%; display: flex; align-items: flex-end; position: relative; overflow: hidden;}
+    .supportArea > div div{max-width: 380px; padding-bottom: 0;}
     .supportArea > div div mark{display: block; margin-bottom: 30px;}
     .supportArea > div div b{display: block; font-weight: 700; color: white; margin-bottom: 10px;}
     .supportArea > div div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
@@ -295,7 +294,7 @@
     /* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
     .deliveryPage .distributionArea{position: relative; align-items: flex-end;}
     .deliveryPage .distributionArea .CW{margin-bottom: 20px;}
-    .deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 60px; width: 100%; z-index: -1;}
+    .deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 50%; top: 70px; transform: translateX(-50%); width: 100%; max-width: 500px; z-index: -1;}
     .deliveryPage .distributionArea .CW .textArea{/* width: 570px; margin-left: auto; */ text-align: center;}
     .deliveryPage .distributionArea .CW .textArea > *:not(h2){/* padding-left: 100px; */}
     .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 30px;}
@@ -318,7 +317,7 @@
     .riderPage .lifeArea .CW .textArea h2{margin-bottom: 30px;}
     .riderPage .lifeArea .CW .textArea > mark{margin-bottom: 10px;}
     .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 20px;}
-    .riderPage .lifeArea .CW .imgArea{width: 100%; position: absolute; right: 0; top: 70px; z-index: -1;}
+    .riderPage .lifeArea .CW .imgArea{width: 100%; max-width: 500px; position: absolute; left: 50%; top: 70px; transform: translateX(-50%); z-index: -1;}
 
     /* 라이더님만을 위한 놀이터 바로고 플레이 */
     .riderPage .playgroundArea .CW .textArea{display: flex; flex-direction: column; align-items: center; justify-content: center;}
@@ -348,6 +347,7 @@
     .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
 
     /* 망설이지 바로 시작하세요! */
+    .riderPage .startArea{overflow: hidden;}
     .riderPage .startArea .CW{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
     .riderPage .startArea .CW .textArea{margin-bottom: 50px;}
     .riderPage .startArea .CW .textArea h2{margin-bottom: 30px;}
@@ -434,10 +434,10 @@
     .aboutUsPage .makeArea > div div{max-width: 350px; height: 300px; display: flex; justify-content: center; align-items: center;}
     .aboutUsPage .makeArea > div div p{font-size: 16px; color: white; line-height: 1.64; text-align: center;}
     .aboutUsPage .makeArea > p{font-size: 16px; line-height: 1.5; color: #111; text-align: center; max-width: 475px; width: calc(100% - 40px); margin: auto auto;}
-    .aboutUsPage .makeArea > p br{display: none;}
+    /* .aboutUsPage .makeArea > p br{display: none;} */
     .aboutUsPage .makeArea > p:not(:last-of-type){margin-bottom: 20px;}
     .aboutUsPage .makeArea > p:nth-of-type(2){margin-bottom: 50px;}
-    .aboutUsPage .makeArea ul{text-align: center;}
+    .aboutUsPage .makeArea ul{text-align: center; width: calc(100% - 40px); margin: 0 auto;}
     .aboutUsPage .makeArea ul li{padding-top: 125px; background-repeat: no-repeat; background-position: center top; background-size: 94px;}
     .aboutUsPage .makeArea ul li:nth-child(1){background-image: url('../images/aboutUs/platform01.png');}
     .aboutUsPage .makeArea ul li:nth-child(2){background-image: url('../images/aboutUs/platform02.png');}
@@ -474,9 +474,9 @@
     /* 숫자로 보는 바로고 */
     .aboutUsPage .numberArea{margin-bottom: 100px;}
     .aboutUsPage .numberArea .CW{display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
-    .aboutUsPage .numberArea .CW .textArea{margin-bottom: 50px;}
+    .aboutUsPage .numberArea .CW .textArea{width: 100%; margin-bottom: 50px;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 24px; font-weight: 700; margin-bottom: 30px;}
-    .aboutUsPage .numberArea .CW .textArea p{max-width: 500px; font-size: 16px; line-height: 1.5; color: #111;}
+    .aboutUsPage .numberArea .CW .textArea p{/* max-width: 500px; */ font-size: 16px; line-height: 1.5; color: #111;}
     .aboutUsPage .numberArea .countArea .graphArea{width: 100%; margin:0 auto 50px; position: relative;}
     .aboutUsPage .numberArea .countArea .graphArea mark{position: absolute; left: 0; top: 40px; font-size: 40px; font-weight: 900;}
     .aboutUsPage .numberArea .countArea .graphArea mark::after{content: '%';}
@@ -548,6 +548,8 @@
     .aboutUsPage .supportArea > div{padding: 50px 0;}
     .aboutUsPage .supportArea > div div{padding-bottom: 0;}
 
+    .aboutUsPage footer{padding-bottom: 60px;}
+
     /* 문의 */
     /* 배달대행 문의 안내 */
     .inquiryPage{padding: 150px 0 100px;}
@@ -564,4 +566,16 @@
     .inquiryPage.finArea section h2{font-size: 36px; font-weight: 700; margin-bottom: 20px; padding-top: 130px; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 134px;}
     .inquiryPage.finArea section p{font-size: 20px; line-height: 1.5; margin-bottom: 65px;}
     .inquiryPage.finArea section a:not([class]){font-size: 18px; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 130px;}
+}
+
+@media screen and (max-width : 600px) {
+    header{padding: 15px 0;}
+    [data-scroll="fullPage"] > *:not(.topBox , footer){padding-top: 60px;}
+    *:not(h1 , h2 , h3) >  br{display: none;}
+    .riderPage .revenueArea .CW div div br{display: block;}
+    .aboutUsPage .breandArea .CW .colorArea li br{display: block;}
+    .introBox .textArea br{display: block;}
+    .progressArea .progressBar{left: -15px;}
+    .aboutUsPage .toDoArea .CW > div .progressArea .progressBar{left: -15px;}
+    .aboutUsPage .numberArea .countArea .yearArea ul li{font-size: 25px;}
 }

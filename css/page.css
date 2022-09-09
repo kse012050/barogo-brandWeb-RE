@@ -77,6 +77,7 @@
     .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
 
     /* 망설이지 바로 시작하세요! */
+    .riderPage .startArea{overflow: hidden;}
     .riderPage .startArea .CW{position: relative;}
     .riderPage .startArea .CW .textArea h2{margin-bottom: 100px;}
     .riderPage .startArea .CW .textArea h2 mark{display: block;}

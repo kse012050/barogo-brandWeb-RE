@@ -54,13 +54,15 @@ $(document).ready(function(){
             selector.scroll(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
-                ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
+                ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
             })
         }   /* 스크롤시 해더 fin */
 
         // 반응형 로고
         function resizeLogo(){
             $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
+            let vh = window.innerHeight * 0.01;
+            $(window).width() < 768 && $('[data-scroll="fullPage"] > *').css('--vh',vh + 'px');
         }   /* 반응형 로고 fin */
         
         // 하단 슬라이더
@@ -350,10 +352,20 @@ $(document).ready(function(){
             if(delta > 0 && 0 < idx){
                 nextTarget = $(this).prev();
                 idx--;
+                if(nextTarget.hasClass('sliderBox')){
+                    $('.fixedLink').fadeIn()
+                    $('.topBtn').removeAttr('style')
+                }
             }else if(delta < 0 && idx < fullPageList.length - 1){
                 nextTarget = $(this).next();
                 idx++;
+                if(nextTarget.hasClass('supportArea')){
+                    $('.fixedLink').fadeOut()
+                    $('.topBtn').fadeOut()
+                }
             }
+
+            
      
 
             // 라이더 페이지 풀페이지 이동 했을 때
@@ -413,11 +425,6 @@ $(document).ready(function(){
             aniBreak = !aniBreak;
         }, 1000)
         
-        // targetArea.each(function(){
-        //     $(this).attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
-        //     $(this).attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
-        //     $(this).attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
-        // })
         targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
         targetArea.attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);

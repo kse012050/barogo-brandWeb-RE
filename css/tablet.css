@@ -37,6 +37,7 @@
 
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 3.750rem; bottom: 3.750rem; width: 3.750rem; height: 3.750rem; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
+    .topBtn.active{display: block;}
 
 
     /* 오버라인 */
@@ -128,7 +129,7 @@
 
 
     /* 메인페이지 공통 */
-    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box; border-bottom: 1px solid black;}
+    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box;}
     [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 5.625rem; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
@@ -178,6 +179,9 @@
     .supportArea > div div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
     .supportArea > div div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
     .supportArea > div div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}
+    @media screen and (min-width : 1100px) {
+        .supportArea > div{align-items: flex-end;}
+    }
 
 
     /* 문의 공통 */
@@ -329,6 +333,7 @@
     .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
 
     /* 망설이지 바로 시작하세요! */
+    .riderPage .startArea{overflow: hidden;}
     .riderPage .startArea .CW{position: relative;}
     .riderPage .startArea .CW .textArea h2{margin-bottom: 6.250rem;}
     .riderPage .startArea .CW .textArea h2 mark{display: block;}
@@ -511,6 +516,7 @@
     .aboutUsPage .sliderBox{margin-bottom: 18.750rem;}
 
     .aboutUsPage .supportArea > div{min-height: 52.938rem; align-items: flex-end;}
+    
 
     /* 문의 */
     /* 배달대행 문의 안내 */
