@@ -133,15 +133,15 @@
     [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 5.625rem; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
-    [data-scroll="fullPage"] > .topBox{position: relative; background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; background-size: 1920px;}
+    [data-scroll="fullPage"] > .topBox{position: relative; background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; background-size: 120rem;}
     [data-scroll="fullPage"] > .topBox > div{height: 100%; padding-top: 11.875rem;}
     [data-scroll="fullPage"] > .topBox > div h2{margin-bottom: 40px;}
-    [data-scroll="fullPage"] > .topBox img{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px;}
-    @media screen and (max-height : 937px){
-        [data-scroll="fullPage"] > .topBox{background-position: center top 447px;}
-        [data-scroll="fullPage"] > .topBox img{top: 187px;}
+    [data-scroll="fullPage"] > .topBox img{position: absolute; left: 50%; transform: translateX(-50%); width: 120rem;}
+    @media screen and (max-height : 76.8032vw){
+        [data-scroll="fullPage"] > .topBox{background-position: center top 27.938rem;}
+        [data-scroll="fullPage"] > .topBox img{top: 11.688rem;}
     }
-    @media screen and (min-height : 938px){
+    @media screen and (min-height : 76.8032vw){
         [data-scroll="fullPage"] > .topBox{background-position: center bottom; }
         [data-scroll="fullPage"] > .topBox img{bottom: 0;}
     }
