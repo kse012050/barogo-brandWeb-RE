@@ -129,4 +129,45 @@
     .riderPage .bannerArea{background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 80px 0;}
     .riderPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
     .riderPage .bannerArea div p{width: 535px; font-size: 18px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
+
+    /* ! 허브 창업 */
+    /* 바로고와 함께하는 이유 */
+    .foundedPage .reasonArea{margin-bottom: 120px;}
+    .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 80px;}
+    .foundedPage .imgArea .foundedSlider{width: 60%; height: 400px; position: relative;}
+    .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 124px; z-index: 5;} 
+    .foundedPage .imgArea .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .foundedPage .imgArea .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper{padding: 0 20px; box-sizing: border-box;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide{height: 88px; box-shadow: 0 8px 34px 0 rgb(8 11 21 / 7%); background-color: white; display: flex; justify-content: space-between;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide img{width: auto; height: 100%;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div{display: flex; flex-direction: column; justify-content: center; padding-right: 40px; text-align: right;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div span{margin-bottom: 10px; color: #a2a2a2;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 17px;}
+
+    /* 놀라운 바로고의 성장세 */
+    .foundedPage .growthArea{margin-bottom: 120px;}
+    .foundedPage .growthArea .CW div{margin-bottom: 60px;}
+    .foundedPage .growthArea .CW div h2{margin-bottom: 20px;}
+    .foundedPage .growthArea .CW ul{display: flex; flex-wrap: wrap; padding-left: 30px;}
+    .foundedPage .growthArea .CW ul li{min-width: 135px;}
+    .foundedPage .growthArea .CW ul li:not(:nth-last-child(-n + 2)){margin-bottom: 40px;}
+    .foundedPage .growthArea .CW ul li mark{font-weight: 700; display: block; margin-bottom: 15px;}
+    .foundedPage .growthArea .CW ul li p::after{content: '+';}
+
+    /* 허브 성장의 동반자 */
+    .foundedPage .companionArea{margin-bottom: 120px;}
+    .foundedPage .companionArea .CW .textArea{margin-bottom: 50px;}
+    .foundedPage .companionArea .CW .textArea h2{max-width: 200px; margin-bottom: 20px;}
+    .foundedPage .companionArea .CW .imgArea{width: 100%; margin-bottom: 80px;} 
+    .foundedPage .companionArea .CW ul{text-align: center;}
+    .foundedPage .companionArea .CW ul li:not(:last-child){margin-bottom: 80px;}
+    .foundedPage .companionArea .CW ul li strong{font-weight: 700; display: block; margin-bottom: 20px;}
+    .foundedPage .companionArea .CW ul li mark{font-weight: 700; display: block; margin-bottom: 10px;}
+    .foundedPage .companionArea .CW ul li p{font-size: 16px; line-height: 1.5; color: #666;}
+
+    /* 배너 */
+    .foundedPage .bannerArea{background: url('../images/founded/buttom-founded.png') no-repeat center / cover;}
+    .foundedPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
+    .foundedPage .bannerArea div p{font-size: 18px; font-weight: 700; line-height: 1.5; color: white;}
 }

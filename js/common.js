@@ -63,7 +63,6 @@ $(document).ready(function(){
         // 반응형 로고
         function resizeLogo(){
             $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
-            let vh = window.innerHeight * 0.01;
         }   /* 반응형 로고 fin */
 
         // 반응형 풀페이지
@@ -158,14 +157,6 @@ $(document).ready(function(){
                 delay: 1000,
             },
             loop: true,
-            breakpoints: {
-                300: {
-                    slidesPerView: 3,
-                },
-                768: {
-                    slidesPerView: 5,
-                }
-            }
         });
     }   /* 허브 창업 전용 fin */
 
