@@ -18,10 +18,12 @@ $(document).ready(function(){
         // 인트로
         $('*').hasClass('introBox') && introAni();
 
-        // 반응형 로고
-        resizeLogo()
+        // 반응형 로고 , 풀페이지 판단
+        resizeLogo();
+        resizeFull();
         $(window).resize(function(){
-            resizeLogo()
+            resizeLogo();
+            resizeFull();
         });
 
         // 스크롤 공통
@@ -63,12 +65,26 @@ $(document).ready(function(){
             $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
             let vh = window.innerHeight * 0.01;
         }   /* 반응형 로고 fin */
+
+        // 반응형 풀페이지
+        function resizeFull(){
+            $(window).width() < 769 ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
+        }
         
         // 하단 슬라이더
         function bottomSlider(){
             var swiper = new Swiper(".bottomSlider", {
                 slidesPerView: "auto",
                 slidesPerView: 2,
+                breakpoints: {
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    }
+                }
             });
         }   /* 하단 슬라이더 fin */
 
@@ -283,10 +299,12 @@ $(document).ready(function(){
     
     // 풀페이지
     function fullPage(){
-        $('body').css('overflow','hidden');
         let fullPageList = $('[data-scroll="fullPage"] > *');
         let idx = 0;
         fullPageList.on('mousewheel',function(e){
+            if($(window).width() < 768){
+                return;
+            }
             if($('html').is(':animated')) return;
             let delta = e.originalEvent.wheelDelta;
             let targetArea = $(this);

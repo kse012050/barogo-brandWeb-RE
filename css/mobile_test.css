@@ -1,0 +1,64 @@
+@media screen and (max-width : 767px) {
+    /* full page 안 progress */
+    .progressArea{position: relative; padding-bottom: 30px; margin-bottom: 30px;}
+    .progressArea .progressBar{position: absolute; left: 0; bottom: 0; width: 100%; height: 6px; background-color: rgba(0, 0, 0, 0.1);}
+    .progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 33.33%; height: 100%; background-color: #fa5014; }
+
+    /* full page 안 scroll 공통 */
+    [data-scrollAni="opacity"] [data-scroll="target"]{position: relative;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 30px;}
+
+
+    [data-scroll="fullPage"] > .topBox{position: relative; margin-bottom: 30px;}
+    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/m-main-bg2.png') , url('../images/common/m-main-bg.png'); background-repeat:no-repeat; background-size: 100%/*  290px */; background-position: center bottom;}
+    [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 145px; padding-bottom: 320px;}
+    [data-scroll="fullPage"] > .topBox .CW a{display: none;}
+    [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 0; bottom: 0; width: 100%; height: 76.6vw /* 290px */; background-repeat: no-repeat; background-size: cover; text-indent: -9999px;}
+
+    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/m-top-delivery.png');}
+    .foundedPage > .topBox .imgArea{background-image: url('../images/founded/m-top-founded.png');}
+    .riderPage > .topBox .imgArea{background-image: url('../images/rider/m-top-rider.png');}
+
+
+    /* ! 배달대행 */
+    /* 사장님의 정성 그대로 빠르고 확실하게 */
+    .deliveryPage .qualitativeArea{margin-bottom: 120px;}
+    .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
+    .deliveryPage .qualitativeArea .CW div h2{margin-bottom: 80px;}
+    .deliveryPage .qualitativeArea .CW div h2 mark{display: block;}
+    .deliveryPage .qualitativeArea .CW > ul{width: 77.5%; margin-left: auto;}
+    .deliveryPage .qualitativeArea .CW > ul li{width: 100%;}
+
+    /* 사장님의 따뜻한 마음 그대로 */
+    .deliveryPage .mindArea{padding: 120px 0; background-color: #f6f6f6; margin-bottom: 120px;}
+    .deliveryPage .mindArea .CW .imgArea{width: 100%; margin-bottom: 60px;}
+    .deliveryPage .mindArea .CW .imgArea img{width: 100%;}
+    .deliveryPage .mindArea .CW .textArea h2{margin-bottom: 20px;}
+    .deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 30px;}
+    .deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 50px;}
+
+    /* 성공하는 매장의 노하우 */
+    .deliveryPage .knowHowArea{margin-bottom: 120px;}
+    .deliveryPage .knowHowArea .CW .textArea{margin-bottom: 80px;}
+    .deliveryPage .knowHowArea .CW .textArea h2{margin-bottom: 20px;}
+    .deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 50px;}
+    .deliveryPage .knowHowArea .CW .textArea ul{display: flex; flex-wrap: wrap; gap: 20px;}
+    .deliveryPage .knowHowArea .CW .imgArea{width: 100%;}
+
+    /* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
+    .deliveryPage .distributionArea{padding-top: 160px; position: relative; margin-bottom: 120px;}
+    .deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 80.5555%; z-index: -1;}
+    .deliveryPage .distributionArea .CW .textArea{padding-top: 55px;}
+    .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 80px;}
+    .deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 45px;}
+    .deliveryPage .distributionArea .CW .textArea mark{display: block; margin-bottom: 20px;}
+    .deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 80px;}
+
+    /* 배너 */
+    .deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover;}
+    .deliveryPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
+    .deliveryPage .bannerArea div p{font-size: 18px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
+}

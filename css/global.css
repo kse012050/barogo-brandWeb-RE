@@ -25,6 +25,7 @@
     mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
     mark::before {content: attr('title');}
 
+    br.mobile{display: none;}
 
     /* 버튼 공통*/
     /* BTN (button) 배경이 들어가는 기본 버튼 */
@@ -144,9 +145,9 @@
     /* 메인페이지 상단 */
     [data-scroll="fullPage"] > .topBox{position: relative;}
     [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x;}
-    [data-scroll="fullPage"] > .topBox > div{height: 100%; padding-top: 190px;}
-    [data-scroll="fullPage"] > .topBox > div h2{margin-bottom: 40px;}
-    [data-scroll="fullPage"] > .topBox img{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px;}
+    [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 190px;}
+    [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px;}
+    [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px; height: 750px; background-repeat: no-repeat; text-indent: -9999px;}
     @media screen and (max-width : 1920px){
         [data-scroll="fullPage"] > .topBox{background-size: 1920px;}
     }
@@ -155,12 +156,16 @@
     }
     @media screen and (max-height : 937px){
         [data-scroll="fullPage"] > .topBox{background-position: center top 447px;}
-        [data-scroll="fullPage"] > .topBox img{top: 187px;}
+        [data-scroll="fullPage"] > .topBox .imgArea{top: 187px;}
     }
     @media screen and (min-height : 938px){
         [data-scroll="fullPage"] > .topBox{background-position: center bottom; }
-        [data-scroll="fullPage"] > .topBox img{bottom: 0;}
+        [data-scroll="fullPage"] > .topBox .imgArea{bottom: 0;}
     }
+
+    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/top-delivery.png');}
+    .foundedPage > .topBox .imgArea{background-image: url('../images/founded/top-founded.png');}
+    .riderPage > .topBox .imgArea{background-image: url('../images/rider/top-rider.png');}
 
 
     /* full page 안 progress */
