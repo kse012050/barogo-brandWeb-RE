@@ -142,32 +142,26 @@
     [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
-    @media screen and (min-width : 1650px) {
-        [data-scroll="fullPage"] > .topBox{ background: url('../images/common/main-bg.png') repeat-x center bottom / 100% 494px;}
-        [data-scroll="fullPage"] > .topBox > div{height: 100%; max-width: 1650px; padding-top: 190px; box-sizing: border-box; margin: 0 auto; background-repeat: no-repeat; background-position: right bottom 0 ,center bottom 140px; background-size: 65% , 100% 192px;}
-        [data-scroll="fullPage"] > .topBox > div div{height: 100%; padding: 0 235px;}
-        [data-scroll="fullPage"] > .topBox > div div h2{margin-bottom: 40px;}
-        
-        /* 배달대행 상단 이미지 */
-        .deliveryPage .topBox > div{background-image:  url('../images/delivery/top-delivery.png') ,url('../images/common/main-bg2.png') ;}
-        /* 라이더 상단 이미지 */
-        .riderPage .topBox > div{background-image:  url('../images/rider/top-rider.png') ,url('../images/common/main-bg2.png') ;}
-        /* 허브창업 상단 이미지 */
-        .foundedPage .topBox > div{background-image:  url('../images/founded/top-founded.png') ,url('../images/common/main-bg2.png') ;}
+    [data-scroll="fullPage"] > .topBox{position: relative;}
+    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x;}
+    [data-scroll="fullPage"] > .topBox > div{height: 100%; padding-top: 190px;}
+    [data-scroll="fullPage"] > .topBox > div h2{margin-bottom: 40px;}
+    [data-scroll="fullPage"] > .topBox img{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px;}
+    @media screen and (max-width : 1920px){
+        [data-scroll="fullPage"] > .topBox{background-size: 1920px;}
+    }
+    @media screen and (min-width : 1921px){
+        [data-scroll="fullPage"] > .topBox{background-size: auto , 100% 490px;}
+    }
+    @media screen and (max-height : 937px){
+        [data-scroll="fullPage"] > .topBox{background-position: center top 447px;}
+        [data-scroll="fullPage"] > .topBox img{top: 187px;}
+    }
+    @media screen and (min-height : 938px){
+        [data-scroll="fullPage"] > .topBox{background-position: center bottom; }
+        [data-scroll="fullPage"] > .topBox img{bottom: 0;}
     }
 
-    @media screen and (max-width : 1649px) {
-        [data-scroll="fullPage"] > .topBox{background-repeat: no-repeat; background-position: center bottom; background-size: 100%;}
-        [data-scroll="fullPage"] > .topBox > div{height: 100%;  padding-top: 190px; box-sizing: border-box;} 
-        [data-scroll="fullPage"] > .topBox > div div{height: 100%;}
-        [data-scroll="fullPage"] > .topBox > div div h2{margin-bottom: 40px;}
-        /* 배달대행 상단 이미지 */
-        .deliveryPage .topBox{background-image:  url('../images/delivery/t-top-delivery.png');}
-        /* 라이더 상단 이미지 */
-        .riderPage .topBox{background-image:  url('../images/rider/t-top-rider.png');}
-        /* 허브창업 상단 이미지 */
-        .foundedPage .topBox{background-image:  url('../images/founded/t-top-founded.png');}
-    }
 
     /* full page 안 progress */
     .progressArea{position: relative; padding-left: 100px;}
