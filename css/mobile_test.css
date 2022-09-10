@@ -61,4 +61,72 @@
     .deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover;}
     .deliveryPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
     .deliveryPage .bannerArea div p{font-size: 18px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
+
+
+    /* ! 라이더 지원 */
+    /* 프로를 프로답게 바로고 라이더 라이프 */
+    .riderPage .lifeArea{padding-bottom: 215px; position: relative; margin-bottom: 120px;}
+    .riderPage .lifeArea .CW .textArea > *:not(h2){padding-left: 45px;}
+    .riderPage .lifeArea .CW .textArea mark{display: block; margin-bottom: 20px;}
+    .riderPage .lifeArea .CW .textArea h2{margin-bottom: 40px;}
+    .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 30px;}
+    .riderPage .lifeArea .CW .imgArea{width: 80.5555%; position: absolute; right: 0; bottom: 0;}
+
+    /* 라이더님만을 위한 놀이터 바로고 플레이 */
+    .riderPage .playgroundArea .CW{position: relative;}
+    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 80px;}
+    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2{margin-bottom: 25px;}
+    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2 mark{display: block;}
+    .riderPage .playgroundArea .CW .imgArea{width: 100%;}
+
+    /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
+    .riderPage .revenueArea{background-color: #f6f6f6; padding: 105px 0 85px;}
+    .riderPage .revenueArea .CW{}
+    .riderPage .revenueArea .CW .textArea{display: flex; flex-direction: column; margin-bottom: 155px;}
+    .riderPage .revenueArea .CW .textArea small{display: block; margin-bottom: 40px; order: 1;}
+    .riderPage .revenueArea .CW .textArea > div{margin-bottom: 35px;}
+    .riderPage .revenueArea .CW .textArea > div > div{display: inline-block; position: relative;}
+    .riderPage .revenueArea .CW .textArea > div > div button{display: flex;  align-items: center; }
+    .riderPage .revenueArea .CW .textArea > div > div button::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
+    .riderPage .revenueArea .CW .textArea > div > div button::after{content: ''; width: 48px; height: 48px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
+    .riderPage .revenueArea .CW .textArea > div > div > div{position: absolute; left: 0;  top: 100%; width: 100%;  z-index: 1; display: none; overflow: hidden;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul{height: 300px; overflow: auto;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
+    .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 5px; background-color: #fa5014;}
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
+    .riderPage .revenueArea .CW > div:last-child{position: relative; width: 260px; margin-left: auto;}
+    .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 0; top: -60px; width: 190px; height: 55px; padding: 15px 20px; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 190px;}
+    .riderPage .revenueArea .CW > div:last-child span{font-size: 43px; font-weight: 700;}
+    .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
+
+    /* 망설이지 바로 시작하세요! */
+    .riderPage .startArea{overflow: hidden; padding: 100px 0;}
+    .riderPage .startArea .CW{position: relative;}
+    .riderPage .startArea .CW .textArea h2{margin-bottom: 20px;}
+    .riderPage .startArea .CW .textArea h2 mark{display: block;}
+    .riderPage .startArea .CW .imgArea{position: relative;}
+    .riderPage .startArea .CW .imgArea img{width: 100%;}
+
+    /* 라이더에게 최적화된 바로고 기능성 굿즈 */
+    .riderPage .goodsArea{margin-bottom: 120px;}
+    .riderPage .goodsArea div h2{width: 195px; margin-bottom: 35px;}
+    .riderPage .goodsArea div ul{display: flex; flex-wrap: wrap; justify-content: space-between; }
+    .riderPage .goodsArea div ul li{width: 47.5%; height: 150px;}
+    .riderPage .goodsArea div ul li img{width: 100%;}
+    .riderPage .goodsArea div ul li:not(:nth-child(2n)){margin-right: 5%;}
+    .riderPage .goodsArea div ul li:not(:nth-last-child(-n + 2)){margin-bottom: 5%;}
+    .riderPage .goodsArea div ul li p{font-size: 24px; line-height: 1.46; font-weight: 700; color: rgba(0, 0, 0, 0.22);}
+    .riderPage .goodsArea div ul li p::before{content: '#';}
+    .riderPage .goodsArea div ul li:not(:first-child){background-repeat: no-repeat; background-position: center; background-size: cover;}
+    .riderPage .goodsArea div ul li:nth-child(2){background-image: url('../images/rider/goods01.png');}
+    .riderPage .goodsArea div ul li:nth-child(3){background-image: url('../images/rider/goods02.png');}
+    .riderPage .goodsArea div ul li:nth-child(4){background-image: url('../images/rider/goods03.png');}
+    .riderPage .goodsArea div ul li:nth-child(5){background-image: url('../images/rider/goods04.png');}
+    .riderPage .goodsArea div ul li:nth-child(6){background-image: url('../images/rider/goods05.png');}
+
+    /* 배너 */
+    .riderPage .bannerArea{background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 80px 0;}
+    .riderPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
+    .riderPage .bannerArea div p{width: 535px; font-size: 18px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
 }

@@ -60,17 +60,17 @@
     /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
     .riderPage .revenueArea{background-color: #f6f6f6;}
     .riderPage .revenueArea .CW{display: flex; justify-content: space-between; align-items: flex-end;}
-    .riderPage .revenueArea .CW > div:first-child small{display: block; margin-bottom: 40px;}
-    .riderPage .revenueArea .CW > div:first-child > div > div{display: inline-block; position: relative;}
-    .riderPage .revenueArea .CW > div:first-child > div > div button{display: flex;  align-items: center; }
-    .riderPage .revenueArea .CW > div:first-child > div > div button::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
-    .riderPage .revenueArea .CW > div:first-child > div > div button::after{content: ''; width: 48px; height: 48px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div{position: absolute; left: 0;  top: 100%; width: 100%;  z-index: 1; display: none; overflow: hidden;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div ul{height: 300px; overflow: auto;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div ul li:hover{background-color: black;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 5px; background-color: #fa5014;}
-    .riderPage .revenueArea .CW > div:first-child > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
+    .riderPage .revenueArea .CW .textArea small{display: block; margin-bottom: 40px;}
+    .riderPage .revenueArea .CW .textArea > div > div{display: inline-block; position: relative;}
+    .riderPage .revenueArea .CW .textArea > div > div button{display: flex;  align-items: center; }
+    .riderPage .revenueArea .CW .textArea > div > div button::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
+    .riderPage .revenueArea .CW .textArea > div > div button::after{content: ''; width: 48px; height: 48px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
+    .riderPage .revenueArea .CW .textArea > div > div > div{position: absolute; left: 0;  top: 100%; width: 100%;  z-index: 1; display: none; overflow: hidden;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul{height: 300px; overflow: auto;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
+    .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
+    .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 5px; background-color: #fa5014;}
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
     .riderPage .revenueArea .CW > div:last-child{position: relative; min-width: 539.34px;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 30px; top: -85px; width: 240px; height: 70px; padding: 15px 30px; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 240px;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 90px; font-weight: 700;}
