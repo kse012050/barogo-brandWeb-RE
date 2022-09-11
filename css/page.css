@@ -151,6 +151,8 @@
 
 
     /* ! 회사소개 */
+    [data-scroll="area"]{overflow: hidden; width: 100%; height: 100vh;}
+    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 200px; padding-top: 190px;}
     .aboutUsPage .makeArea h2{margin-bottom: 60px;}
@@ -172,12 +174,7 @@
     .aboutUsPage .metaArea{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;}
     .aboutUsPage .metaArea span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
 
-
-    [data-scroll="wrap"]{overflow: hidden;}
-    [data-scroll="wrap"].active{overflow: auto; width: calc(100% + 17px); height: 100vh;}
-    [data-scroll="area"]{overflow: hidden; width: 100%; height: 100vh;}
-    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
-
+    /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
     .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
     .aboutUsPage .toDoArea .CW h2{margin-bottom: 30px;}
     .aboutUsPage .toDoArea .CW > p{margin-bottom: 0px;}
@@ -195,18 +192,18 @@
     .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
     .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
-    .aboutUsPage .numberArea .countArea .graphArea{width: 680px; margin-bottom: 100px; position: relative;}
-    .aboutUsPage .numberArea .countArea .graphArea mark{position: absolute; left: 0; top: 60px; font-size: 80px; font-weight: 900;}
-    .aboutUsPage .numberArea .countArea .graphArea mark::after{content: '%';}
-    .aboutUsPage .numberArea .countArea .graphArea img{width: 100%;}
-    .aboutUsPage .numberArea .countArea .graphArea canvas{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
-    .aboutUsPage .numberArea .countArea .yearArea{position: relative;}
-    .aboutUsPage .numberArea .countArea .yearArea h3{position: absolute; top: 70px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
-    .aboutUsPage .numberArea .countArea .yearArea ul{display: flex; position: relative;}
-    .aboutUsPage .numberArea .countArea .yearArea ul li{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
-    .aboutUsPage .numberArea .countArea .yearArea ul li:not(:last-of-type){margin-right: 50px;}
-    .aboutUsPage .numberArea .countArea .yearArea ul li::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 25px;}
-    .aboutUsPage .numberArea .countArea .yearArea ul li p::after{content: '+';}
+    .aboutUsPage .numberArea .CW .countArea .graphArea{width: 680px; margin-bottom: 100px; position: relative;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea mark{position: absolute; left: 0; top: 60px; font-size: 80px; font-weight: 900;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea mark::after{content: '%';}
+    .aboutUsPage .numberArea .CW .countArea .graphArea img{width: 100%;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea canvas{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea{position: relative; padding-bottom: 130px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea h3{position: absolute; bottom: 0px; right: 20px; font-size: 150px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul{display: flex; position: relative;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li{font-size: 46px; font-weight: 700; display: flex; flex-direction: column;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li:not(:last-of-type){margin-right: 50px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li::before{content: attr(title); width: 100%; font-size: 18px; font-weight: 700; color: #666; margin-bottom: 25px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li p::after{content: '+';}
 
 
     /* 바로고가 걸어온길 */
@@ -218,11 +215,10 @@
     .aboutUsPage .roadArea .CW .textArea .yearArea li{font-size: 54px; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
     .aboutUsPage .roadArea .CW .textArea .yearArea li:not(:last-child){margin-bottom: 60px;}
     .aboutUsPage .roadArea .CW .textArea .yearArea li.active{color: black;}
-    .aboutUsPage .roadArea .CW .monthArea{position: relative;}
+    .aboutUsPage .roadArea .CW .monthArea{position: relative; width: 680px;}
     .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 30px; font-weight: 700; margin-bottom: 55px;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 120px;}
-    .aboutUsPage .roadArea .CW .monthArea > ol > li::before{content: attr(title);}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 20px; display: flex; flex-wrap: wrap; align-items: flex-end;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 55px;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li::before{content: attr(title); font-weight: 700; margin-right: 30px;}
@@ -230,7 +226,7 @@
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark::after{content: '*';}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small{font-size: 16px; color: #666; margin-left: 5px;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small::before{content: '*'; color: #fa5014;}
-    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li img{max-width: 636px; margin-top: 50px;} */
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li .imgArea{max-width: 636px; margin-top: 50px;}
 
     /* BAROGO Breand identity */
     .aboutUsPage{margin-bottom: 200px;}
@@ -251,7 +247,6 @@
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/color02.png');}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff; background-image: url('../images/aboutUs/color03.png');}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6; background-image: url('../images/aboutUs/color04.png');}
-    .aboutUsPage .breandArea .CW .colorArea li img{width: 25px; order: 1;}
     .aboutUsPage .breandArea .CW .colorArea li p{font-size: 15px; line-height: 1.33; font-weight: 600;}
     .aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(3) p{color: black;}

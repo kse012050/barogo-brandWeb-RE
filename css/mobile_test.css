@@ -170,4 +170,103 @@
     .foundedPage .bannerArea{background: url('../images/founded/buttom-founded.png') no-repeat center / cover;}
     .foundedPage .bannerArea div{height: 540px; display: flex; align-items: flex-end; padding: 40px 20px; box-sizing: border-box;}
     .foundedPage .bannerArea div p{font-size: 18px; font-weight: 700; line-height: 1.5; color: white;}
+
+
+    /* ! 회사소개 */
+    [data-scroll="area"]{overflow: hidden; height: 100vh;}
+    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
+    /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
+    .aboutUsPage .makeArea{margin-bottom: 120px; padding-top: 145px;}
+    .aboutUsPage .makeArea h2{margin-bottom: 30px;}
+    .aboutUsPage .makeArea > div{background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin-bottom: 40px;}
+    .aboutUsPage .makeArea > div div{height: 495px; padding: 40px 10px; box-sizing: border-box;}
+    .aboutUsPage .makeArea > div div p{font-size: 18px; color: white; line-height: 1.54; }
+    .aboutUsPage .makeArea > p{font-size: 16px; line-height: 1.5; color: #111; text-align: center; max-width: 625px; width: calc(100% - 40px); margin: auto auto;}
+    .aboutUsPage .makeArea > p:not(:last-of-type){margin-bottom: 25px;}
+    .aboutUsPage .makeArea > p:nth-of-type(2){margin-bottom: 80px;}
+    .aboutUsPage .makeArea ul{width: calc(100% - 40px); margin: 0 auto 120px;}
+    .aboutUsPage .makeArea ul li{padding-left: 105px; background-repeat: no-repeat; background-position: left 15px center; background-size: 60px;}
+    .aboutUsPage .makeArea ul li:not(:last-child){margin-bottom: 50px;}
+    .aboutUsPage .makeArea ul li:nth-child(1){background-image: url('../images/aboutUs/platform01.png');}
+    .aboutUsPage .makeArea ul li:nth-child(2){background-image: url('../images/aboutUs/platform02.png');}
+    .aboutUsPage .makeArea ul li:nth-child(3){background-image: url('../images/aboutUs/platform03.png');}
+    .aboutUsPage .makeArea ul li strong{display: block; font-size: 18px; font-weight: 700; margin-bottom: 10px;}
+    .aboutUsPage .makeArea ul li p{font-size: 16px; line-height: 1.5; color: #111;}
+
+    /* META LOGISTIS UNIVERSE */
+    .aboutUsPage .metaArea{width: calc(100% - 20px); margin: 0 auto 120px;}
+    .aboutUsPage .metaArea span{display: block; padding-bottom: 45.9%; background: url('../images/aboutUs/m-typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
+
+    /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
+    .aboutUsPage .toDoArea{position: relative; padding-bottom: 120px;}
+    .aboutUsPage .toDoArea .CW h2{margin-bottom: 20px;}
+    .aboutUsPage .toDoArea .CW > p{margin-bottom: 80px;}
+    .aboutUsPage .toDoArea .CW > div{padding-bottom: 175px; position: relative;}
+    .aboutUsPage .toDoArea .CW > div .imgArea{position: absolute; right: 0; bottom: 0; width: 75%; /* width: 270px; */}
+
+    /* 숫자로 보는 바로고 */
+    .aboutUsPage .numberArea{margin-bottom: 120px;}
+    .aboutUsPage .numberArea .CW .textArea{margin-bottom: 80px;}
+    .aboutUsPage .numberArea .CW .textArea h2{font-size: 20px; font-weight: 700; margin-bottom: 20px;}
+    .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 16px; line-height: 1.5;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea{width: 100%; margin-bottom: 80px; position: relative;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea mark{position: absolute; left: 0; top: 30px; font-size: 48px; font-weight: 900;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea mark::after{content: '%';}
+    .aboutUsPage .numberArea .CW .countArea .graphArea img{width: 100%;}
+    .aboutUsPage .numberArea .CW .countArea .graphArea canvas{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea{position: relative; padding-bottom: 60px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea h3{position: absolute; right: 0; bottom: 0; font-size: 75px; font-weight: 700; color: rgba(0, 0, 0, 0.05);}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul{display: flex; }
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li{font-size: 22px; font-weight: 700; display: flex; flex-direction: column;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li:nth-child(1){width: 90px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li:nth-child(2){width: 115px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li:nth-child(3){width: 115px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li::before{content: attr(title); width: 100%; font-size: 13px; font-weight: 700; color: #666; margin-bottom: 15px;}
+    .aboutUsPage .numberArea .CW .countArea .yearArea ul li p::after{content: '+';}
+
+    /* 바로고가 걸어온길 */
+    .aboutUsPage .roadArea{height: 100vh; }
+    .aboutUsPage .roadArea .CW .textArea h2{font-size: 24px; font-weight: 700; line-height: 1.33; margin-bottom: 20px;}
+    .aboutUsPage .roadArea .CW .textArea p{font-size: 16px; line-height: 1.5; margin-bottom: 80px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea{margin-bottom: 80px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li{font-size: 36px; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li:not(:last-child){margin-bottom: 30px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea li.active{color: black;}
+    .aboutUsPage .roadArea .CW .monthArea{position: relative;}
+    .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 24px; font-weight: 700; margin-bottom: 50px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 80px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 16px; display: flex; flex-wrap: wrap; align-items: flex-end;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 45px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li::before{content: attr(title); font-weight: 700; margin-right: 25px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark{margin: 0 5px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark::after{content: '*';}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small{display: block; font-size: 16px; color: #666; margin-left: 90px; margin-top: 10px;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li small::before{content: '*'; color: #fa5014;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li .imgArea{width: 100%; margin-top: 30px;}
+
+    /* BAROGO Breand identity */
+    .aboutUsPage .breandArea .CW h2{font-size: 24px; font-weight: 700; line-height: 1.33; margin-bottom: 20px;}
+    .aboutUsPage .breandArea .CW div{margin-bottom: 80px;}
+    .aboutUsPage .breandArea .CW div p{font-size: 16px; line-height: 1.5;}
+    .aboutUsPage .breandArea .CW div p:not(:last-of-type){margin-bottom: 25px;}
+    .aboutUsPage .breandArea .CW div + *{display: block; clear: both;}
+    .aboutUsPage .breandArea .CW strong{display: block; font-size: 18px; font-weight: 700; margin-bottom: 30px;}
+    .aboutUsPage .breandArea .CW ul{margin-bottom: 80px;}
+    .aboutUsPage .breandArea .CW .logoArea{padding: 30px 25px; border: 1px solid #fa5014;}
+    .aboutUsPage .breandArea .CW .logoArea li{text-align: center; padding: 10px 40px;  padding: 30px 20px 20px;}
+    .aboutUsPage .breandArea .CW .logoArea li:not(:last-child){border-bottom: 1px solid #fa5014;}
+    .aboutUsPage .breandArea .CW .logoArea li b{display: block; font-size: 15px; font-weight: 700; margin-bottom: 30px;}
+    .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
+    .aboutUsPage .breandArea .CW .colorArea{}
+    .aboutUsPage .breandArea .CW .colorArea li{height: 120px;  padding: 25px; box-sizing: border-box; background-repeat: no-repeat; background-position: right 25px top 25px;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014; background-image: url('../images/aboutUs/m-color01.png');  background-size: 80px;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/m-color02.png');  background-size: 63px;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff; background-image: url('../images/aboutUs/m-color03.png');  background-size: 60px;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6; background-image: url('../images/aboutUs/m-color04.png');  background-size: 107px;}
+    .aboutUsPage .breandArea .CW .colorArea li p{font-size: 12px; line-height: 1.33; font-weight: 600;}
+    .aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
+    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3) p{color: black;}
+    .aboutUsPage .breandArea .CW > a{width: 180px; margin:0 auto;}
+
 }
