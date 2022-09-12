@@ -87,6 +87,8 @@ $(document).ready(function(){
             });
         }   /* 하단 슬라이더 fin */
 
+       
+
 
         $('header div button').click(function(){
             $(this).toggleClass('active');
@@ -308,6 +310,11 @@ $(document).ready(function(){
                 }
             }
 
+            // 푸터 부분 스크롤 막기
+            if($('.scrollArea > div').scrollTop() > 0){
+                return;
+            }
+
             // 풀페이지 이동 넘버 설정
             if(delta > 0 && 0 < idx){
                 nextTarget = $(this).prev();
@@ -322,10 +329,10 @@ $(document).ready(function(){
             if(nextTarget && nextTarget.attr('data-eventAni')){
                 eventAni(nextTarget , delta)
             }
-
-    
+            console.log($(this).scrollTop());
             fullPageAni(fullPageList.eq(idx))
         })
+
         let touchstartX; 
         let touchstartY; 
         let touchendX; 
@@ -392,9 +399,9 @@ $(document).ready(function(){
             fullPageAni(fullPageList.eq(idx))
         })
     
-        function fullPageAni(nextTarge){
-            nextTarge.addClass('active').siblings().removeClass('active');
-            $('html').stop().animate({scrollTop : nextTarge.offset().top} , 500)
+        function fullPageAni(nextTarget){
+            nextTarget.addClass('active').siblings().removeClass('active');
+            $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
         }
 
         $('.topBtn').click(function(){
