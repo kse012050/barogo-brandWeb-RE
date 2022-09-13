@@ -81,20 +81,19 @@
 
     /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
     .riderPage .revenueArea{background-color: #f6f6f6; padding: 105px 0 85px;}
-    .riderPage .revenueArea .CW{}
     .riderPage .revenueArea .CW .textArea{display: flex; flex-direction: column; margin-bottom: 155px;}
     .riderPage .revenueArea .CW .textArea small{display: block; margin-bottom: 40px; order: 1;}
     .riderPage .revenueArea .CW .textArea > div{margin-bottom: 35px;}
     .riderPage .revenueArea .CW .textArea > div > div{display: inline-block; position: relative;}
     .riderPage .revenueArea .CW .textArea > div > div button{display: flex;  align-items: center; }
     .riderPage .revenueArea .CW .textArea > div > div button::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background-color: black;}
-    .riderPage .revenueArea .CW .textArea > div > div button::after{content: ''; width: 48px; height: 48px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
+    .riderPage .revenueArea .CW .textArea > div > div button::after{content: ''; width: 30px; height: 30px; background: url('../images/common/dropdown.png') no-repeat center / cover;}
     .riderPage .revenueArea .CW .textArea > div > div > div{position: absolute; left: 0;  top: 100%; width: 100%;  z-index: 1; display: none; overflow: hidden;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul{height: 300px; overflow: auto;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
-    .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 5px; background-color: #fa5014;}
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar {width: 5px; height: 8px; background-color: #aaa; }
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar-thumb {background: #fa5014;}
     .riderPage .revenueArea .CW > div:last-child{position: relative; width: 260px; margin-left: auto;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 0; top: -60px; width: 190px; height: 55px; padding: 15px 20px; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 190px;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 43px; font-weight: 700;}
@@ -105,8 +104,8 @@
     .riderPage .startArea .CW{position: relative;}
     .riderPage .startArea .CW .textArea h2{margin-bottom: 20px;}
     .riderPage .startArea .CW .textArea h2 mark{display: block;}
-    .riderPage .startArea .CW .imgArea{position: relative;}
-    .riderPage .startArea .CW .imgArea img{width: 100%;}
+    .riderPage .startArea .CW .imgArea{position: relative; height: 213px;}
+    .riderPage .startArea .CW .imgArea img{width: 100%; position: absolute; right: -100%; top: 0; transition: right 0.5s;}
 
     /* 라이더에게 최적화된 바로고 기능성 굿즈 */
     .riderPage .goodsArea{margin-bottom: 120px;}
@@ -134,7 +133,7 @@
     /* 바로고와 함께하는 이유 */
     .foundedPage .reasonArea{margin-bottom: 120px;}
     .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 80px;}
-    .foundedPage .imgArea .foundedSlider{width: 60%; height: 400px; position: relative;}
+    .foundedPage .imgArea .foundedSlider{height: 235px; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 124px; z-index: 5;} 
     .foundedPage .imgArea .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
     .foundedPage .imgArea .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
@@ -142,8 +141,8 @@
     .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide{height: 88px; box-shadow: 0 8px 34px 0 rgb(8 11 21 / 7%); background-color: white; display: flex; justify-content: space-between;}
     .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide img{width: auto; height: 100%;}
     .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div{display: flex; flex-direction: column; justify-content: center; padding-right: 40px; text-align: right;}
-    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div span{margin-bottom: 10px; color: #a2a2a2;}
-    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 17px;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div span{font-size: 12px; margin-bottom: 10px; color: #a2a2a2;}
+    .foundedPage .imgArea .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 14px;}
 
     /* 놀라운 바로고의 성장세 */
     .foundedPage .growthArea{margin-bottom: 120px;}
@@ -268,5 +267,18 @@
     .aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(3) p{color: black;}
     .aboutUsPage .breandArea .CW > a{width: 180px; margin:0 auto;}
+
+
+
+    /* 후원 */
+    .supportArea > div{width: 100%; height: 100%; padding-top: 50px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100%; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+    .supportArea > div div{padding-bottom: 40px;}
+    .supportArea > div div mark{display: block; width: 220px; line-height: 1.36; margin-bottom: 50px;}
+    .supportArea > div div b{display: block; font-size: 14px; font-weight: 700; color: white; margin-bottom: 10px;}
+    .supportArea > div div span{display: block; background-repeat: no-repeat; background-size: cover; background-position: center; height: 0.001px; overflow: hidden; text-indent: -9999px;}
+    .supportArea > div div span:not(:last-of-type){margin-bottom: 20px;}
+    .supportArea > div div span:nth-of-type(1){background-image: url('../images/common/m-supoort01.png'); padding-bottom: 50%;}
+    .supportArea > div div span:nth-of-type(2){background-image: url('../images/common/m-supoort02.png'); padding-bottom: 34%;}
+    .supportArea > div div span:nth-of-type(3){background-image: url('../images/common/m-supoort03.png'); padding-bottom: 3%;}
 
 }

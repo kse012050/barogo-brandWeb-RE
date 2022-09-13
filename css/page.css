@@ -70,7 +70,8 @@
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 40px; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
     .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 5px; background-color: #fa5014;}
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar {width: 5px; height: 8px; background-color: #aaa; }
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar-thumb {background: #fa5014;}
     .riderPage .revenueArea .CW > div:last-child{position: relative; min-width: 539.34px;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 30px; top: -85px; width: 240px; height: 70px; padding: 15px 30px; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 240px;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 90px; font-weight: 700;}

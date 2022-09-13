@@ -143,8 +143,7 @@
     [data-scroll="fullPage"] > *:not(.topBox , .scrollArea){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
-    [data-scroll="fullPage"] > .topBox{position: relative;}
-    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x;}
+    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative;}
     [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 190px;}
     [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px;}
     [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px; height: 750px; background-repeat: no-repeat; text-indent: -9999px;}
@@ -195,14 +194,8 @@
 
     .scrollArea{padding-top: 90px; box-sizing: border-box;}
     .scrollArea > div{overflow: auto; height: 100vh; position: relative;}
-    .scrollArea > div::-webkit-scrollbar {
-        width: 5px;
-        height: 8px;
-        background-color: #aaa; /* 또는 트랙에 추가한다 */
-    }
-    .scrollArea > div::-webkit-scrollbar-thumb {
-        background: #fa5014;
-    }
+    .scrollArea > div::-webkit-scrollbar{width: 5px; height: 8px; background-color: #aaa; }
+    .scrollArea > div::-webkit-scrollbar-thumb {background: #fa5014;}
 
     /* 후원 */
     .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}

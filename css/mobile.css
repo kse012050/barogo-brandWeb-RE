@@ -42,21 +42,21 @@
      /* 해더 */
      header{position: fixed; left: 0; top: 0; width: 100%; padding: 1.875rem 0; z-index: 100; transition-duration: 0.5s; background-color: white; transition-property: padding , box-shadow;}
      header div{display: flex; justify-content: space-between;}
-     header div h1{width: 1.875rem;}
+     header div h1{width: 1.625rem;}
      header div h1 img{width: 100%;}
      header div nav{position: fixed; right: -100%; top: 0; width: 17.938rem; height: 100%; background-color: white; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); transition: right 0.5s;}
      header div nav.active{right: 0;}
      header div nav ul{padding: 3.750rem 1.875rem;}
      header div nav ul li:not(:last-child){margin-bottom: 3.125rem;}
      header div nav ul li a{font-weight: 700; display: block;}
-     header div button{width: 1.875rem; padding: 0.313rem 0.250rem; box-sizing: border-box; position: relative; z-index: 10; transition: padding 0.5s;}
+     header div button{width: 1.625rem; padding: 0.313rem 0.250rem; box-sizing: border-box; position: relative; z-index: 10; transition: padding 0.5s;}
      header div button span{display: block; height: 0.188rem; background-color: black; transition-duration: 0.5s; transition-property: opacity , transform;}
      header div button span:nth-child(2){width: 0.875rem; margin-left: auto;}
-     header div button span:not(:last-child){margin-bottom: 0.313rem;}
+     header div button span:not(:last-child){margin-bottom: 0.250rem;}
      header div button.active{padding: 0;}
-     header div button.active span:nth-child(1){transform: translateY(0.500em) rotate(45deg);}
+     header div button.active span:nth-child(1){transform: translateY(0.438rem) rotate(45deg);}
      header div button.active span:nth-child(2){opacity: 0;}
-     header div button.active span:nth-child(3){transform: translateY(-0.500em) rotate(-45deg);}
+     header div button.active span:nth-child(3){transform: translateY(-0.438rem) rotate(-45deg);}
      .inquiryPage header div{flex-direction: column; align-items: flex-start;}
      .inquiryPage header div h1{margin-bottom: 2.500rem;}
      .inquiryPage header div nav{display: none;}

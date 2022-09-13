@@ -130,8 +130,8 @@
 
 
     /* 메인페이지 공통 */
-    [data-scroll="fullPage"] > *:not(footer){height: 100vh; box-sizing: border-box;}
-    [data-scroll="fullPage"] > *:not(.topBox , footer){display: flex; justify-content: center; align-items: center; padding-top: 5.625rem; box-sizing: border-box;}
+    [data-scroll="fullPage"] > *:not(.scrollArea){height: 100vh; box-sizing: border-box;}
+    [data-scroll="fullPage"] > *:not(.topBox , .scrollArea){display: flex; justify-content: center; align-items: center; padding-top: 5.625rem; box-sizing: border-box;}
 
     /* 메인페이지 상단 */
     [data-scroll="fullPage"] > .topBox{overflow: hidden; position: relative; background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; background-size: 120rem;}
@@ -176,7 +176,7 @@
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
     /* 후원 */
-    .supportArea > div{width: 100%; height: 100%; display: flex; align-items: center; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 11.875rem; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+    .supportArea > div{width: 100%; height: 100%; padding-top: 6.875rem; display: flex; align-items: center; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100%; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
     .supportArea > div div{padding-bottom: 2.500rem;}
     .supportArea > div div mark{display: block; padding-bottom: 2.187rem; margin-bottom: 2.187rem;}
     .supportArea > div div b{display: block; font-weight: 700; color: white; margin-bottom: 1.875rem;}
@@ -185,8 +185,17 @@
     .supportArea > div div span:nth-of-type(1){background-image: url('../images/common/supoort01.png'); padding-bottom: 15.9322%;}
     .supportArea > div div span:nth-of-type(2){background-image: url('../images/common/supoort02.png'); padding-bottom: 12.2881%;}
     .supportArea > div div span:nth-of-type(3){background-image: url('../images/common/supoort03.png'); padding-bottom: 1.6949%;}
-    @media screen and (min-width : 1100px) {
-        .supportArea > div{align-items: flex-end;}
+  
+
+    .scrollArea{padding-top: 5.625rem; box-sizing: border-box;}
+    .scrollArea > div{overflow: auto; height: 100vh; position: relative;}
+    .scrollArea > div::-webkit-scrollbar {
+        width: 0.313rem;
+        height: 0.500rem;
+        background-color: #aaa; 
+    }
+    .scrollArea > div::-webkit-scrollbar-thumb {
+        background: #fa5014;
     }
 
 
@@ -332,7 +341,8 @@
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 2.500rem; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
     .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 0.313rem; background-color: #fa5014;}
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul{width: calc(100% + 17px);}
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar {width: 0.313rem; height: 0.500rem; background-color: #aaa; }
+    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar-thumb {background: #fa5014;}
     .riderPage .revenueArea .CW > div:last-child{position: relative; min-width: 33.709rem;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 1.875rem; top: -5.313rem; width: 15.000rem; height: 4.375rem; padding: 0.938rem 1.875rem; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 15.000rem;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 5.625rem; font-weight: 700;}

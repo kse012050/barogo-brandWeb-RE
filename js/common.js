@@ -1,3 +1,4 @@
+let responsiveWidth = 768;
 $(document).ready(function(){
     // 공통
     common()
@@ -67,7 +68,9 @@ $(document).ready(function(){
 
         // 반응형 풀페이지
         function resizeFull(){
-            $(window).width() < 769 ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
+            if($('[data-scroll="fullPage"]').length > 0){
+                $(window).width() < 769 ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
+            }
         }
         
         // 하단 슬라이더
@@ -129,8 +132,6 @@ $(document).ready(function(){
             e.stopPropagation();
             $('[data-click="drop"] + div').stop().slideUp();
             $(this).next('div').stop().slideToggle();
-            dropTotitleHeight = $(this).next('div').find('li').height() * $(this).next('div').find('li').length;
-            $(this).next('div').children('.progressBar').css('height',(dropHeight / dropTotitleHeight * 100) + '%')
         })
         // 목록 클릭시 값 변경
         $('[data-click="drop"] + div li').click(function(e){
@@ -157,6 +158,15 @@ $(document).ready(function(){
             spaceBetween: 12,
             autoplay: {
                 delay: 1000,
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 5,
+                }
             },
             loop: true,
         });
@@ -293,11 +303,10 @@ $(document).ready(function(){
     // 풀페이지
     function fullPage(){
         let fullPageList = $('[data-scroll="fullPage"] > *');
+        let touchList = $('[data-scroll="fullPage"] [data-scrollAni="opacity"]');
         let idx = 0;
         fullPageList.on('mousewheel',function(e){
-            if($(window).width() < 768){
-                return;
-            }
+            if($(window).width() < 769) return;
             if($('html').is(':animated')) return;
             let delta = e.originalEvent.wheelDelta;
             let targetArea = $(this);
@@ -329,7 +338,7 @@ $(document).ready(function(){
             if(nextTarget && nextTarget.attr('data-eventAni')){
                 eventAni(nextTarget , delta)
             }
-            console.log($(this).scrollTop());
+            
             fullPageAni(fullPageList.eq(idx))
         })
 
@@ -338,21 +347,22 @@ $(document).ready(function(){
         let touchendX; 
         let touchendY; 
 
+        
         fullPageList.on('touchstart',function(e){
+            if($(window).width() < 769) return;
             touchstartX = e.touches[0].clientX;
             touchstartY = e.touches[0].clientY;
         })
-
+        
         fullPageList.on('touchend',function(e){
+            if($(window).width() < 769) return;
             touchendX = e.changedTouches[0].clientX;
             touchendY = e.changedTouches[0].clientY;
+            if($('html').is(':animated')) return;
             if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
                 return;
             }
-
-            if($('html').is(':animated')) return;
             let delta = -(touchstartY - touchendY);
-
             let targetArea = $(this);
             let nextTarget;
             
@@ -363,30 +373,18 @@ $(document).ready(function(){
                 }
             }
 
+            // 푸터 부분 스크롤 막기
+            if($('.scrollArea > div').scrollTop() > 0){
+                return;
+            }
+
             // 풀페이지 이동 넘버 설정
             if(delta > 0 && 0 < idx){
                 nextTarget = $(this).prev();
                 idx--;
-                if(nextTarget.hasClass('sliderBox')){
-                    $('.fixedLink').fadeIn()
-                    $('.topBtn').removeAttr('style')
-                }
             }else if(delta < 0 && idx < fullPageList.length - 1){
                 nextTarget = $(this).next();
                 idx++;
-                if(idx == 1){
-                    $('.topBtn').addClass('active')
-                }
-
-                if(nextTarget.hasClass('supportArea')){
-                    $('.fixedLink').fadeOut()
-                    $('.topBtn').fadeOut()
-                }
-            }
-            if(nextTarget.prop('tagName') == 'FOOTER'){
-                $('[data-scroll="fullPage"]').animate({top : -($(window).height() * (idx - 1) + $('footer').height())})
-            }else{
-                $('[data-scroll="fullPage"]').animate({top : -($(window).height() * idx)})
             }
      
 
@@ -394,15 +392,37 @@ $(document).ready(function(){
             if(nextTarget && nextTarget.attr('data-eventAni')){
                 eventAni(nextTarget , delta)
             }
-
-    
+            
             fullPageAni(fullPageList.eq(idx))
+        })
+
+
+        touchList.on('touchstart',function(e){
+            if($(window).width() > 769) return;
+            touchstartX = e.touches[0].clientX;
+            touchstartY = e.touches[0].clientY;
+        })
+
+        touchList.on('touchend',function(e){
+            if($(window).width() > 769) return;
+            touchendX = e.changedTouches[0].clientX;
+            touchendY = e.changedTouches[0].clientY;
+            if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
+                return;
+            }
+
+            let delta = -(touchstartX - touchendX);
+            let targetArea = $(this);
+            
+            scrollAni(targetArea , delta)
+    
         })
     
         function fullPageAni(nextTarget){
             nextTarget.addClass('active').siblings().removeClass('active');
             $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
         }
+
 
         $('.topBtn').click(function(){
             $('[data-scroll="fullPage"]').animate({top : -($(window).height() * idx)})
@@ -458,7 +478,11 @@ $(document).ready(function(){
     // 투명도 효과
     function opacityAni(list , idx , progress){
         if(progress.find('span').is(':animated')) return;
-        progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
+        if($(window).width() > responsiveWidth){
+            progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
+        }else{
+            progress.find('span').animate({'left':progress.width()  / list[0].length * idx} , 500 , 'linear')
+        }
         list.map((t)=>{
             t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
         })
