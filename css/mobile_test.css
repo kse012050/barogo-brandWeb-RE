@@ -172,8 +172,8 @@
 
 
     /* ! 회사소개 */
-    [data-scroll="area"]{overflow: hidden; height: 100vh;}
-    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
+    /* [data-scroll="area"]{overflow: hidden; height: 100vh;}
+    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; } */
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 120px; padding-top: 145px;}
     .aboutUsPage .makeArea h2{margin-bottom: 30px;}
@@ -227,14 +227,15 @@
     .aboutUsPage .roadArea{height: 100vh; }
     .aboutUsPage .roadArea .CW .textArea h2{font-size: 24px; font-weight: 700; line-height: 1.33; margin-bottom: 20px;}
     .aboutUsPage .roadArea .CW .textArea p{font-size: 16px; line-height: 1.5; margin-bottom: 80px;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea{margin-bottom: 80px;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li{font-size: 36px; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li:not(:last-child){margin-bottom: 30px;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li.active{color: black;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea{margin-bottom: 80px; overflow: auto;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol{display: inline-block; width: 683px; padding-bottom: 10px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol::after{content: ''; display: block; clear: both;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol li{float: left; font-size: 36px; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer; margin: 0 15px;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol li.active{color: black;}
     .aboutUsPage .roadArea .CW .monthArea{position: relative;}
-    .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
+    .aboutUsPage .roadArea .CW .monthArea > ol{position: relative;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:first-child){display: none; /* position: absolute; left: 0; top: 0; width: 100%; */}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 24px; font-weight: 700; margin-bottom: 50px;}
-    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 80px;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 16px; display: flex; flex-wrap: wrap; align-items: flex-end;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 45px;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li::before{content: attr(title); font-weight: 700; margin-right: 25px;}

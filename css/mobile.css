@@ -36,7 +36,7 @@
     .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
     
     /* 탑 버튼 */
-    .topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
+    .topBtn{ display: none; position: fixed; left: 30px; bottom: 100px; width: 30px; height: 30px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
     .topBtn.active{display: block;}
 
      /* 해더 */

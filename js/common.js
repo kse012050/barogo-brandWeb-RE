@@ -28,7 +28,7 @@ $(document).ready(function(){
         });
 
         // 스크롤 공통
-        !$('.aboutUsPage').length ? scrollHeader($(window)) : scrollHeader($('main[data-scroll="area"]').find('[data-scroll="area"]').eq(1));
+        ($('.aboutUsPage').length > 0 && $(window).width() > responsiveWidth) ? scrollHeader($('main[data-scroll="area"]').find('[data-scroll="area"]').eq(1)) : scrollHeader($(window));
      
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
@@ -57,7 +57,8 @@ $(document).ready(function(){
             selector.scroll(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
-                ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
+                ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
+                // ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
             })
         }   /* 스크롤시 해더 fin */
 
@@ -68,9 +69,10 @@ $(document).ready(function(){
 
         // 반응형 풀페이지
         function resizeFull(){
-            if($('[data-scroll="fullPage"]').length > 0){
+            if($('[data-scroll="fullPage"]').length > 0 || $('.aboutUsPage').length > 0){
                 $(window).width() < 769 ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
             }
+            
         }
         
         // 하단 슬라이더
@@ -175,12 +177,15 @@ $(document).ready(function(){
 
     // 회사소개 전용
     function aboutUsPage(){
-        $('body').css('overflow','hidden');
         $('[data-scroll="area"]').each(function(){
             $(this).on('mousewheel',function(e){
+                if($(window).width() < responsiveWidth){return}
                 e.stopPropagation();
                 let delta = e.originalEvent.wheelDelta;
                 let totalHeight = 0;
+                let targetLi = $(this).children('[data-scrollAni]').find('[data-scroll="target"]').eq(0).children('li')
+                let idx;
+                
                 $(this).children().each(function(){
                     totalHeight += $(this).outerHeight(true);
                 })
@@ -188,18 +193,26 @@ $(document).ready(function(){
                 if($(this).parent().scrollTop() == 0 && Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta > 0){
                     if(scrollAni($(this).children('[data-scrollAni]') , delta)){
                         $(this).parent().removeClass('active');
-                    }else{
-                        $(this).addClass('active');
-                        $(this).parent().removeClass('active');
+                        targetLi.each(function(i){
+                            if($(this).hasClass('active')){
+                                idx = i;
+                            }
+                        })
+                        if(idx == 0){
+                            $(this).addClass('active');
+                        }
                     }
-                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop()){
+                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta < 0){
                     if(scrollAni($(this).children('[data-scrollAni]') , delta)){
                         $(this).removeClass('active');
-                    }else if(delta > 0){
-                        $(this).addClass('active');
-                        $(this).parent().removeClass('active');
-                    }else if(delta < 0){
-                        $(this).parent().addClass('active');
+                        targetLi.each(function(i){
+                            if($(this).hasClass('active')){
+                                idx = i;
+                            }
+                        })
+                        if(idx == (targetLi.length - 1)){
+                            $(this).parent().addClass('active');
+                        }
                     }
                 }
             })
@@ -210,20 +223,21 @@ $(document).ready(function(){
             let touchendY; 
 
             $(this).on('touchstart',function(e){
+                if($(window).width() < responsiveWidth){return}
                 e.stopPropagation();
                 touchstartX = e.touches[0].clientX;
                 touchstartY = e.touches[0].clientY;
             })
 
             $(this).on('touchend',function(e){
+                if($(window).width() < responsiveWidth){return}
                 e.stopPropagation();
                 touchendX = e.changedTouches[0].clientX;
                 touchendY = e.changedTouches[0].clientY;
-                if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
-                    return;
-                }
-                let delta = -(touchstartY - touchendY);
                 let totalHeight = 0;
+                let targetLi = $(this).children('[data-scrollAni]').find('[data-scroll="target"]').eq(0).children('li')
+                let idx;
+                let delta = -(touchstartY - touchendY);
                 $(this).children().each(function(){
                     totalHeight += $(this).outerHeight(true);
                 })
@@ -231,18 +245,26 @@ $(document).ready(function(){
                 if($(this).parent().scrollTop() == 0 && Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta > 0){
                     if(scrollAni($(this).children('[data-scrollAni]') , delta)){
                         $(this).parent().removeClass('active');
-                    }else{
-                        $(this).addClass('active');
-                        $(this).parent().removeClass('active');
+                        targetLi.each(function(i){
+                            if($(this).hasClass('active')){
+                                idx = i;
+                            }
+                        })
+                        if(idx == 0){
+                            $(this).addClass('active');
+                        }
                     }
-                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop()){
+                }else if(Math.floor(totalHeight - $(this).height()) <= $(this).scrollTop() && delta < 0){
                     if(scrollAni($(this).children('[data-scrollAni]') , delta)){
                         $(this).removeClass('active');
-                    }else if(delta > 0){
-                        $(this).addClass('active');
-                        $(this).parent().removeClass('active');
-                    }else if(delta < 0){
-                        $(this).parent().addClass('active');
+                        targetLi.each(function(i){
+                            if($(this).hasClass('active')){
+                                idx = i;
+                            }
+                        })
+                        if(idx == (targetLi.length - 1)){
+                            $(this).parent().addClass('active');
+                        }
                     }
                 }
             })
@@ -262,40 +284,62 @@ $(document).ready(function(){
             }
         })  /* 그래프 fin */
 
-        
-        $('.roadArea .yearArea li').click(function(){
+        // 연혁 클릭
+        $('.roadArea .yearArea ol li').click(function(){
             let target = $('.roadArea').find('[data-scroll="target"]');
             let targetList =[]
             if(!target.length){return}
             target.each(function(){
                 targetList.push($(this).children('li'));
             })
-            
-            targetList[0].each(function(i){
-                targetList[0].eq(i).hasClass('active') && (idx = i);
-            })
-            $(this).addClass('active').siblings().removeClass('active');
-            moveAni(targetList ,target, $(this).index())
-        })
+            if($(window).width() > responsiveWidth){
+                moveAni(targetList ,target, $(this).index())
+                $('[data-scroll="area"]').removeClass('active');
+                if($(this).index() == 0){
+                    $('[data-scroll="area"]').eq(1).addClass('active');
+                }else if($(this).index() == ($('.roadArea .yearArea ol li').length - 1)){
+                    $('[data-scroll="area"]').eq(0).addClass('active');
+                }
+            }else{
+                $(this).addClass('active').siblings().removeClass('active')
+                targetList[1].hide();
+                targetList[1].eq($(this).index()).fadeIn();
+            }
+        }) /* // 연혁 클릭 fin */
+
+        // 모바일 스크롤 그래프
+        $(window).scroll(function(){
+            if($(window).width() < responsiveWidth && $(window).scrollTop() > $('.numberArea').offset().top && graphBreak){
+                graphAni();
+                setTimeout(function(){
+                    eventAni(graphArea)
+                },1000)
+                graphBreak = !graphBreak;
+            }
+        })  /* 모바일 스크롤 그래프 fin */
 
         $('.topBtn').click(function(){
-            $('[data-scroll="area"]').removeClass('active');
-            $('[data-scroll="area"]').eq(-1).addClass('active');
-            $('[data-scroll="area"]').animate({scrollTop : 0});
-            $('main[data-scroll="area"]').find('[data-scroll="target"]').each(function(){
-                $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
-            })
-            $('main[data-scroll="area"]').find('[data-scrollAni]').each(function(){
-                scrollAni($(this) , 120)
-                let target = $('.roadArea').find('[data-scroll="target"]');
-                let targetList =[]
-                if(!target.length){return}
-                target.each(function(){
-                    targetList.push($(this).children('li'));
+            if($(window).width() > responsiveWidth){
+                $('[data-scroll="area"]').removeClass('active');
+                $('[data-scroll="area"]').eq(-1).addClass('active');
+                $('[data-scroll="area"]').animate({scrollTop : 0});
+                $('main[data-scroll="area"]').find('[data-scroll="target"]').each(function(){
+                    $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
                 })
-                $('.roadArea .yearArea li').eq(0).addClass('active').siblings().removeClass('active');
-                moveAni(targetList ,target, 0)
-            })
+                $('main[data-scroll="area"]').find('[data-scrollAni]').each(function(){
+                    scrollAni($(this) , 120)
+                    let target = $('.roadArea').find('[data-scroll="target"]');
+                    let targetList =[]
+                    if(!target.length){return}
+                    target.each(function(){
+                        targetList.push($(this).children('li'));
+                    })
+                    $('.roadArea .yearArea li').eq(0).addClass('active').siblings().removeClass('active');
+                    moveAni(targetList ,target, 0)
+                })
+            }else{
+                $('html').animate({scrollTop : 0});
+            }
         })
     }   /* // 회사소개 전용 fin */
     
@@ -396,7 +440,7 @@ $(document).ready(function(){
             fullPageAni(fullPageList.eq(idx))
         })
 
-
+        // 모바일
         touchList.on('touchstart',function(e){
             if($(window).width() > 769) return;
             touchstartX = e.touches[0].clientX;
@@ -425,7 +469,7 @@ $(document).ready(function(){
 
 
         $('.topBtn').click(function(){
-            $('[data-scroll="fullPage"]').animate({top : -($(window).height() * idx)})
+            $('html').animate({scrollTop : 0})
             idx = 0;
             fullPageList.find('[data-scroll="target"]').each(function(){
                 $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
@@ -507,7 +551,11 @@ $(document).ready(function(){
     function moveAni(targetList , target , idx){
         targetList[0].eq(idx).addClass('active').siblings().removeClass('active');
         targetList[1].eq(idx).addClass('active').siblings().removeClass('active');
-        target.eq(1).stop().animate({top : -(targetList[1].eq(idx).position().top)} , 500); 
+        if($(window).width() > responsiveWidth){
+            target.eq(1).stop().animate({top : -(targetList[1].eq(idx).position().top)} , 500); 
+        }else{
+            target.eq(1).eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
+        }
     }
 
     function eventAni(t){

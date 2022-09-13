@@ -484,9 +484,9 @@
     .aboutUsPage .roadArea .CW .textArea{max-width: 22.188rem;}
     .aboutUsPage .roadArea .CW .textArea h2{font-size: 2.625rem; font-weight: 700; margin-bottom: 1.875rem;}
     .aboutUsPage .roadArea .CW .textArea p{font-size: 1.250rem; line-height: 1.5; margin-bottom: 5.000rem;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li{font-size: 3.375rem; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li:not(:last-child){margin-bottom: 3.750rem;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea li.active{color: black;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol li{font-size: 3.375rem; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol li:not(:last-child){margin-bottom: 3.750rem;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea ol li.active{color: black;}
     .aboutUsPage .roadArea .CW .monthArea{position: relative; width: 42.500rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 1.875rem; font-weight: 700; margin-bottom: 3.438rem;}
