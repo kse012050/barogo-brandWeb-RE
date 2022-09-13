@@ -32,7 +32,7 @@ $(document).ready(function(){
      
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
-
+  
 
         /* ! 함수 생성 */
         // 인트로
@@ -267,6 +267,29 @@ $(document).ready(function(){
                         }
                     }
                 }
+            })
+
+            let touchList = $('.aboutUsPage [data-scrollAni="opacity"]');
+            // 모바일
+            touchList.on('touchstart',function(e){
+                if($(window).width() > responsiveWidth) return;
+                touchstartX = e.touches[0].clientX;
+                touchstartY = e.touches[0].clientY;
+            })
+
+            touchList.on('touchend',function(e){
+                if($(window).width() > responsiveWidth) return;
+                touchendX = e.changedTouches[0].clientX;
+                touchendY = e.changedTouches[0].clientY;
+                if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
+                    return;
+                }
+
+                let delta = -(touchstartX - touchendX);
+                let targetArea = $(this);
+                
+                scrollAni(targetArea , delta)
+        
             })
         })
 
@@ -528,7 +551,8 @@ $(document).ready(function(){
             progress.find('span').animate({'left':progress.width()  / list[0].length * idx} , 500 , 'linear')
         }
         list.map((t)=>{
-            t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
+            t.eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().css('opacity',0).removeClass('active');
+            // t.eq(idx).stop().fadeIn().addClass('active').siblings().hide().removeClass('active');
         })
     } // 투명도 효과 fin
     

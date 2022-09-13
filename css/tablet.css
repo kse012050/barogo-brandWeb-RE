@@ -188,7 +188,7 @@
   
 
     .scrollArea{padding-top: 5.625rem; box-sizing: border-box;}
-    .scrollArea > div{overflow: auto; height: 100vh; position: relative;}
+    .scrollArea > div{overflow: auto; height: calc(100vh - 5.625rem); position: relative;}
     .scrollArea > div::-webkit-scrollbar {
         width: 0.313rem;
         height: 0.500rem;
@@ -275,6 +275,8 @@
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
     .deliveryPage .qualitativeArea .CW div h2{margin-bottom: 6.250rem;}
     .deliveryPage .qualitativeArea .CW div h2 mark{display: block;}
+    .deliveryPage .qualitativeArea .CW div div ul li div{display: flex; gap: 0.625rem; margin-top: 3.125rem;}
+    .deliveryPage .qualitativeArea .CW div div ul li div a{white-space: nowrap;}
     .deliveryPage .qualitativeArea .CW > ul{width: 49.15%;}
     .deliveryPage .qualitativeArea .CW > ul li{width: 100%;}
     .deliveryPage .qualitativeArea .CW > ul li img{width: 100%;}

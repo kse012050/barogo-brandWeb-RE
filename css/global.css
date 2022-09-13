@@ -193,12 +193,12 @@
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
     .scrollArea{padding-top: 90px; box-sizing: border-box;}
-    .scrollArea > div{overflow: auto; height: 100vh; position: relative;}
+    .scrollArea > div{overflow: auto; height: calc(100vh - 90px); position: relative;}
     .scrollArea > div::-webkit-scrollbar{width: 5px; height: 8px; background-color: #aaa; }
     .scrollArea > div::-webkit-scrollbar-thumb {background: #fa5014;}
 
     /* 후원 */
-    .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
+    .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014; box-sizing: border-box;}
     .supportArea > div::after{content: ''; position: absolute; left: 50%; top: 180px; width: 100%; min-width: 1920px;  transform: translateX(-50%); height: 62px; background: url('../images/common/footer_line.png') no-repeat center center / 100% 62px;}
     .supportArea > div div{padding-bottom: 40px;}
     .supportArea > div div mark{display: block; margin-bottom: 70px;}
