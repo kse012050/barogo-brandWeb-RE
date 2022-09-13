@@ -1,4 +1,4 @@
-let responsiveWidth = 768;
+let responsiveWidth = 767;
 $(document).ready(function(){
     // 공통
     common()
@@ -70,7 +70,7 @@ $(document).ready(function(){
         // 반응형 풀페이지
         function resizeFull(){
             if($('[data-scroll="fullPage"]').length > 0 || $('.aboutUsPage').length > 0){
-                $(window).width() < 769 ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
+                $(window).width() < responsiveWidth ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
             }
             
         }
@@ -101,7 +101,7 @@ $(document).ready(function(){
         })
         // 푸터 메뉴 클릭
         $('footer .topArea div .linkArea > li b').click(function(){
-            if($(window).width() < 600){
+            if($(window).width() < responsiveWidth){
                 $(this).toggleClass('active')
                 $(this).next().stop().slideToggle();
             }
@@ -350,7 +350,7 @@ $(document).ready(function(){
         let touchList = $('[data-scroll="fullPage"] [data-scrollAni="opacity"]');
         let idx = 0;
         fullPageList.on('mousewheel',function(e){
-            if($(window).width() < 769) return;
+            if($(window).width() < responsiveWidth) return;
             if($('html').is(':animated')) return;
             let delta = e.originalEvent.wheelDelta;
             let targetArea = $(this);
@@ -393,13 +393,13 @@ $(document).ready(function(){
 
         
         fullPageList.on('touchstart',function(e){
-            if($(window).width() < 769) return;
+            if($(window).width() < responsiveWidth) return;
             touchstartX = e.touches[0].clientX;
             touchstartY = e.touches[0].clientY;
         })
         
         fullPageList.on('touchend',function(e){
-            if($(window).width() < 769) return;
+            if($(window).width() < responsiveWidth) return;
             touchendX = e.changedTouches[0].clientX;
             touchendY = e.changedTouches[0].clientY;
             if($('html').is(':animated')) return;
@@ -442,13 +442,13 @@ $(document).ready(function(){
 
         // 모바일
         touchList.on('touchstart',function(e){
-            if($(window).width() > 769) return;
+            if($(window).width() > responsiveWidth) return;
             touchstartX = e.touches[0].clientX;
             touchstartY = e.touches[0].clientY;
         })
 
         touchList.on('touchend',function(e){
-            if($(window).width() > 769) return;
+            if($(window).width() > responsiveWidth) return;
             touchendX = e.changedTouches[0].clientX;
             touchendY = e.changedTouches[0].clientY;
             if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){

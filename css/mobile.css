@@ -22,12 +22,12 @@
     /* 버튼 공통*/
     /* BTN (button) 배경이 들어가는 기본 버튼 */
     [class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700;}
-    .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none;}
-    .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
-    input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
+    .BTN-arrow{ color: white; max-width: 16.688rem; line-height: 4.500rem; font-size: 1.250rem;  padding:0 2.500rem; background-color: #fa5014; border: none;}
+    .BTN-arrow::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
+    input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
-    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box;}
-    [class |= "BBTN"]::after{content: ''; width: 20px; height: 20px; margin-left: 10px; background-repeat: no-repeat; background-position: center; background-size: cover;}
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 14.063rem; line-height: 3.875rem; font-size: 1.125rem; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 1.875rem; box-sizing: border-box;}
+    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
     .BBTN-download::after{background-image: url('../images/common/download.png');}
@@ -36,7 +36,7 @@
     .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
     
     /* 탑 버튼 */
-    .topBtn{ display: none; position: fixed; left: 30px; bottom: 100px; width: 30px; height: 30px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
+    .topBtn{ display: none; position: fixed; left: 1.875rem; bottom: 6.250rem; width: 1.875rem; height: 1.875rem; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
     .topBtn.active{display: block;}
 
      /* 해더 */
@@ -66,7 +66,7 @@
      .inquiryPage header.active div{display: flex; flex-direction: row; justify-content: flex-start; align-items: center;}
      .inquiryPage header.active div > p{display: block;}
      
-     header.active{padding: 1.250rem 0; box-shadow: 0 0.188rem 0.438rem 0 rgba(0, 0, 0, 0.1)}
+     header.active{padding: /* 1.250rem */1.250rem 0; box-shadow: 0 0.188rem 0.438rem 0 rgba(0, 0, 0, 0.1)}
      .inquiryPage header.active h1{display: none;}
 
 
