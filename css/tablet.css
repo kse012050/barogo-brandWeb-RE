@@ -16,6 +16,8 @@
     mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
     mark::before {content: attr('title');}
 
+    .hiddenText{height: 0.001px; overflow: hidden;}
+
     br.mobile{display: none;}
 
     /* 버튼 공통*/
@@ -273,6 +275,27 @@
     .boardPage section .pageArea ol li:not(:last-child){margin-right: 1.625rem;}
     .boardPage section .pageArea ol li a{font-size: 1.125rem; font-weight: 700; color: #d4d4d4;}
     .boardPage section .pageArea ol li:is(.active, :hover) a{color: black; text-decoration: underline;}
+
+
+    /* 게시판 상세 페이지 공통 */
+    .detailPage section{padding-top: 14.063rem; margin-bottom: 7.500rem;}
+    .detailPage section .titleArea{padding: 2.500rem 0; border-top: 0.250rem solid black;}
+    .detailPage section .titleArea mark{display: block; font-size: 1.000rem; font-weight: 700; margin-bottom: 0.625rem;}
+    .detailPage section .titleArea h3{font-size: 1.375rem; font-weight: 1.45; font-weight: 700; margin-bottom: 0.938rem;}
+    .detailPage section .titleArea time{display: block; font-size: 1.000rem; font-weight: 400; color: #666666;}
+    .detailPage section .contentArea{font-size: 1.000rem; line-height: 1.5; height: 14.063rem; padding: 2.500rem 0; border-width: 1px 0; border-style: solid; border-color: #d4d4d4; box-sizing: border-box;}
+    .detailPage section .fileArea{padding: 2.500rem 0;}
+    .detailPage section .fileArea .textArea{display: flex; font-size: 1.000rem;}
+    .detailPage section .fileArea .textArea::before{content: attr(title); margin-right: 1.563rem;}
+    .detailPage section .fileArea .textArea li:not(:last-child){margin-right: 0.938rem;}
+    .detailPage section .fileArea .textArea li a{font-weight: 700; text-decoration: underline;}
+    .detailPage section .fileArea .imgArea{display: flex; margin-top: 1.875rem;}
+    .detailPage section .fileArea .imgArea li{width: 18.5%; position: relative;}
+    .detailPage section .fileArea .imgArea li:not(:last-child){ margin-right: 1.875%;}
+    .detailPage section .fileArea .imgArea li a{width: 100%; padding-bottom: 100%; background-repeat: no-repeat; background-position: center; background-size: cover; height: 0.01px; text-indent: -9999px;}
+    .detailPage section .fileArea .imgArea li a::after{content: ''; width: 3.750rem; height: 3.750rem; border-radius: 100%; background:rgba(0, 0, 0, 0.5) url('../images/detail/download.png') no-repeat center / 1.875rem; opacity: 0; transition: opacity 0.5s; position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%);}
+    .detailPage section .fileArea .imgArea li a:hover::after{opacity: 1;}
+    .detailPage section > a{display: block; width: 6.875rem; line-height: 2.500rem; font-size: 0.875rem; font-weight: 500; text-align: center; border: 1px solid #d4d4d4; margin: 3.125rem auto 0;}
 
 
     /* ! 배달대행 */
@@ -550,4 +573,5 @@
     .inquiryPage.finArea section h2{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.250rem; padding-top: 8.125rem; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 8.375rem;}
     .inquiryPage.finArea section p{font-size: 1.250rem; line-height: 1.5; margin-bottom: 4.063rem;}
     .inquiryPage.finArea section a:not([class]){font-size: 1.125rem; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 8.125rem;}
+
 }

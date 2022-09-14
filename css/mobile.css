@@ -18,6 +18,8 @@
     mark::before{ clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;}
     mark::before {content: attr('title');}
 
+    .hiddenText{height: 0.001px; overflow: hidden;}
+
     br.pc{display: none;}
 
     /* 버튼 공통*/
@@ -233,6 +235,30 @@
     .boardPage section.disclosureArea .boardArea li{flex-direction: column; align-items: flex-start;}
     .boardPage section.disclosureArea .boardArea li div{margin-bottom: 1.250rem;}
   
+
+    /* 게시판 상세 페이지 공통 */
+    .detailPage section{padding: 6.875rem 0 5.000rem;}
+    .detailPage section .titleArea{padding: 1.875rem 0; border-top: 0.250rem solid black;}
+    .detailPage section .titleArea mark{display: block; font-size: 1.000rem; font-weight: 700; margin-bottom: 0.625rem;}
+    .detailPage section .titleArea h3{font-size: 1.875rem; font-weight: 1.45; font-weight: 700; margin-bottom: 0.938rem;}
+    .detailPage section .titleArea time{display: block; font-size: 1.000rem; font-weight: 400; color: #666666;}
+    .detailPage section .contentArea{font-size: 1.000rem; line-height: 1.5; height: 14.063rem; padding: 1.875rem 0; border-width: 1px 0; border-style: solid; border-color: #d4d4d4; box-sizing: border-box;}
+    .detailPage section .fileArea{padding: 1.875rem 0;}
+    .detailPage section .fileArea .textArea{display: flex; flex-wrap: wrap; font-size: 1.000rem;}
+    .detailPage section .fileArea .textArea::before{content: attr(title); width: 100%; margin-bottom: 5%;}
+    .detailPage section .fileArea .textArea li{width: 49%;}
+    .detailPage section .fileArea .textArea li:not(:nth-child(2n)){ margin-right: 2%;}
+    .detailPage section .fileArea .textArea li:not(:nth-last-child(-n + 2)){margin-bottom: 5%;}
+    .detailPage section .fileArea .textArea li a{display: block; font-weight: 700; text-decoration: underline;}
+    .detailPage section .fileArea .imgArea{display: flex; flex-wrap: wrap; margin-top: 1.875rem;}
+    .detailPage section .fileArea .imgArea li{width: 49%; position: relative;}
+    .detailPage section .fileArea .imgArea li:not(:nth-child(2n)){ margin-right: 2%;}
+    .detailPage section .fileArea .imgArea li:not(:nth-last-child(-n + 2)){margin-bottom: 2%;}
+    .detailPage section .fileArea .imgArea li a{width: 100%; padding-bottom: 100%; background-repeat: no-repeat; background-position: center; background-size: cover; height: 0.01px; text-indent: -9999px;}
+    .detailPage section .fileArea .imgArea li a::after{content: ''; width: 3.750rem; height: 3.750rem; border-radius: 100%; background:rgba(0, 0, 0, 0.5) url('../images/detail/download.png') no-repeat center / 1.875rem; opacity: 0; transition: opacity 0.5s; position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%);}
+    .detailPage section .fileArea .imgArea li a:hover::after{opacity: 1;}
+    .detailPage section > a{display: block; width: 6.875rem; line-height: 2.500rem; font-size: 0.875rem; font-weight: 500; text-align: center; border: 1px solid #d4d4d4; margin: 3.125rem auto 0;}
+
 
     /* full page 안 progress */
     .progressArea{position: relative; padding-top: 1.875rem; margin-bottom: 1.875rem;}
