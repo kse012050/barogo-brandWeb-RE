@@ -1,5 +1,11 @@
+
 let responsiveWidth = 767;
 $(document).ready(function(){
+    // 새로고침 시 최상단 이동
+    setTimeout(function(){
+        $('html').scrollTop(0)
+    },300) 
+
     // 공통
     common()
     
@@ -48,7 +54,8 @@ $(document).ready(function(){
             $('.introBox .textArea span').eq(1).css('animationDuration' , + introDuration / 2 +'s')
             $('.introBox .textArea span').eq(2).css('animationDuration' , + introDuration / 3 * 2 +'s')
             $('.introBox .BG').on('animationend', function(){
-                $('.introBox').css('display','none')
+                $('.introBox').css('display','none');
+                $('.deliveryPage > .topBox .imgArea').addClass('active');
             })
         }   /* 인트로 fin */
 

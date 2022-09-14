@@ -139,6 +139,9 @@
     footer .bottomArea div:nth-of-type(2) b{display: block; font-size: 12px; margin-bottom: 10px;}
     footer .bottomArea div:nth-of-type(2) a{font-size: 26px; font-weight: 700; line-height: 1.19; margin-bottom: 10px;}
     footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
+    @media screen and (max-width : 1900px) {
+        :is(.mainPage , .aboutUsPage) footer .bottomArea{padding-bottom: 150px ;}
+    }
 
 
     /* 메인페이지 공통 */
@@ -165,7 +168,8 @@
         [data-scroll="fullPage"] > .topBox .imgArea{bottom: 0;}
     }
 
-    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/top-delivery.png');}
+    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/top-delivery.png'); opacity: 0; transition: opacity 0.5s;}
+    .deliveryPage > .topBox .imgArea.active{opacity: 1;}
     .foundedPage > .topBox .imgArea{background-image: url('../images/founded/top-founded.png');}
     .riderPage > .topBox .imgArea{background-image: url('../images/rider/top-rider.png');}
 

@@ -14,17 +14,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
    
     <style>
-        .wrap{width: 300px; height: 300px; overflow: auto; position: relative;}
-        .wrap div{height: 1000px;}
-        .wrap span{position: absolute; right: 0; bottom: 0; width: 10px; height: 10px; background-color: red;}
+        ul{margin: 0; padding: 0; list-style: none; max-width: 1000px; margin: 0 auto;}
+        ul::after{content: ''; display: block; clear: both;}
+        ul li{float: left; width: 25%;}
+        ul li:nth-child(1){background-color: lightblue; height: 300px;}
+        ul li:nth-child(2){background-color: lightcoral; height: 200px;}
+        ul li:nth-child(3){background-color: lemonchiffon; height: 300px;}
+        ul li:nth-child(4){background-color: lightgreen; height: 550px;}
+        ul li:nth-child(5){background-color: lightblue; height: 200px; float: right;}
+        ul li:nth-child(6){background-color: lightcoral; height: 300px; float: right;}
+        ul li:nth-child(7){background-color: lemonchiffon; float: right;}
+        ul li:nth-child(8){background-color: lightgreen;}
+        ul li:nth-child(9){background-color: lightgray;}
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <div>
-
-        </div>
-        <span></span>
-    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
 </body>
 </html>
