@@ -87,6 +87,7 @@ $(document).ready(function(){
                     },
                     768: {
                         slidesPerView: 2,
+                        spaceBetween: 25,
                     }
                 }
             });
