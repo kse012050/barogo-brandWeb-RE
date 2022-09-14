@@ -104,7 +104,7 @@
     footer .topArea div .linkArea > li:not(:last-of-type){margin-right: 8.125rem;}
     footer .topArea div .linkArea > li b{display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.938rem;}
     footer .topArea div .linkArea > li ul li a{font-size: 0.750rem; line-height: 2.17; font-weight: 500; display: flex;}
-    footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 2.500rem;}
+    /* footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 2.500rem;} */
     footer .topArea div .SNSArea{display: flex; gap: 1.250rem;}
     footer .topArea div .SNSArea li a{display: block; width: 1.250rem; height: 1.250rem; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
     footer .topArea div .SNSArea li:nth-child(1) a{background-image: url('../images/common/facebook.png');}
@@ -113,10 +113,11 @@
     footer .topArea div .SNSArea li:nth-child(4) a{background-image: url('../images/common/insta.png');}
 
     /* 바텀 공통 */
-    footer .bottomArea{padding: 3.125rem 0;}
+    footer .bottomArea{padding: 3.125rem 0 10.125rem;}
     footer .bottomArea p{font-size: 0.750rem; color: #999;}
     footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-end;}
-    footer .bottomArea div:first-of-type h2{margin-bottom: 0.625rem;}
+    footer .bottomArea div:first-of-type h2{width: 8.125rem; margin-bottom: 0.625rem;}
+    footer .bottomArea div:first-of-type h2 img{width: 100%;}
     footer .bottomArea div:first-of-type address{display: flex; margin-bottom: 0.313rem;}
     footer .bottomArea div:first-of-type address p:not(:last-of-type){margin-right: 0.313rem;}
     footer .bottomArea div:first-of-type > p{margin-bottom: 1.250rem;}
@@ -460,6 +461,7 @@
     .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{height: 25%;}
     .aboutUsPage .toDoArea .CW > div .progressArea ul li div mark{display: block; margin-bottom: 1.250rem;}
     .aboutUsPage .toDoArea .CW > div .progressArea ul li div p{color: #666;}
+    .aboutUsPage .toDoArea .CW > div .imgArea{width: 30.000rem;}
 
 
 

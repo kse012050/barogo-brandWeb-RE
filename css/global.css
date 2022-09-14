@@ -113,7 +113,7 @@
     footer .topArea div .linkArea > li:not(:last-of-type){margin-right: 130px;}
     footer .topArea div .linkArea > li b{display: block; font-size: 14px; font-weight: 700; margin-bottom: 15px;}
     footer .topArea div .linkArea > li ul li a{font-size: 12px; line-height: 2.17; font-weight: 500; display: flex;}
-    footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 40px;}
+    /* footer .topArea div .linkArea > li ul li a::before{content: attr('title'); font-weight: 700; width: 40px;} */
     footer .topArea div .SNSArea{display: flex; gap: 20px;}
     footer .topArea div .SNSArea li a{display: block; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
     footer .topArea div .SNSArea li:nth-child(1) a{background-image: url('../images/common/facebook.png');}
@@ -125,7 +125,8 @@
     footer .bottomArea{padding: 50px 0;}
     footer .bottomArea p{font-size: 12px; color: #999;}
     footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-end;}
-    footer .bottomArea div:first-of-type h2{margin-bottom: 10px;}
+    footer .bottomArea div:first-of-type h2{width: 130px; margin-bottom: 10px;}
+    footer .bottomArea div:first-of-type h2 img{width: 100%;}
     footer .bottomArea div:first-of-type address{display: flex; margin-bottom: 5px;}
     footer .bottomArea div:first-of-type address p:not(:last-of-type){margin-right: 5px;}
     footer .bottomArea div:first-of-type > p{margin-bottom: 20px;}
