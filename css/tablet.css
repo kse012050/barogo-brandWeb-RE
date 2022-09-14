@@ -175,6 +175,10 @@
     .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 0.313rem;}
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
+    /* 스크롤 */
+    .scrollBox::-webkit-scrollbar{width: 0.313rem; height: 0.500rem; background-color: rgba(0, 0, 0, 0.1); }
+    .scrollBox::-webkit-scrollbar-thumb {background: #fa5014;}
+
     /* 후원 */
     .supportArea > div{width: 100%; height: 100%; padding-top: 6.875rem; display: flex; align-items: center; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100%; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
     .supportArea > div div{padding-bottom: 2.500rem;}
@@ -343,8 +347,6 @@
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 2.500rem; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
     .riderPage .revenueArea .CW .textArea > div > div > div .progressBar{position: absolute; right: 0; top: 0; width: 0.313rem; background-color: #fa5014;}
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar {width: 0.313rem; height: 0.500rem; background-color: #aaa; }
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar-thumb {background: #fa5014;}
     .riderPage .revenueArea .CW > div:last-child{position: relative; min-width: 33.709rem;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 1.875rem; top: -5.313rem; width: 15.000rem; height: 4.375rem; padding: 0.938rem 1.875rem; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 15.000rem;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 5.625rem; font-weight: 700;}

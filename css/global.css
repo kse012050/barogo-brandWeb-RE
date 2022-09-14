@@ -192,10 +192,11 @@
     .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 5px;}
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
+    /* 스크롤 */
     .scrollArea{padding-top: 90px; box-sizing: border-box;}
     .scrollArea > div{overflow: auto; height: calc(100vh - 90px); position: relative;}
-    .scrollArea > div::-webkit-scrollbar{width: 5px; height: 8px; background-color: #aaa; }
-    .scrollArea > div::-webkit-scrollbar-thumb {background: #fa5014;}
+    .scrollBox::-webkit-scrollbar{width: 5px; height: 8px; background-color: rgba(0, 0, 0, 0.1); }
+    .scrollBox::-webkit-scrollbar-thumb {background: #fa5014;}
 
     /* 후원 */
     .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014; box-sizing: border-box;}

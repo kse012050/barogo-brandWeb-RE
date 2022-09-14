@@ -177,7 +177,9 @@ $(document).ready(function(){
 
     // 회사소개 전용
     function aboutUsPage(){
+        // 회사소개 스크롤 이벤트
         $('[data-scroll="area"]').each(function(){
+            // PC 
             $(this).on('mousewheel',function(e){
                 if($(window).width() < responsiveWidth){return}
                 e.stopPropagation();
@@ -216,7 +218,9 @@ $(document).ready(function(){
                     }
                 }
             })
+            // PC fin
 
+            // tablet
             let touchstartX; 
             let touchstartY; 
             let touchendX; 
@@ -275,12 +279,20 @@ $(document).ready(function(){
                 }
             })
 
+            // tablet fin
+
             let touchList = $('.aboutUsPage [data-scrollAni="opacity"]');
             // 모바일
             touchList.on('touchstart',function(e){
                 if($(window).width() > responsiveWidth) return;
                 touchstartX = e.touches[0].clientX;
                 touchstartY = e.touches[0].clientY;
+            })
+
+            $(this).on('touchmove',function(e){
+                if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+                    e.preventDefault();
+                }
             })
 
             touchList.on('touchend',function(e){
@@ -297,10 +309,12 @@ $(document).ready(function(){
                 scrollAni(targetArea , delta)
         
             })
+
+            // 모바일 fin
         })
 
         
-        // 그래프
+        // 그래프 이벤트
         let graphArea = $('[data-specialAni="graph"]');
         let graphBreak = true;
         graphArea.parent().scroll(function(){
@@ -311,7 +325,7 @@ $(document).ready(function(){
                 },1000)
                 graphBreak = !graphBreak;
             }
-        })  /* 그래프 fin */
+        })  /* 그래프 이벤트 fin */
 
         // 연혁 클릭
         $('.roadArea .yearArea ol li').click(function(){
@@ -378,6 +392,8 @@ $(document).ready(function(){
         let fullPageList = $('[data-scroll="fullPage"] > *');
         let touchList = $('[data-scroll="fullPage"] [data-scrollAni="opacity"]');
         let idx = 0;
+
+        // PC fullPage
         fullPageList.on('mousewheel',function(e){
             if($(window).width() < responsiveWidth) return;
             if($('html').is(':animated')) return;
@@ -415,12 +431,14 @@ $(document).ready(function(){
             fullPageAni(fullPageList.eq(idx))
         })
 
+        // PC fullPage fin
+
         let touchstartX; 
         let touchstartY; 
         let touchendX; 
         let touchendY; 
 
-        
+        // PC , tablet fullPage touch
         fullPageList.on('touchstart',function(e){
             if($(window).width() < responsiveWidth) return;
             touchstartX = e.touches[0].clientX;
@@ -468,8 +486,9 @@ $(document).ready(function(){
             
             fullPageAni(fullPageList.eq(idx))
         })
+        // PC , tablet fullPage touch fin
 
-        // 모바일
+        // 모바일 opacity 터치 X축
         touchList.on('touchstart',function(e){
             if($(window).width() > responsiveWidth) return;
             touchstartX = e.touches[0].clientX;
@@ -496,25 +515,29 @@ $(document).ready(function(){
             scrollAni(targetArea , delta)
     
         })
+        // 모바일 opacity 터치 X축 fin
     
+        // fullPage 이동 이벤트
         function fullPageAni(nextTarget){
             nextTarget.addClass('active').siblings().removeClass('active');
             $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
-        }
+        }   /* fullPage 이동 이벤트 fin */
 
-        let countBool = true;
+        // 모바일 스크롤시 숫자 카운트
+        let countBreak = true;
         $(window).scroll(function(){
             if($(window).width() < responsiveWidth){
                 $('[data-eventani="count"]').each(function(){
-                    if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBool){
+                    if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBreak){
                         countAni($(this).find('[data-eventAni="target"]'))
-                        countBool = !countBool;
+                        countBreak = !countBreak;
                     }
                 })
             }
-        })
+        })  /* 모바일 스크롤시 숫자 카운트 fin */
 
 
+        // fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼
         $('.topBtn').click(function(){
             $('html').animate({scrollTop : 0})
             idx = 0;
@@ -524,10 +547,11 @@ $(document).ready(function(){
             fullPageList.each(function(){
                 scrollAni($(this) , 120)
             })
-        })
+        })  /* fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼 fin */
         
     } /* 풀페이지 fin */
     
+    // fullPage 안 scroll event
     let aniBreak = false;
     function scrollAni(targetArea , delta){
         if(aniBreak){ return true}
@@ -565,7 +589,7 @@ $(document).ready(function(){
         return true;
 
         
-    } /* scroll event fin */
+    } /* fullPage 안 scroll event fin */
     
     // 투명도 효과
     function opacityAni(list , idx , progress){
@@ -597,6 +621,7 @@ $(document).ready(function(){
         }
     }   /* 라이더 오토바이 효과 fin */
 
+    // 회사소개 연혁 페이지이동
     function moveAni(targetList , target , idx){
         targetList[0].eq(idx).addClass('active').siblings().removeClass('active');
         targetList[1].eq(idx).addClass('active').siblings().removeClass('active');
@@ -605,16 +630,15 @@ $(document).ready(function(){
         }else{
             target.eq(1).eq(idx).stop().animate({opacity : 1} , 500).addClass('active').siblings().animate({opacity : 0} , 500).removeClass('active');
         }
-    }
+    }   /* 회사소개 연혁 페이지이동 fin */
+
 
     function eventAni(t){
         let target = t.find('[data-eventAni="target"]');
-
         t.attr('data-eventAni') == 'count' && countAni(target , true);
-
-       
     }
 
+    // 숫자 카운팅
     function countAni(list , decimal){
         const countOptions = {
             useEasing :true,
@@ -644,146 +668,143 @@ $(document).ready(function(){
             }
             count.start();
         });
-    }
+    }   /* 숫자 카운팅 fin */
 
-// 그래프
-
-function graphAni(){
-    let canvas , ctx , w , h , lines = [];
-    function canvasInit(){
-        canvas = document.getElementById('graph');
-        ctx = canvas.getContext('2d');
-        canvasSize();
-        lines.push(new Line());
-    }
-
-    function canvasSize(){
-        // w = canvas.width = document.querySelector('.graphArea').offsetWidth;
-        // h = canvas.height = document.querySelector('.graphArea').offsetHeight;
-        w = canvas.width = 680;
-        h = canvas.height = 381;
-    }
-
-    function drawScene(){
-        animationLoop();
-    }
-
-    function animationLoop(){
-        ctx.clearRect(0,0,w,h);
-        lines.map((l)=>{
-            l.draw();
-            l.update();
-        })
-        requestAnimationFrame(animationLoop)
-    }
-
-    class Line{
-        constructor(){
-            this.x = 40;
-            this.y = 329;
-            this.lineX = this.x;
-            this.lineY = this.y;
-            this.progress = 0;
-            this.point = [
-                {x : 40 , y : 329},
-                {x : 139, y : 317},
-                {x : 249, y : 298},
-                {x : 360, y : 261},
-                {x : 469, y : 188},
-                {x : 583, y : 97},
-            ]
-            this.line = [];
-            this.count = 0;
-            this.balls = [new Ball(this.point[0].x , this.point[0].y)];
-            this.lastCheck = false;
+    // 그래프
+    function graphAni(){
+        let canvas , ctx , w , h , lines = [];
+        function canvasInit(){
+            canvas = document.getElementById('graph');
+            ctx = canvas.getContext('2d');
+            canvasSize();
+            lines.push(new Line());
         }
-        draw(){
-            ctx.beginPath();
-            this.line.map((l , i)=>{
-                ctx.moveTo(this.point[i].x , this.point[i].y);
-                ctx.lineTo(l.x , l.y)
-            })
-            ctx.moveTo(this.point[this.count].x , this.point[this.count].y);
-            ctx.lineTo(this.lineX , this.lineY)
-            ctx.strokeStyle = 'black';
-            ctx.lineWidth = 4
-            ctx.stroke();
 
-            this.balls.map((b)=>{
-                b.draw();
-                b.update();
-            })
+        function canvasSize(){
+            w = canvas.width = 680;
+            h = canvas.height = 381;
         }
-        update(){
-            if(this.count < this.point.length - 1){ 
-                if(this.count == this.point.length - 2){
-                    this.lastCheck = true;
+
+        function drawScene(){
+            animationLoop();
+        }
+
+        function animationLoop(){
+            ctx.clearRect(0,0,w,h);
+            lines.map((l)=>{
+                l.draw();
+                l.update();
+            })
+            requestAnimationFrame(animationLoop)
+        }
+
+        class Line{
+            constructor(){
+                this.x = 40;
+                this.y = 329;
+                this.lineX = this.x;
+                this.lineY = this.y;
+                this.progress = 0;
+                this.point = [
+                    {x : 40 , y : 329},
+                    {x : 139, y : 317},
+                    {x : 249, y : 298},
+                    {x : 360, y : 261},
+                    {x : 469, y : 188},
+                    {x : 583, y : 97},
+                ]
+                this.line = [];
+                this.count = 0;
+                this.balls = [new Ball(this.point[0].x , this.point[0].y)];
+                this.lastCheck = false;
+            }
+            draw(){
+                ctx.beginPath();
+                this.line.map((l , i)=>{
+                    ctx.moveTo(this.point[i].x , this.point[i].y);
+                    ctx.lineTo(l.x , l.y)
+                })
+                ctx.moveTo(this.point[this.count].x , this.point[this.count].y);
+                ctx.lineTo(this.lineX , this.lineY)
+                ctx.strokeStyle = 'black';
+                ctx.lineWidth = 4
+                ctx.stroke();
+
+                this.balls.map((b)=>{
+                    b.draw();
+                    b.update();
+                })
+            }
+            update(){
+                if(this.count < this.point.length - 1){ 
+                    if(this.count == this.point.length - 2){
+                        this.lastCheck = true;
+                    }
+                    if(this.progress <= 1){
+                        this.lineX = this.point[this.count].x + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x))
+                        this.lineY = this.point[this.count].y + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y))
+                        this.progress += 0.1;
+                    }else{
+                        this.lineX = this.point[this.count + 1].x;
+                        this.lineY = this.point[this.count + 1].y;
+                        this.line.push({x : this.lineX , y : this.lineY});
+                        this.count++;
+                        this.progress = 0;
+                        this.balls.push(new Ball(this.lineX , this.lineY , this.lastCheck));
+                    }
                 }
-                if(this.progress <= 1){
-                    this.lineX = this.point[this.count].x + (this.progress * (this.point[this.count + 1].x - this.point[this.count].x))
-                    this.lineY = this.point[this.count].y + (this.progress * (this.point[this.count + 1].y - this.point[this.count].y))
-                    this.progress += 0.1;
+                
+            }
+        }
+
+        class Ball{
+            constructor(x , y , lastCheck){
+                this.x = x;
+                this.y = y;
+                this.size = 0;
+                this.lastCheck = lastCheck;
+            }
+
+            draw(){
+                if(this.lastCheck){
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size <=19 ? this.size : 19 , 0 , Math.PI * 2 );
+                    ctx.fillStyle = 'rgba(250,80,20,1)';
+                    ctx.fill()
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size <=45 ? this.size : 45 , 0 , Math.PI * 2 );
+                    ctx.fillStyle = 'rgba(250,80,20,0.3)';
+                    ctx.fill()
+
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
+                    ctx.fillStyle = 'rgba(250,80,20,0.1)';
+                    ctx.fill()
                 }else{
-                    this.lineX = this.point[this.count + 1].x;
-                    this.lineY = this.point[this.count + 1].y;
-                    this.line.push({x : this.lineX , y : this.lineY});
-                    this.count++;
-                    this.progress = 0;
-                    this.balls.push(new Ball(this.lineX , this.lineY , this.lastCheck));
+                    ctx.beginPath();
+                    ctx.arc(this.x , this.y , this.size, 0 , Math.PI * 2);
+                    ctx.fillStyle = 'black';
+                    ctx.fill()
                 }
             }
-            
+
+            update(){
+                if(this.lastCheck){
+                    if(this.size < 70){
+                        this.size = this.size + 0.5; 
+                    }
+                }else{
+                    if(this.size < 8){
+                        this.size = this.size + 0.5; 
+                    }
+                }
+            }
         }
+        canvasInit();
+        drawScene();
     }
-
-    class Ball{
-        constructor(x , y , lastCheck){
-            this.x = x;
-            this.y = y;
-            this.size = 0;
-            this.lastCheck = lastCheck;
-        }
-
-        draw(){
-            if(this.lastCheck){
-                ctx.beginPath();
-                ctx.arc(this.x , this.y , this.size <=19 ? this.size : 19 , 0 , Math.PI * 2 );
-                ctx.fillStyle = 'rgba(250,80,20,1)';
-                ctx.fill()
-                ctx.closePath();
-
-                ctx.beginPath();
-                ctx.arc(this.x , this.y , this.size <=45 ? this.size : 45 , 0 , Math.PI * 2 );
-                ctx.fillStyle = 'rgba(250,80,20,0.3)';
-                ctx.fill()
-
-                ctx.beginPath();
-                ctx.arc(this.x , this.y , this.size , 0 , Math.PI * 2 );
-                ctx.fillStyle = 'rgba(250,80,20,0.1)';
-                ctx.fill()
-            }else{
-                ctx.beginPath();
-                ctx.arc(this.x , this.y , this.size, 0 , Math.PI * 2);
-                ctx.fillStyle = 'black';
-                ctx.fill()
-            }
-        }
-
-        update(){
-            if(this.lastCheck){
-                if(this.size < 70){
-                    this.size = this.size + 0.5; 
-                }
-            }else{
-                if(this.size < 8){
-                    this.size = this.size + 0.5; 
-                }
-            }
-        }
-    }
-    canvasInit();
-    drawScene();
-}
     
     
 })  /* document ready fin */

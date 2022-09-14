@@ -117,6 +117,10 @@
     .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
 
 
+    /* 스크롤 */
+    .scrollBox::-webkit-scrollbar{width: 0.313rem; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1); }
+    .scrollBox::-webkit-scrollbar-thumb {background: #fa5014;}
+
     /* 후원 */
     .supportArea > div{width: 100%; height: 100%; padding-top: 3.125rem; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100%; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014;}
     .supportArea > div div{padding-bottom: 2.500rem;}
@@ -200,8 +204,8 @@
   
 
     /* full page 안 progress */
-    .progressArea{position: relative; padding-bottom: 1.875rem; margin-bottom: 1.875rem;}
-    .progressArea .progressBar{position: absolute; left: 0; bottom: 0; width: 100%; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1);}
+    .progressArea{position: relative; padding-top: 1.875rem; margin-bottom: 1.875rem;}
+    .progressArea .progressBar{position: absolute; left: 0; top: 0; width: 100%; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1);}
     .progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 33.33%; height: 100%; background-color: #fa5014; }
 
     /* full page 안 scroll 공통 */
@@ -227,6 +231,7 @@
     /* 사장님의 정성 그대로 빠르고 확실하게 */
     .deliveryPage .qualitativeArea{margin-bottom: 7.500rem;}
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
+    .deliveryPage .qualitativeArea .CW div{width: 100%;}
     .deliveryPage .qualitativeArea .CW div h2{margin-bottom: 5.000rem;}
     .deliveryPage .qualitativeArea .CW div h2 mark{display: block;}
     .deliveryPage .qualitativeArea .CW div div ul li div{ margin-top: 20px;}
@@ -296,8 +301,6 @@
     .riderPage .revenueArea .CW .textArea > div > div > div ul{height: 18.750rem; overflow: auto;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 2.500rem; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar {width: 0.313rem; height: 0.500rem; background-color: #aaa; }
-    .riderPage .revenueArea .CW .textArea > div > div > div.scrollHidden ul::-webkit-scrollbar-thumb {background: #fa5014;}
     .riderPage .revenueArea .CW > div:last-child{position: relative; width: 16.250rem; margin-left: auto;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 0; top: -3.750rem; width: 11.875rem; height: 3.438rem; padding: 0.938rem 1.250rem; font-weight: 700; color: white;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 11.875rem;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 2.688rem; font-weight: 700;}
@@ -434,8 +437,6 @@
     .aboutUsPage .roadArea .CW .textArea h2{font-size: 1.500rem; font-weight: 700; line-height: 1.33; margin-bottom: 1.250rem;}
     .aboutUsPage .roadArea .CW .textArea p{font-size: 1.000rem; line-height: 1.5; margin-bottom: 5.000rem;}
     .aboutUsPage .roadArea .CW .textArea .yearArea{margin-bottom: 5.000rem; overflow: auto;}
-    .aboutUsPage .roadArea .CW .textArea .yearArea::-webkit-scrollbar {height: 0.375rem; background-color: rgba(0, 0, 0, 0.1); }
-    .aboutUsPage .roadArea .CW .textArea .yearArea::-webkit-scrollbar-thumb {background: #fa5014;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol{display: inline-block; width: 42.688rem; padding-bottom: 0.625rem;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol::after{content: ''; display: block; clear: both;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol li{float: left; font-size: 2.250rem; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer; margin: 0 0.938rem;}
