@@ -332,7 +332,7 @@ $(document).ready(function(){
 
         // 모바일 스크롤 그래프
         $(window).scroll(function(){
-            if($(window).width() < responsiveWidth && $(window).scrollTop() > $('.numberArea').offset().top && graphBreak){
+            if($(window).width() < responsiveWidth && $(window).scrollTop() > $('.numberArea').offset().top -($(window).height() * 0.3) && graphBreak){
                 graphAni();
                 setTimeout(function(){
                     eventAni(graphArea)
@@ -490,6 +490,18 @@ $(document).ready(function(){
             $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
         }
 
+        let countBool = true;
+        $(window).scroll(function(){
+            if($(window).width() < responsiveWidth){
+                $('[data-eventani="count"]').each(function(){
+                    if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBool){
+                        countAni($(this).find('[data-eventAni="target"]'))
+                        countBool = !countBool;
+                    }
+                })
+            }
+        })
+
 
         $('.topBtn').click(function(){
             $('html').animate({scrollTop : 0})
@@ -501,6 +513,7 @@ $(document).ready(function(){
                 scrollAni($(this) , 120)
             })
         })
+        
     } /* 풀페이지 fin */
     
     let aniBreak = false;
@@ -587,36 +600,38 @@ $(document).ready(function(){
 
         t.attr('data-eventAni') == 'count' && countAni(target , true);
 
-        function countAni(list , decimal){
-            const countOptions = {
-                useEasing :true,
-                separator : ",",
-                decimal : decimal ? "," : '',
-            };
-            list.each(function(){
-                var startCount;	
-                let count;
-                let endCount = $(this).attr('data-endCount').replace(/[^0-9]/g, "");
-                if(startCount){
-                    startCount = $(this).attr('data-startCount').replace(/[^0-9]/g, "");
-                }else{
-                    startCount = '';
-                    for(let a = 0; a < endCount.length; a++){
-                        startCount += '0'
-                    }
+       
+    }
+
+    function countAni(list , decimal){
+        const countOptions = {
+            useEasing :true,
+            separator : ",",
+            decimal : decimal ? "," : '',
+        };
+        list.each(function(){
+            var startCount;	
+            let count;
+            let endCount = $(this).attr('data-endCount').replace(/[^0-9]/g, "");
+            if(startCount){
+                startCount = $(this).attr('data-startCount').replace(/[^0-9]/g, "");
+            }else{
+                startCount = '';
+                for(let a = 0; a < endCount.length; a++){
+                    startCount += '0'
                 }
-                if($(this).attr('id') == 'year'){
-                    count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, {
-                        useEasing :true,
-                        separator : "",
-                        decimal : '',
-                    });
-                }else{
-                    count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, countOptions);
-                }
-                count.start();
-            });
-        }
+            }
+            if($(this).attr('id') == 'year'){
+                count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, {
+                    useEasing :true,
+                    separator : "",
+                    decimal : '',
+                });
+            }else{
+                count = new CountUp($(this).attr('id'),parseInt(startCount), endCount, 0, 2, countOptions);
+            }
+            count.start();
+        });
     }
 
 // 그래프

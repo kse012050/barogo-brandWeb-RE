@@ -433,6 +433,8 @@
     .aboutUsPage .roadArea .CW .textArea h2{font-size: 1.500rem; font-weight: 700; line-height: 1.33; margin-bottom: 1.250rem;}
     .aboutUsPage .roadArea .CW .textArea p{font-size: 1.000rem; line-height: 1.5; margin-bottom: 5.000rem;}
     .aboutUsPage .roadArea .CW .textArea .yearArea{margin-bottom: 5.000rem; overflow: auto;}
+    .aboutUsPage .roadArea .CW .textArea .yearArea::-webkit-scrollbar {width: 0.313rem; height: 0.500rem; background-color: #aaa; }
+    .aboutUsPage .roadArea .CW .textArea .yearArea::-webkit-scrollbar-thumb {background: #fa5014;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol{display: inline-block; width: 42.688rem; padding-bottom: 0.625rem;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol::after{content: ''; display: block; clear: both;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol li{float: left; font-size: 2.250rem; font-weight: 700; color: rgba(0, 0, 0, 0.13); cursor: pointer; margin: 0 0.938rem;}
