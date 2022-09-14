@@ -229,6 +229,12 @@ $(document).ready(function(){
                 touchstartY = e.touches[0].clientY;
             })
 
+            $(this).on('touchmove',function(e){
+                if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+                    e.preventDefault();
+                }
+            })
+
             $(this).on('touchend',function(e){
                 if($(window).width() < responsiveWidth){return}
                 e.stopPropagation();
@@ -468,6 +474,12 @@ $(document).ready(function(){
             if($(window).width() > responsiveWidth) return;
             touchstartX = e.touches[0].clientX;
             touchstartY = e.touches[0].clientY;
+        })
+
+        touchList.on('touchmove',function(e){
+            if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+                e.preventDefault();
+            }
         })
 
         touchList.on('touchend',function(e){
