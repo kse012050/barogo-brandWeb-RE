@@ -32,11 +32,11 @@
     /* 버튼 공통*/
     /* BTN (button) 배경이 들어가는 기본 버튼 */
     [class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700;}
-    .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none;}
+    .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px; white-space: nowrap;  padding:0 40px; background-color: #fa5014; border: none;}
     .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
     input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
-    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box;}
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box;}
     [class |= "BBTN"]::after{content: ''; width: 20px; height: 20px; margin-left: 10px; background-repeat: no-repeat; background-position: center; background-size: cover;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
@@ -201,8 +201,10 @@
     /* 스크롤 */
     .scrollArea{padding-top: 90px; box-sizing: border-box;}
     .scrollArea > div{overflow: auto; height: calc(100vh - 90px); position: relative;}
-    .scrollBox::-webkit-scrollbar{width: 5px; height: 8px; background-color: rgba(0, 0, 0, 0.1); }
+    .scrollBox::-webkit-scrollbar{width: 5px; height: 8px; background-color: rgba(0, 0, 0, 0.1);}
+    .scrollBox::-webkit-scrollbar-track{background-color: rgba(0, 0, 0, 0.1);}
     .scrollBox::-webkit-scrollbar-thumb {background: #fa5014;}
+   
 
     /* 후원 */
     .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014; box-sizing: border-box;}
