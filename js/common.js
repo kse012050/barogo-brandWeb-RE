@@ -38,6 +38,12 @@ $(document).ready(function(){
      
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
+
+        // 모바일 메뉴
+        mobileMenu();
+
+        // 푸터 메뉴 클릭
+        footerMenu();
   
 
         /* ! 함수 생성 */
@@ -102,18 +108,23 @@ $(document).ready(function(){
 
        
 
+        // 모바일 메뉴
+        function mobileMenu(){
+            $('header div button').click(function(){
+                $(this).toggleClass('active');
+                $('header div nav').toggleClass('active');
+            })
+        }  /* 모바일 메뉴 fin */
 
-        $('header div button').click(function(){
-            $(this).toggleClass('active');
-            $('header div nav').toggleClass('active');
-        })
         // 푸터 메뉴 클릭
-        $('footer .topArea div .linkArea > li b').click(function(){
-            if($(window).width() < responsiveWidth){
-                $(this).toggleClass('active')
-                $(this).next().stop().slideToggle();
-            }
-        })
+        function footerMenu(){
+            $('footer .topArea div .linkArea > li b').click(function(){
+                if($(window).width() < responsiveWidth){
+                    $(this).toggleClass('active')
+                    $(this).next().stop().slideToggle();
+                }
+            })
+        }   /* 푸터 메뉴 클릭 fin */
 
     }   /* common fin */
 
@@ -641,10 +652,11 @@ $(document).ready(function(){
     }   /* 회사소개 연혁 페이지이동 fin */
 
 
+    // 카운터 
     function eventAni(t){
         let target = t.find('[data-eventAni="target"]');
         t.attr('data-eventAni') == 'count' && countAni(target , true);
-    }
+    }   /* 카운터 fin */
 
     // 숫자 카운팅
     function countAni(list , decimal){
