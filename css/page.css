@@ -257,11 +257,11 @@
     .inquiryArea .guideArea li:nth-child(2) a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
 
     /* 문의 완료 */
-    .inquiryPage.finArea{height: 100vh; box-sizing: border-box;}
-    .inquiryPage.finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-    .inquiryPage.finArea section h2{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.250rem; padding-top: 8.125rem; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 8.375rem;}
-    .inquiryPage.finArea section p{font-size: 1.250rem; line-height: 1.5; margin-bottom: 4.063rem;}
-    .inquiryPage.finArea section a:not([class]){font-size: 1.125rem; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 8.125rem;}
+    .finArea{height: 100vh; padding-top: 5.313rem; box-sizing: border-box;}
+    .finArea section{text-align: center; height: 100%; min-height: 25.250rem; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .finArea section h2{font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; padding-top: 6.125rem; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 6.375rem;}
+    .finArea section p{font-size: 1rem; line-height: 1.5; margin-bottom: 3rem;}
+    .finArea section a:not([class]){font-size: 1.125rem; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 4rem;}
 }   /* mobile fin */
 
 /* tablet */
@@ -535,11 +535,11 @@
     .inquiryArea .guideArea li:nth-child(2) a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
 
     /* 문의 완료 */
-    .inquiryPage.finArea{height: 100vh; box-sizing: border-box;}
-    .inquiryPage.finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-    .inquiryPage.finArea section h2{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.250rem; padding-top: 8.125rem; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 8.375rem;}
-    .inquiryPage.finArea section p{font-size: 1.250rem; line-height: 1.5; margin-bottom: 4.063rem;}
-    .inquiryPage.finArea section a:not([class]){font-size: 1.125rem; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 8.125rem;}
+    .finArea{height: 100vh; box-sizing: border-box;}
+    .finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .finArea section h2{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.250rem; padding-top: 8.125rem; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 8.375rem;}
+    .finArea section p{font-size: 1.250rem; line-height: 1.5; margin-bottom: 4.063rem;}
+    .finArea section a:not([class]){font-size: 1.125rem; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 8.125rem;}
 
 }   /* tablet fin */
 
@@ -813,9 +813,9 @@
     .inquiryArea .guideArea li:nth-child(2) a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
 
     /* 문의 완료 */
-    .inquiryPage.finArea{height: 100vh; box-sizing: border-box;}
-    .inquiryPage.finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-    .inquiryPage.finArea section h2{font-size: 36px; font-weight: 700; margin-bottom: 20px; padding-top: 130px; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 134px;}
-    .inquiryPage.finArea section p{font-size: 20px; line-height: 1.5; margin-bottom: 65px;}
-    .inquiryPage.finArea section a:not([class]){font-size: 18px; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 130px;}
+    .finArea{height: 100vh; box-sizing: border-box;}
+    .finArea section{text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .finArea section h2{font-size: 36px; font-weight: 700; margin-bottom: 20px; padding-top: 130px; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 134px;}
+    .finArea section p{font-size: 20px; line-height: 1.5; margin-bottom: 65px;}
+    .finArea section a:not([class]){font-size: 18px; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 130px;}
 }
