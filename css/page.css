@@ -152,8 +152,6 @@
 
 
     /* ! 회사소개 */
-    /* [data-scroll="area"]{overflow: hidden; height: 100vh;}
-    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; } */
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 7.500rem; padding-top: 9.063rem;}
     .aboutUsPage .makeArea h2{margin-bottom: 1.875rem;}
@@ -181,9 +179,8 @@
     .aboutUsPage .toDoArea .CW h2{margin-bottom: 1.250rem;}
     .aboutUsPage .toDoArea .CW > p{margin-bottom: 5.000rem;}
     .aboutUsPage .toDoArea .CW > div{padding-bottom: 10.938rem; position: relative;}
-    .aboutUsPage .toDoArea .CW > div .imgArea{position: absolute; right: 0; bottom: 0; width: 75%; /* width: 16.875rem; */}
+    .aboutUsPage .toDoArea .CW > div .imgArea{position: absolute; right: 0; bottom: 0; width: 75%;}
     .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{width: 25%;}
-    /* .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{} */
 
     /* 숫자로 보는 바로고 */
     .aboutUsPage .numberArea{margin-bottom: 7.500rem;}
@@ -215,7 +212,7 @@
     .aboutUsPage .roadArea .CW .textArea .yearArea ol li.active{color: black;}
     .aboutUsPage .roadArea .CW .monthArea{position: relative;}
     .aboutUsPage .roadArea .CW .monthArea > ol{position: relative;}
-    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:first-child){display: none; /* position: absolute; left: 0; top: 0; width: 100%; */}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:first-child){display: none;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 1.500rem; font-weight: 700; margin-bottom: 3.125rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 1.000rem; display: flex; flex-wrap: wrap; align-items: flex-end;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 2.813rem;}
@@ -239,7 +236,6 @@
     .aboutUsPage .breandArea .CW .logoArea li:not(:last-child){border-bottom: 1px solid #fa5014;}
     .aboutUsPage .breandArea .CW .logoArea li b{display: block; font-size: 0.938rem; font-weight: 700; margin-bottom: 1.875rem;}
     .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-    .aboutUsPage .breandArea .CW .colorArea{}
     .aboutUsPage .breandArea .CW .colorArea li{height: 7.500rem;  padding: 1.563rem; box-sizing: border-box; background-repeat: no-repeat; background-position: right 1.563rem top 1.563rem;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014; background-image: url('../images/aboutUs/m-color01.png');  background-size: 5.000rem;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/m-color02.png');  background-size: 3.938rem;}
@@ -461,7 +457,6 @@
 
 
     /* 숫자로 보는 바로고 */
-    /* .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center;} */
     .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.875rem;}
     .aboutUsPage .numberArea .CW .textArea p{max-width: 22.188rem; font-size: 1.250rem; line-height: 1.5; color: #111;}
@@ -741,7 +736,6 @@
 
 
     /* 숫자로 보는 바로고 */
-    /* .aboutUsPage .numberArea{height: 100vh; display: flex; align-items: center;} */
     .aboutUsPage .numberArea .CW{display: flex; justify-content: space-between;}
     .aboutUsPage .numberArea .CW .textArea h2{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
     .aboutUsPage .numberArea .CW .textArea p{max-width: 355px; font-size: 20px; line-height: 1.5; color: #111;}
