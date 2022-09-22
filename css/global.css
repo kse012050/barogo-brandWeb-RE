@@ -435,6 +435,7 @@
     [data-scroll="fullPage"] > .topBox{overflow: hidden; position: relative; background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; background-size: 120rem;}
     [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 11.875rem;}
     [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px;}
+    [data-scroll="fullPage"] > .topBox .CW a{position: relative; z-index: 10;}
     [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 120rem; height: 46.875rem; background-repeat: no-repeat; background-size: cover; text-indent: -9999px;}
     @media screen and (max-height : 76.8032vw){
         [data-scroll="fullPage"] > .topBox{background-position: center top 27.938rem;}
@@ -737,6 +738,7 @@
     [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative;}
     [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 190px;}
     [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px;}
+    [data-scroll="fullPage"] > .topBox .CW a{position: relative; z-index: 10;}
     [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px; height: 750px; background-repeat: no-repeat; text-indent: -9999px;}
     @media screen and (max-width : 1920px){
         [data-scroll="fullPage"] > .topBox{background-size: 1920px;}
