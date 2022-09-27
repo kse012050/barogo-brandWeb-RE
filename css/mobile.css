@@ -328,6 +328,7 @@
     /* 프로를 프로답게 바로고 라이더 라이프 */
     .riderPage .lifeArea{padding-bottom: 13.438rem; position: relative; margin-bottom: 7.500rem;}
     .riderPage .lifeArea .CW .textArea > *:not(h2){padding-left: 2.813rem;}
+    .riderPage .lifeArea .CW .textArea mark{display: block; margin-bottom: 1.250rem;}
     .riderPage .lifeArea .CW .textArea h2{margin-bottom: 2.500rem;}
     .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 1.875rem;}
     .riderPage .lifeArea .CW .imgArea{width: 80.5555%; position: absolute; right: 0; bottom: 0;}
@@ -370,13 +371,12 @@
     .riderPage .goodsArea{margin-bottom: 7.500rem;}
     .riderPage .goodsArea div h2{width: 12.188rem; margin-bottom: 2.188rem;}
     .riderPage .goodsArea div ul{display: flex; flex-wrap: wrap; justify-content: space-between; }
-    .riderPage .goodsArea div ul li{width: 47.5%; height: 9.375rem;}
-    .riderPage .goodsArea div ul li img{width: 100%;}
+    .riderPage .goodsArea div ul li{width: 47.5%; height: 9.375rem; }
     .riderPage .goodsArea div ul li:not(:nth-child(2n)){margin-right: 5%;}
     .riderPage .goodsArea div ul li:not(:nth-last-child(-n + 2)){margin-bottom: 5%;}
     .riderPage .goodsArea div ul li p{font-size: 1.500rem; line-height: 1.46; font-weight: 700; color: rgba(0, 0, 0, 0.22);}
     .riderPage .goodsArea div ul li p::before{content: '#';}
-    .riderPage .goodsArea div ul li:not(:first-child){background-repeat: no-repeat; background-position: center; background-size: cover;}
+    .riderPage .goodsArea div ul li:not(:first-child){background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
     .riderPage .goodsArea div ul li:nth-child(2){background-image: url('../images/rider/goods01.png');}
     .riderPage .goodsArea div ul li:nth-child(3){background-image: url('../images/rider/goods02.png');}
     .riderPage .goodsArea div ul li:nth-child(4){background-image: url('../images/rider/goods03.png');}
