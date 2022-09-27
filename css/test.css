@@ -1,0 +1,14 @@
+.aboutUsPage .breandArea .CW .logoArea{margin-bottom: 5.000em;}
+.aboutUsPage .breandArea .CW .logoArea li{text-align: center; padding: 1.563em 3.125em; border-radius: 1.000em; background-color: white;  box-shadow: 0 0.125em 1.250em 0 rgba(0, 0, 0, 0.1);}
+.aboutUsPage .breandArea .CW .logoArea li:not(:last-child){margin-bottom: 1.250em;}
+.aboutUsPage .breandArea .CW .logoArea li b{display: block; font-weight: 700; margin-bottom: 1.063em;}
+.aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
+.aboutUsPage .breandArea .CW .colorArea{display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.625em; margin-bottom: 6.875em;}
+.aboutUsPage .breandArea .CW .colorArea li{width: calc((100% - 0.625em) / 2);; height: 15.000em; font-size: 0.813em; padding: 15px; border-radius: 0.750em; box-sizing: border-box; box-shadow: 0 0.125em 1.250em 0 rgba(0, 0, 0, 0.1);}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(5){background-color: #dcdcdc;}
+.aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2) , li:nth-child(4)){color: white;}
+.aboutUsPage .breandArea .CW .colorArea li b{display: block;  font-weight: 700; margin-bottom: 0.625em;}

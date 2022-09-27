@@ -481,8 +481,9 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .aboutUsPage .makeArea ul li p{font-size: 20px; line-height: 1.5; color: #111;}
 
 /* META LOGISTIS UNIVERSE */
-.aboutUsPage .metaArea{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;}
-.aboutUsPage .metaArea span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;}
+/* .aboutUsPage .metaArea{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;} */
+/* .aboutUsPage .metaArea span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;} */
+.aboutUsPage .metaArea{font-size: 7.55vw; font-weight: 700;}
 
 /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
 .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
@@ -526,7 +527,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .aboutUsPage .roadArea .CW .textArea .yearArea ol li:not(:last-child){margin-bottom: 60px;}
 .aboutUsPage .roadArea .CW .textArea .yearArea ol li.active{color: black;}
 .aboutUsPage .roadArea .CW .monthArea{position: relative; width: 680px;}
-.aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0;}
+.aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0; padding-top: 80px;}
 .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 30px; font-weight: 700; margin-bottom: 55px;}
 .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 120px;}
 .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 20px; display: flex; flex-wrap: wrap; align-items: flex-end;}
@@ -540,29 +541,31 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 
 /* BAROGO Breand identity */
 .aboutUsPage{margin-bottom: 200px;}
+.aboutUsPage .breandArea{padding: 195px 0 205px; background-color: #f9f9f9;}
 .aboutUsPage .breandArea .CW h2{font-size: 42px; font-weight: 700; float: left; margin-right: 160px;}
 .aboutUsPage .breandArea .CW div{float: left; width: 550px; margin-bottom: 120px;}
 .aboutUsPage .breandArea .CW div p{font-size: 20px; line-height: 1.5; color: #111;}
 .aboutUsPage .breandArea .CW div p:not(:last-of-type){margin-bottom: 30px;}
 .aboutUsPage .breandArea .CW div + *{display: block; clear: both;}
-.aboutUsPage .breandArea .CW strong{display: block; font-size: 20px; font-weight: 700; margin-bottom: 50px;}
-.aboutUsPage .breandArea .CW ul{margin-bottom: 120px;}
-.aboutUsPage .breandArea .CW .logoArea{display: flex; padding: 60px 0; border: 1px solid #fa5014;}
-.aboutUsPage .breandArea .CW .logoArea li{flex: 1; text-align: center; padding: 10px 40px;}
-.aboutUsPage .breandArea .CW .logoArea li b{display: block; margin-bottom: 30px;}
+.aboutUsPage .breandArea .CW strong{display: block; font-size: 20px; font-weight: 700; margin-bottom: 30px;}
+.aboutUsPage .breandArea .CW .logoArea{display: flex; margin-bottom: 80px;}
+.aboutUsPage .breandArea .CW .logoArea li{flex: 1; text-align: center; padding: 50px 147px; border-radius: 16px; background-color: white;  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);}
+.aboutUsPage .breandArea .CW .logoArea li:not(:last-child){margin-right: 20px;}
+.aboutUsPage .breandArea .CW .logoArea li b{display: block; font-weight: 700; margin-bottom: 17px;}
 .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-.aboutUsPage .breandArea .CW .colorArea{display: flex;}
-.aboutUsPage .breandArea .CW .colorArea li{flex: 1; height: 480px; display: flex; justify-content: space-between; align-items: flex-start; padding: 30px; box-sizing: border-box; background-repeat: no-repeat; background-position: right 30px top 30px; background-size: 25px;}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014; background-image: url('../images/aboutUs/color01.png');}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/color02.png');}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff; background-image: url('../images/aboutUs/color03.png');}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6; background-image: url('../images/aboutUs/color04.png');}
-.aboutUsPage .breandArea .CW .colorArea li p{font-size: 15px; line-height: 1.33; font-weight: 600;}
-.aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(3) p{color: black;}
-.aboutUsPage .breandArea .CW > a{width: 180px; margin-left: auto;}
-
-.aboutUsPage .sliderBox{margin-bottom: 300px;}
+.aboutUsPage .breandArea .CW .colorArea{display: flex; justify-content: space-between; margin-bottom: 110px;}
+.aboutUsPage .breandArea .CW .colorArea li{height: 180px; font-size: 15px; padding: 20px; border-radius: 12px; box-sizing: border-box; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(-n + 3){width: 180px;}
+.aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(-n + 3)){width: 280px;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6;}
+.aboutUsPage .breandArea .CW .colorArea li:nth-child(5){background-color: #dcdcdc;}
+.aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2) , li:nth-child(4)){color: white;}
+.aboutUsPage .breandArea .CW .colorArea li b{display: block;  font-weight: 700; margin-bottom: 15px;}
+.aboutUsPage .breandArea .CW .colorArea li p{line-height: 1.33;}
+.aboutUsPage .breandArea .CW > a{width: 175px; margin:0 auto;}
 
 .aboutUsPage .supportArea > div{min-height: 847px;}
 

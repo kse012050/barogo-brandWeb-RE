@@ -339,9 +339,9 @@ $(document).ready(function(){
         graphArea.parent().scroll(function(){
             if(graphArea.offset().top < $(window).height() - graphArea.height() && graphBreak){
                 graphAni();
-                setTimeout(function(){
-                    eventAni(graphArea)
-                },1000)
+                eventAni(graphArea)
+                // setTimeout(function(){
+                // },1000)
                 graphBreak = !graphBreak;
             }
         })  /* 그래프 이벤트 fin */
