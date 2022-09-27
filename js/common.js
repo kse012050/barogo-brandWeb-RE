@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('.aboutUsPage').length > 0 && aboutUsPage();
 
     // 풀페이지
-    $('[data-scroll="fullPage"]').length > 0 && fullPage();
+    // $('[data-scroll="fullPage"]').length > 0 && fullPage();
     
     function common(){
         // 인트로
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
         // 반응형 풀페이지
         function resizeFull(){
-            if($('[data-scroll="fullPage"]').length > 0 || $('.aboutUsPage').length > 0){
+            if(/* $('[data-scroll="fullPage"]').length > 0 || */ $('.aboutUsPage').length > 0){
                 $(window).width() < responsiveWidth ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
             }
             
