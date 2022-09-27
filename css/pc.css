@@ -1,5 +1,7 @@
 .CW{width: calc(100% - 40px); max-width: 1180px; margin: 0 auto;}
 
+@media screen and (min-width : 768px) {
+
 /* 공통 */
 /* 폰트 케이스 */
 /* title case */
@@ -22,7 +24,7 @@ br.mobile{display: none;}
 
 /* 버튼 공통*/
 /* BTN (button) 배경이 들어가는 기본 버튼 */
-[class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700;}
+[class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700; border-radius: 3px; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);}
 .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px; white-space: nowrap;  padding:0 40px; background-color: #fa5014; border: none;}
 .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
 input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
@@ -136,10 +138,10 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 
 /* 메인페이지 공통 */
 /* [data-scroll="fullPage"] > *:not(.scrollArea){height: 100vh; box-sizing: border-box;} */
-[data-scroll="fullPage"] > *:not(.topBox , .scrollArea){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
+/* [data-scroll="fullPage"] > *:not(.topBox , .scrollArea){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;} */
 
 /* 메인페이지 상단 */
-[data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative;}
+[data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative; overflow: hidden;}
 [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 190px; padding-bottom: 495px;}
 [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px;}
 [data-scroll="fullPage"] > .topBox .CW a{position: relative; z-index: 10;}
@@ -181,7 +183,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .imgArea img{width: 100%;}
 
 /* 슬라이더 공통 */
-.sliderBox{overflow: hidden;}
+.sliderBox{padding: 200px; margin-bottom: 130px; overflow: hidden; }
 .sliderBox h2{margin-bottom: 50px;}
 .sliderBox .swiper{overflow: visible;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide{width: calc((100% - 25px) / 2); max-width: 575px; }
@@ -312,14 +314,15 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .deliveryPage .qualitativeArea .CW > ul li img{width: 100%;}
 
 /* 사장님의 따뜻한 마음 그대로 */
-.deliveryPage .mindArea{background-color: #f6f6f6;}
+.deliveryPage .mindArea{background-color: #f6f6f6; padding: 200px 0;}
 .deliveryPage .mindArea .CW{display: flex; justify-content: space-between; align-items: center;}
 .deliveryPage .mindArea .CW .imgArea{width: 40.67%;}
-.deliveryPage .mindArea .CW .textArea h2{margin-bottom: 30px;}
-.deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 30px;}
-.deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 50px;}
+.deliveryPage .mindArea .CW .textArea h2{margin-bottom: 20px;}
+.deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 20px;}
+.deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 35px;}
 
 /* 성공하는 매장의 노하우 */
+.deliveryPage .knowHowArea{padding: 200px 0;}
 .deliveryPage .knowHowArea .CW{display: flex; justify-content: space-between; }
 .deliveryPage .knowHowArea .CW .textArea h2{margin-bottom: 30px;}
 .deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 50px;}
@@ -328,27 +331,27 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .deliveryPage .knowHowArea .CW .imgArea{width: 49.15%;}
 
 /* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
+.deliveryPage .distributionArea{margin-bottom: 285px;}
 .deliveryPage .distributionArea .CW{position: relative;}
-.deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 53.38%; z-index: -1;}
-.deliveryPage .distributionArea .CW .textArea{width: 570px; margin-left: auto;}
-.deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 100px;}
+.deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 50px; width: 50%; z-index: -1;}
+.deliveryPage .distributionArea .CW .textArea{width: 540px; margin-left: auto; padding-top: 80px;}
 .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 80px;}
 .deliveryPage .distributionArea .CW .textArea mark{display: block; margin-bottom: 25px;}
 .deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
 
 /* 배너 */
-.deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover; padding: 80px 0;}
+.deliveryPage .bannerArea{height: 800px; background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover; padding: 80px 0;}
 .deliveryPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
 .deliveryPage .bannerArea div p{width: 500px; font-size: 24px; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 10px black;}
 
 
 /* ! 라이더 지원 */
 /* 프로를 프로답게 바로고 라이더 라이프 */
+.riderPage .lifeArea{padding: 200px 0;}
 .riderPage .lifeArea .CW{position: relative;}
-.riderPage .lifeArea .CW .textArea > *:not(h2){padding-left: 100px;}
-.riderPage .lifeArea .CW .textArea mark{display: block;}
 .riderPage .lifeArea .CW .textArea h2{margin-bottom: 100px;}
 .riderPage .lifeArea .CW .textArea > mark{margin-bottom: 25px;}
+.riderPage .lifeArea .CW .textArea p{color: #666666;}
 .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
 .riderPage .lifeArea .CW .imgArea{width: 52.54%; position: absolute; right: 0; top: 0;}
 
@@ -573,3 +576,4 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .finArea section h2{font-size: 36px; font-weight: 700; margin-bottom: 20px; padding-top: 130px; background: url('../images/inquiry/complete.png') no-repeat center top; background-size: 134px;}
 .finArea section p{font-size: 20px; line-height: 1.5; margin-bottom: 65px;}
 .finArea section a:not([class]){font-size: 18px; line-height: 1.67; font-weight: 700; color: #666; text-decoration: underline; margin-bottom: 130px;}
+}
