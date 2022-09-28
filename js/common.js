@@ -462,22 +462,29 @@ $(document).ready(function(){
                         });
                         scrollTarget.map((t)=>{
                             heightArray.map((h , i)=>{
+                                // t.css('z-index' , 0)
                                 if(i == 0){
                                     t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
-                                    t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
+                                    // t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
+                                    // t.eq(i).css('z-index' , 1)
                                 }else if(i == heightArray.length - 1){
                                     t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
-                                    t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
+                                    // t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
+                                    // t.eq(i).css('z-index' , 1)
                                 }else if(i >= 1){
                                     let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
                                     t.eq(i).css('opacity',opacity)
-                                    t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
+                                    // t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
+                                }
+                                if(t.eq(i).css('opacity') > 0){
+                                    t.eq(i).css('z-index' , 1)
+                                }else{
+                                    t.eq(i).css('z-index' , 0)
                                 }
                             })
                         })
                         // console.log(((scrollValue - areaOffTop) / scrollHeight));
                         scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
-                        console.log(((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * parseInt($('[data-scroll="rightLeft"]').css('right')));
                         scrollArea2.find('[data-special="target"]').css(
                             'transform', 'translateX(' +((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * 100 + '%)'
                         )
