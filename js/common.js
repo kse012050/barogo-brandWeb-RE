@@ -39,6 +39,9 @@ $(document).ready(function(){
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
 
+        $('.mainPage').length > 0 && mainTopAni();
+
+
         // 모바일 메뉴
         mobileMenu();
 
@@ -64,6 +67,13 @@ $(document).ready(function(){
                 $('.deliveryPage > .topBox .imgArea').addClass('active');
             })
         }   /* 인트로 fin */
+
+        function mainTopAni(){
+            // let startAniSelector = '.mainPage .topBox , .mainPage .topBox .imgArea , .mainPage .topBox h2 , .mainPage .topBox p';
+            // $(startAniSelector).css('opacity' , 0);
+            // $('.mainPage .topBox').animate({opacity : 1});
+            // $('.mainPage .topBox .imgArea').animate({opacity : 1});
+        }
 
         // 스크롤시 해더
         function scrollHeader(selector){
