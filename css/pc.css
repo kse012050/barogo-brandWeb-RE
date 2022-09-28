@@ -182,7 +182,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 30px;}
 
 [data-scrollAni="fixed"]{position: relative;}
-[data-scrollAni="fixed"] > div{width: 100%; height: 100vh; min-height: 800px; display: flex; justify-content: center; align-items: center; padding: 200px; box-sizing: border-box;}
+[data-scrollAni="fixed"] > div{width: 100%; height: 100vh; min-height: 800px; display: flex; justify-content: center; align-items: center; padding: 0 200px; box-sizing: border-box;}
 [data-scrollAni="fixed"] [data-scroll="target"]{position: relative;}
 [data-scrollAni="fixed"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
 [data-scrollAni="fixed"] [data-scroll="target"] li.active{opacity: 1;}
@@ -350,6 +350,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .deliveryPage .distributionArea{margin-bottom: 285px;}
 .deliveryPage .distributionArea .CW{position: relative;}
 .deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 50px; width: 50%; z-index: -1;}
+.deliveryPage .distributionArea.active .CW .imgArea{top: 220px; transition-duration: 1s; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);}
 .deliveryPage .distributionArea .CW .textArea{width: 540px; margin-left: auto; padding-top: 80px;}
 .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 80px;}
 .deliveryPage .distributionArea .CW .textArea mark{display: block; margin-bottom: 25px;}
@@ -371,6 +372,9 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .riderPage .lifeArea .CW .textArea p{color: #666666;}
 .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 60px;}
 .riderPage .lifeArea .CW .imgArea{width: 52.54%; position: absolute; right: 0; top: 0;}
+.riderPage .lifeArea.active .CW .imgArea{top: 220px; transition-duration: 1s; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);}
+
+
 
 /* 라이더님만을 위한 놀이터 바로고 플레이 */
 .riderPage .playgroundArea .CW{position: relative; display: flex; justify-content: space-between;}
@@ -450,8 +454,8 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .foundedPage .growthArea .CW{display: flex; justify-content: space-between;}
 .foundedPage .growthArea .CW div{order: 1;}
 .foundedPage .growthArea .CW div h2{margin-bottom: 30px;}
-.foundedPage .growthArea .CW ul{display: flex; flex-wrap: wrap; width: 545px;}
-.foundedPage .growthArea .CW ul li{min-width: 155px;}
+.foundedPage .growthArea .CW ul{display: flex; flex-wrap: wrap; width: 555px;}
+.foundedPage .growthArea .CW ul li{min-width: 220px;}
 .foundedPage .growthArea .CW ul li:nth-child(2n + 1){min-width: 335px;}
 .foundedPage .growthArea .CW ul li:not(:nth-last-child(-n + 2)){margin-bottom: 50px;}
 .foundedPage .growthArea .CW ul li mark{font-weight: 700; display: block; margin-bottom: 20px;}

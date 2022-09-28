@@ -423,6 +423,8 @@ $(document).ready(function(){
         // fixScroll();
         partScroll();
     }
+
+    $('.mainPage').length > 0 && scrollAnimation();
     function partScroll(){
         if($(window).width() > responsiveWidth){
             let scrollArea = [];
@@ -595,6 +597,27 @@ $(document).ready(function(){
                 };
             })
         })
+    }
+
+    function scrollAnimation(){
+        $(window).scroll(function(){
+            $('[data-scroll="animation"]').each(function(){
+                if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3)){
+                    $(this).addClass('active');
+                }
+            })
+        })
+
+        // 모바일 스크롤시 숫자 카운트
+        let countBreak = true;
+        $(window).scroll(function(){
+            $('[data-eventani="count"]').each(function(){
+                if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBreak){
+                    countAni($(this).find('[data-eventAni="target"]'))
+                    countBreak = !countBreak;
+                }
+            })
+        })  /* 모바일 스크롤시 숫자 카운트 fin */
     }
     
     // 풀페이지
