@@ -404,7 +404,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .riderPage .startArea .CW .textArea h2{margin-bottom: 100px;}
 .riderPage .startArea .CW .textArea h2 mark{display: block;}
 .riderPage .startArea .CW .imgArea{position: absolute; right: 0; top: 50%; width: 54.23%; transform: translateY(-50%);}
-.riderPage .startArea .CW .imgArea img{position: absolute; top: 0; right: calc((100vw -1180px) / -2); transform:translateY(-50%); transition: right 0.5s;}
+.riderPage .startArea .CW .imgArea img{transform: translateX(100%);}
 
 /* 라이더에게 최적화된 바로고 기능성 굿즈 */
 .riderPage .goodsArea{margin-bottom: 200px;}

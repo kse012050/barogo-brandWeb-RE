@@ -309,6 +309,7 @@
     .deliveryPage .qualitativeArea .CW div div ul li div a:not(:last-child){margin-bottom: 10px;}
     .deliveryPage .qualitativeArea .CW > ul{width: 77.5%; margin-left: auto;}
     .deliveryPage .qualitativeArea .CW > ul li{width: 100%;}
+    .deliveryPage .qualitativeArea .CW > ul li video{width: 100%;}
 
     /* 사장님의 따뜻한 마음 그대로 */
     .deliveryPage .mindArea{padding: 7.500rem 0; background-color: #f6f6f6; margin-bottom: 7.500rem;}
@@ -382,7 +383,7 @@
     .riderPage .startArea .CW .textArea h2{margin-bottom: 5rem;}
     .riderPage .startArea .CW .textArea h2 mark{display: block;}
     .riderPage .startArea .CW .imgArea{position: relative; height: 13.313rem;}
-    .riderPage .startArea .CW .imgArea img{width: 100%; position: absolute; right: -100%; top: 0; transition: right 0.5s;}
+    .riderPage .startArea .CW .imgArea img{width: 100%; position: absolute; right: -50%; top: 0; transition: right 0.5s;}
 
     /* 라이더에게 최적화된 바로고 기능성 굿즈 */
     .riderPage .goodsArea{margin-bottom: 7.500rem;}

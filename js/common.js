@@ -419,8 +419,110 @@ $(document).ready(function(){
         })
     }   /* // 회사소개 전용 fin */
     
-    if($('[data-scrollAni="fixed"]').length > 0 && $(window).width() > responsiveWidth){
-        fixScroll();
+    if($('[data-scrollAni="fixed"]').length > 0 ){
+        // fixScroll();
+        partScroll();
+    }
+    function partScroll(){
+        if($(window).width() > responsiveWidth){
+            let scrollArea = [];
+            for(let a = 0; a < $('[data-scrollAni="fixed"]').length; a++){
+                scrollArea.push($('[data-scrollAni="fixed"]').eq(a))
+            }
+            scrollArea.map((scrollArea2)=>{
+                let scrollFix = scrollArea2.children();
+                let scrollTarget = [];
+                let targetLength = scrollArea2.find('[data-scroll="target"]').length;
+                for(let a = 0; a < targetLength; a++){
+                    scrollTarget.push(scrollArea2.find('[data-scroll="target"]').eq(a).children())
+                }
+                targetLength = scrollTarget[0].length;
+                scrollArea2.css('height', (targetLength + 1) * 1000)
+                let areaOffTop = scrollArea2.offset().top;
+                let areaHeight = scrollArea2.outerHeight();
+                let fixHeight = scrollFix.outerHeight();
+                let scrollHeight = areaHeight - fixHeight;
+                let targetHeight = (scrollHeight) / (targetLength + targetLength - 2);
+                let heightArray = [];
+                for(let a = 0; a < targetLength; a++){
+                    a == 0 && heightArray.push(areaOffTop);
+                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
+                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
+                }
+                let progressHeight = 100 / targetLength;
+                $('.progressBar span').css('height' , progressHeight + '%');
+                
+                $(window).scroll((e)=>{
+                    let scrollValue = $(window).scrollTop();
+        
+                    if((scrollValue > areaOffTop) &&  (scrollValue < areaOffTop + scrollHeight)){
+                        scrollFix.css({
+                            'position':'fixed',
+                            'top' : '0',
+                        });
+                        scrollTarget.map((t)=>{
+                            heightArray.map((h , i)=>{
+                                if(i == 0){
+                                    t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
+                                    t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
+                                }else if(i == heightArray.length - 1){
+                                    t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
+                                    t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
+                                }else if(i >= 1){
+                                    let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
+                                    t.eq(i).css('opacity',opacity)
+                                    t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
+                                }
+                            })
+                        })
+                        // console.log(((scrollValue - areaOffTop) / scrollHeight));
+                        scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
+                        console.log(((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * parseInt($('[data-scroll="rightLeft"]').css('right')));
+                        scrollArea2.find('[data-special="target"]').css(
+                            'transform', 'translateX(' +((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * 100 + '%)'
+                        )
+                    }else{
+                        let topValue = 0;
+                        scrollValue > areaOffTop ? topValue = scrollHeight : topValue = 0
+                        scrollFix.css({
+                            'position':'absolute',
+                            'top' : topValue
+                        });
+                    };
+                })
+            })
+        }else{
+            let touchList = $('[data-scroll="fullPage"] [data-scrollAni="fixed"]');
+             // 모바일 opacity 터치 X축
+            touchList.on('touchstart',function(e){
+                if($(window).width() > responsiveWidth) return;
+                touchstartX = e.touches[0].clientX;
+                touchstartY = e.touches[0].clientY;
+            })
+
+            touchList.on('touchmove',function(e){
+                if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+                    e.preventDefault();
+                }
+            })
+
+            touchList.on('touchend',function(e){
+                console.log(3);
+                if($(window).width() > responsiveWidth) return;
+                touchendX = e.changedTouches[0].clientX;
+                touchendY = e.changedTouches[0].clientY;
+                if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
+                    return;
+                }
+
+                let delta = -(touchstartX - touchendX);
+                let targetArea = $(this);
+                
+                scrollAni(targetArea , delta)
+        
+            })
+            // 모바일 opacity 터치 X축 fin
+        }
     }
     function fixScroll(){
         let scrollArea = [];
@@ -656,6 +758,7 @@ $(document).ready(function(){
     let aniBreak = false;
     function scrollAni(targetArea , delta){
         if(aniBreak){ return true}
+        console.log(4);
         
         let target = targetArea.find('[data-scroll="target"]');
         let targetList =[]
@@ -684,6 +787,7 @@ $(document).ready(function(){
             aniBreak = !aniBreak;
         }, 1000)
         
+        targetArea.attr('data-scrollAni') == 'fixed' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
         targetArea.attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
@@ -694,6 +798,7 @@ $(document).ready(function(){
     
     // 투명도 효과
     function opacityAni(list , idx , progress){
+        console.log(5);
         if(progress.find('span').is(':animated')) return;
         if($(window).width() > responsiveWidth){
             progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
@@ -710,13 +815,11 @@ $(document).ready(function(){
     function bikeAni(targetArea , idx){
         targetList = targetArea.find('[data-special="target"]')
         /* 바이크 이미지 */
-        let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
-        /* 바이크 위치 */
 
         if(idx == 0){
-            targetList.css('right',targetRight)
+            targetList.css('right',-50 + "%")
         }else if(idx == 1 ){
-            targetList.css('right',targetRight / 2)
+            targetList.css('right',-25 + "%")
         }else{
             targetList.css('right',0)
         }
