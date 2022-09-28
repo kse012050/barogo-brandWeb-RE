@@ -409,6 +409,74 @@ $(document).ready(function(){
         })
     }   /* // 회사소개 전용 fin */
     
+    if($('[data-scrollAni="fixed"]').length > 0 && $(window).width() > responsiveWidth){
+        fixScroll();
+    }
+    function fixScroll(){
+        let scrollArea = [];
+        for(let a = 0; a < $('[data-scrollAni="fixed"]').length; a++){
+            scrollArea.push($('[data-scrollAni="fixed"]').eq(a))
+        }
+        scrollArea.map((scrollArea2)=>{
+            let scrollFix = scrollArea2.children();
+            let scrollTarget = [];
+            let targetLength = scrollArea2.find('[data-scroll="target"]').length;
+            for(let a = 0; a < targetLength; a++){
+                scrollTarget.push(scrollArea2.find('[data-scroll="target"]').eq(a).children())
+            }
+            targetLength = scrollTarget[0].length;
+            scrollArea2.css('height', (targetLength + 1) * 1000)
+            let areaOffTop = scrollArea2.offset().top;
+            let areaHeight = scrollArea2.outerHeight();
+            let fixHeight = scrollFix.outerHeight();
+            let scrollHeight = areaHeight - fixHeight;
+            let targetHeight = (scrollHeight) / (targetLength + targetLength - 2);
+            let heightArray = [];
+            for(let a = 0; a < targetLength; a++){
+                a == 0 && heightArray.push(areaOffTop);
+                a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
+                a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
+            }
+            let progressHeight = 100 / targetLength;
+            $('.progressBar span').css('height' , progressHeight + '%');
+            
+            $(window).scroll((e)=>{
+                let scrollValue = $(window).scrollTop();
+    
+                if((scrollValue > areaOffTop) &&  (scrollValue < areaOffTop + scrollHeight)){
+                    scrollFix.css({
+                        'position':'fixed',
+                        'top' : '0',
+                    });
+                    scrollTarget.map((t)=>{
+                        heightArray.map((h , i)=>{
+                            if(i == 0){
+                                t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
+                                t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
+                            }else if(i == heightArray.length - 1){
+                                t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
+                                t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
+                            }else if(i >= 1){
+                                let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
+                                t.eq(i).css('opacity',opacity)
+                                t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
+                            }
+                        })
+                    })
+                    scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
+                    scrollArea2.find('[data-scroll="rightLeft"]').css(
+                        'transform', 'translateX('+((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * ((($(window).width() - $('.CW').width()) / 2 )+ scrollArea2.find('[data-scroll="rightLeft"]').width())+'px) translateY(-50%)')
+                }else{
+                    let topValue = 0;
+                    scrollValue > areaOffTop ? topValue = scrollHeight : topValue = 0
+                    scrollFix.css({
+                        'position':'absolute',
+                        'top' : topValue
+                    });
+                };
+            })
+        })
+    }
     
     // 풀페이지
     function fullPage(){
