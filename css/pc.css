@@ -151,19 +151,13 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 40px; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
 [data-scroll="fullPage"] > .topBox .CW a{position: relative; z-index: 10; opacity: 0; animation: startTopAni 0.5s 0.9s forwards;}
 [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 1920px; height: 750px; background-repeat: no-repeat; text-indent: -9999px; }
+[data-scroll="fullPage"] > .topBox{background-position: center bottom; }
+[data-scroll="fullPage"] > .topBox .imgArea{bottom: 0;}
 @media screen and (max-width : 1920px){
     [data-scroll="fullPage"] > .topBox{background-size: 1920px;}
 }
 @media screen and (min-width : 1921px){
     [data-scroll="fullPage"] > .topBox{background-size: auto , 100% 490px;}
-}
-@media screen and (max-height : 937px){
-    [data-scroll="fullPage"] > .topBox{background-position: center top 447px;}
-    [data-scroll="fullPage"] > .topBox .imgArea{top: 187px;}
-}
-@media screen and (min-height : 938px){
-    [data-scroll="fullPage"] > .topBox{background-position: center bottom; }
-    [data-scroll="fullPage"] > .topBox .imgArea{bottom: 0;}
 }
 @keyframes startTopAni {
     0%{opacity: 0;}
