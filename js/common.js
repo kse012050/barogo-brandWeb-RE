@@ -102,7 +102,11 @@ $(document).ready(function(){
                         slidesPerView: 2,
                         spaceBetween: 25,
                     }
-                }
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
             });
         }   /* 하단 슬라이더 fin */
 
