@@ -485,7 +485,7 @@
     /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
     .aboutUsPage .toDoArea{position: relative; padding-bottom: 7.500rem;}
     .aboutUsPage .toDoArea .CW h2{margin-bottom: 1.250rem;}
-    .aboutUsPage .toDoArea .CW > p{margin-bottom: 5.000rem;}
+    .aboutUsPage .toDoArea .CW > p{margin-bottom: 4.375rem;}
     .aboutUsPage .toDoArea .CW > div{padding-bottom: 10.938rem; position: relative;}
     .aboutUsPage .toDoArea .CW > div .imgArea{position: absolute; right: 0; bottom: 0; width: 75%;}
     .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{width: 25%;}
