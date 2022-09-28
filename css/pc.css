@@ -371,12 +371,12 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .riderPage .lifeArea .CW .imgArea{width: 52.54%; position: absolute; right: 0; top: 0;}
 
 /* 라이더님만을 위한 놀이터 바로고 플레이 */
-.riderPage .playgroundArea .CW{position: relative;}
-.riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 200px;}
+.riderPage .playgroundArea .CW{position: relative; display: flex; justify-content: space-between;}
+.riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 65px;}
 .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2{margin-bottom: 25px;}
 .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2 mark{display: block;}
-.riderPage .playgroundArea .CW .textArea .progressArea{width: 375px; margin-left: auto; box-sizing: border-box;}
-.riderPage .playgroundArea .CW .imgArea{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 43.64%;}
+.riderPage .playgroundArea .CW .textArea .progressArea ul li p{color: #666;}
+.riderPage .playgroundArea .CW .imgArea{width: 360px; order: -1; margin-left: 110px;}
 
 /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
 .riderPage .revenueArea{background-color: #f6f6f6; padding: 190px 0 230px;}
@@ -495,9 +495,26 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .aboutUsPage .makeArea ul li p{font-size: 20px; line-height: 1.5; color: #111;}
 
 /* META LOGISTIS UNIVERSE */
-/* .aboutUsPage .metaArea{max-width: 1800px; width: calc(100% - 40px); margin: 0 auto;} */
-/* .aboutUsPage .metaArea span{display: block; padding-bottom: 5.2222%; background: url('../images/aboutUs/typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;} */
-.aboutUsPage .metaArea{font-size: 7.55vw; font-weight: 700;}
+.aboutUsPage .metaArea{font-size: 7.55vw; font-weight: 700; white-space: nowrap; overflow: hidden;}
+.aboutUsPage .metaArea :is(span , mark){display: inline-block; animation-duration: 40s; animation-timing-function: linear; animation-iteration-count: infinite;}
+.aboutUsPage .metaArea span{animation-name: textAni1; animation-delay: -40s;}
+.aboutUsPage .metaArea mark{animation-name: textAni2; animation-delay: -20s;}
+@keyframes textAni1 {
+    0%{
+        transform: translateX(102%);
+    }
+    100%{
+        transform: translateX(-102%);             
+    }
+}
+@keyframes textAni2 {
+    0%{
+        transform: translateX(2%);
+    }
+    100%{
+        transform: translateX(-202%);
+    }
+}
 
 /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
 .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;}
@@ -561,24 +578,28 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .aboutUsPage .breandArea .CW div p{font-size: 20px; line-height: 1.5; color: #111;}
 .aboutUsPage .breandArea .CW div p:not(:last-of-type){margin-bottom: 30px;}
 .aboutUsPage .breandArea .CW div + *{display: block; clear: both;}
-.aboutUsPage .breandArea .CW strong{display: block; font-size: 20px; font-weight: 700; margin-bottom: 30px;}
-.aboutUsPage .breandArea .CW .logoArea{display: flex; margin-bottom: 80px;}
-.aboutUsPage .breandArea .CW .logoArea li{flex: 1; text-align: center; padding: 50px 147px; border-radius: 16px; background-color: white;  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);}
-.aboutUsPage .breandArea .CW .logoArea li:not(:last-child){margin-right: 20px;}
-.aboutUsPage .breandArea .CW .logoArea li b{display: block; font-weight: 700; margin-bottom: 17px;}
+.aboutUsPage .breandArea .CW ul::before{content: attr(title); display: block; font-size: 20px; font-weight: 700; margin-bottom: 30px;}
+.aboutUsPage .breandArea .CW ul::after{content: ''; display: block; clear: both;}
+.aboutUsPage .breandArea .CW ul li{float: left; font-size: 15px;}
+.aboutUsPage .breandArea .CW ul li:not(:last-child){margin-right: 20px;}
+.aboutUsPage .breandArea .CW ul li b{display: block; font-weight: 700; margin-bottom: 15px;}
+.aboutUsPage .breandArea .CW ul li p{line-height: 1.33;}
+.aboutUsPage .breandArea .CW .logoArea{margin-bottom: 80px;}
+.aboutUsPage .breandArea .CW .logoArea li{width: calc((100% - 20px) / 2);  text-align: center; padding: 50px 147px; border-radius: 16px; background-color: white;  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1); box-sizing: border-box;}
+.aboutUsPage .breandArea .CW .logoArea li b{color: #111;}
 .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-.aboutUsPage .breandArea .CW .colorArea{display: flex; justify-content: space-between; margin-bottom: 110px;}
-.aboutUsPage .breandArea .CW .colorArea li{height: 180px; font-size: 15px; padding: 20px; border-radius: 12px; box-sizing: border-box; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(-n + 3){width: 180px;}
-.aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(-n + 3)){width: 280px;}
+.aboutUsPage .breandArea .CW ul:not(.logoArea){float: left; width: calc((100% - 20px) / 2); margin-bottom: 110px;}
+.aboutUsPage .breandArea .CW ul:not(.logoArea) li{height: 180px; padding: 20px; border-radius: 12px; box-sizing: border-box; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);}
+.aboutUsPage .breandArea .CW ul:last-of-type + *{clear: both;}
+.aboutUsPage .breandArea .CW .colorArea{margin-right: 20px;}
+.aboutUsPage .breandArea .CW .colorArea li{width: calc((100% - 40px) / 3);}
 .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
 .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
 .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6;}
-.aboutUsPage .breandArea .CW .colorArea li:nth-child(5){background-color: #dcdcdc;}
-.aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2) , li:nth-child(4)){color: white;}
-.aboutUsPage .breandArea .CW .colorArea li b{display: block;  font-weight: 700; margin-bottom: 15px;}
-.aboutUsPage .breandArea .CW .colorArea li p{line-height: 1.33;}
+.aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2)){color: white;}
+.aboutUsPage .breandArea .CW .secondaryArea li{width: calc((100% - 20px) / 2);}
+.aboutUsPage .breandArea .CW .secondaryArea li:nth-child(1){color: white; background-color: #2d3ce6;}
+.aboutUsPage .breandArea .CW .secondaryArea li:nth-child(2){background-color: #dcdcdc;}
 .aboutUsPage .breandArea .CW > a{width: 175px; margin:0 auto;}
 
 .aboutUsPage .supportArea > div{min-height: 847px;}

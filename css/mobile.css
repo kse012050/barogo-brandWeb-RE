@@ -461,12 +461,26 @@
     .aboutUsPage .makeArea ul li p{font-size: 1.000rem; line-height: 1.5; color: #111;}
 
     /* META LOGISTIS UNIVERSE */
-    /* .aboutUsPage .metaArea{width: calc(100% - 1.250rem); margin: 0 auto 7.500rem;}
-    .aboutUsPage .metaArea span{display: block; padding-bottom: 45.9%; background: url('../images/aboutUs/m-typo.png') no-repeat center / cover; height: 0.0001px; overflow: hidden; text-indent: -9999px;} */
-    .aboutUsPage .metaArea{width: calc(100% - 1.250rem); margin: 0 auto 7.500rem; font-size: 7.55vw; font-weight: 700;}
-    .aboutUsPage .metaArea span{display: block;}
-    .aboutUsPage .metaArea span:nth-of-type(2){text-align: right;}
-    .aboutUsPage .metaArea mark{display: block;}
+    .aboutUsPage .metaArea{ margin: 0 auto 7.500rem; font-size: 7.6vw; font-weight: 700; white-space: nowrap; overflow: hidden;}
+    .aboutUsPage .metaArea :is(span , mark){display: inline-block; animation-duration: 40s; animation-timing-function: linear; animation-iteration-count: infinite;}
+    .aboutUsPage .metaArea span{animation-name: textAni1; animation-delay: -40s;}
+    .aboutUsPage .metaArea mark{animation-name: textAni2; animation-delay: -20s;}
+    @keyframes textAni1 {
+        0%{
+            transform: translateX(102%);
+        }
+        100%{
+            transform: translateX(-102%);             
+        }
+    }
+    @keyframes textAni2 {
+        0%{
+            transform: translateX(2%);
+        }
+        100%{
+            transform: translateX(-202%);
+        }
+    }
 
     /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
     .aboutUsPage .toDoArea{position: relative; padding-bottom: 7.500rem;}
@@ -518,51 +532,31 @@
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li .imgArea{width: 100%; margin-top: 1.875rem;}
 
     /* BAROGO Breand identity */
-    /* .aboutUsPage .breandArea .CW h2{font-size: 1.500rem; font-weight: 700; line-height: 1.33; margin-bottom: 1.250rem;}
-    .aboutUsPage .breandArea .CW div{margin-bottom: 5.000rem;}
-    .aboutUsPage .breandArea .CW div p{font-size: 1.000rem; line-height: 1.5;}
-    .aboutUsPage .breandArea .CW div p:not(:last-of-type){margin-bottom: 1.563rem;}
-    .aboutUsPage .breandArea .CW div + *{display: block; clear: both;}
-    .aboutUsPage .breandArea .CW strong{display: block; font-size: 1.125rem; font-weight: 700; margin-bottom: 1.875rem;}
-    .aboutUsPage .breandArea .CW ul{margin-bottom: 5.000rem;}
-    .aboutUsPage .breandArea .CW .logoArea{padding: 1.875rem 1.563rem; border: 1px solid #fa5014;}
-    .aboutUsPage .breandArea .CW .logoArea li{text-align: center; padding: 0.625rem 2.500rem;  padding: 1.875rem 1.250rem 1.250rem;}
-    .aboutUsPage .breandArea .CW .logoArea li:not(:last-child){border-bottom: 1px solid #fa5014;}
-    .aboutUsPage .breandArea .CW .logoArea li b{display: block; font-size: 0.938rem; font-weight: 700; margin-bottom: 1.875rem;}
-    .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-    .aboutUsPage .breandArea .CW .colorArea li{height: 7.500rem;  padding: 1.563rem; box-sizing: border-box; background-repeat: no-repeat; background-position: right 1.563rem top 1.563rem;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014; background-image: url('../images/aboutUs/m-color01.png');  background-size: 5.000rem;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000; background-image: url('../images/aboutUs/m-color02.png');  background-size: 3.938rem;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff; background-image: url('../images/aboutUs/m-color03.png');  background-size: 3.750rem;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6; background-image: url('../images/aboutUs/m-color04.png');  background-size: 6.688rem;}
-    .aboutUsPage .breandArea .CW .colorArea li p{font-size: 0.750rem; line-height: 1.33; font-weight: 600;}
-    .aboutUsPage .breandArea .CW .colorArea li:not(:nth-child(3)) p{color: white;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(3) p{color: black;}
-    .aboutUsPage .breandArea .CW > a{width: 11.250rem; margin:0 auto;} */
-
     .aboutUsPage .breandArea{padding: 7.5rem 0; background-color: #f9f9f9;}
     .aboutUsPage .breandArea .CW h2{font-size: 1.500rem; font-weight: 700; line-height: 1.33; margin-bottom: 1.250rem;}
     .aboutUsPage .breandArea .CW div{margin-bottom: 5.000rem;}
     .aboutUsPage .breandArea .CW div p{font-size: 1.000rem; line-height: 1.5;}
     .aboutUsPage .breandArea .CW div p:not(:last-of-type){margin-bottom: 1.563rem;}
     .aboutUsPage .breandArea .CW div + *{display: block; clear: both;}
-    .aboutUsPage .breandArea .CW strong{display: block; font-size: 1.125rem; font-weight: 700; margin-bottom: 1.875rem;}
-    .aboutUsPage .breandArea .CW .logoArea{margin-bottom: 5.000em;}
-    .aboutUsPage .breandArea .CW .logoArea{margin-bottom: 5.000rem;}
-    .aboutUsPage .breandArea .CW .logoArea li{text-align: center; padding: 1.563rem 3.125rem; border-radius: 1.000rem; background-color: white;  box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
-    .aboutUsPage .breandArea .CW .logoArea li:not(:last-child){margin-bottom: 1.250rem;}
-    .aboutUsPage .breandArea .CW .logoArea li b{display: block; font-weight: 700; margin-bottom: 1.063rem;}
+    .aboutUsPage .breandArea .CW ul::before{content: attr(title); display: block; font-size: 1.125rem; font-weight: 700; margin-bottom: 1.875rem;}
+    .aboutUsPage .breandArea .CW ul::after{content: ''; display: block; clear: both;}
+    .aboutUsPage .breandArea .CW ul{margin-bottom: 5.000rem;}
+    .aboutUsPage .breandArea .CW ul li{float: left; font-size: 1.125rem;}
+    .aboutUsPage .breandArea .CW ul li b{display: block; font-weight: 700; margin-bottom: 1.063rem;}
+    .aboutUsPage .breandArea .CW ul li p{line-height: 1.33;}
+    .aboutUsPage .breandArea .CW .logoArea li{width: 100%; text-align: center; padding: 1.563rem 3.125rem; border-radius: 1.000rem; background-color: white;  box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1); box-sizing: border-box;}
+    .aboutUsPage .breandArea .CW .logoArea li:not(:last-child){margin-bottom: 0.625rem;}
+    .aboutUsPage .breandArea .CW .logoArea li b{color: #111;}
     .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-    .aboutUsPage .breandArea .CW .colorArea{display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 6.875rem;}
-    .aboutUsPage .breandArea .CW .colorArea li{width: calc((100% - 0.625rem) / 2);; height: 11.250rem; font-size: 0.813rem; padding: 15px; border-radius: 0.750rem; box-sizing: border-box; box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
+    .aboutUsPage .breandArea .CW ul:not(.logoArea) li{width: calc((100% - 0.625rem) / 2); height: 11.250rem; font-size: 0.813rem; padding: 0.938rem; border-radius: 0.750rem; box-sizing: border-box; box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
+    .aboutUsPage .breandArea .CW ul:not(.logoArea) li:not(:nth-child(2n)){margin-right: 0.625rem;}
+    .aboutUsPage .breandArea .CW ul:not(.logoArea) li:not(:nth-last-child(-n + 2)){margin-bottom: 0.625rem;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(4){background-color: #2d3ce6;}
-    .aboutUsPage .breandArea .CW .colorArea li:nth-child(5){background-color: #dcdcdc;}
-    .aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2) , li:nth-child(4)){color: white;}
-    .aboutUsPage .breandArea .CW .colorArea li b{display: block;  font-weight: 700; margin-bottom: 0.625rem;}
-    .aboutUsPage .breandArea .CW .colorArea li p{line-height: 1.33;}
+    .aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2)){color: white;}
+    .aboutUsPage .breandArea .CW .secondaryArea li:nth-child(1){color: white; background-color: #2d3ce6;}
+    .aboutUsPage .breandArea .CW .secondaryArea li:nth-child(2){background-color: #dcdcdc;}
     .aboutUsPage .breandArea .CW > a{width: 11.250rem; margin:0 auto;}
 
      /* 문의 */
