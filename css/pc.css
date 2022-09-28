@@ -24,7 +24,7 @@ br.mobile{display: none;}
 
 /* 버튼 공통*/
 /* BTN (button) 배경이 들어가는 기본 버튼 */
-[class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700; border-radius: 3px; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);}
+[class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; font-weight: 700; border-radius: 3px; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);}
 .BTN-arrow{ color: white; max-width: 267px; line-height: 72px; font-size: 20px; white-space: nowrap;  padding:0 40px; background-color: #fa5014; border: none;}
 .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
 input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
@@ -36,7 +36,7 @@ input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/c
 .BBTN-download::after{background-image: url('../images/common/download.png');}
 
 /* 문의하기 링크 */
-.fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition: transform 0.5s; }
+.fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition: transform 0.5s; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2); border-radius: 3px;}
 .fixedLink::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
 .fixedLink.active{transform: translateX(0);}
 
@@ -325,6 +325,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .deliveryPage .qualitativeArea .CW > ul{width: 49.15%;}
 .deliveryPage .qualitativeArea .CW > ul li{width: 100%;}
 .deliveryPage .qualitativeArea .CW > ul li img{width: 100%;}
+.deliveryPage .qualitativeArea .CW > ul li video{width: 100%;}
 
 /* 사장님의 따뜻한 마음 그대로 */
 .deliveryPage .mindArea{background-color: #f6f6f6; padding: 200px 0;}
