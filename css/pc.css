@@ -629,7 +629,7 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .inquiryPage{padding: 230px 0 120px;}
 .inquiryArea .guideArea{padding-top: 95px; display: flex; justify-content: space-between;}
 .inquiryArea .guideArea li{width: 48.5%; border: 1px solid #ddd;}
-.inquiryArea .guideArea li > a{display: block; height: 335x; padding: 175px 40px 90px; box-sizing: border-box; font-size: 28px; font-weight: 700; line-height: 1.36; color: #111; background-position: left 40px top 50px , left 40px bottom 40px; background-repeat: no-repeat;}
+.inquiryArea .guideArea li > a{display: block; height: 335px; padding: 175px 40px 90px; box-sizing: border-box; font-size: 28px; font-weight: 700; line-height: 1.36; color: #111; background-position: left 40px top 50px , left 40px bottom 40px; background-repeat: no-repeat;}
 .inquiryArea .guideArea li:nth-child(1) > a{background-image: url('../images/inquiry/shop.png') , url('../images/common/arrow_black.png');}
 .inquiryArea .guideArea li:nth-child(2) > a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
 .inquiryArea .guideArea li .popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
