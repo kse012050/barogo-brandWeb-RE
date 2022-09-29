@@ -157,8 +157,6 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 
 
 /* 메인페이지 공통 */
-/* [data-scroll="fullPage"] > *:not(.scrollArea){height: 100vh; box-sizing: border-box;} */
-/* [data-scroll="fullPage"] > *:not(.topBox , .scrollArea){display: flex; justify-content: center; align-items: center; padding-top: 90px; box-sizing: border-box;} */
 
 /* 메인페이지 상단 */
 [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative; overflow: hidden; 
@@ -222,14 +220,6 @@ footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide .imgArea{width: 100%; height: 325px; background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 20px; margin-bottom: 20px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide mark{display: block; font-weight: 700; margin-bottom: 5px;}
 .sliderBox .swiper .swiper-wrapper .swiper-slide p{color: #111;}
-
-/* 스크롤 */
-/* .scrollArea{padding-top: 90px; box-sizing: border-box;}
-.scrollArea > div{overflow: auto; height: calc(100vh - 90px); position: relative;}
-.scrollBox::-webkit-scrollbar{width: 5px; height: 8px; background-color: rgba(0, 0, 0, 0.1);}
-.scrollBox::-webkit-scrollbar-track{background-color: rgba(0, 0, 0, 0.1);}
-.scrollBox::-webkit-scrollbar-thumb {background: #fa5014;} */
-
 
 /* 후원 */
 .supportArea > div{width: 100%; height: 100%; padding-top: 110px; display: flex; align-items: flex-end; background: #1a1a1a url('../images/common/footer_bg.png') no-repeat center top / 100% 190px; position: relative; overflow: hidden; border-bottom: 1px solid #fa5014; box-sizing: border-box;}
