@@ -1,44 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iphone 모바일 확대 방지 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"">
-    <title>회사소개 - 바로고</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/import.css">
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <!-- countUp -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.5/countUp.min.js" integrity="sha512-1YM6bEc8uBWgHGLyQbBZyKgb6X6SKs3xR9aP8AwfyWPMf4plLM8g3r+769pGiebwOW3L8QPP0m3PWyiaHJ5rOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/common.js"></script>
-    <link rel="icon" href="images/common/logo.png">
-</head>
+<?php include "head.php"; ?>
 <body>
     <div class="aboutUsPage">
-        <header>
-            <div class="CW">
-                <h1><a href="index.html"><img src="images/common/logo.png" alt="barogo logo"></a></h1>
-                <nav>
-                    <ul>
-                        <li class="FC-01"><a href="index.html">배달대행 문의</a></li>
-                        <li class="FC-01"><a href="rider.html">라이더 지원</a></li>
-                        <li class="FC-01"><a href="founded.html">허브 창업</a></li>
-                        <li class="FC-01 active"><a href="aboutUs.html">회사 소개</a></li>
-                        <li class="FC-01"><a href="#">채용</a></li>
-                    </ul>
-                </nav>
-                <button>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
+        <?php include "header.php"; ?>
 
         <main data-scroll="area" class="">
             <div data-scroll="area" class="b">
@@ -271,6 +234,7 @@
                             컬러조합을 통해 세련되고 에너제틱한 바로고의 활력을 전달합니다.
                         </p>
                     </div>
+                    <strong>LOGO SYSTEM</strong>
                     <ul title="LOGO SYSTEM" class="logoArea">
                         <li>
                             <b>Horizontal</b>
@@ -326,7 +290,7 @@
                             </p>
                         </li>
                     </ul>
-                    <a href="" class="BBTN-download">BI / GUIDE</a>
+                    <a <?=homepageLinkCheck("https://barogo.com/data/recruit/2021_바로고_배달_트렌드_리포트.pdf")?> class="BBTN-download">BI / GUIDE</a>
                 </div>
             </section>
 
@@ -338,32 +302,46 @@
                         <div class="swiper-button-next"></div>
                     </div>
                     <div class="swiper bottomSlider">
+
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
+                            <?php
+                            if(checkArray($archives,true)){
+                                foreach ($archives as $archive){
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="imgArea" style="background-image: url('<?=$archive["thum_file_path"]?>');"></div>
+                                        <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
+                                        <p class="FC-01"><?=$archive["subject"]?></p>
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            ?>
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -382,79 +360,8 @@
                     </div>
                 </div>
             </div>
-            <footer>
-                <div class="topArea">
-                    <div class="CW">
-                        <ul class="linkArea">
-                            <li>
-                                <b>회사</b>
-                                <ul>
-                                    <li><a href="aboutUs.html">회사 소개</a></li>
-                                    <li><a href="">채용</a></li>
-                                    <li><a href="board-disclosure.html">공시</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>서비스</b>
-                                <ul>
-                                    <li><a href="deliveryInquiry.html">배달대행 문의</a></li>
-                                    <li><a href="rider.html">라이더 지원</a></li>
-                                    <li><a href="founded.html">허브 창업</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>지원</b>
-                                <ul>
-                                    <li><a href="board-notice.html">공지사항</a></li>
-                                    <li><a href="board-data.html">자료실</a></li>
-                                    <li><a href="">블로그</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>이메일 문의</b>
-                                <ul>
-                                    <li><a href="mailto:partners@barogo.com" title="제휴">partners@barogo.com</a></li>
-                                    <li><a href="mailto:communications@barogo.com" title="PR">communications@barogo.com</a></li>
-                                    <li><a href="mailto:marketing@barogo.com" title="마케팅">marketing@barogo.com</a></li>
-                                    <li><a href="mailto:recruiting@barogo.com" title="채용">recruiting@barogo.com</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-        
-                        <ul class="SNSArea">
-                            <li><a href="#">페이스북</a></li>
-                            <li><a href="#">유튜브</a></li>
-                            <li><a href="#">블로그</a></li>
-                            <li><a href="#">인스타</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="CW bottomArea">
-                    <div>
-                        <h2><img src="images/common/footer_logo.png" alt="BAROGO logo"></h2>
-                        <address>
-                            <p>대표자 : 이태권</p>
-                            <p>주소 : 서울특별시 강남구 언주로134길32</p>
-                            <p>사업자 등록번호 : 119-86-87135</p>
-                        </address>
-                        <p>© 2022 Barogo. All rights reserved. </p>
-                        <ul>
-                            <li><a href="">배송 표준 약관</a></li>
-                            <li><a href="">위치기반 서비스 이용약관</a></li>
-                            <li><a href="">개인 정보 처리 방침</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <b>대표번호</b>
-                        <a href="tel:+025509900">02-550-9900</a>
-                        <p>
-                            AM 10:00 ~ PM 05:00 (토, 일, 공휴일 휴무)<br/>
-                            (점심시간 PM 12:00 ~ PM 01:30)
-                        </p>
-                    </div>
-                </div>
-            </footer>
-            <a href="deliveryInquiry.html" class="fixedLink">인재채용 바로가기</a>
+            <?php include "footer.php"; ?>
+            <a href="deliveryInquiry.php" class="fixedLink">인재채용 바로가기</a>
             <button class="topBtn">최상단으로 이동</button>
         </main>
     </div>
