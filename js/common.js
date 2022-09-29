@@ -443,6 +443,12 @@ $(document).ready(function(){
             $('.popupArea').fadeOut();
             $('body').removeAttr('style');
         }
+
+        $('.inquiryPage input[type="submit"]').click(function(e){
+            if(!$(this).hasClass('active')){
+                e.preventDefault();
+            }
+        })
     }
     
     if($('[data-scrollAni="fixed"]').length > 0 ){
