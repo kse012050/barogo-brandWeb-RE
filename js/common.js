@@ -21,9 +21,6 @@ $(document).ready(function(){
     // 문의 페이지
     $('.inquiryPage').length > 0 && inquiryPage();
 
-    // 풀페이지
-    // $('[data-scroll="fullPage"]').length > 0 && fullPage();
-    
     function common(){
         // 인트로
         $('*').hasClass('introBox') && introAni();
@@ -42,7 +39,11 @@ $(document).ready(function(){
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
 
-        $('.mainPage').length > 0 && mainTopAni();
+        // 페이지 스크롤 이벤트
+        $('.mainPage').length > 0 && scrollAnimation();
+
+        // 페이지 부분 스크롤 이벤트
+        $('[data-scrollAni="fixed"]').length > 0 && partScroll();
 
 
         // 모바일 메뉴
@@ -71,12 +72,6 @@ $(document).ready(function(){
             })
         }   /* 인트로 fin */
 
-        function mainTopAni(){
-            // let startAniSelector = '.mainPage .topBox , .mainPage .topBox .imgArea , .mainPage .topBox h2 , .mainPage .topBox p';
-            // $(startAniSelector).css('opacity' , 0);
-            // $('.mainPage .topBox').animate({opacity : 1});
-            // $('.mainPage .topBox .imgArea').animate({opacity : 1});
-        }
 
         // 스크롤시 해더
         function scrollHeader(selector){
@@ -87,7 +82,6 @@ $(document).ready(function(){
                 if($('.topBtn').hasClass('active')){
                     ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
                 }
-                // ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
             })
         }   /* 스크롤시 해더 fin */
 
@@ -98,7 +92,7 @@ $(document).ready(function(){
 
         // 반응형 풀페이지
         function resizeFull(){
-            if(/* $('[data-scroll="fullPage"]').length > 0 || */ $('.aboutUsPage').length > 0){
+            if($('.aboutUsPage').length > 0){
                 $(window).width() < responsiveWidth ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
             }
             
@@ -425,6 +419,7 @@ $(document).ready(function(){
         })
     }   /* // 회사소개 전용 fin */
 
+    // 문의하기 전용
     function inquiryPage(){
         $('[data-click*="popup"]').click(function(e){
             e.preventDefault();
@@ -453,14 +448,9 @@ $(document).ready(function(){
                 e.preventDefault();
             }
         })
-    }
+    }   /* 문의하기 전용 fin */
     
-    if($('[data-scrollAni="fixed"]').length > 0 ){
-        // fixScroll();
-        partScroll();
-    }
-
-    $('.mainPage').length > 0 && scrollAnimation();
+    // 페이지 부분 스크롤
     function partScroll(){
         if($(window).width() > responsiveWidth){
             let scrollArea = [];
@@ -572,72 +562,7 @@ $(document).ready(function(){
         $('.topBtn').click(function(){
             $(this).hasClass('active') && $('html').animate({scrollTop : 0});
         })
-    }
-    function fixScroll(){
-        let scrollArea = [];
-        for(let a = 0; a < $('[data-scrollAni="fixed"]').length; a++){
-            scrollArea.push($('[data-scrollAni="fixed"]').eq(a))
-        }
-        scrollArea.map((scrollArea2)=>{
-            let scrollFix = scrollArea2.children();
-            let scrollTarget = [];
-            let targetLength = scrollArea2.find('[data-scroll="target"]').length;
-            for(let a = 0; a < targetLength; a++){
-                scrollTarget.push(scrollArea2.find('[data-scroll="target"]').eq(a).children())
-            }
-            targetLength = scrollTarget[0].length;
-            scrollArea2.css('height', (targetLength + 1) * 1000)
-            let areaOffTop = scrollArea2.offset().top;
-            let areaHeight = scrollArea2.outerHeight();
-            let fixHeight = scrollFix.outerHeight();
-            let scrollHeight = areaHeight - fixHeight;
-            let targetHeight = (scrollHeight) / (targetLength + targetLength - 2);
-            let heightArray = [];
-            for(let a = 0; a < targetLength; a++){
-                a == 0 && heightArray.push(areaOffTop);
-                a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
-                a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
-            }
-            let progressHeight = 100 / targetLength;
-            $('.progressBar span').css('height' , progressHeight + '%');
-            
-            $(window).scroll((e)=>{
-                let scrollValue = $(window).scrollTop();
-    
-                if((scrollValue > areaOffTop) &&  (scrollValue < areaOffTop + scrollHeight)){
-                    scrollFix.css({
-                        'position':'fixed',
-                        'top' : '0',
-                    });
-                    scrollTarget.map((t)=>{
-                        heightArray.map((h , i)=>{
-                            if(i == 0){
-                                t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
-                                t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
-                            }else if(i == heightArray.length - 1){
-                                t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
-                                t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
-                            }else if(i >= 1){
-                                let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
-                                t.eq(i).css('opacity',opacity)
-                                t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
-                            }
-                        })
-                    })
-                    scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
-                    scrollArea2.find('[data-scroll="rightLeft"]').css(
-                        'transform', 'translateX('+((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * ((($(window).width() - $('.CW').width()) / 2 )+ scrollArea2.find('[data-scroll="rightLeft"]').width())+'px) translateY(-50%)')
-                }else{
-                    let topValue = 0;
-                    scrollValue > areaOffTop ? topValue = scrollHeight : topValue = 0
-                    scrollFix.css({
-                        'position':'absolute',
-                        'top' : topValue
-                    });
-                };
-            })
-        })
-    }
+    } /* 페이지 부분 스크롤 fin */
 
     function scrollAnimation(){
         $(window).scroll(function(){
@@ -659,170 +584,6 @@ $(document).ready(function(){
             })
         })  /* 모바일 스크롤시 숫자 카운트 fin */
     }
-    
-    // 풀페이지
-    function fullPage(){
-        let fullPageList = $('[data-scroll="fullPage"] > *');
-        let touchList = $('[data-scroll="fullPage"] [data-scrollAni="opacity"]');
-        let idx = 0;
-
-        // PC fullPage
-        fullPageList.on('mousewheel',function(e){
-            if($(window).width() < responsiveWidth) return;
-            if($('html').is(':animated')) return;
-            let delta = e.originalEvent.wheelDelta;
-            let targetArea = $(this);
-            let nextTarget;
-            
-            // 해당 영역에 투명도 이벤트가 있을 때
-            if(targetArea.attr('data-scrollAni')){
-                if(scrollAni(targetArea , delta)){
-                    return; 
-                }
-            }
-
-            // 푸터 부분 스크롤 막기
-            if($('.scrollArea > div').scrollTop() > 0){
-                return;
-            }
-
-            // 풀페이지 이동 넘버 설정
-            if(delta > 0 && 0 < idx){
-                nextTarget = $(this).prev();
-                idx--;
-            }else if(delta < 0 && idx < fullPageList.length - 1){
-                nextTarget = $(this).next();
-                idx++;
-            }
-     
-
-            // 라이더 페이지 풀페이지 이동 했을 때
-            if(nextTarget && nextTarget.attr('data-eventAni')){
-                eventAni(nextTarget , delta)
-            }
-            
-            fullPageAni(fullPageList.eq(idx))
-        })
-
-        // PC fullPage fin
-
-        let touchstartX; 
-        let touchstartY; 
-        let touchendX; 
-        let touchendY; 
-
-        // PC , tablet fullPage touch
-        fullPageList.on('touchstart',function(e){
-            if($(window).width() < responsiveWidth) return;
-            touchstartX = e.touches[0].clientX;
-            touchstartY = e.touches[0].clientY;
-        })
-        
-        fullPageList.on('touchend',function(e){
-            if($(window).width() < responsiveWidth) return;
-            touchendX = e.changedTouches[0].clientX;
-            touchendY = e.changedTouches[0].clientY;
-            if($('html').is(':animated')) return;
-            if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
-                return;
-            }
-            let delta = -(touchstartY - touchendY);
-            let targetArea = $(this);
-            let nextTarget;
-            
-            // 해당 영역에 투명도 이벤트가 있을 때
-            if(targetArea.attr('data-scrollAni')){
-                if(scrollAni(targetArea , delta)){
-                    return; 
-                }
-            }
-
-            // 푸터 부분 스크롤 막기
-            if($('.scrollArea > div').scrollTop() > 0){
-                return;
-            }
-
-            // 풀페이지 이동 넘버 설정
-            if(delta > 0 && 0 < idx){
-                nextTarget = $(this).prev();
-                idx--;
-            }else if(delta < 0 && idx < fullPageList.length - 1){
-                nextTarget = $(this).next();
-                idx++;
-            }
-     
-
-            // 라이더 페이지 풀페이지 이동 했을 때
-            if(nextTarget && nextTarget.attr('data-eventAni')){
-                eventAni(nextTarget , delta)
-            }
-            
-            fullPageAni(fullPageList.eq(idx))
-        })
-        // PC , tablet fullPage touch fin
-
-        // 모바일 opacity 터치 X축
-        touchList.on('touchstart',function(e){
-            if($(window).width() > responsiveWidth) return;
-            touchstartX = e.touches[0].clientX;
-            touchstartY = e.touches[0].clientY;
-        })
-
-        touchList.on('touchmove',function(e){
-            if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
-                e.preventDefault();
-            }
-        })
-
-        touchList.on('touchend',function(e){
-            if($(window).width() > responsiveWidth) return;
-            touchendX = e.changedTouches[0].clientX;
-            touchendY = e.changedTouches[0].clientY;
-            if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
-                return;
-            }
-
-            let delta = -(touchstartX - touchendX);
-            let targetArea = $(this);
-            
-            scrollAni(targetArea , delta)
-    
-        })
-        // 모바일 opacity 터치 X축 fin
-    
-        // fullPage 이동 이벤트
-        function fullPageAni(nextTarget){
-            nextTarget.addClass('active').siblings().removeClass('active');
-            $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
-        }   /* fullPage 이동 이벤트 fin */
-
-        // 모바일 스크롤시 숫자 카운트
-        let countBreak = true;
-        $(window).scroll(function(){
-            if($(window).width() < responsiveWidth){
-                $('[data-eventani="count"]').each(function(){
-                    if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBreak){
-                        countAni($(this).find('[data-eventAni="target"]'))
-                        countBreak = !countBreak;
-                    }
-                })
-            }
-        })  /* 모바일 스크롤시 숫자 카운트 fin */
-
-
-        // fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼
-        $('.topBtn').click(function(){
-            $('html').animate({scrollTop : 0})
-            idx = 0;
-            fullPageList.find('[data-scroll="target"]').each(function(){
-                $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
-            })
-            fullPageList.each(function(){
-                scrollAni($(this) , 120)
-            })
-        })  /* fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼 fin */
-        
-    } /* 풀페이지 fin */
     
     // fullPage 안 scroll event
     let aniBreak = false;
@@ -1080,7 +841,6 @@ $(document).ready(function(){
         canvasInit();
         drawScene();
     }
-    
     
 })  /* document ready fin */
 
