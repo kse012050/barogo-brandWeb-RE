@@ -15,8 +15,11 @@ $(document).ready(function(){
     // 허브 창업 페이지
     $('.foundedPage').length > 0 && foundedPage();
 
-    // 허브 창업 페이지
+    // 회사 소개 페이지
     $('.aboutUsPage').length > 0 && aboutUsPage();
+
+    // 문의 페이지
+    $('.inquiryPage').length > 0 && inquiryPage();
 
     // 풀페이지
     // $('[data-scroll="fullPage"]').length > 0 && fullPage();
@@ -418,6 +421,29 @@ $(document).ready(function(){
             }
         })
     }   /* // 회사소개 전용 fin */
+
+    function inquiryPage(){
+        $('[data-click="popup"]').click(function(e){
+            e.preventDefault();
+            $('.popupArea').fadeIn().css('display','flex');
+            $('body').css('overflow','hidden');
+        })
+        $('.popupArea').click(function(){
+            closePopup();
+        })
+        $('.popupArea div').click(function(e){
+            e.stopPropagation();
+        })
+
+        $('.popupArea div button').click(function(){
+            closePopup();
+        })
+
+        function closePopup(){
+            $('.popupArea').fadeOut();
+            $('body').removeAttr('style');
+        }
+    }
     
     if($('[data-scrollAni="fixed"]').length > 0 ){
         // fixScroll();
