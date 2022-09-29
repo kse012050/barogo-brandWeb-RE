@@ -47,9 +47,22 @@ input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/c
 .fixedLink.active{transform: translateX(0);}
 
 /* 탑 버튼 */
-.topBtn{ display: none; position: fixed; left: 60px; bottom: 60px; width: 60px; height: 60px; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;}
-.topBtn.active{display: block;}
-
+.topBtn{ display: none; position: fixed; left: 50%; bottom: 60px; width: 61px; height: 31px; transform: translateX(-50%);  
+    background-image: url('../images/common/top.png'); background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px; z-index: 10;
+    animation: bounce 2s infinite; transition: 0.5s;
+}
+.topBtn.active{background-image: url('../images/common/top-active.png'); animation-name: none;}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
 
 /* 오버라인 */
 [class*="overLine"]{position: relative;}

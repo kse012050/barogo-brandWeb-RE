@@ -84,6 +84,7 @@ $(document).ready(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
+                ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
                 // ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
             })
         }   /* 스크롤시 해더 fin */
@@ -566,7 +567,7 @@ $(document).ready(function(){
         }
 
         $('.topBtn').click(function(){
-            $('html').animate({scrollTop : 0});
+            $(this).hasClass('active') && $('html').animate({scrollTop : 0});
         })
     }
     function fixScroll(){
