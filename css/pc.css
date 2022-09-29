@@ -30,12 +30,15 @@ br.mobile{display: none;}
 .BTN-arrow::after{content: ''; width: 46px; height: 10px; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 30px;}
 input[type="submit"].BTN-arrow{width: 193px; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 40px center / 46px;}
 /* BBTN (border button) 테두리가 들어가는 버튼*/
-[class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box; transition-duration: 0.5s; transition-property: background-color , color;}
+[class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 225px; line-height: 62px; font-size: 18px; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 30px; box-sizing: border-box; transition-duration: 0.5s; transition-property: background-color , background-image, color;}
 [class |= "BBTN"]::after{content: ''; width: 20px; height: 20px; margin-left: 10px; background-repeat: no-repeat; background-position: center; background-size: cover;}
 [class |= "BBTN"]:hover{background-color: #fa5014; color: white;}
 .BBTN-go::after{background-image: url('../images/common/go.png');}
 .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
 .BBTN-download::after{background-image: url('../images/common/download.png');}
+.BBTN-go:hover::after{background-image: url('../images/common/go-white.png');}
+.BBTN-subscribe:hover::after{background-image: url('../images/common/subscribe-white.png');}
+.BBTN-download:hover::after{background-image: url('../images/common/download-white.png');}
 
 /* 문의하기 링크 */
 .fixedLink{position: fixed; right: 60px; bottom: 60px; transform: translateX(calc(100% + 60px)); color: white; min-width: 267px; line-height: 72px; font-size: 20px;  padding:0 40px; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition-duration: 0.5s; transition-property: transform , background-color; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2); border-radius: 3px;}
