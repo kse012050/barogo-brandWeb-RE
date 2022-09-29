@@ -564,6 +564,10 @@ $(document).ready(function(){
             })
             // 모바일 opacity 터치 X축 fin
         }
+
+        $('.topBtn').click(function(){
+            $('html').animate({scrollTop : 0});
+        })
     }
     function fixScroll(){
         let scrollArea = [];
