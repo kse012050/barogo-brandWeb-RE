@@ -1,44 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iphone 모바일 확대 방지 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"">
-    <title>허브창업 - 바로고</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/import.css">
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <!-- countUp -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.5/countUp.min.js" integrity="sha512-1YM6bEc8uBWgHGLyQbBZyKgb6X6SKs3xR9aP8AwfyWPMf4plLM8g3r+769pGiebwOW3L8QPP0m3PWyiaHJ5rOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/common.js"></script>
-    <link rel="icon" href="images/common/logo.png">
-</head>
+<?php include "head.php"; ?>
 <body>
     <div class="mainPage">
-        <header>
-            <div class="CW">
-                <h1><a href="index.html"><img src="images/common/logo.png" alt="barogo logo"></a></h1>
-                <nav>
-                    <ul>
-                        <li class="FC-01"><a href="index.html">배달대행 문의</a></li>
-                        <li class="FC-01"><a href="rider.html">라이더 지원</a></li>
-                        <li class="FC-01 active"><a href="founded.html">허브 창업</a></li>
-                        <li class="FC-01"><a href="aboutUs.html">회사 소개</a></li>
-                        <li class="FC-01"><a href="#">채용</a></li>
-                    </ul>
-                </nav>
-                <button>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
+        <?php include "header.php"; ?>
 
         <main class="foundedPage" data-scroll="fullPage">
             <section class="topBox">
@@ -47,7 +10,7 @@
                         상생 물류 산업의 시작<br/>
                         바로고 허브
                     </h2>
-                    <a href="foundedInquiry.html" class="BTN-arrow">바로 문의하기</a>
+                    <a href="foundedInquiry" class="BTN-arrow">바로 문의하기</a>
                 </div>
                 <div class="imgArea">
                     허브 창업 이미지
@@ -67,26 +30,21 @@
                                 </div>
                                 <ul data-scroll="target">
                                     <li class="active">
-                                        <mark class="TC-03">압도적 브랜드 파워</mark>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
                                         <p class="FC-01">
-                                            국내 최다 대형 프랜차이즈 보유!<br/>
-                                            119,000개의 전국 가맹점 제휴로 검증된<br/>
-                                            바로고의 브랜드 경쟁력
+                                            <?=nl2br(getValue($content,"depth2_content1"))?>
                                         </p>
                                     </li>
                                     <li>
-                                        <mark class="TC-03">안정적 수익 창출</mark>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
                                         <p class="FC-01">
-                                            식음·비식음, 다양한 배달 물량을 제공하며<br/>
-                                            허브의 안정적 수익 창출을 지원합니다.
+                                            <?=nl2br(getValue($content,"depth2_content2"))?>
                                         </p>
                                     </li>
                                     <li>
-                                        <mark class="TC-03">배달 중 문제 신속 해결</mark>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
                                         <p class="FC-01">
-                                            배달 수행 중 발생하는 모든 이슈는<br/>
-                                            바로고의 실시간 통합 관제 센터에서<br/>
-                                            빠르게 해결합니다.
+                                            <?=nl2br(getValue($content,"depth2_content3"))?>
                                         </p>
                                     </li>
                                 </ul>
@@ -182,26 +140,25 @@
                     <div>
                         <h2 class="TC-02">바로고의 놀라운 성장세</h2>
                         <p class="FC-01">
-                            바로고는 지금도 성장하는 중입니다.<br/>
-                            상생 물류, 넥스트 물류 시대에 합류하세요!
+                            <?=nl2br(getValue($content,"depth3_content1"))?>
                         </p>
                     </div>
                     <ul>
                         <li>
                             <mark class="FC-01">월 배달 수행량</mark>
-                            <p class="TC-03" data-eventAni="target" id="test01" data-endCount="19,180,000">0</p>
+                            <p class="TC-03" data-eventAni="target" id="test01" data-endCount="<?=intval(getValue($content,"depth3_subject2"))?>"><?=number_format(getValue($content,"depth3_subject2"))?></p>
                         </li>
                         <li>
                             <mark class="FC-01">전문라이더</mark>
-                            <p class="TC-03" data-eventAni="target" id="test02" data-endCount="36000">0</p>
+                            <p class="TC-03" data-eventAni="target" id="test02" data-endCount="<?=intval(getValue($content,"depth3_subject3"))?>"><?=number_format(getValue($content,"depth3_subject3"))?></p>
                         </li>
                         <li>
                             <mark class="FC-01">전국 허브</mark>
-                            <p class="TC-03" data-eventAni="target" id="test03" data-endCount="1320">0</p>
+                            <p class="TC-03" data-eventAni="target" id="test03" data-endCount="<?=intval(getValue($content,"depth3_subject4"))?>"><?=number_format(getValue($content,"depth3_subject4"))?></p>
                         </li>
                         <li>
                             <mark class="FC-01">제휴 상점</mark>
-                            <p class="TC-03" data-eventAni="target" id="test04" data-endCount="119000">0</p>
+                            <p class="TC-03" data-eventAni="target" id="test04" data-endCount="<?=intval(getValue($content,"depth3_subject5"))?>"><?=number_format(getValue($content,"depth3_subject5"))?></p>
                         </li>
                     </ul>
                 </div>
@@ -220,40 +177,34 @@
                         </p>
                     </div>
                     <div class="imgArea">
-                        <img src="images/founded/companion.png" alt="">
+                        <img src="images/founded/companion.png" alt="BAROGO 강남지사 이미지">
                     </div>
                     <ul>
                         <li>
-                            <strong class="TC-03">허브 영업 지원</strong>
+                            <strong class="TC-03"><?=getValue($content,"depth4_subject1")?></strong>
                             <mark class="FC-01">
-                                B2B 프로모션 등<br/>
-                                전폭적 허브 지원책 상시진행
+                                <?=nl2br(getValue($content,"depth4_content1_a"))?>
                             </mark>
                             <p>
-                                권역 내 가맹점 영업 및<br/>
-                                라이더 모집을 바로고 본사에서<br/>
-                                적극적으로 지원합니다!
+                                <?=nl2br(getValue($content,"depth4_content1_b"))?>
                             </p>
                         </li>
                         <li>
-                            <strong class="TC-03">허브 상생 전략</strong>
+                            <strong class="TC-03"><?=getValue($content,"depth4_subject2")?></strong>
                             <mark class="FC-01">
-                                상권 분석 및 사업 타당성<br/>
-                                조사에 기반한 전략적 운영지원!
+                                <?=nl2br(getValue($content,"depth4_content2_a"))?>
                             </mark>
                             <p>
-                                합리적인 가격과 상품의 바이크 리스 제도,<br/>
-                                바로고만의 라이더 단체보험으로<br/>
-                                모두가 상생할 수 있도록 합니다.
+                                <?=nl2br(getValue($content,"depth4_content2_b"))?>
                             </p>
                         </li>
                         <li>
-                            <strong class="TC-03">허브의 성장 도모</strong>
-                            <mark class="FC-01">허브의 수익 창출 다양한 사업 지원</mark>
+                            <strong class="TC-03"><?=getValue($content,"depth4_subject3")?></strong>
+                            <mark class="FC-01">
+                                <?=nl2br(getValue($content,"depth4_content3_a"))?>
+                            </mark>
                             <p>
-                                바로고는 허브와 함께하는<br/>
-                                동반자로서 모두의 지속가능한 <br/>
-                                성장을 추구합니다.
+                                <?=nl2br(getValue($content,"depth4_content3_b"))?>
                             </p>
                         </li>
                     </ul>
@@ -263,10 +214,7 @@
             <div class="bannerArea">
                 <div class="CW">
                     <p>
-                        무엇이든 어디서나.<br/>
-                        바로고는 더 많고 긴밀한 연결을 통해,<br/>
-                        허브-라이더 모두가 함께 성장하는 환경을 만들어갑니다.<br/>
-                        상생물류, 초연결생태계를 개척하는 바로고와 함께하세요.
+                        <?=nl2br(getValue($content,"depth5_content1"))?>
                     </p>
                 </div>
             </div>
@@ -280,36 +228,50 @@
                     </div>
                     <div class="swiper bottomSlider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>
-                                <mark class="FC-01">#Film</mark>
-                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>
-                            </div>
+
+                            <?php
+                            if(checkArray($archives,true)){
+                                foreach ($archives as $archive){
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="imgArea" style="background-image: url('<?=$archive["thum_file_path"]?>');"></div>
+                                        <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
+                                        <p class="FC-01"><?=$archive["subject"]?></p>
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            ?>
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
             </section>
-           
+
             <div class="supportArea">
                 <div>
                     <div class="CW">
@@ -324,84 +286,12 @@
                 </div>
             </div>
         </main>
-
-        <footer>
-            <div class="topArea">
-                <div class="CW">
-                    <ul class="linkArea">
-                        <li>
-                            <b>회사</b>
-                            <ul>
-                                <li><a href="aboutUs.html">회사 소개</a></li>
-                                <li><a href="">채용</a></li>
-                                <li><a href="board-disclosure.html">공시</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>서비스</b>
-                            <ul>
-                                <li><a href="deliveryInquiry.html">배달대행 문의</a></li>
-                                <li><a href="rider.html">라이더 지원</a></li>
-                                <li><a href="founded.html">허브 창업</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>지원</b>
-                            <ul>
-                                <li><a href="board-notice.html">공지사항</a></li>
-                                <li><a href="board-data.html">자료실</a></li>
-                                <li><a href="">블로그</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>이메일 문의</b>
-                            <ul>
-                                <li><a href="mailto:partners@barogo.com" title="제휴">partners@barogo.com</a></li>
-                                <li><a href="mailto:communications@barogo.com" title="PR">communications@barogo.com</a></li>
-                                <li><a href="mailto:marketing@barogo.com" title="마케팅">marketing@barogo.com</a></li>
-                                <li><a href="mailto:recruiting@barogo.com" title="채용">recruiting@barogo.com</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-    
-                    <ul class="SNSArea">
-                        <li><a href="#">페이스북</a></li>
-                        <li><a href="#">유튜브</a></li>
-                        <li><a href="#">블로그</a></li>
-                        <li><a href="#">인스타</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="CW bottomArea">
-                <div>
-                    <h2><img src="images/common/footer_logo.png" alt="BAROGO logo"></h2>
-                    <address>
-                        <p>대표자 : 이태권</p>
-                        <p>주소 : 서울특별시 강남구 언주로134길32</p>
-                        <p>사업자 등록번호 : 119-86-87135</p>
-                    </address>
-                    <p>© 2022 Barogo. All rights reserved. </p>
-                    <ul>
-                        <li><a href="">배송 표준 약관</a></li>
-                        <li><a href="">위치기반 서비스 이용약관</a></li>
-                        <li><a href="">개인 정보 처리 방침</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <b>대표번호</b>
-                    <a href="tel:+025509900">02-550-9900</a>
-                    <p>
-                        AM 10:00 ~ PM 05:00 (토, 일, 공휴일 휴무)<br/>
-                        (점심시간 PM 12:00 ~ PM 01:30)
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <?php include "footer.php"; ?>
     </div>
     <!-- 허브 창업 컨텐츠 fin -->
 
     
-    <a href="deliveryInquiry.html" class="fixedLink">바로 문의하기</a>
+    <a href="foundedInquiry" class="fixedLink">바로 문의하기</a>
     <button class="topBtn">최상단으로 이동</button>
 </body>
 </html>
