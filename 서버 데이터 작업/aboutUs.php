@@ -1,5 +1,5 @@
 <?php include "head.php"; ?>
-<body>
+<body class="bodyHidden">
     <div class="aboutUsPage">
         <?php include "header.php"; ?>
 

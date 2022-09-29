@@ -2,9 +2,9 @@
 let responsiveWidth = 767;
 $(document).ready(function(){
     // 새로고침 시 최상단 이동
-    setTimeout(function(){
+   /*  setTimeout(function(){
         $('html').scrollTop(0)
-    },300) 
+    },300)  */
 
     // 공통
     common()
@@ -27,10 +27,8 @@ $(document).ready(function(){
 
         // 반응형 로고 , 풀페이지 판단
         resizeLogo();
-        resizeFull();
         $(window).resize(function(){
             resizeLogo();
-            resizeFull();
         });
 
         // 스크롤 공통
@@ -90,14 +88,6 @@ $(document).ready(function(){
             $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
         }   /* 반응형 로고 fin */
 
-        // 반응형 풀페이지
-        function resizeFull(){
-            if($('.aboutUsPage').length > 0){
-                $(window).width() < responsiveWidth ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
-            }
-            
-        }
-        
         // 하단 슬라이더
         function bottomSlider(){
             var swiper = new Swiper(".bottomSlider", {
@@ -210,6 +200,9 @@ $(document).ready(function(){
 
     // 회사소개 전용
     function aboutUsPage(){
+        setTimeout(function(){
+            $('html').scrollTop(0)
+        },300) 
         // 회사소개 스크롤 이벤트
         $('[data-scroll="area"]').each(function(){
             // PC 
@@ -419,35 +412,44 @@ $(document).ready(function(){
         })
     }   /* // 회사소개 전용 fin */
 
-    // 문의하기 전용
+    // 문의 페이지 전용
     function inquiryPage(){
-        $('[data-click*="popup"]').click(function(e){
-            e.preventDefault();
-            let attrName = $(this).attr('data-click');
-            $('[data-popup="'+attrName+'"]').fadeIn().css('display','flex');
-            $('body').css('overflow','hidden');
-        })
-        $('.popupBox').click(function(){
-            closePopup();
-        })
-        $('.popupBox div').click(function(e){
-            e.stopPropagation();
-        })
+        
+        // 문의 페이지 팝업
+        inquiryPopup();
 
-        $('.popupBox div button').click(function(){
-            closePopup();
-        })
+        // 문의 페이지 팝업
+        function inquiryPopup(){
+            $('[data-click*="popup"]').click(function(e){
+                e.preventDefault();
+                let attrName = $(this).attr('data-click');
+                $('[data-popup="'+attrName+'"]').fadeIn().css('display','flex');
+                $('body').css('overflow','hidden');
+            })
+            $('.popupBox').click(function(){
+                closePopup();
+            })
+            $('.popupBox div').click(function(e){
+                e.stopPropagation();
+            })
 
-        function closePopup(){
-            $('.popupBox').fadeOut();
-            $('body').removeAttr('style');
-        }
+            $('.popupBox div button').click(function(){
+                closePopup();
+            })
 
+            function closePopup(){
+                $('.popupBox').fadeOut();
+                $('body').removeAttr('style');
+            }
+        }   /* 문의 페이지 팝업 fin */
+
+        // submit 버튼 활성화되지 않으면 클릭 막기
         $('.inquiryPage input[type="submit"]').click(function(e){
             if(!$(this).hasClass('active')){
                 e.preventDefault();
             }
         })
+
     }   /* 문의하기 전용 fin */
     
     // 페이지 부분 스크롤
@@ -563,6 +565,7 @@ $(document).ready(function(){
             $(this).hasClass('active') && $('html').animate({scrollTop : 0});
         })
     } /* 페이지 부분 스크롤 fin */
+
 
     function scrollAnimation(){
         $(window).scroll(function(){
@@ -706,7 +709,7 @@ $(document).ready(function(){
         });
     }   /* 숫자 카운팅 fin */
 
-    // 그래프
+    // 캔버스 그래프
     function graphAni(){
         let canvas , ctx , w , h , lines = [];
         function canvasInit(){
@@ -840,7 +843,7 @@ $(document).ready(function(){
         }
         canvasInit();
         drawScene();
-    }
+    }   /* 캔버스 그래프 fin */
     
 })  /* document ready fin */
 
