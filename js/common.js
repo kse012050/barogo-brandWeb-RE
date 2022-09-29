@@ -84,7 +84,9 @@ $(document).ready(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
-                ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
+                if($('.topBtn').hasClass('active')){
+                    ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
+                }
                 // ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
             })
         }   /* 스크롤시 해더 fin */
@@ -424,24 +426,25 @@ $(document).ready(function(){
     }   /* // 회사소개 전용 fin */
 
     function inquiryPage(){
-        $('[data-click="popup"]').click(function(e){
+        $('[data-click*="popup"]').click(function(e){
             e.preventDefault();
-            $('.popupArea').fadeIn().css('display','flex');
+            let attrName = $(this).attr('data-click');
+            $('[data-popup="'+attrName+'"]').fadeIn().css('display','flex');
             $('body').css('overflow','hidden');
         })
-        $('.popupArea').click(function(){
+        $('.popupBox').click(function(){
             closePopup();
         })
-        $('.popupArea div').click(function(e){
+        $('.popupBox div').click(function(e){
             e.stopPropagation();
         })
 
-        $('.popupArea div button').click(function(){
+        $('.popupBox div button').click(function(){
             closePopup();
         })
 
         function closePopup(){
-            $('.popupArea').fadeOut();
+            $('.popupBox').fadeOut();
             $('body').removeAttr('style');
         }
 

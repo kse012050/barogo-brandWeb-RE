@@ -579,15 +579,15 @@
     .inquiryArea .guideArea li > a{display: block; height: 15.625rem; padding: 7.813rem 2.500rem 2.500rem; box-sizing: border-box; font-size: 1.250rem; font-weight: 700; line-height: 1.36; color: #111; background-position: left 2.500rem top 2.500rem , left 2.500rem bottom 2.500rem; background-repeat: no-repeat;}
     .inquiryArea .guideArea li:nth-child(1) > a{background-image: url('../images/inquiry/shop.png') , url('../images/common/arrow_black.png');}
     .inquiryArea .guideArea li:nth-child(2) > a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
-    .inquiryArea .guideArea li .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
-    .inquiryArea .guideArea li .popupArea div{width: calc(100% - 40px); background-color: white; padding: 1.125rem 1.250rem 1.250rem; box-sizing: border-box;}
-    .inquiryArea .guideArea li .popupArea div p{font-size: 0.8rem; line-height: 1.750rem; text-align: center;}
-    .inquiryArea .guideArea li .popupArea div p strong{font-weight: 700;}
-    .inquiryArea .guideArea li .popupArea div p:first-of-type{margin-bottom: 1.250rem;}
-    .inquiryArea .guideArea li .popupArea div p:nth-of-type(2){margin-bottom: 1.875rem;}
-    .inquiryArea .guideArea li .popupArea div :is(a , button){width: 100%; font-size: 0.875rem; font-weight: 700; line-height: 3.125rem; text-align: center;}
-    .inquiryArea .guideArea li .popupArea div a{color: white; background-color: #fa5014; margin-bottom: 0.625rem;}
-    .inquiryArea .guideArea li .popupArea div button{color: #fa5014; border: 1px solid #fa5014;}
+    .inquiryArea .guideArea li .popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
+    .inquiryArea .guideArea li .popupBox div{width: calc(100% - 40px); background-color: white; padding: 1.125rem 1.250rem 1.250rem; box-sizing: border-box;}
+    .inquiryArea .guideArea li .popupBox div p{font-size: 0.8rem; line-height: 1.750rem; text-align: center;}
+    .inquiryArea .guideArea li .popupBox div p strong{font-weight: 700;}
+    .inquiryArea .guideArea li .popupBox div p:first-of-type{margin-bottom: 1.250rem;}
+    .inquiryArea .guideArea li .popupBox div p:nth-of-type(2){margin-bottom: 1.875rem;}
+    .inquiryArea .guideArea li .popupBox div :is(a , button){width: 100%; font-size: 0.875rem; font-weight: 700; line-height: 3.125rem; text-align: center;}
+    .inquiryArea .guideArea li .popupBox div a{color: white; background-color: #fa5014; margin-bottom: 0.625rem;}
+    .inquiryArea .guideArea li .popupBox div button{color: #fa5014; border: 1px solid #fa5014;}
 
     /* 문의 완료 */
     .finArea{height: 100vh; padding-top: 5.313rem; box-sizing: border-box;}
