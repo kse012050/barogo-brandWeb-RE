@@ -489,8 +489,8 @@ $(document).ready(function(){
                 let heightArray = [];
                 for(let a = 0; a < targetLength; a++){
                     a == 0 && heightArray.push(areaOffTop);
-                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight - 700);
-                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2 - 700);
+                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
+                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
                 }
                 let progressHeight = 100 / targetLength;
                 $('.progressBar span').css('height' , progressHeight + '%');
