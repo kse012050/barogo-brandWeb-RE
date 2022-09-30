@@ -358,20 +358,20 @@
 
     /* ! 배달대행 */
     /* 사장님의 정성 그대로 빠르고 확실하게 */
-    .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; position: relative; padding: 200px 0;}
-    .deliveryPage .qualitativeArea .CW h2{position: absolute; left: 0; top: 200px; z-index: 10; padding-right: 200px; background-color: white;}
-    .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -50px; width: 100%; height: 50px; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .deliveryPage .qualitativeArea .CW .swiper{width: 100%; height: 600px;}
+    .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; position: relative; padding: 12.500rem 0;}
+    .deliveryPage .qualitativeArea .CW h2{position: absolute; left: 0; top: 12.500rem; z-index: 10; padding-right: 12.500rem; background-color: white;}
+    .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .deliveryPage .qualitativeArea .CW .swiper{width: 100%; height: 37.500rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide{display: flex; justify-content: space-between; align-items: center;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea{padding-left: 6.250rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea{width: 580px;}
+    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea{width: 36.250rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea video{width: 100%;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div{display: flex; margin-top: 50px;}
+    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div{display: flex; margin-top: 3.125rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div button{display: inline-flex;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div a:not(:last-of-type){margin-right: 10px;}
+    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div a:not(:last-of-type){margin-right: 0.625rem;}
     .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination{left: 0; right: auto;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet{height: 50px; border-radius: 0; margin: 0;}
+    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0; margin: 0;}
     .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
     .deliveryPage .qualitativeArea .CW div div ul li div{display: flex; gap: 0.625rem; margin-top: 3.125rem;}
     .deliveryPage .qualitativeArea .CW div div ul li div a{white-space: nowrap;}
@@ -539,7 +539,7 @@
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 12.500rem; padding-top: 11.875rem;}
     .aboutUsPage .makeArea h2{margin-bottom: 3.750rem;}
-    .aboutUsPage .makeArea > div{max-width: 1600px; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 5.000rem;}
+    .aboutUsPage .makeArea > div{max-width: 137.500rem; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 5.000rem;}
     .aboutUsPage .makeArea > div div{height: 36.563rem; display: flex; justify-content: flex-end;}
     .aboutUsPage .makeArea > div div p{font-size: 1.375rem; color: white; line-height: 1.64; width: 33.750rem; padding: 5.625rem 0;}
     .aboutUsPage .makeArea > p{font-size: 1.250rem; line-height: 1.5; color: #111; text-align: center; max-width: 625px; width: calc(100% - 2.500rem); margin: auto auto;}

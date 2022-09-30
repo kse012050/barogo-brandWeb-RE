@@ -12,9 +12,9 @@ $(document).ready(function(){
           el: ".swiper-pagination",
           clickable: true,
         },
-        autoplay: {
+        /* autoplay: {
             delay: 2500,
-        },
+        }, */
         slidesPerView: 1,
         loop: true,
       });
