@@ -38,7 +38,7 @@
     .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
     
     /* 탑 버튼 */
-    .topBtn{ display: none; position: fixed; left: 1.875rem; bottom: 6.250rem; width: 1.875rem; height: 1.875rem; background:white url('../images/common/top.png') no-repeat center / cover; text-indent: -9999px; z-index: 10;
+    .topBtn{ display: none; position: fixed; left: 1.875rem; bottom: 6.250rem; width: 1.875rem; height: 1.875rem; text-indent: -9999px; z-index: 10;
         background-image: url('../images/common/top.png'); background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px; z-index: 10;
         animation: bounce 2s infinite; transition: 0.5s;
     }
@@ -228,7 +228,10 @@
     .agreeArea ul li label{display: block;}
     .agreeArea ul li label span{color: #666;}
     .agreeArea ul li a{text-decoration: underline; font-weight: 700; margin-left: 1.875rem;}
-    .inquiryPage input[type="submit"]{margin-left: auto;}
+    .inquiryPage .agreeArea .popupBox{display: none;}
+    .inquiryPage input[type="submit"]{width: 9.063rem; line-height: 3.750rem; font-size: 1rem; color: white; font-weight: 700; white-space: nowrap; padding:0 1.875rem; border: none; background:#d3d3d3 url('../images/common/arrow_white.png') no-repeat right 1.875rem center / 2.375rem;    display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;     border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); transition: 0.5s background-color; margin-left: auto;}
+    .inquiryPage input[type="submit"].active{background-color: #fa5014;}
+    .inquiryPage input[type="submit"].active:hover{background-color: #fb7343;}
 
     /* 게시판 공통 */
     .boardPage section{padding: 6.875rem 0 5.000rem;}

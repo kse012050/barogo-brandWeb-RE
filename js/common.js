@@ -77,7 +77,7 @@ $(document).ready(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
-                if($('.topBtn').hasClass('active')){
+                if($('.topBtn').length > 0){
                     ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
                 }
             })

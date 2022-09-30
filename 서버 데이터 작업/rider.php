@@ -73,18 +73,18 @@
                                     </li>
                                 </ul>
                             </div>
-                            <ul class="imgArea" data-scroll="target">
-                                <li class="active">
-                                    <img src="images/rider/playground01.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="images/rider/playground02.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="images/rider/playground03.png" alt="">
-                                </li>
-                            </ul>
                         </div>
+                        <ul class="imgArea" data-scroll="target">
+                            <li class="active">
+                                <img src="images/rider/playground01.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/rider/playground02.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/rider/playground03.png" alt="">
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
