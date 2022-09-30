@@ -429,14 +429,19 @@ $(document).ready(function(){
             $('.popupBox').click(function(){
                 closePopup();
             })
+            $('.popupBox').on('mousewheel',function(e){
+                e.preventDefault();
+            })
             $('.popupBox div').click(function(e){
                 e.stopPropagation();
             })
 
-            $('.popupBox div button').click(function(){
+            $('.popupBox div [data-close]').click(function(){
                 closePopup();
             })
-
+            $('.popupBox div button').click(function(e){
+                e.preventDefault();
+            })
             function closePopup(){
                 $('.popupBox').fadeOut();
                 $('body').removeAttr('style');
