@@ -69,10 +69,10 @@
                         </div>
                         <ul class="imgArea" data-scroll="target" >
                             <li class="active">
-                                <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                                <img src="images/delivery/qualitative01.png" alt="">
                             </li>
                             <li>
-                                <img src="images/delivery/qualitative02.png" alt="">
+                                <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
                             </li>
                             <li>
                                 <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
