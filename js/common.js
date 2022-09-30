@@ -436,12 +436,20 @@ $(document).ready(function(){
                 e.stopPropagation();
             })
 
-            $('.popupBox div [data-close]').click(function(){
-                closePopup();
-            })
             $('.popupBox div button').click(function(e){
                 e.preventDefault();
             })
+
+            $('.popupBox div [data-close]').click(function(){
+                closePopup();
+            })
+
+            $('.popupBox div [data-chk]').click(function(){
+                closePopup();
+                let attrName = $(this).attr('data-chk');
+                $('#' + attrName).prop('checked',true);
+            })
+
             function closePopup(){
                 $('.popupBox').fadeOut();
                 $('body').removeAttr('style');
@@ -481,8 +489,8 @@ $(document).ready(function(){
                 let heightArray = [];
                 for(let a = 0; a < targetLength; a++){
                     a == 0 && heightArray.push(areaOffTop);
-                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
-                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
+                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight - 700);
+                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2 - 700);
                 }
                 let progressHeight = 100 / targetLength;
                 $('.progressBar span').css('height' , progressHeight + '%');
