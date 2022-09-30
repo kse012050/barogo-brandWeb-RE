@@ -1,6 +1,6 @@
 <?php include "head.php"; ?>
 <body>
-    <div class="introBox">
+    <!-- <div class="introBox">
         <div class="BG">
 
         </div>
@@ -9,7 +9,7 @@
             <span>FROM</span><br/>
             <span>ANYWHERE</span>
         </p>
-    </div>
+    </div> -->
     <div class="mainPage">
         <?php include "header.php"; ?>
 

@@ -6,6 +6,19 @@ $(document).ready(function(){
         $('html').scrollTop(0)
     },300)  */
 
+    new Swiper(".test", {
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+        },
+        slidesPerView: 1,
+        loop: true,
+      });
+
     // 공통
     common()
     

@@ -360,7 +360,7 @@
     /* 배너 */
     .deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover;}
     .deliveryPage .bannerArea div{height: 33.750rem; display: flex; align-items: flex-end; padding: 2.500rem 1.250rem; box-sizing: border-box;}
-    .deliveryPage .bannerArea div p{font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 0.625rem black;}
+    .deliveryPage .bannerArea div p{font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white;}
 
 
     /* ! 라이더 지원 */

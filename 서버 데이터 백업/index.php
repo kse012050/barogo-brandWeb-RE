@@ -18,7 +18,7 @@
             <!-- 페이지 상단 부분 공통 -->
             <section class="topBox">
                 <div class="CW">
-                    <h2 class="TC-01">
+                    <h2 class="TC-02">
                         무엇이든 어디서나<br/>
                         배달은 누구보다 확실하게
                     </h2>
@@ -29,48 +29,56 @@
                 </div>
             </section>
 
-            <section class="qualitativeArea" data-scrollAni="opacity">
-                <div class="CW">
-                    <div>
-                        <h2 class="TC-01">
-                            사장님의 정성 그대로
-                            <mark>빠르고 확실하게</mark>
-                        </h2>
-                        <div class="progressArea">
-                            <div class="progressBar">
-                                <span></span>
+            <section class="qualitativeArea" data-scrollAni="fixed">
+                <div>
+                    <div class="CW">
+                        <div>
+                            <h2 class="TC-02">
+                                사장님의 정성 그대로<br/>
+                                빠르고 확실하게
+                            </h2>
+                            <div class="progressArea">
+                                <div class="progressBar">
+                                    <span></span>
+                                </div>
+                                <ul data-scroll="target">
+                                    <li class="active">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content1"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content2"))?>
+                                        </p>
+                                        <div>
+                                            <a <?=homepageLinkCheck(getValue($content,"link1"))?> class="BBTN-download">사장님 프로그램</a>
+                                            <a <?=homepageLinkCheck(getValue($content,"link2"))?> class="BBTN-download">사용 설명서</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content3"))?>
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul data-scroll="target">
-                                <li class="active">
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content1"))?>
-                                    </p>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content2"))?>
-                                    </p>
-                                    <div>
-                                        <a <?=homepageLinkCheck(getValue($content,"link1"))?> class="BBTN-download">사장님 프로그램</a>
-                                        <a <?=homepageLinkCheck(getValue($content,"link2"))?> class="BBTN-download">사용 설명서</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content3"))?>
-                                    </p>
-                                </li>
-                            </ul>
                         </div>
+                        <ul class="imgArea" data-scroll="target" >
+                            <li class="active">
+                                <img src="images/delivery/qualitative01.png" alt="">
+                            </li>
+                            <li>
+                                <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                            </li>
+                            <li>
+                                <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="imgArea" data-scroll="target" >
-                        <li class="active"><img src="images/delivery/qualitative01.png" alt=""></li>
-                        <li><img src="images/delivery/qualitative02.png" alt=""></li>
-                        <li><img src="images/delivery/qualitative03.png" alt=""></li>
-                    </ul>
                 </div>
             </section>
 
@@ -108,12 +116,12 @@
                 </div>
             </section>
 
-            <section class="distributionArea">
+            <section class="distributionArea" data-scroll="animation">
                 <div class="CW">
                     <div class="imgArea">
                         <img src="images/delivery/distribution.png" alt="프리미엄 라스트마일 물류 서비스 이미지" data-scroll="target">
                     </div>
-                    <div class="textArea">
+                    <div class="textArea overLine-right">
                         <h2 class="TC-02">
                             기업 고객을 위한<br/>
                             프리미엄 라스트마일 물류 서비스
@@ -140,7 +148,11 @@
 
             <section class="sliderBox">
                 <div class="CW">
-                    <h2 class="TC-02">#바로고 사장님</h2>
+                    <div class="titleArea">
+                        <h2 class="TC-02">#바로고 사장님</h2>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                     <div class="swiper bottomSlider">
                         <div class="swiper-wrapper">
                             <?php
@@ -182,26 +194,21 @@
                 </div>
             </section>
 
-            <div class="scrollArea">
-                <div class="scrollBox">
-                    <div class="supportArea">
-                        <div>
-                            <div class="CW">
-                                <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
-                                <b class="FC-01">B2B 브랜드</b>
-                                <span>B2B 브랜드 이미지</span>
-                                <b class="FC-01">주문중개 플랫폼</b>
-                                <span>주문중개 플랫폼 이미지</span>
-                                <b class="FC-01">협업사 & 협력 단체</b>
-                                <span>협업사 & 협력 단체 이미지</span>
-                            </div>
-                        </div>
+            <div class="supportArea">
+                <div>
+                    <div class="CW">
+                        <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
+                        <b class="FC-01">B2B 브랜드</b>
+                        <span>B2B 브랜드 이미지</span>
+                        <b class="FC-01">주문중개 플랫폼</b>
+                        <span>주문중개 플랫폼 이미지</span>
+                        <b class="FC-01">협업사 & 협력 단체</b>
+                        <span>협업사 & 협력 단체 이미지</span>
                     </div>
-
-                    <?php include "footer.php"; ?>
                 </div>
             </div>
         </main>
+        <?php include "footer.php"; ?>
     </div>
     <a href="deliveryInquiry" class="fixedLink">문의하기</a>
     <button class="topBtn">최상단으로 이동</button>
