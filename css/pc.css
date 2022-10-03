@@ -281,7 +281,7 @@
     .agreeArea > ul > li:not(:last-child){margin-bottom: 2.500rem;}
     .agreeArea > ul > li label span{color: #666;}
     .agreeArea > ul > li a{text-decoration: underline; font-weight: 700;}
-    .inquiryPage .agreeArea .popupBox > div{display: flex; flex-direction: column; max-width: 44.063rem; width: calc(100% - 2.500rem); max-height: 670px; height: 100vh;}
+    .inquiryPage .agreeArea .popupBox > div{display: flex; flex-direction: column; max-width: 44.063rem; width: calc(100% - 2.500rem); max-height: 41.875rem; height: 100vh;}
     .inquiryPage .agreeArea .popupBox > div strong{display: block; padding: 0 1.250rem; line-height: 5.625rem; box-shadow: inset 0 -1px 0 0 #fa5014;}
     .inquiryPage .agreeArea .popupBox > div strong mark{font-size: 1.375rem; font-weight: 700;}
     .inquiryPage .agreeArea .popupBox > div .textArea{padding: 1.250rem; flex: 1; overflow: auto; font-size: 0.875rem; line-height: 1.29;}
@@ -290,15 +290,16 @@
     .inquiryPage .agreeArea .popupBox > div .textArea ol li{counter-increment: test;}
     .inquiryPage .agreeArea .popupBox > div .textArea ol li:not(:last-child){margin-bottom: 1.250rem;}
     .inquiryPage .agreeArea .popupBox > div .textArea ol li::before{display: block; content: counter(test) '. ' attr(title); font-weight: 700; margin-bottom: 0.625rem;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table{font-size: 0.688rem; border-top: 0.125rem solid black; text-align: center;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table th{font-weight: 700; background-color: #f3f3f3; vertical-align: middle; border: 1px solid #d4d4d4;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table td{vertical-align: middle; border: 1px solid #d4d4d4;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tr > *{padding: 0.625rem 0;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tbody tr > *:nth-child(1){width: 18.18%;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tbody tr > *:nth-child(2){width: 18.18%;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tbody tr > *:nth-child(3){width: 21.21%;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tbody tr > *:nth-child(4){width: 21.21%;}
-    .inquiryPage .agreeArea .popupBox > div .textArea ol li table tbody tr > *:nth-child(5){width: 21.21%;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea{overflow: auto;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table{width: 660px; font-size: 0.688rem; border-top: 0.125rem solid black; text-align: center;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table th{font-weight: 700; background-color: #f3f3f3; vertical-align: middle; border: 1px solid #d4d4d4;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table td{vertical-align: middle; border: 1px solid #d4d4d4;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tr > *{padding: 0.625rem 0;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(1){width: 120px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(2){width: 120px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(3){width: 140px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(4){width: 140px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(5){width: 140px;}
     .inquiryPage .agreeArea .popupBox > div .btnArea{display: flex; justify-content: center; padding: 1.250rem 0 1.875rem;}
     .inquiryPage .agreeArea .popupBox > div .btnArea button{width: 11.875rem; height: 3.750rem; font-size: 1.125rem; font-weight: 700;}
     .inquiryPage .agreeArea .popupBox > div .btnArea button:nth-child(1){border: 1px solid #fa5014; color: #fa5014; margin-right: 0.938rem;}
