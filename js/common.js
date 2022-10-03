@@ -143,6 +143,9 @@ $(document).ready(function(){
             })
         }   /* 푸터 메뉴 클릭 fin */
 
+        $('.topBtn').click(function(){
+            $(this).hasClass('active') && $('html').animate({scrollTop : 0});
+        })
     }   /* common fin */
 
 
@@ -256,6 +259,8 @@ $(document).ready(function(){
                         }
                     }
                 }
+
+                topButton()
             })
             // PC fin
 
@@ -316,6 +321,8 @@ $(document).ready(function(){
                         }
                     }
                 }
+
+                topButton();
             })
 
             // tablet fin
@@ -346,8 +353,16 @@ $(document).ready(function(){
                 let targetArea = $(this);
                 
                 scrollAni(targetArea , delta)
-        
+                topButton();
             })
+
+            function topButton(){
+                if($('.supportArea').offset().top < 0 ){
+                    $('.topBtn').addClass('active');
+                }else{
+                    $('.topBtn').removeClass('active');
+                }
+            }
 
             // 모바일 fin
         })
@@ -401,6 +416,7 @@ $(document).ready(function(){
         })  /* 모바일 스크롤 그래프 fin */
 
         $('.topBtn').click(function(){
+            if(!$(this).hasClass('active'))return;
             if($(window).width() > responsiveWidth){
                 $('[data-scroll="area"]').removeClass('active');
                 $('[data-scroll="area"]').eq(-1).addClass('active');
@@ -570,7 +586,6 @@ $(document).ready(function(){
             })
 
             touchList.on('touchend',function(e){
-                console.log(3);
                 if($(window).width() > responsiveWidth) return;
                 touchendX = e.changedTouches[0].clientX;
                 touchendY = e.changedTouches[0].clientY;
@@ -587,9 +602,7 @@ $(document).ready(function(){
             // 모바일 opacity 터치 X축 fin
         }
 
-        $('.topBtn').click(function(){
-            $(this).hasClass('active') && $('html').animate({scrollTop : 0});
-        })
+      
     } /* 페이지 부분 스크롤 fin */
 
 
@@ -614,11 +627,10 @@ $(document).ready(function(){
         })  /* 모바일 스크롤시 숫자 카운트 fin */
     }
     
-    // fullPage 안 scroll event
+    // scroll event
     let aniBreak = false;
     function scrollAni(targetArea , delta){
         if(aniBreak){ return true}
-        console.log(4);
         
         let target = targetArea.find('[data-scroll="target"]');
         let targetList =[]
@@ -658,7 +670,6 @@ $(document).ready(function(){
     
     // 투명도 효과
     function opacityAni(list , idx , progress){
-        console.log(5);
         if(progress.find('span').is(':animated')) return;
         if($(window).width() > responsiveWidth){
             progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
