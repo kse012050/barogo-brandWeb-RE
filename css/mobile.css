@@ -184,7 +184,12 @@
     .supportArea > div div span:nth-of-type(3){background-image: url('../images/common/m-supoort03.png'); padding-bottom: 3%;}
 
 
+    /* 문의 */
     /* 문의 공통 */
+    .inquiryPage .popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
+    .inquiryPage .popupBox > div{background-color: white; box-sizing: border-box;}
+
+    /* 배달대행 문의 안내 */
     .inquiryArea{ margin-bottom: 6.250rem; font-size: 1.000rem;}
     .inquiryArea .textArea{margin-bottom: 4.375rem;}
     .inquiryArea .textArea :is(h2 , legend){margin-bottom: 0.625rem;}
@@ -228,7 +233,29 @@
     .agreeArea ul li label{display: block;}
     .agreeArea ul li label span{color: #666;}
     .agreeArea ul li a{text-decoration: underline; font-weight: 700; margin-left: 1.875rem;}
-    .inquiryPage .agreeArea .popupBox{display: none;}
+    .inquiryPage .agreeArea .popupBox > div{display: flex; flex-direction: column; max-width: 44.063rem; width: calc(100% - 2.500rem); max-height: 41.875rem; height: 100vh;}
+    .inquiryPage .agreeArea .popupBox > div strong{display: block; padding: 0 1.250rem; line-height: 5.625rem; box-shadow: inset 0 -1px 0 0 #fa5014;}
+    .inquiryPage .agreeArea .popupBox > div strong mark{font-size: 1.375rem; font-weight: 700;}
+    .inquiryPage .agreeArea .popupBox > div .textArea{padding: 1.250rem; flex: 1; overflow: auto; font-size: 0.875rem; line-height: 1.29;}
+    .inquiryPage .agreeArea .popupBox > div .textArea b{display: block; font-weight: 700; margin-bottom: 1.250rem;}
+    .inquiryPage .agreeArea .popupBox > div .textArea p{font-weight: 400; margin-bottom: 1.250rem;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li{counter-increment: test;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li:not(:last-child){margin-bottom: 1.250rem;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li::before{display: block; content: counter(test) '. ' attr(title); font-weight: 700; margin-bottom: 0.625rem;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea{overflow: auto;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table{width: 660px; font-size: 0.688rem; border-top: 0.125rem solid black; text-align: center;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table th{font-weight: 700; background-color: #f3f3f3; vertical-align: middle; border: 1px solid #d4d4d4;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table td{vertical-align: middle; border: 1px solid #d4d4d4;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tr > *{padding: 0.625rem 0;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(1){width: 120px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(2){width: 120px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(3){width: 140px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(4){width: 140px;}
+    .inquiryPage .agreeArea .popupBox > div .textArea ol li .tableArea table tbody tr > *:nth-child(5){width: 140px;}
+    .inquiryPage .agreeArea .popupBox > div .btnArea{display: flex; flex-direction: column; padding: 1.250rem 1.250rem 1.875rem; box-sizing: border-box;}
+    .inquiryPage .agreeArea .popupBox > div .btnArea button{height: 3.750rem; font-size: 1.125rem; font-weight: 700;}
+    .inquiryPage .agreeArea .popupBox > div .btnArea button:nth-child(1){border: 1px solid #fa5014; color: #fa5014; order: 1; }
+    .inquiryPage .agreeArea .popupBox > div .btnArea button:nth-child(2){background-color: #fa5014; color: white; margin-bottom: 0.938rem;}
     .inquiryPage input[type="submit"]{width: 9.063rem; line-height: 3.750rem; font-size: 1rem; color: white; font-weight: 700; white-space: nowrap; padding:0 1.875rem; border: none; background:#d3d3d3 url('../images/common/arrow_white.png') no-repeat right 1.875rem center / 2.375rem;    display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;     border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); transition: 0.5s background-color; margin-left: auto;}
     .inquiryPage input[type="submit"].active{background-color: #fa5014;}
     .inquiryPage input[type="submit"].active:hover{background-color: #fb7343;}
@@ -326,7 +353,6 @@
     .deliveryPage .qualitativeArea .CW h2{width: 100%; position: relative; z-index: 5;}
     .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -5.000rem; width: 100%; height: 5.000rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
     .deliveryPage .qualitativeArea .CW .swiper{width: 100%; height: 40.625rem; padding-top: 5.000rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide{}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea{padding-left: 2.250rem; margin-bottom: 3.125rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea p{letter-spacing: -0.063rem;}
@@ -598,7 +624,6 @@
     .aboutUsPage .breandArea .CW .secondaryArea li:nth-child(2){background-color: #dcdcdc;}
     .aboutUsPage .breandArea .CW > a{width: 11.250rem; margin:0 auto;}
 
-     /* 문의 */
     /* 배달대행 문의 안내 */
     .inquiryPage{padding: 9.375rem 0 6.250rem;}
     .inquiryArea .guideArea{padding-top: 3.125rem;}
@@ -607,8 +632,7 @@
     .inquiryArea .guideArea li > a{display: block; height: 15.625rem; padding: 7.813rem 2.500rem 2.500rem; box-sizing: border-box; font-size: 1.250rem; font-weight: 700; line-height: 1.36; color: #111; background-position: left 2.500rem top 2.500rem , left 2.500rem bottom 2.500rem; background-repeat: no-repeat;}
     .inquiryArea .guideArea li:nth-child(1) > a{background-image: url('../images/inquiry/shop.png') , url('../images/common/arrow_black.png');}
     .inquiryArea .guideArea li:nth-child(2) > a{background-image: url('../images/inquiry/corp.png') , url('../images/common/arrow_black.png');}
-    .inquiryArea .guideArea li .popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
-    .inquiryArea .guideArea li .popupBox div{width: calc(100% - 40px); background-color: white; padding: 1.125rem 1.250rem 1.250rem; box-sizing: border-box;}
+    .inquiryArea .guideArea li .popupBox div{width: calc(100% - 40px); padding: 1.125rem 1.250rem 1.250rem;} 
     .inquiryArea .guideArea li .popupBox div p{font-size: 0.8rem; line-height: 1.750rem; text-align: center;}
     .inquiryArea .guideArea li .popupBox div p strong{font-weight: 700;}
     .inquiryArea .guideArea li .popupBox div p:first-of-type{margin-bottom: 1.250rem;}

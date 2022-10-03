@@ -6,7 +6,7 @@ $(document).ready(function(){
         $('html').scrollTop(0)
     },300)  */
 
-    new Swiper(".test", {
+   /*  new Swiper(".test", {
         direction: "vertical",
         pagination: {
           el: ".swiper-pagination",
@@ -17,7 +17,7 @@ $(document).ready(function(){
         },
         slidesPerView: 1,
         loop: true,
-      });
+      }); */
 
     // 공통
     common()
