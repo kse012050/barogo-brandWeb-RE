@@ -34,7 +34,7 @@
     input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
     [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 14.063rem; line-height: 3.875rem; font-size: 1.125rem; font-weight: 700; white-space: nowrap; box-shadow: 0 0.188rem 0.438rem 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 0.188rem; padding: 0 1.875rem; box-sizing: border-box; transition-duration: 0.5s; transition-property: background-color , color;}
-    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover; transition-duration: 0.5s; transition-property: background-image;}
+    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover; transition-duration: 0.2s; transition-property: background-image;}
     [class |= "BBTN"]:hover{background-color: #fa5014; color: white;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
@@ -44,10 +44,20 @@
     .BBTN-download:hover::after{background-image: url('../images/common/download-white.png');}
 
     /* 문의하기 링크 */
-    .fixedLink{position: fixed; right: 3.750rem; bottom: 3.750rem; transform: translateX(calc(100% + 3.750rem)); color: white; min-width: 16.688rem; line-height: 4.500rem; font-size: 1.250rem;  padding:0 2.500rem; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition-duration: 0.5s; transition-property: transform , background-color; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); border-radius: 0.188rem;}
+    .fixedLink{position: fixed; right: 3.750rem; bottom: 3.750rem; transform: translateX(calc(100% + 3.750rem)); color: white; min-width: 16.688rem; line-height: 4.500rem; font-size: 1.250rem;  padding:0 2.500rem; background-color: #fa5014; border: none; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10; transition-duration: 0.5s; transition-property: transform , background-color; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); border-radius: 0.188rem; overflow: hidden;}
     .fixedLink:hover{background-color: #fb7343;}
     .fixedLink::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
     .fixedLink.active{transform: translateX(0);}
+
+    /* 버튼 애니메이션 */
+    :is([class *= "BTN"]){position: relative; overflow: hidden;}
+    :is([class *= "BTN"] , .fixedLink) span{position: absolute; background-color: rgba(255, 255, 255, 0.3); transform: translate(-50% , -50%); pointer-events: none; border-radius: 100%;animation-name: clickAni;animation-duration: 1s;animation-timing-function: linear; animation-fill-mode: forwards;}
+    @keyframes clickAni {
+        0%{width: 0; height: 0;}
+        80%{width: 200%; padding-top: 200%; opacity: 1;}
+        100%{width: 200%; padding-top: 200%; opacity: 0;}
+    }
+
 
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 50%; bottom: 3.750rem; width: 3.813rem; height: 1.938rem; transform: translateX(-50%);  
@@ -331,8 +341,8 @@
     .inquiryPage .agreeArea .popupBox > div .textArea .imgArea{display: flex; flex-wrap: wrap; justify-content: space-between;}
     .inquiryPage .agreeArea .popupBox > div .textArea .imgArea li{width: calc((100% - 1.250rem) / 2);}
     .inquiryPage .agreeArea .popupBox > div .btnArea{display: flex; justify-content: center; padding: 1.250rem 0 1.875rem; font-size: 1.125rem; font-weight: 700;}
-    .inquiryPage .agreeArea .popupBox > div .btnArea button{width: 11.875rem; height: 3.750rem;}
-    .inquiryPage .agreeArea .popupBox > div .btnArea a{text-align: center; width: 11.875rem; line-height: 3.375rem;}
+    .inquiryPage .agreeArea .popupBox > div .btnArea button{width: 11.875rem; height: 3.750rem; border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2);}
+    .inquiryPage .agreeArea .popupBox > div .btnArea a{text-align: center; width: 11.875rem; line-height: 3.375rem; border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2);}
     .inquiryPage .agreeArea .popupBox > div .btnArea button:nth-of-type(1){border: 1px solid #fa5014; color: #fa5014; margin-right: 0.938rem;}
     .inquiryPage .agreeArea .popupBox > div .btnArea :is(button:nth-of-type(2) , a){background-color: #fa5014; color: white;}
     .inquiryPage input[type="submit"]{width: 12.063rem; line-height: 4.500rem; font-size: 1.250rem; color: white; font-weight: 700; white-space: nowrap; padding:0 2.500rem; border: none; background:#d3d3d3 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;    display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;     border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2); transition: 0.5s background-color; margin-left: auto;}
@@ -455,8 +465,12 @@
     .riderPage .lifeArea .CW .textArea p{color: #666666;}
     .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 3.750rem;}
     .riderPage .lifeArea .CW .imgArea{width: 52.54%; position: absolute; right: 0; top: 0;}
-    .riderPage .lifeArea.active .CW .imgArea{top: 13.750rem; transition-duration: 1s; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);}
-
+    .riderPage .lifeArea.active .CW .imgArea{animation: life-bounce 0.5s forwards;}
+    @keyframes life-bounce {
+        0%{top: 0;}
+        100% {top: 13.750rem;}
+     
+    }
 
 
     /* 라이더님만을 위한 놀이터 바로고 플레이 */
@@ -735,8 +749,8 @@
     .inquiryArea .guideArea li .popupBox div p:first-of-type{margin-bottom: 1.875rem;}
     .inquiryArea .guideArea li .popupBox div p:nth-of-type(2){margin-bottom: 3.125rem;}
     .inquiryArea .guideArea li .popupBox div :is(a , button){width: 100%; font-size: 1.125rem; font-weight: 700; line-height: 3.750rem; text-align: center;}
-    .inquiryArea .guideArea li .popupBox div a{color: white; background-color: #fa5014; margin-bottom: 0.938rem;}
-    .inquiryArea .guideArea li .popupBox div button{color: #fa5014; border: 1px solid #fa5014;}
+    .inquiryArea .guideArea li .popupBox div a{color: white; background-color: #fa5014; margin-bottom: 0.938rem; border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2);}
+    .inquiryArea .guideArea li .popupBox div button{color: #fa5014; border: 1px solid #fa5014; border-radius: 0.188rem; box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2);}
 
     /* 문의 완료 */
     .finArea{height: 100vh; box-sizing: border-box;}

@@ -35,8 +35,17 @@
     .BBTN-download::after{background-image: url('../images/common/download.png');}
 
     /* 문의하기 링크 */
-    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; border-radius: 16px 16px 0 0; box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
+    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; border-radius: 16px 16px 0 0; box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10; overflow: hidden;}
     
+    /* 버튼 애니메이션 */
+    :is([class *= "BTN"]){position: relative; overflow: hidden;}
+    :is([class *= "BTN"] , .fixedLink) span{position: absolute; background-color: rgba(255, 255, 255, 0.3); transform: translate(-50% , -50%); pointer-events: none; border-radius: 100%;animation-name: clickAni;animation-duration: 1s;animation-timing-function: linear; animation-fill-mode: forwards;}
+    @keyframes clickAni {
+        0%{width: 0; height: 0;}
+        80%{width: 200%; padding-top: 200%; opacity: 1;}
+        100%{width: 200%; padding-top: 200%; opacity: 0;}
+    }
+
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 1.875rem; bottom: 6.250rem; width: 1.875rem; height: 1.875rem; text-indent: -9999px; z-index: 10;
         background-image: url('../images/common/top.png'); background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px; z-index: 10;
@@ -503,13 +512,13 @@
     /* 바로고와 함께하는 이유 */
     .foundedPage .reasonArea{}
     .foundedPage .reasonArea .CW{position: relative;}
-    .foundedPage .reasonArea .CW h2{padding-bottom: 1.563rem; position: relative;}
-    .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
-    .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 3.125rem;}
+    .foundedPage .reasonArea .CW h2{ position: relative;}
+    .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
+    .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 1.25rem; margin-bottom: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea img{display: block;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 1.875rem; left: 0; right: auto; transform: translateY(0);}
     .foundedPage .imgArea .foundedSlider{height: 14.688rem; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
     .foundedPage .imgArea .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
