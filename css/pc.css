@@ -33,8 +33,8 @@
     .BTN-arrow::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
     input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
-    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 14.063rem; line-height: 3.875rem; font-size: 1.125rem; font-weight: 700; white-space: nowrap; box-shadow: 0 0.188rem 0.438rem 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 0.188rem; padding: 0 1.875rem; box-sizing: border-box; transition-duration: 0.5s; transition-property: background-color , background-image, color;}
-    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 14.063rem; line-height: 3.875rem; font-size: 1.125rem; font-weight: 700; white-space: nowrap; box-shadow: 0 0.188rem 0.438rem 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 0.188rem; padding: 0 1.875rem; box-sizing: border-box; transition-duration: 0.5s; transition-property: background-color , color;}
+    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover; transition-duration: 0.5s; transition-property: background-image;}
     [class |= "BBTN"]:hover{background-color: #fa5014; color: white;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
@@ -272,7 +272,7 @@
     .inquiryArea .inputArea li select{background: url('../images/common/dropdown.png') no-repeat right center / 1.500rem; }
     .inquiryArea .inputArea li textarea{resize: none; width: 100%; height: 14.375rem; padding: 1.875rem; border: 1px solid #d4d4d4; box-sizing: border-box;}
     .inquiryArea .inputArea li :is(input , textarea)::placeholder{color: rgba(0, 0, 0, 0.3);}
-    .inquiryArea .inputArea li div{width: 100%; display: flex;}
+    .inquiryArea .inputArea li div{width: 100%; display: flex; position: relative;}
     .inquiryArea .inputArea li div:not([class]) *:not(:last-child){margin-right: 0.938rem;}
     .inquiryArea .inputArea li div ~ *:not(button , time){margin-top: 2.500rem;}
     .inquiryArea .inputArea li div :is(button , input[type="radio"] + label){font-size: 1.000rem; font-weight: 500; text-align: center; line-height: 3.750rem; border: 1px solid #d4d4d4; box-sizing: border-box;}
@@ -286,8 +286,10 @@
     .inquiryArea .inputArea li strong{font-size: 1.125rem; font-weight: 600;}
     .inquiryArea .inputArea li strong + :not(small){margin-top: 3.750rem;}
     .inquiryArea .inputArea li small{width: 100%; font-size: 1.000rem; font-weight: 400; color: #666; margin-top: 0.625rem; margin-bottom: 3.750rem;}
-    .inquiryArea .inputArea li time{position: absolute; left: 0; bottom: -1.250rem; color: #fa5014;} 
+    .inquiryArea .inputArea li time{position: absolute; right: 0.938rem; top: 50%; transform: translateY(-50%); font-size: 1.125rem; font-weight: 700; color: #fa5014;} 
     .inquiryArea .inputArea li time.none{display: none;}
+    .inquiryArea .inputArea li p{display: none; position: absolute; left: 0; bottom: -1.125rem; font-size: 1.125rem; font-weight: 700; color: #fa5014;}
+    .inquiryArea .inputArea li p.active{display: block;}
     .agreeArea{width: 42.500rem; margin-left: auto; margin-bottom: 7.500rem; font-size: 1.125rem; }
     .agreeArea legend{height: 0.001px; overflow: hidden;}
     .agreeArea input[type="checkbox"]{display: none;}
