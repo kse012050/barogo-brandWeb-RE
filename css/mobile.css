@@ -430,11 +430,10 @@
     /* ! 라이더 지원 */
     /* 프로를 프로답게 바로고 라이더 라이프 */
     .riderPage .lifeArea{padding-bottom: 13.438rem; position: relative; margin-bottom: 7.500rem;}
-    .riderPage .lifeArea .CW .textArea > *:not(h2){padding-left: 2.813rem;}
     .riderPage .lifeArea .CW .textArea mark{display: block; margin-bottom: 1.250rem;}
     .riderPage .lifeArea .CW .textArea h2{margin-bottom: 2.500rem;}
     .riderPage .lifeArea .CW .textArea p:not(:last-of-type){margin-bottom: 1.875rem;}
-    .riderPage .lifeArea .CW .imgArea{width: 80.5555%; position: absolute; right: 0; bottom: 0;}
+    .riderPage .lifeArea .CW .imgArea{width: 80%; position: absolute; left: 10%; bottom: 0;}
 
     /* 라이더님만을 위한 놀이터 바로고 플레이 */
     .riderPage .playgroundArea .CW{position: relative;}
@@ -442,11 +441,11 @@
     .riderPage .playgroundArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -3rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .riderPage .playgroundArea .CW .titleArea h2{margin-bottom: 1.563rem;}
     .riderPage .playgroundArea .CW .partSlider{height: 37.500rem; padding-top: 3.125rem; box-sizing: border-box;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 2.25rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin-left: auto;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; transform: translateY(0);}
+    .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
 
 
     /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
@@ -507,9 +506,9 @@
     .foundedPage .reasonArea .CW h2{padding-bottom: 1.563rem; position: relative;}
     .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 3.125rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 2.25rem; margin-bottom: 1.875rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 1.25rem; margin-bottom: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea img{display: block; width: 75%; margin-left: auto;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea img{display: block;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
     .foundedPage .imgArea .foundedSlider{height: 14.688rem; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
