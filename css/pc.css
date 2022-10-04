@@ -181,22 +181,21 @@
 
 
     /* 메인페이지 공통 */
-
     /* 메인페이지 상단 */
-    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative; overflow: hidden; 
+    .mainPage .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative; overflow: hidden; 
         opacity: 0; animation: startTopAni 1s forwards;
     }
-    [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 11.875rem; padding-bottom: 30.938rem;}
-    [data-scroll="fullPage"] > .topBox .CW h2{margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
-    [data-scroll="fullPage"] > .topBox .CW a{position: relative; z-index: 10; opacity: 0; animation: startTopAni 0.5s 0.9s forwards;}
-    [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 120.000rem; height: 46.875rem; background-repeat: no-repeat; background-size: 100%; text-indent: -9999px; }
-    [data-scroll="fullPage"] > .topBox{background-position: center bottom; }
-    [data-scroll="fullPage"] > .topBox .imgArea{bottom: 0;}
+    .mainPage .topBox .CW{height: 100%; padding-top: 11.875rem; padding-bottom: 30.938rem;}
+    .mainPage .topBox .CW h2{margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
+    .mainPage .topBox .CW a{position: relative; z-index: 10; opacity: 0; animation: startTopAni 0.5s 0.9s forwards;}
+    .mainPage .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 120.000rem; height: 46.875rem; background-repeat: no-repeat; background-size: 100%; text-indent: -9999px; }
+    .mainPage .topBox{background-position: center bottom; }
+    .mainPage .topBox .imgArea{bottom: 0;}
     @media screen and (max-width : 1920px){
-        [data-scroll="fullPage"] > .topBox{background-size: 120.000rem;}
+        .mainPage .topBox{background-size: 120.000rem;}
     }
     @media screen and (min-width : 1921px){
-        [data-scroll="fullPage"] > .topBox{background-size: auto , 100% 490px;}
+        .mainPage .topBox{background-size: auto , 100% 490px;}
     }
     @keyframes startTopAni {
         0%{opacity: 0;}
@@ -219,14 +218,6 @@
     [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
     [data-scrollAni="opacity"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0;}
     [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
-
-    [data-scrollAni="fixed"]{position: relative;}
-    [data-scrollAni="fixed"] > div{width: 100%; height: 100vh; min-height: 50.000rem; display: flex; justify-content: center; align-items: center; padding: 12.500rem 0; box-sizing: border-box;}
-    [data-scrollAni="fixed"] [data-scroll="target"]{position: relative;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li.active{opacity: 1;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
 
     /* 부분 슬라이더 공통 */
     .partSlider .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0;}

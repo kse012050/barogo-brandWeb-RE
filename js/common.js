@@ -43,23 +43,9 @@ $(document).ready(function(){
         // 페이지 부분 스크롤 이벤트
         $('.partSlider').length > 0 && partSlider();
 
-        $('[class *= "BTN"] , .fixedLink').on('mousedown',function(e){
-            e.preventDefault();
-            posX = e.offsetX;
-            posY = e.offsetY;
-
-            var ripples = $('<span></span');
-            $(this).append(ripples);
-            ripples.css({
-                'left' : posX,
-                'top' : posY
-            });
-            
-            setTimeout(function(){
-                ripples.remove();
-            },3000);
-
-        })
+        // 버튼 클릭 애니
+        $('[class *= "BTN"]').length > 0 && buttonClickAni();
+        
 
         // 모바일 메뉴
         mobileMenu();
@@ -127,7 +113,26 @@ $(document).ready(function(){
             });
         }   /* 하단 슬라이더 fin */
 
-       
+        // 버튼 클릭 애니
+        function buttonClickAni(){
+            $('[class *= "BTN"] , .fixedLink').on('mousedown',function(e){
+                e.preventDefault();
+                posX = e.offsetX;
+                posY = e.offsetY;
+
+                var ripples = $('<span></span');
+                $(this).append(ripples);
+                ripples.css({
+                    'left' : posX,
+                    'top' : posY
+                });
+                
+                setTimeout(function(){
+                    ripples.remove();
+                },3000);
+
+            })
+        }   /* 버튼 클릭 애니 fin */
 
         // 모바일 메뉴
         function mobileMenu(){

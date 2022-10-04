@@ -167,6 +167,43 @@
     footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
 
 
+    /* 메인페이지 공통 */
+    /* 메인페이지 상단 */
+    .mainPage .topBox{position: relative; margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 1s forwards;}
+    .mainPage .topBox{ background-image:  url('../images/common/m-main-bg2.png') , url('../images/common/m-main-bg.png'); background-repeat:no-repeat; background-size: 100%; background-position: center bottom;}
+    .mainPage .topBox .CW{height: 100%; padding-top: 9.063rem; padding-bottom: 20.000rem;}
+    .mainPage .topBox .CW h2{font-size: 1.875rem; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
+    .mainPage .topBox .CW a{display: none;}
+    .mainPage .topBox .imgArea{position: absolute; left: 0; bottom: 0; width: 100%; height: 80.3vw; background-repeat: no-repeat; background-size: cover; text-indent: -9999px;}
+
+    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/m-top-delivery.png');}
+    .foundedPage > .topBox .imgArea{background-image: url('../images/founded/m-top-founded.png');}
+    .riderPage > .topBox .imgArea{background-image: url('../images/rider/m-top-rider.png');}
+
+    @keyframes startTopAni {
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+
+
+    /* full page 안 progress */
+    .progressArea{position: relative; padding-top: 1.875rem; margin-bottom: 1.875rem;}
+    .progressArea .progressBar{position: absolute; left: 0; top: 0; width: 100%; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1);}
+    .progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 33.33%; height: 100%; background-color: #fa5014; }
+
+    /* full page 안 scroll 공통 */
+    [data-scrollAni="opacity"] [data-scroll="target"]{position: relative; transition: 0.5s;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li:not(.active){position: absolute; left: 0; top: 0; opacity: 0; z-index: -1;}
+    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
+
+
+    /* 부분 슬라이더 공통 */
+    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
+    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
+    .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
+
 
      /* 이미지 공통 */
     .imgArea img{width: 100%;}
@@ -343,46 +380,6 @@
     .detailPage section > a{display: block; width: 6.875rem; line-height: 2.500rem; font-size: 0.875rem; font-weight: 500; text-align: center; border: 1px solid #d4d4d4; margin: 3.125rem auto 0;}
 
 
-    /* full page 안 progress */
-    .progressArea{position: relative; padding-top: 1.875rem; margin-bottom: 1.875rem;}
-    .progressArea .progressBar{position: absolute; left: 0; top: 0; width: 100%; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1);}
-    .progressArea .progressBar span{position: absolute; left: 0; top: 0; width: 33.33%; height: 100%; background-color: #fa5014; }
-
-    /* full page 안 scroll 공통 */
-    [data-scrollAni="opacity"] [data-scroll="target"]{position: relative; transition: 0.5s;}
-    [data-scrollAni="opacity"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
-    [data-scrollAni="opacity"] [data-scroll="target"] li.active{opacity: 1;}
-    [data-scrollAni="opacity"] [data-scroll="target"] li:not(.active){position: absolute; left: 0; top: 0; opacity: 0; z-index: -1;}
-    [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
-
-    [data-scrollAni="fixed"] [data-scroll="target"]{position: relative; transition: 0.5s;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li{opacity: 0; transition: opacity 0.5s;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li.active{opacity: 1;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li:not(.active){position: absolute; left: 0; top: 0; opacity: 0; z-index: -1;}
-    [data-scrollAni="fixed"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
-
-    /* 부분 슬라이더 공통 */
-    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
-    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
-    .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
-
-
-    [data-scroll="fullPage"] > .topBox{position: relative; margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 1s forwards;}
-    [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/m-main-bg2.png') , url('../images/common/m-main-bg.png'); background-repeat:no-repeat; background-size: 100%; background-position: center bottom;}
-    [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 9.063rem; padding-bottom: 20.000rem;}
-    [data-scroll="fullPage"] > .topBox .CW h2{font-size: 1.875rem; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
-    [data-scroll="fullPage"] > .topBox .CW a{display: none;}
-    [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 0; bottom: 0; width: 100%; height: 80.3vw; background-repeat: no-repeat; background-size: cover; text-indent: -9999px;}
-
-    .deliveryPage > .topBox .imgArea{background-image: url('../images/delivery/m-top-delivery.png');}
-    .foundedPage > .topBox .imgArea{background-image: url('../images/founded/m-top-founded.png');}
-    .riderPage > .topBox .imgArea{background-image: url('../images/rider/m-top-rider.png');}
-
-    @keyframes startTopAni {
-        0%{opacity: 0;}
-        100%{opacity: 1;}
-    }
-
     /* ! 배달대행 */
     /* 사장님의 정성 그대로 빠르고 확실하게 */
     .deliveryPage .qualitativeArea{}
@@ -510,14 +507,13 @@
 
     /* ! 허브 창업 */
     /* 바로고와 함께하는 이유 */
-    .foundedPage .reasonArea{}
     .foundedPage .reasonArea .CW{position: relative;}
     .foundedPage .reasonArea .CW h2{ position: relative;}
     .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 1.25rem; margin-bottom: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea img{display: block;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea > img{display: block; width: 75%; margin: 0 auto;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 1.875rem; left: 0; right: auto; transform: translateY(0);}
     .foundedPage .imgArea .foundedSlider{height: 14.688rem; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
