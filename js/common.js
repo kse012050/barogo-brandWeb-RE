@@ -445,9 +445,9 @@ $(document).ready(function(){
             $('.popupBox').click(function(){
                 closePopup();
             })
-            $('.popupBox').on('mousewheel',function(e){
+           /*  $('.popupBox').on('mousewheel',function(e){
                 e.preventDefault();
-            })
+            }) */
             $('.popupBox div').click(function(e){
                 e.stopPropagation();
             })
