@@ -380,18 +380,18 @@
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; position: relative; padding: 12.500rem 0;}
     .deliveryPage .qualitativeArea .CW h2{position: absolute; left: 0; top: 12.500rem; z-index: 10; padding-right: 12.500rem; background-color: white;}
     .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .deliveryPage .qualitativeArea .CW .swiper{width: 100%; height: 37.500rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide{display: flex; justify-content: space-between; align-items: center;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea{padding-left: 6.250rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea{width: 36.250rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea video{width: 100%;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div{display: flex; margin-top: 3.125rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div button{display: inline-flex;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div a:not(:last-of-type){margin-right: 0.625rem;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination{left: 0; right: auto;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0; margin: 0;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
+    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 37.500rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide{display: flex; justify-content: space-between; align-items: center;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 6.250rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 36.250rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea video{width: 100%;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{display: flex; margin-top: 3.125rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div button{display: inline-flex;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div a:not(:last-of-type){margin-right: 0.625rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-pagination{left: 0; right: auto;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0; margin: 0;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
     .deliveryPage .qualitativeArea .CW div div ul li div{display: flex; gap: 0.625rem; margin-top: 3.125rem;}
     .deliveryPage .qualitativeArea .CW div div ul li div a{white-space: nowrap;}
     .deliveryPage .qualitativeArea .CW > ul{width: 49.15%;}
@@ -509,21 +509,26 @@
 
     /* ! 허브 창업 */
     /* 바로고와 함께하는 이유 */
-    .foundedPage .reasonArea{height: 80vh;}
+    .foundedPage .reasonArea{padding: 12.500rem 0;}
     .foundedPage .reasonArea .CW{position: relative;}
-    .foundedPage .reasonArea .CW .textArea h2{margin-bottom: 6.250rem;}
-    .foundedPage .reasonArea .CW .imgArea{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
-    .foundedPage .reasonArea .CW .imgArea li{height: 100%; display: flex; align-items: center;}
-    .foundedPage .foundedSlider{width: 31.875rem; height: 30.500rem; position: relative;}
-    .foundedPage .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
-    .foundedPage .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .foundedPage .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
-    .foundedPage .foundedSlider .swiper-wrapper{padding: 0 1.250rem; box-sizing: border-box;}
-    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide{height: 5.500rem; box-shadow: 0 0.500rem 2.125rem 0 rgb(8 11 21 / 7%); background-color: white; display: flex; justify-content: space-between;}
-    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide img{width: auto; height: 100%;}
-    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div{display: flex; flex-direction: column; justify-content: center; padding-right: 2.500rem; text-align: right;}
-    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div span{margin-bottom: 0.625rem; color: #a2a2a2;}
-    .foundedPage .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 1.063rem;}
+    .foundedPage .reasonArea .CW h2{position: absolute; left: 0; top: 0; padding-top: 1.875rem; padding-right: 3.125rem;  background-color: white; z-index: 10;}
+    .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .foundedPage .reasonArea .CW .partSlider{height: 31.250rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide{display: flex; justify-content: space-between;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{align-self: center; padding-left: 6.250rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea{align-self: center; width: 31.875rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{right: auto; left: 0;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider{width: 31.875rem; height: 30.500rem; position: relative;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper{padding: 0 1.250rem; box-sizing: border-box;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper .swiper-slide{height: 5.500rem; box-shadow: 0 0.500rem 2.125rem 0 rgb(8 11 21 / 7%); background-color: white; display: flex; justify-content: space-between;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper .swiper-slide img{width: auto; height: 100%;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper .swiper-slide div{display: flex; flex-direction: column; justify-content: center; padding-right: 2.500rem; text-align: right;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper .swiper-slide div span{margin-bottom: 0.625rem; color: #a2a2a2;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider .swiper-wrapper .swiper-slide div p{font-size: 1.063rem;}
 
     /* 놀라운 바로고의 성장세 */
     .foundedPage .growthArea{padding: 11.563rem 0 10.625rem; background-color: #f4f4f4;}
