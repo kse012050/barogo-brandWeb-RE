@@ -494,6 +494,13 @@ $(document).ready(function(){
         },
         slidesPerView: 1,
         loop: true,
+        on:{
+            slideChange: function(){
+                if($(this)[0].$el.hasClass('bikeSlider')){
+                    $('.riderPage .startArea .CW .imgArea img').css('transform','translateX('+(2 - $(this)[0].realIndex) * 50+'%)')
+                }
+            }
+        }
     });
 
       

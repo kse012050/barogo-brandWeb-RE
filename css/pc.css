@@ -492,12 +492,16 @@
     .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
 
     /* 망설이지 바로 시작하세요! */
-    .riderPage .startArea{overflow: hidden;}
+    .riderPage .startArea{overflow: hidden; padding: 12.500rem 0;}
     .riderPage .startArea .CW{position: relative;}
-    .riderPage .startArea .CW .textArea h2{margin-bottom: 6.250rem;}
-    .riderPage .startArea .CW .textArea h2 mark{display: block;}
+    .riderPage .startArea .CW h2{position: relative; display: inline-block; padding-right: 12.50rem;}
+    .riderPage .startArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
+    .riderPage .startArea .CW .partSlider{height: 12.500rem;}
+    .riderPage .startArea .CW .partSlider .swiper-slide{display: flex; align-items: center; padding-left: 6.250rem;}
+    .riderPage .startArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem}
+    .riderPage .startArea .CW .partSlider .swiper-pagination{right: auto; left: 0; top: 50%;}
     .riderPage .startArea .CW .imgArea{position: absolute; right: 0; top: 50%; width: 54.23%; transform: translateY(-50%);}
-    .riderPage .startArea .CW .imgArea img{transform: translateX(100%);}
+    .riderPage .startArea .CW .imgArea img{transform: translateX(100%); transition: transform 0.5s;}
 
     /* 라이더에게 최적화된 바로고 기능성 굿즈 */
     .riderPage .goodsArea{margin-bottom: 12.500rem;}
