@@ -1,0 +1,374 @@
+<?php include "head.php"; ?>
+<body class="bodyHidden">
+    <div class="aboutUsPage">
+        <?php include "header.php"; ?>
+
+        <main data-scroll="area" class="">
+            <div data-scroll="area" class="b">
+                <div data-scroll="area" class="a active">
+                    <section class="makeArea">
+                        <h2 class="CW TC-01">
+                            세상에 활력을 더하는<br/>
+                            초연결 생태계를 만듭니다.
+                        </h2>
+                        <div>
+                            <div class="CW">
+                                <p>
+                                    바로고는 기존의 배달, 물류산업을 넘어 무한한 연결을 실현하여<br class="mobile"/>
+                                    상생, 성장, 나눔의 新물류 시대를 열어갑니다.
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            바로고는 상점-라이더-고객을 잇는<br class="mobile"/> 라스트마일 인프라를 넘어<br/>
+                            수많은 파트너들의 꿈과 기회를 연결하며,<br class="mobile"/> Meta Logistics의 시대를 열어갑니다.
+                        </p>
+                        <p>
+                            필요한 것을, 필요한 곳에, 필요한 순간 제공하는 초연결 솔루션으로<br class="pc"/>
+                            상품과 서비스의 가치를 높이고 세상의 행복 총량을 키워갑니다.
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>OnO 하이브리드 플랫폼</strong>
+                                <p>
+                                    강력한 물류 인프라와 온라인 서비스, <br class="pc"/>
+                                    Online과 Offline을 통합합니다.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>종합 연결 데이터 플랫폼</strong>
+                                <p>
+                                    축적된 데이터를 연결해 <br/>
+                                    새로운 기회와 솔루션을 만듭니다.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>모두를 위한 기회실현 플랫폼</strong>
+                                <p>
+                                    다양한 사업과 파트너들에게 <br/>
+                                    연결의 활력을 제공하며 꿈을 실현합니다
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <p class="metaArea">
+                        <span>LOGISTICS UNIVERSE META</span><mark>LOGISTICS UNIVERSE META</mark>
+                    </p>
+
+                    <section class="toDoArea" data-scrollAni="opacity">
+                        <div class="CW">
+                            <h2 class="TC-02">초연결 생태계를 만들기 위해 바로고가 하는 것</h2>
+                            <p class="FC-01">
+                                바로고는 상점-라이더-고객을 잇는 라스트마일 인프라를 넘어<br/>
+                                수많은 파트너들의 꿈과 기회를 연결하며, Meta Logistics의 시대를 열어갑니다.
+                            </p>
+                            <div>
+                                <div class="progressArea">
+                                    <div class="progressBar">
+                                        <span></span>
+                                    </div>
+                                    <ul data-scroll="target">
+                                        <li class="active">
+                                            <div>
+                                                <mark class="TC-03">배달대행 플랫폼</mark>
+                                                <p class="FC-01">
+                                                    전국 단위 배달대행 플랫폼으로써 최대 규모의 인프라를 바탕으로<br/>
+                                                    라스트 마일 딜리버리 플랫폼 업계 1위 브랜드로 성장하였습니다.<br/>
+                                                    바로고는 이제, Meta Logistics 초연결 생태계를 만들어가고 있습니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <mark class="TC-03">사륜 물류 배송 서비스</mark>
+                                                <p class="FC-01">
+                                                    식음·비식음, 이륜물류 뿐만 아니라<br/>
+                                                    다양한 카테고리의 배송 서비스를 제공합니다.<br/>
+                                                    심야배송, 전담배송 등 물류 전문가들이 제공하는<br/>
+                                                    맞춤형 프리미엄 라스트마일 서비스로<br/>
+                                                    고객 경험 지평을 넓혀갑니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <mark class="TC-03">도시주방</mark>
+                                                <p class="FC-01">
+                                                    바로고의 라스트마일 서비스와 긴밀하게 협업하는<br/>
+                                                    공유주방 ‘도시주방’을 운영합니다.<br/>
+                                                    상점과 비즈니스의 가능성을 확장하며<br/>
+                                                    함께 성장할 수 있는 인큐베이팅을 지원합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <mark class="TC-03">배달 패키지</mark>
+                                                <p class="FC-01">
+                                                    외식배달, 포장에 꼭 필요한 포장용기.<br/>
+                                                    바로고에서는 배달 서비스에 최적화된 패키지를<br/>
+                                                    합리적으로 제공하며, 각종 맞춤형 서비스를 지원합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="imgArea" data-scroll="target">
+                                    <li class="active"><img src="images/aboutUs/toDo01.png" alt=""></li>
+                                    <li><img src="images/aboutUs/toDo02.png" alt=""></li>
+                                    <li><img src="images/aboutUs/toDo03.png" alt=""></li>
+                                    <li><img src="images/aboutUs/toDo04.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="numberArea" data-specialAni="graph" data-eventAni="count">
+                    <div class="CW">
+                        <div class="textArea">
+                            <h2>숫자로 보는 바로고</h2>
+                            <p>
+                                국내 최초 전국단위 배달대행 플랫폼으로<br/>
+                                시작한 바로고는 오늘도 새로운 기록을<br/>
+                                만들어 내고 있습니다.
+                            </p>
+                        </div>
+                        <div class="countArea">
+                            <div class="graphArea">
+                                <mark id="percent" data-eventAni="target" data-startCount="0" data-endCount="1818">0</mark>
+                                <img src="images/common/graph.png" alt="그래프 배경">
+                                <canvas id="graph"></canvas>
+                            </div>
+                            <div class="yearArea">
+                                <h3 id="year" data-eventAni="target" data-startCount="2016" data-endCount="2022">2016</h3>
+                                <ul>
+                                    <li title="허브 수">
+                                        <p id="herbs" data-eventAni="target" data-startCount="190" data-endCount="1100">190</p>
+                                    </li>
+                                    <li title="활동 라이더 수">
+                                        <p id="riders" data-eventAni="target" data-startCount="14,000" data-endCount="34000">14,000</p>
+                                    </li>
+                                    <li title="등록 상점 수">
+                                        <p id="store" data-eventAni="target" data-startCount="8,000" data-endCount="116000">8,000</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="roadArea" data-scrollAni="move">
+                    <div class="CW">
+                        <div class="textArea">
+                            <h2>바로고가 걸어온 길</h2>
+                            <p>
+                                딜리버리 플랫폼 시대의 첫 장을 펴낸 바로고. 
+                                바로고의 역사는 그대로 대한민국 라스트마일 
+                                딜리버리의 역사가 됩니다. 
+                            </p>
+                            <div class="yearArea scrollBox">
+                                <ol data-scroll="target">
+                                    <li class="active">2015 - 2017</li>
+                                    <li>2018 - 2019</li>
+                                    <li>2020 - 현재</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="monthArea">
+                            <ol class="overLine-right" data-scroll="target">
+                                <li>
+                                    <strong>2017 - 2015</strong>
+                                    <ol>
+                                        <li title="2016.08">월 배송 건 수 100만 건 돌파</li>
+                                        <li title="2015.08">B2B 첫 계약</li>
+                                        <li title="2015.02">바로고 법인 설립</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <strong>2018 - 2019</strong>
+                                    <ol>
+                                        <li title="2019.12">예비 유니콘 선정</li>
+                                        <li title="2019.09">누적 배달 건수 1억건 돌파</li>
+                                        <li title="2019.09">모빌리티 플랫폼 무빙(50/50 JV) 설립</li>
+                                        <li title="2019.06">시리즈 B & B+ 투자 (200억원)</li>
+                                        <li title="2019.04">바로고앤 설립</li>
+                                        <li title="2018.05">시리즈 A 투자 (200억원)</li>
+                                    </ol>
+                                </li>
+                                <li class="active">
+                                    <strong>2021 - 현재</strong>
+                                    <ol>
+                                        <li title="2021.01">시리즈 C & C+ 투자 (1500억원)</li>
+                                        <li title="2021.07">월 배달 건 수 1,893만 건 돌파</li>
+                                        <li title="2020.10">
+                                            도시주방(바로고의 공유주방 브랜드) 1호점 오픈</small>
+                                            <div class="imgArea">
+                                                <img src="images/aboutUs/2020-01.png" alt="2020.01 이미지">
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="breandArea">
+                <div class="CW">
+                    <h2>
+                        BAROGO<br/>
+                        Brand Identity
+                    </h2>
+                    <div>
+                        <p>
+                            바로고의 심볼은 단순한 배달을 넘어<br/>
+                            새로운 물류 생태계의 미래를 개척하는 Pioneer’s Flag를 의미하며,<br class="mobile"/>
+                            로고 타입은 모두에게 힘이 되는 일상의 생활력을 선사하는<br class="pc"/>
+                            바로고의 가치를 볼드하고 견고한 서체를 통해 표현했습니다.
+                        </p>
+                        <p>
+                            바로고의 메인 컬러는 생동감이 느껴지는 Vital Orange로,<br class="pc"/>
+                            컬러조합을 통해 세련되고 에너제틱한 바로고의 활력을 전달합니다.
+                        </p>
+                    </div>
+                    <ul title="LOGO SYSTEM" class="logoArea">
+                        <li>
+                            <b>Horizontal</b>
+                            <img src="images/aboutUs/logoSystem01.png" alt="Horizontal">
+                        </li>
+                        <li>
+                            <b>Vertical</b>
+                            <img src="images/aboutUs/logoSystem03.png" alt="Vertical">
+                        </li>
+                    </ul>
+                    <ul title="COLOR SYSTEM" class="colorArea">
+                        <li>
+                            <b>VITAL ORANGE</b>
+                            <p>
+                                Pantone 1655C<br/>
+                                RGB 250 80 20<br/>
+                                CMYK 0 75 100 0 <br/>
+                                #FA5014
+                            </p>
+                        </li>
+                        <li>
+                            <b>BLACK</b>
+                            <p>
+                                RGB 0 0 0<br/>
+                                CMYK 0 0 0 100 <br/>
+                                #000000
+                            </p>
+                        </li>
+                        <li>
+                            <b>WHITE</b>
+                            <p>
+                                RGB 255 255 255<br/>
+                                CMYK 0 0 0 0 <br/>
+                                #FFFFFF 
+                            </p>
+                        </li>
+                    </ul>
+                    <ul title="SECONDARY COLOR SYSTEM" class="secondaryArea">
+                        <li>
+                            <b>VITAL BLUE</b>
+                            <p>
+                                RGB 45 60 230<br/>
+                                CMYK 90 65 0 0<br/>
+                                #2D3CE6
+                            </p>
+                        </li>
+                        <li>
+                            <b>LIGHT GRAY</b>
+                            <p>
+                                Cool Gray 2 C<br/>
+                                RGB 220 220 220<br/>
+                                CMYK 0 0 0 20
+                            </p>
+                        </li>
+                    </ul>
+                    <a <?=homepageLinkCheck("https://barogo.com/data/recruit/2021_바로고_배달_트렌드_리포트.pdf")?> class="BBTN-download">BI / GUIDE</a>
+                </div>
+            </section>
+
+            <section class="sliderBox">
+                <div class="CW">
+                    <div class="titleArea">
+                        <h2 class="TC-02">#바로고 사장님</h2>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="swiper bottomSlider">
+
+                        <div class="swiper-wrapper">
+                            <?php
+                            if(checkArray($archives,true)){
+                                foreach ($archives as $archive){
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="imgArea" style="background-image: url('<?=$archive["thum_file_path"]?>');"></div>
+                                        <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
+                                        <p class="FC-01"><?=$archive["subject"]?></p>
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            ?>
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+<!--                                <mark class="FC-01">#Film</mark>-->
+<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="supportArea">
+                <div>
+                    <div class="CW">
+                        <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
+                        <b class="FC-01">B2B 브랜드</b>
+                        <span>B2B 브랜드 이미지</span>
+                        <b class="FC-01">주문중개 플랫폼</b>
+                        <span>주문중개 플랫폼 이미지</span>
+                        <b class="FC-01">협업사 & 협력 단체</b>
+                        <span>협업사 & 협력 단체 이미지</span>
+                    </div>
+                </div>
+                <button class="topBtn">최상단으로 이동</button>
+            </div>
+            <?php include "footer.php"; ?>
+            <?php
+            if(!empty(getSiteIntoValue($site,"recruiting_url"))){
+                ?>
+                <a href="<?=getSiteIntoValue($site,"recruiting_url")?>" class="fixedLink" target="_blank">인재채용 바로가기</a>
+                <?php
+            }
+            ?>
+        </main>
+    </div>
+</body>
+</html>
