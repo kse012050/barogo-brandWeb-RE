@@ -28,14 +28,14 @@
     .BTN-arrow::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
     input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
-    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 12.500rem; line-height: 3.750rem; font-size: 1rem; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 1.250rem; box-sizing: border-box;}
-    [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; min-width: 7.813rem; max-width: 10.313rem; line-height: 3.125rem; font-size: 0.875rem; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 1.250rem; box-sizing: border-box; letter-spacing: -1px;}
+    [class |= "BBTN"]::after{content: ''; width: 1rem; height: 1rem; margin-left: 0.313rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
     .BBTN-download::after{background-image: url('../images/common/download.png');}
 
     /* 문의하기 링크 */
-    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
+    .fixedLink{position: fixed; left: 0; bottom: 0; color: white; width: 100%; line-height: 3.750rem; font-size: 1.000rem;  background-color: #fa5014; border: none; border-radius: 16px 16px 0 0; box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; box-sizing: border-box; z-index: 10;}
     
     /* 탑 버튼 */
     .topBtn{ display: none; position: fixed; left: 1.875rem; bottom: 6.250rem; width: 1.875rem; height: 1.875rem; text-indent: -9999px; z-index: 10;
@@ -164,7 +164,7 @@
 
 
     /* 슬라이더 공통 */
-    .sliderBox{overflow: hidden; padding: 7.500rem 0;}
+    .sliderBox{overflow: hidden; padding: 3.750rem 0 7.500rem;}
     .sliderBox .titleArea{display: flex; align-items: center; margin-bottom: 3.125rem;}
     .sliderBox .titleArea h2{margin-right: 1.250rem;}
     .sliderBox .titleArea :is(.swiper-button-next , .swiper-button-prev){position: static; margin: 0; width: 2.125rem; height: 2.125rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
@@ -352,14 +352,14 @@
 
     /* 부분 슬라이더 공통 */
     .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
-    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
+    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
     .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
 
 
-    [data-scroll="fullPage"] > .topBox{position: relative; margin-bottom: 1.875rem; opacity: 0; animation: startTopAni 1s forwards;}
+    [data-scroll="fullPage"] > .topBox{position: relative; margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 1s forwards;}
     [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/m-main-bg2.png') , url('../images/common/m-main-bg.png'); background-repeat:no-repeat; background-size: 100%; background-position: center bottom;}
     [data-scroll="fullPage"] > .topBox .CW{height: 100%; padding-top: 9.063rem; padding-bottom: 20.000rem;}
-    [data-scroll="fullPage"] > .topBox .CW h2{opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
+    [data-scroll="fullPage"] > .topBox .CW h2{font-size: 1.875rem; opacity: 0; animation: startTopAni 0.5s 0.4s forwards; }
     [data-scroll="fullPage"] > .topBox .CW a{display: none;}
     [data-scroll="fullPage"] > .topBox .imgArea{position: absolute; left: 0; bottom: 0; width: 100%; height: 80.3vw; background-repeat: no-repeat; background-size: cover; text-indent: -9999px;}
 
@@ -374,19 +374,20 @@
 
     /* ! 배달대행 */
     /* 사장님의 정성 그대로 빠르고 확실하게 */
-    .deliveryPage .qualitativeArea{margin-bottom: 7.500rem;}
+    .deliveryPage .qualitativeArea{}
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
     .deliveryPage .qualitativeArea .CW h2{width: 100%; position: relative; z-index: 5;}
-    .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -5.000rem; width: 100%; height: 5.000rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .deliveryPage .qualitativeArea .CW .swiper{width: 100%; height: 40.625rem; padding-top: 5.000rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea{padding-left: 2.250rem; margin-bottom: 3.125rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea p{letter-spacing: -0.063rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea{width: 75%; margin-left: auto;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .imgArea video{width: 100%;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div{margin-top: 3.125rem;}
-    .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div a:not(:last-of-type){margin-bottom: 0.625rem;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination{top: 5.000rem; left: 0; right: auto; transform: translateY(0);}
+    .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 27.500rem; padding-top: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.250rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea p{letter-spacing: -0.063rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea video{width: 100%;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{margin-top: 1.250rem; display: flex;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div a{display: inline-flex;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div a:not(:last-of-type){margin-right: 0.625rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-pagination{top: 1.875rem; left: 0; right: auto; transform: translateY(0);}
     .deliveryPage .qualitativeArea .CW div div ul li div a{display: inline-flex; white-space: nowrap;}
     .deliveryPage .qualitativeArea .CW div div ul li div a:not(:last-child){margin-bottom: 0.625rem;}
     .deliveryPage .qualitativeArea .CW > ul{width: 77.5%; margin-left: auto;}
@@ -394,29 +395,29 @@
     .deliveryPage .qualitativeArea .CW > ul li video{width: 100%;}
 
     /* 사장님의 따뜻한 마음 그대로 */
-    .deliveryPage .mindArea{padding: 7.500rem 0; background-color: #f6f6f6; margin-bottom: 7.500rem;}
-    .deliveryPage .mindArea .CW .imgArea{width: 100%; margin-bottom: 3.750rem;}
+    .deliveryPage .mindArea{padding: 3.750rem 0; background-color: #f6f6f6; margin-bottom: 3.750rem;}
+    .deliveryPage .mindArea .CW .imgArea{width: 100%; margin-bottom: 1.875rem;}
     .deliveryPage .mindArea .CW .imgArea img{width: 100%;}
     .deliveryPage .mindArea .CW .textArea h2{margin-bottom: 1.250rem;}
     .deliveryPage .mindArea .CW .textArea p:not(:last-of-type){margin-bottom: 1.875rem;}
-    .deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 3.125rem;}
+    .deliveryPage .mindArea .CW .textArea p:last-of-type{margin-bottom: 1.250rem;}
 
     /* 성공하는 매장의 노하우 */
-    .deliveryPage .knowHowArea{margin-bottom: 7.500rem;}
-    .deliveryPage .knowHowArea .CW .textArea{margin-bottom: 5.000rem;}
-    .deliveryPage .knowHowArea .CW .textArea h2{margin-bottom: 1.250rem;}
-    .deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 3.125rem;}
-    .deliveryPage .knowHowArea .CW .textArea ul{display: flex; flex-wrap: wrap; gap: 1.250rem;}
+    .deliveryPage .knowHowArea{margin-bottom: 5.000rem;}
+    .deliveryPage .knowHowArea .CW .textArea{margin-bottom: 1.250rem;}
+    .deliveryPage .knowHowArea .CW .textArea h2{margin-bottom: 1.875rem;}
+    .deliveryPage .knowHowArea .CW .textArea p{margin-bottom: 1.250rem;}
+    .deliveryPage .knowHowArea .CW .textArea ul{display: flex; gap: 0.625rem;}
     .deliveryPage .knowHowArea .CW .imgArea{width: 100%;}
 
     /* 기업 고객을 위한 프리미엄 라스트마일 물류 서비스 */
-    .deliveryPage .distributionArea{padding-top: 10.000rem; position: relative; margin-bottom: 7.500rem;}
+    .deliveryPage .distributionArea{padding-top: 10.000rem; position: relative; margin-bottom: 3.750rem;}
     .deliveryPage .distributionArea .CW .imgArea{position: absolute; left: 0; top: 0; width: 80.5555%; z-index: -1;}
-    .deliveryPage .distributionArea .CW .textArea{padding-top: 3.438rem;}
-    .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 5.000rem;}
-    .deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 2.813rem;}
+    .deliveryPage .distributionArea .CW .textArea{padding-top: 2.813rem;}
+    .deliveryPage .distributionArea .CW .textArea h2{margin-bottom: 2.500rem;}
+    /* .deliveryPage .distributionArea .CW .textArea > *:not(h2){padding-left: 2.813rem;} */
     .deliveryPage .distributionArea .CW .textArea mark{display: block; margin-bottom: 1.250rem;}
-    .deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 5.000rem;}
+    .deliveryPage .distributionArea .CW .textArea p:not(:last-of-type){margin-bottom: 1.875rem;}
 
     /* 배너 */
     .deliveryPage .bannerArea{background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover;}
@@ -563,12 +564,13 @@
 
     /* META LOGISTIS UNIVERSE */
     .aboutUsPage .metaArea{ margin: 0 auto 7.500rem; font-size: 7.6vw; font-weight: 700; white-space: nowrap; overflow: hidden;}
-    .aboutUsPage .metaArea :is(span , mark){display: inline-block; animation-duration: 40s; animation-timing-function: linear; animation-iteration-count: infinite;}
-    .aboutUsPage .metaArea span{animation-name: textAni1; animation-delay: -40s;}
+    .aboutUsPage .metaArea :is(span , mark){display: inline-block; animation-duration: 30s; animation-timing-function: linear; animation-iteration-count: infinite;}
+    .aboutUsPage .metaArea span.blackColor{animation-name: textAni1; animation-delay: -30s;}
     .aboutUsPage .metaArea mark{animation-name: textAni2; animation-delay: -20s;}
+    .aboutUsPage .metaArea span.grayColor{color: lightgray; animation-name: textAni3; animation-delay: -10s;}
     @keyframes textAni1 {
         0%{
-            transform: translateX(102%);
+            transform: translateX(202%);
         }
         100%{
             transform: translateX(-102%);             
@@ -576,10 +578,18 @@
     }
     @keyframes textAni2 {
         0%{
-            transform: translateX(2%);
+            transform: translateX(102%);
         }
         100%{
             transform: translateX(-202%);
+        }
+    }
+    @keyframes textAni3 {
+        0%{
+            transform: translateX(2%);
+        }
+        100%{
+            transform: translateX(-302%);
         }
     }
 
@@ -623,7 +633,7 @@
     .aboutUsPage .roadArea .CW .monthArea > ol{position: relative;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:first-child){display: none;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 1.500rem; font-weight: 700; margin-bottom: 3.125rem;}
-    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 1.000rem; display: flex; flex-wrap: wrap; align-items: flex-end;}
+    .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 1.000rem; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem 0;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li:not(:last-child){margin-bottom: 2.813rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li::before{content: attr(title); font-weight: 700; margin-right: 1.563rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li mark{margin: 0 0.313rem;}
