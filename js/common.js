@@ -6,19 +6,6 @@ $(document).ready(function(){
         $('html').scrollTop(0)
     },300)  */
 
-   /*  new Swiper(".test", {
-        direction: "vertical",
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        autoplay: {
-            delay: 2500,
-        },
-        slidesPerView: 1,
-        loop: true,
-      }); */
-
     // 공통
     common()
     
@@ -54,7 +41,7 @@ $(document).ready(function(){
         $('.mainPage').length > 0 && scrollAnimation();
 
         // 페이지 부분 스크롤 이벤트
-        $('[data-scrollAni="fixed"]').length > 0 && partScroll();
+        $('.partSlider').length > 0 && partSlider();
 
 
         // 모바일 메뉴
@@ -495,112 +482,19 @@ $(document).ready(function(){
     }   /* 문의하기 전용 fin */
     
     // 페이지 부분 스크롤
-    function partScroll(){
-        if($(window).width() > responsiveWidth){
-            let scrollArea = [];
-            for(let a = 0; a < $('[data-scrollAni="fixed"]').length; a++){
-                scrollArea.push($('[data-scrollAni="fixed"]').eq(a))
-            }
-            scrollArea.map((scrollArea2)=>{
-                let scrollFix = scrollArea2.children();
-                let scrollTarget = [];
-                let targetLength = scrollArea2.find('[data-scroll="target"]').length;
-                for(let a = 0; a < targetLength; a++){
-                    scrollTarget.push(scrollArea2.find('[data-scroll="target"]').eq(a).children())
-                }
-                targetLength = scrollTarget[0].length;
-                scrollArea2.css('height', (targetLength + 1) * 1000)
-                let areaOffTop = scrollArea2.offset().top;
-                let areaHeight = scrollArea2.outerHeight();
-                let fixHeight = scrollFix.outerHeight();
-                let scrollHeight = areaHeight - fixHeight;
-                let targetHeight = (scrollHeight) / (targetLength + targetLength - 2);
-                let heightArray = [];
-                for(let a = 0; a < targetLength; a++){
-                    a == 0 && heightArray.push(areaOffTop);
-                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
-                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
-                }
-                let progressHeight = 100 / targetLength;
-                $('.progressBar span').css('height' , progressHeight + '%');
-                
-                $(window).scroll((e)=>{
-                    let scrollValue = $(window).scrollTop();
-        
-                    if((scrollValue > areaOffTop) &&  (scrollValue < areaOffTop + scrollHeight)){
-                        scrollFix.css({
-                            'position':'fixed',
-                            'top' : '0',
-                        });
-                        scrollTarget.map((t)=>{
-                            heightArray.map((h , i)=>{
-                                // t.css('z-index' , 0)
-                                if(i == 0){
-                                    t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
-                                    // t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
-                                    // t.eq(i).css('z-index' , 1)
-                                }else if(i == heightArray.length - 1){
-                                    t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
-                                    // t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
-                                    // t.eq(i).css('z-index' , 1)
-                                }else if(i >= 1){
-                                    let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
-                                    t.eq(i).css('opacity',opacity)
-                                    // t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
-                                }
-                                if(t.eq(i).css('opacity') > 0){
-                                    t.eq(i).css('z-index' , 1)
-                                }else{
-                                    t.eq(i).css('z-index' , 0)
-                                }
-                            })
-                        })
-                        // console.log(((scrollValue - areaOffTop) / scrollHeight));
-                        scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
-                        scrollArea2.find('[data-special="target"]').css(
-                            'transform', 'translateX(' +((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * 100 + '%)'
-                        )
-                    }else{
-                        let topValue = 0;
-                        scrollValue > areaOffTop ? topValue = scrollHeight : topValue = 0
-                        scrollFix.css({
-                            'position':'absolute',
-                            'top' : topValue
-                        });
-                    };
-                })
-            })
-        }else{
-            let touchList = $('[data-scroll="fullPage"] [data-scrollAni="fixed"]');
-             // 모바일 opacity 터치 X축
-            touchList.on('touchstart',function(e){
-                if($(window).width() > responsiveWidth) return;
-                touchstartX = e.touches[0].clientX;
-                touchstartY = e.touches[0].clientY;
-            })
-
-            touchList.on('touchmove',function(e){
-                if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
-                    e.preventDefault();
-                }
-            })
-
-            touchList.on('touchend',function(e){
-                if($(window).width() > responsiveWidth) return;
-                touchendX = e.changedTouches[0].clientX;
-                touchendY = e.changedTouches[0].clientY;
-                if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
-                    return;
-                }
-
-                let delta = -(touchstartX - touchendX);
-                let targetArea = $(this);
-                
-                scrollAni(targetArea , delta)
-        
-            })
-            // 모바일 opacity 터치 X축 fin
-        }
+    function partSlider(){
+    new Swiper(".partSlider", {
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+        },
+        slidesPerView: 1,
+        loop: true,
+    });
 
       
     } /* 페이지 부분 스크롤 fin */

@@ -218,6 +218,12 @@
     [data-scrollAni="fixed"] [data-scroll="target"] li:not(:first-child){position: absolute; left: 0; top: 0;}
     [data-scrollAni="fixed"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
 
+    /* 부분 슬라이더 공통 */
+    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0;}
+    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
+    .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
+
+
     /* 이미지 공통 */
     .imgArea img{width: 100%;}
 
@@ -441,12 +447,18 @@
 
 
     /* 라이더님만을 위한 놀이터 바로고 플레이 */
-    .riderPage .playgroundArea .CW{position: relative; display: flex; justify-content: space-between;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 4.063rem;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2{margin-bottom: 1.563rem;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2 mark{display: block;}
-    .riderPage .playgroundArea .CW .textArea .progressArea ul li p{color: #666;}
-    .riderPage .playgroundArea .CW .imgArea{width: 22.500rem; order: -1; margin-left: 6.875rem;}
+    .riderPage .playgroundArea{padding-bottom: 12.500rem;}
+    .riderPage .playgroundArea .CW{position: relative;}
+    .riderPage .playgroundArea .CW .titleArea{position: absolute; right: 0; top: 0; padding-top: 3.125rem; z-index: 10; background-color: white;}
+    .riderPage .playgroundArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
+    .riderPage .playgroundArea .CW .titleArea h2{margin-bottom: 1.563rem;}
+    .riderPage .playgroundArea .CW .partSlider{height: 31.250rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide{display: flex; justify-content: space-between;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{align-self: flex-end; width: 18.750rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 22.500rem; order: -1; margin-left: 6.875rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-pagination{right: 25.000rem; top: auto; bottom: 0; transform: translateY(0);}
 
     /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
     .riderPage .revenueArea{background-color: #f6f6f6; padding: 11.875rem 0 14.375rem;}

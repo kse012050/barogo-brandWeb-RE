@@ -28,7 +28,7 @@
     .BTN-arrow::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
     input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
     /* BBTN (border button) 테두리가 들어가는 버튼*/
-    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 14.063rem; line-height: 3.875rem; font-size: 1.125rem; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 1.875rem; box-sizing: border-box;}
+    [class |= "BBTN"]{display: flex; justify-content: space-between; align-items: center; max-width: 12.500rem; line-height: 3.750rem; font-size: 1rem; font-weight: 700; box-shadow: 0 3px 7px 0 white; color: #fa5014; border: 1px solid #fa5014; border-radius: 3px; padding: 0 1.250rem; box-sizing: border-box;}
     [class |= "BBTN"]::after{content: ''; width: 1.250rem; height: 1.250rem; margin-left: 0.625rem; background-repeat: no-repeat; background-position: center; background-size: cover;}
     .BBTN-go::after{background-image: url('../images/common/go.png');}
     .BBTN-subscribe::after{background-image: url('../images/common/subscribe.png');}
@@ -341,6 +341,11 @@
     [data-scrollAni="fixed"] [data-scroll="target"] li:not(.active){position: absolute; left: 0; top: 0; opacity: 0; z-index: -1;}
     [data-scrollAni="fixed"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
 
+    /* 부분 슬라이더 공통 */
+    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
+    .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
+    .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
+
 
     [data-scroll="fullPage"] > .topBox{position: relative; margin-bottom: 1.875rem; opacity: 0; animation: startTopAni 1s forwards;}
     [data-scroll="fullPage"] > .topBox{ background-image:  url('../images/common/m-main-bg2.png') , url('../images/common/m-main-bg.png'); background-repeat:no-repeat; background-size: 100%; background-position: center bottom;}
@@ -373,8 +378,6 @@
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div{margin-top: 3.125rem;}
     .deliveryPage .qualitativeArea .CW .swiper-slide .textArea div a:not(:last-of-type){margin-bottom: 0.625rem;}
     .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination{top: 5.000rem; left: 0; right: auto; transform: translateY(0);}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0; margin: 0;}
-    .deliveryPage .qualitativeArea .CW .swiper .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
     .deliveryPage .qualitativeArea .CW div div ul li div a{display: inline-flex; white-space: nowrap;}
     .deliveryPage .qualitativeArea .CW div div ul li div a:not(:last-child){margin-bottom: 0.625rem;}
     .deliveryPage .qualitativeArea .CW > ul{width: 77.5%; margin-left: auto;}
@@ -423,11 +426,16 @@
 
     /* 라이더님만을 위한 놀이터 바로고 플레이 */
     .riderPage .playgroundArea .CW{position: relative;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1){margin-bottom: 5.000rem;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2{margin-bottom: 1.563rem;}
-    .riderPage .playgroundArea .CW .textArea > div:nth-of-type(1) h2 mark{display: block;}
-    .riderPage .playgroundArea .CW .textArea > .progressArea mark{display: block; margin-bottom: 1.875rem;}
-    .riderPage .playgroundArea .CW .imgArea{width: 100%;}
+    .riderPage .playgroundArea .CW .titleArea{position: relative;}
+    .riderPage .playgroundArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -3rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
+    .riderPage .playgroundArea .CW .titleArea h2{margin-bottom: 1.563rem;}
+    .riderPage .playgroundArea .CW .partSlider{height: 37.500rem; padding-top: 3.125rem; box-sizing: border-box;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 2.25rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin-left: auto;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; transform: translateY(0);}
+
 
     /* 나의 라이프스타일에 맞춰 주간스케쥴을 입력해보세요 */
     .riderPage .revenueArea{background-color: #f6f6f6; padding: 6.563rem 0 5.313rem;}
