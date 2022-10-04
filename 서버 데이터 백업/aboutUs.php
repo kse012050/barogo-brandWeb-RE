@@ -20,33 +20,28 @@
                             </div>
                         </div>
                         <p>
-                            바로고는 상점-라이더-고객을 잇는<br class="mobile"/> 라스트마일 인프라를 넘어<br/>
-                            수많은 파트너들의 꿈과 기회를 연결하며,<br class="mobile"/> Meta Logistics의 시대를 열어갑니다.
+                            <?=nl2br(getValue($content,"depth2_content1_a"))?>
                         </p>
                         <p>
-                            필요한 것을, 필요한 곳에, 필요한 순간 제공하는 초연결 솔루션으로<br class="pc"/>
-                            상품과 서비스의 가치를 높이고 세상의 행복 총량을 키워갑니다.
+                            <?=nl2br(getValue($content,"depth2_content1_b"))?>
                         </p>
                         <ul>
                             <li>
-                                <strong>OnO 하이브리드 플랫폼</strong>
+                                <strong><?=getValue($content,"depth2_subject2")?></strong>
                                 <p>
-                                    강력한 물류 인프라와 온라인 서비스, <br class="pc"/>
-                                    Online과 Offline을 통합합니다.
+                                    <?=nl2br(getValue($content,"depth2_content2"))?>
                                 </p>
                             </li>
                             <li>
-                                <strong>종합 연결 데이터 플랫폼</strong>
+                                <strong><?=getValue($content,"depth2_subject3")?></strong>
                                 <p>
-                                    축적된 데이터를 연결해 <br/>
-                                    새로운 기회와 솔루션을 만듭니다.
+                                    <?=nl2br(getValue($content,"depth2_content3"))?>
                                 </p>
                             </li>
                             <li>
-                                <strong>모두를 위한 기회실현 플랫폼</strong>
+                                <strong><?=getValue($content,"depth2_subject4")?></strong>
                                 <p>
-                                    다양한 사업과 파트너들에게 <br/>
-                                    연결의 활력을 제공하며 꿈을 실현합니다
+                                    <?=nl2br(getValue($content,"depth2_content4"))?>
                                 </p>
                             </li>
                         </ul>
@@ -71,44 +66,33 @@
                                     <ul data-scroll="target">
                                         <li class="active">
                                             <div>
-                                                <mark class="TC-03">배달대행 플랫폼</mark>
+                                                <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
                                                 <p class="FC-01">
-                                                    전국 단위 배달대행 플랫폼으로써 최대 규모의 인프라를 바탕으로<br/>
-                                                    라스트 마일 딜리버리 플랫폼 업계 1위 브랜드로 성장하였습니다.<br/>
-                                                    바로고는 이제, Meta Logistics 초연결 생태계를 만들어가고 있습니다.
+                                                    <?=nl2br(getValue($content,"depth3_content1"))?>
                                                 </p>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <mark class="TC-03">사륜 물류 배송 서비스</mark>
+                                                <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
                                                 <p class="FC-01">
-                                                    식음·비식음, 이륜물류 뿐만 아니라<br/>
-                                                    다양한 카테고리의 배송 서비스를 제공합니다.<br/>
-                                                    심야배송, 전담배송 등 물류 전문가들이 제공하는<br/>
-                                                    맞춤형 프리미엄 라스트마일 서비스로<br/>
-                                                    고객 경험 지평을 넓혀갑니다.
+                                                    <?=nl2br(getValue($content,"depth3_content2"))?>
                                                 </p>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <mark class="TC-03">도시주방</mark>
+                                                <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
                                                 <p class="FC-01">
-                                                    바로고의 라스트마일 서비스와 긴밀하게 협업하는<br/>
-                                                    공유주방 ‘도시주방’을 운영합니다.<br/>
-                                                    상점과 비즈니스의 가능성을 확장하며<br/>
-                                                    함께 성장할 수 있는 인큐베이팅을 지원합니다.
+                                                    <?=nl2br(getValue($content,"depth3_content3"))?>
                                                 </p>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <mark class="TC-03">배달 패키지</mark>
+                                                <mark class="TC-03"><?=getValue($content,"depth3_subject4")?></mark>
                                                 <p class="FC-01">
-                                                    외식배달, 포장에 꼭 필요한 포장용기.<br/>
-                                                    바로고에서는 배달 서비스에 최적화된 패키지를<br/>
-                                                    합리적으로 제공하며, 각종 맞춤형 서비스를 지원합니다.
+                                                    <?=nl2br(getValue($content,"depth3_content4"))?>
                                                 </p>
                                             </div>
                                         </li>
@@ -130,14 +114,12 @@
                         <div class="textArea">
                             <h2>숫자로 보는 바로고</h2>
                             <p>
-                                국내 최초 전국단위 배달대행 플랫폼으로<br/>
-                                시작한 바로고는 오늘도 새로운 기록을<br/>
-                                만들어 내고 있습니다.
+                                <?=nl2br(getValue($content,"depth4_content1"))?>
                             </p>
                         </div>
                         <div class="countArea">
                             <div class="graphArea">
-                                <mark id="percent" data-eventAni="target" data-startCount="0" data-endCount="1818">0</mark>
+                                <mark id="percent" data-eventAni="target" data-startCount="0" data-endCount="<?=getValue($content,"depth4_subject1_a")?>">0</mark>
                                 <img src="images/common/graph.png" alt="그래프 배경">
                                 <canvas id="graph"></canvas>
                             </div>
@@ -145,13 +127,13 @@
                                 <h3 id="year" data-eventAni="target" data-startCount="2016" data-endCount="2022">2016</h3>
                                 <ul>
                                     <li title="허브 수">
-                                        <p id="herbs" data-eventAni="target" data-startCount="190" data-endCount="1100">190</p>
+                                        <p id="herbs" data-eventAni="target" data-startCount="190" data-endCount="<?=getValue($content,"depth4_subject1_c")?>">190</p>
                                     </li>
                                     <li title="활동 라이더 수">
-                                        <p id="riders" data-eventAni="target" data-startCount="14,000" data-endCount="34000">14,000</p>
+                                        <p id="riders" data-eventAni="target" data-startCount="14,000" data-endCount="<?=getValue($content,"depth4_subject1_b")?>">14,000</p>
                                     </li>
                                     <li title="등록 상점 수">
-                                        <p id="store" data-eventAni="target" data-startCount="8,000" data-endCount="116000">8,000</p>
+                                        <p id="store" data-eventAni="target" data-startCount="8,000" data-endCount="<?=getValue($content,"depth4_subject1_d")?>">8,000</p>
                                     </li>
                                 </ul>
                             </div>
@@ -224,17 +206,12 @@
                     </h2>
                     <div>
                         <p>
-                            바로고의 심볼은 단순한 배달을 넘어<br/>
-                            새로운 물류 생태계의 미래를 개척하는 Pioneer’s Flag를 의미하며,<br class="mobile"/>
-                            로고 타입은 모두에게 힘이 되는 일상의 생활력을 선사하는<br class="pc"/>
-                            바로고의 가치를 볼드하고 견고한 서체를 통해 표현했습니다.
+                            <?=nl2br(getValue($content,"depth5_content1_a"))?>
                         </p>
                         <p>
-                            바로고의 메인 컬러는 생동감이 느껴지는 Vital Orange로,<br class="pc"/>
-                            컬러조합을 통해 세련되고 에너제틱한 바로고의 활력을 전달합니다.
+                            <?=nl2br(getValue($content,"depth5_content1_b"))?>
                         </p>
                     </div>
-                    <strong>LOGO SYSTEM</strong>
                     <ul title="LOGO SYSTEM" class="logoArea">
                         <li>
                             <b>Horizontal</b>
@@ -359,6 +336,7 @@
                         <span>협업사 & 협력 단체 이미지</span>
                     </div>
                 </div>
+                <button class="topBtn">최상단으로 이동</button>
             </div>
             <?php include "footer.php"; ?>
             <?php
@@ -368,8 +346,6 @@
                 <?php
             }
             ?>
-
-            <button class="topBtn">최상단으로 이동</button>
         </main>
     </div>
 </body>

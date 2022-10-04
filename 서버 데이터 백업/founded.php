@@ -17,120 +17,124 @@
                 </div>
             </section>
 
-            <section class="reasonArea" data-scrollAni="fixed">
-                <div>
-                    <div class="CW">
-                        <div class="textArea">
-                            <h2 class="TC-02">
-                                바로고와 함께하는 이유
-                            </h2>
-                            <div class="progressArea">
-                                <div class="progressBar">
-                                    <span></span>
+            <section class="reasonArea">
+                <div class="CW">
+                    <h2 class="TC-02">
+                        바로고와 함께하는 이유
+                    </h2>
+                    <!-- 슬라이더 -->
+                    <div class="swiper partSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content1"))?>
+                                    </p>
                                 </div>
-                                <ul data-scroll="target">
-                                    <li class="active">
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content1"))?>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content2"))?>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content3"))?>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <ul class="imgArea" data-scroll="target">
-                            <li class="active">
-                                <div class="swiper foundedSlider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand01.png" alt="CU logo">
-                                            <div>
-                                                <span>주문 금액 32,000원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                <div class="imgArea">
+                                    <div class="swiper foundedSlider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand01.png" alt="CU logo">
+                                                <div>
+                                                    <span>주문 금액 32,000원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand02.png" alt="Burger King logo">
-                                            <div>
-                                                <span>주문 금액 11,000원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand02.png" alt="Burger King logo">
+                                                <div>
+                                                    <span>주문 금액 11,000원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand03.png" alt="McDonald's logo">
-                                            <div>
-                                                <span>주문 금액 47,000원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand03.png" alt="McDonald's logo">
+                                                <div>
+                                                    <span>주문 금액 47,000원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand04.png" alt="Baskin Robbins logo">
-                                            <div>
-                                                <span>주문 금액 21,600원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand04.png" alt="Baskin Robbins logo">
+                                                <div>
+                                                    <span>주문 금액 21,600원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand05.png" alt="Ediya logo">
-                                            <div>
-                                                <span>주문 금액 19,800원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand05.png" alt="Ediya logo">
+                                                <div>
+                                                    <span>주문 금액 19,800원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand06.png" alt="Paris Baguette logo">
-                                            <div>
-                                                <span>주문 금액 24,800원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand06.png" alt="Paris Baguette logo">
+                                                <div>
+                                                    <span>주문 금액 24,800원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand07.png" alt="Dunkin logo">
-                                            <div>
-                                                <span>주문 금액 12,000원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand07.png" alt="Dunkin logo">
+                                                <div>
+                                                    <span>주문 금액 12,000원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand08.png" alt="olive young logo">
-                                            <div>
-                                                <span>주문 금액 56,000원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand08.png" alt="olive young logo">
+                                                <div>
+                                                    <span>주문 금액 56,000원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand09.png" alt="GS25 logo">
-                                            <div>
-                                                <span>주문 금액 10,800원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand09.png" alt="GS25 logo">
+                                                <div>
+                                                    <span>주문 금액 10,800원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/founded/brand10.png" alt="Lotteria logo">
-                                            <div>
-                                                <span>주문 금액 22,500원</span>
-                                                <p>주문이 들어왔습니다</p>
+                                            <div class="swiper-slide">
+                                                <img src="images/founded/brand10.png" alt="Lotteria logo">
+                                                <div>
+                                                    <span>주문 금액 22,500원</span>
+                                                    <p>주문이 들어왔습니다</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li><img src="images/founded/reason02.png" alt="안정적 수입 창출"></li>
-                            <li><img src="images/founded/reason03.png" alt="배달 중 문제 신속 해결"></li>
-                        </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content2"))?>
+                                    </p>
+                                </div>
+                                <div class="imgArea">
+                                    <img src="images/founded/reason02.png" alt="안정적 수입 창출">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content3"))?>
+                                    </p>
+                                </div>
+                                <div class="imgArea">
+                                    <img src="images/founded/reason03.png" alt="배달 중 문제 신속 해결">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <!-- 슬라이더 fin -->
                 </div>
             </section>
            
@@ -284,6 +288,7 @@
                         <span>협업사 & 협력 단체 이미지</span>
                     </div>
                 </div>
+                <button class="topBtn">최상단으로 이동</button>
             </div>
         </main>
         <?php include "footer.php"; ?>
@@ -292,6 +297,5 @@
 
     
     <a href="foundedInquiry" class="fixedLink">바로 문의하기</a>
-    <button class="topBtn">최상단으로 이동</button>
 </body>
 </html>

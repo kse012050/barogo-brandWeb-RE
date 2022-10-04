@@ -37,55 +37,59 @@
                 </div>
             </section>
 
-            <section class="playgroundArea" data-scrollAni="fixed">
-                <div>
-                    <div class="CW">
-                        <div class="textArea">
-                            <div>
-                                <h2 class="TC-02">
-                                    라이더님만을 위한 놀이터<br/>
-                                    바로고 플레이
-                                </h2>
-                                <p class="FC-01">
-                                    당신의 라이딩이 더욱 즐겁고 풍성하도록<br/>
-                                    달릴수록 즐거워지는 바로고 플레이!<br/>
-                                    오직 바로고에만 있습니다.
-                                </p>
-                            </div>
-                            <div class="progressArea">
-                                <div class="progressBar">
-                                    <span></span>
+            <section class="playgroundArea">
+                <div class="CW">
+                    <div class="titleArea">
+                        <h2 class="TC-02">
+                            라이더님만을 위한 놀이터<br/>
+                            바로고 플레이
+                        </h2>
+                        <p class="FC-01">
+                            당신의 라이딩이 더욱 즐겁고 풍성하도록<br/>
+                            달릴수록 즐거워지는 바로고 플레이!<br/>
+                            오직 바로고에만 있습니다.
+                        </p>
+                    </div>
+                    <!-- 슬라이더 -->
+                    <div class="swiper partSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth3_content1"))?>
+                                    </p>
                                 </div>
-                                <ul data-scroll="target">
-                                    <li class="active">
-                                        <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth3_content1"))?>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
-                                        <p class="FC-01"><?=nl2br(getValue($content,"depth3_content2"))?></p>
-                                    </li>
-                                    <li>
-                                        <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
-                                        <p class="FC-01"><?=nl2br(getValue($content,"depth3_content3"))?></p>
-                                    </li>
-                                </ul>
+                                <div class="imgArea">
+                                    <img src="images/rider/playground01.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth3_content2"))?>
+                                    </p>
+                                </div>
+                                <div class="imgArea">
+                                    <img src="images/rider/playground02.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth3_content3"))?>
+                                    </p>
+                                </div>
+                                <div class="imgArea">
+                                    <img src="images/rider/playground03.png" alt="">
+                                </div>
                             </div>
                         </div>
-                        <ul class="imgArea" data-scroll="target">
-                            <li class="active">
-                                <img src="images/rider/playground01.png" alt="">
-                            </li>
-                            <li>
-                                <img src="images/rider/playground02.png" alt="">
-                            </li>
-                            <li>
-                                <img src="images/rider/playground03.png" alt="">
-                            </li>
-                        </ul>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <!-- 슬라이더 fin -->
                 </div>
             </section>
 
@@ -256,6 +260,7 @@
                         <span>협업사 & 협력 단체 이미지</span>
                     </div>
                 </div>
+                <button class="topBtn">최상단으로 이동</button>
             </div>
         </main>
         <?php include "footer.php"; ?>
@@ -264,6 +269,5 @@
 
     
     <a href="riderInquiry.php" class="fixedLink">바로 지원하기</a>
-    <button class="topBtn">최상단으로 이동</button>
 </body>
 </html>

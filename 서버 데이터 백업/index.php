@@ -30,54 +30,52 @@
             </section>
 
             <section class="qualitativeArea">
-                <div>
-                    <div class="CW">
-                        <h2 class="TC-02">
-                            사장님의 정성 그대로<br/>
-                            빠르고 확실하게
-                        </h2>
-                        <div class="swiper test">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="textArea">
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content1"))?>
-                                        </p>
-                                    </div>
-                                    <div class="imgArea">
-                                        <img src="images/delivery/qualitative01.png" alt="">
-                                    </div>
+                <div class="CW">
+                    <h2 class="TC-02">
+                        사장님의 정성 그대로<br/>
+                        빠르고 확실하게
+                    </h2>
+                    <div class="swiper partSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content1"))?>
+                                    </p>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="textArea">
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content2"))?>
-                                        </p>
-                                        <div>
-                                            <a <?=homepageLinkCheck(getValue($content,"link1"))?> class="BBTN-download">사장님 프로그램</a>
-                                            <a <?=homepageLinkCheck(getValue($content,"link2"))?> class="BBTN-download">사용 설명서</a>
-                                        </div>
-                                    </div>
-                                    <div class="imgArea">
-                                        <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="textArea">
-                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
-                                        <p class="FC-01">
-                                            <?=nl2br(getValue($content,"depth2_content3"))?>
-                                        </p>
-                                    </div>
-                                    <div class="imgArea">
-                                        <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
-                                    </div>
+                                <div class="imgArea">
+                                    <img src="images/delivery/qualitative01.png" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content2"))?>
+                                    </p>
+                                    <div>
+                                        <a <?=homepageLinkCheck(getValue($content,"link1"))?> class="BBTN-download">사장님 프로그램</a>
+                                        <a <?=homepageLinkCheck(getValue($content,"link2"))?> class="BBTN-download">사용 설명서</a>
+                                    </div>
+                                </div>
+                                <div class="imgArea">
+                                    <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="textArea">
+                                    <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                    <p class="FC-01">
+                                        <?=nl2br(getValue($content,"depth2_content3"))?>
+                                    </p>
+                                </div>
+                                <div class="imgArea">
+                                    <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
+                                </div>
+                            </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </section>
@@ -206,11 +204,11 @@
                         <span>협업사 & 협력 단체 이미지</span>
                     </div>
                 </div>
+                <button class="topBtn">최상단으로 이동</button>
             </div>
         </main>
         <?php include "footer.php"; ?>
     </div>
     <a href="deliveryInquiry" class="fixedLink">문의하기</a>
-    <button class="topBtn">최상단으로 이동</button>
 </body>
 </html>
