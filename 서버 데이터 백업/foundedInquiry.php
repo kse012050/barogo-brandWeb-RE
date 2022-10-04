@@ -13,17 +13,18 @@
             <form id="inquiryForm" onsubmit="return false">
                 <input type="hidden" name="type" value="<?=INQUIRY_TYPE_4?>">
                 <input type="hidden" name="mobile_auth_id" value="" id="mobile_auth_id">
+                <input type="hidden" name="mobile" value="" id="mobile">
                 <fieldset class="inquiryArea">
                     <div class="textArea">
                         <legend class="TC-01">허브 창업 문의</legend>
                         <p>1분이면 한번에 끝!</p>
                     </div>
                     <ul class="overLine-right inputArea">
-                        <li>
+                        <li class="required">
                             <label for="">성함</label>
-                            <input class="hangle" type="text" placeholder="성함 (한글만 입력가능)" name="name" autocomplete="off">
+                            <input class="hangle" type="text" placeholder="성함 (한글만 입력가능)" name="name" id="userName" autocomplete="off">
                         </li>
-                        <li>
+                        <li id="mobileLi" class="required">
                             <label for="">연락처</label>
                             <div>
                                 <select name="mobile1" id="mobile1">
@@ -61,7 +62,7 @@
                                 <button onclick="checkMobileAuth()">인증하기</button>
                             </div>
                         </li>
-                        <li>
+                        <li class="required">
                             <label for="">배달 대행 운영 경험</label>
                             <div>
                                 <input type="radio" checked name="delivery_operation_yn" id="delivery_operation_yn1" value="<?=Y?>">
@@ -70,7 +71,7 @@
                                 <label for="delivery_operation_yn2">운영 경험 없음</label>
                             </div>
                         </li>
-                        <li>
+                        <li class="required">
                             <label for="">현재 배달 대행 운영 여부</label>
                             <div>
                                 <input type="radio" checked name="current_delivery_operation_yn" id="current_delivery_operation_yn1" value="<?=Y?>">
@@ -79,26 +80,26 @@
                                 <label for="current_delivery_operation_yn2">운영하지않음</label>
                             </div>
                         </li>
-                        <li>
+                        <li class="required current-option">
                             <label for="">현재 사용중인 프로그램</label>
-                            <input type="text" placeholder="ex. 바로고 프로그램" name="current_use_program" autocomplete="off">
+                            <input type="text" placeholder="ex. 바로고 프로그램" name="current_use_program"  id="current_use_program" autocomplete="off">
                         </li>
-                        <li>
+                        <li class="required current-option">
                             <label for="">함께하는 라이더 수</label>
-                            <input class="digit_number" type="text" placeholder="" name="together_rider_count" autocomplete="off">
+                            <input class="digit_number" type="text" placeholder="" name="together_rider_count" id="together_rider_count" autocomplete="off">
                         </li>
-                        <li>
+                        <li class="required current-option">
                             <label for="">운영 중인 가맹점 수</label>
-                            <input class="digit_number" type="text" placeholder="" name="store_count" autocomplete="off">
+                            <input class="digit_number" type="text" placeholder="" name="store_count" id="store_count" autocomplete="off">
                         </li>
-                        <li>
+                        <li class="required current-option">
                             <label for="">하루 평균 주문 수행 건수</label>
                             <div>
-                                <input class="digit_number" type="text" placeholder="주중 평균 수행량" name="weekdays_delivery_count" autocomplete="off">
-                                <input class="digit_number" type="text" placeholder="주말 평균 수행량" name="weekend_delivery_count" autocomplete="off">
+                                <input class="digit_number" type="text" placeholder="주중 평균 수행량" name="weekdays_delivery_count" id="weekdays_delivery_count" autocomplete="off">
+                                <input class="digit_number" type="text" placeholder="주말 평균 수행량" name="weekend_delivery_count" id="weekend_delivery_count" autocomplete="off">
                             </div>
                         </li>
-                        <li>
+                        <li class="required" id="hope_location_li">
                             <label for="">희망 개설 지역</label>
                             <div>
                                 <select class="sido" name="si_name[]" id="sido1">
@@ -120,7 +121,7 @@
                         </li>
                         <li>
                             <label for="">기타 참고 사항</label>
-                            <input type="text" placeholder="ex. 운영기간, 권역 범위 등" name="comment" autocomplete="off">
+                            <input type="text" placeholder="ex. 운영기간, 권역 범위 등" name="comment" id="comment" autocomplete="off">
                         </li>
                     </ul>
                 </fieldset>
@@ -141,7 +142,7 @@
                         </li>
                     </ul>
                 </fieldset>
-                <input type="submit" value="제출" class="BTN-arrow" onclick="api('inquiryForm')">
+                <input type="submit" value="제출" onclick="api('inquiryForm')">
             </form>
         </div>
     </div>

@@ -77,6 +77,7 @@ if($thisfilename == FILE_RIDERINQUIRY ||
     $sidoList       = sido();
 }
 
+$site = site();
 
 ?>
 <!DOCTYPE html>

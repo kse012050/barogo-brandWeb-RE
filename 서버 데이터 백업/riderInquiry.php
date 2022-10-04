@@ -13,21 +13,22 @@
             <form id="inquiryForm" onsubmit="return false">
                 <input type="hidden" name="type" value="<?=INQUIRY_TYPE_3?>">
                 <input type="hidden" name="mobile_auth_id" value="" id="mobile_auth_id">
+                <input type="hidden" name="mobile" value="" id="mobile">
                 <fieldset class="inquiryArea">
                     <div class="textArea">
                         <legend class="TC-01">라이더 지원</legend>
                         <p>1분이면 한번에 끝!</p>
                     </div>
                     <ul class="overLine-right inputArea">
-                        <li>
-                            <label for="">성함</label>
-                            <input class="hangle" type="text" placeholder="성함" name="name" autocomplete="off">
+                        <li class="required">
+                            <label for="userName">성함</label>
+                            <input class="hangle" type="text" placeholder="성함" name="name" autocomplete="off" id="userName">
                         </li>
-                        <li>
-                            <label for="">생년월일</label>
-                            <input class="digit_number"  maxlength="8" type="text" placeholder="ex. 19991010" name="birthdate" autocomplete="off">
+                        <li class="required">
+                            <label for="digitNumber">생년월일</label>
+                            <input class="digit_number"  maxlength="8" type="text" placeholder="ex. 19991010" name="birthdate" autocomplete="off" id="digitNumber">
                         </li>
-                        <li>
+                        <li id="mobileLi" class="required">
                             <label for="">연락처</label>
                             <div>
                                 <select name="mobile1" id="mobile1">
@@ -54,17 +55,17 @@
                                 <button onclick="requestMobileAuth()">인증번호 발송</button>
                             </div>
                         </li>
-                        <li id="mobilAuthLi" style="display: none">
+                        <li id="mobilAuthLi" style="display: none" class="required">
                             <label for="">인증번호</label>
                             <div>
                                 <div>
                                     <input class="digit_number" type="text" name="auth_number" id="auth_number" autocomplete="off">
-                                    <time></time>
+                                    <time>3:00</time>
                                 </div>
                                 <button onclick="checkMobileAuth()">인증하기</button>
                             </div>
                         </li>
-                        <li>
+                        <li class="required">
                             <label for="">배달 경험</label>
                             <div class="showThree">
                                 <input type="radio" checked name="delivery_experience" value="없음" id="delivery_experience1">
@@ -79,7 +80,7 @@
                                 <label for="delivery_experience5">2년 이상</label>
                             </div>
                         </li>
-                        <li>
+                        <li class="required">
                             <label for="">희망 근무 시간</label>
                             <div>
                                 <input type="radio" checked name="hope_delivery_time" value="풀타임" id="hope_delivery_time1">
@@ -88,7 +89,7 @@
                                 <label for="hope_delivery_time2">파트타임</label>
                             </div>
                         </li>
-                        <li>
+                        <li class="required">
                             <label for="">바이크를 보유 여부</label>
                             <div>
                                 <input type="radio" checked name="bike_own_yn" value="<?=Y?>" id="bike_own_yn1">
@@ -97,7 +98,7 @@
                                 <label for="bike_own_yn2">아니오, 없습니다.</label>
                             </div>
                         </li>
-                        <li>
+                        <li id="hope_location_li">
                             <strong>희망 근무 지역</strong><small>희망지역 순으로 해당지역 바로고 허브 매칭</small>
                             <label for="">1지망</label>
                             <div>
@@ -177,14 +178,14 @@
                             <label for="marketing_yn">마케팅을 위한 개인정보 수집 이용 동의 <span>(선택)</span></label>
                             <a href="">보기</a>
                         </li>
-                        <li>
-                            <input type="checkbox" name="letter_subscription_yn" value="<?=Y?>" id="letter_subscription_yn">
-                            <label for="letter_subscription_yn">바로레터 구독 동의 <span>(선택)</span></label>
-                            <a href="">보기</a>
-                        </li>
+<!--                        <li>-->
+<!--                            <input type="checkbox" name="letter_subscription_yn" value="--><?//=Y?><!--" id="letter_subscription_yn">-->
+<!--                            <label for="letter_subscription_yn">바로레터 구독 동의 <span>(선택)</span></label>-->
+<!--                            <a href="">보기</a>-->
+<!--                        </li>-->
                     </ul>
                 </fieldset>
-                <input type="submit" value="제출" class="BTN-arrow" onclick="api('inquiryForm')">
+                <input type="submit" value="제출" onclick="api('inquiryForm')">
             </form>
         </div>
     </div>

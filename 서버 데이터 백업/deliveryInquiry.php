@@ -26,9 +26,24 @@
                 </li>
                 <li>
                     <a href="deliveryInquiry-enterprise.php">
-                        기업 본사
+                        기업 본사<br/>
                         배달제휴 문의
                     </a>
+                    <div class="popupBox" data-popup="popup01">
+                        <div>
+                            <p>
+                                프랜차이즈 소속의 <strong>개별 매장에서 문의하시는 경우,</strong><br/>
+                                <mark>[단일 매장 배달대행 문의]</mark>를 이용해주세요!<br/>
+                                보다 정확하고 빠른 연결이 가능합니다.
+                            </p>
+                            <p>
+                                <strong>프렌차이즈/기업 본사</strong>에서<br/>
+                                바로고와의 서비스 제휴를 원하시는게 맞나요?
+                            </p>
+                            <a href="deliveryInquiry-enterprise.html">네, 기업본사 문의입니다</a>
+                            <button>아니요, 다시할게요</button>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </section>

@@ -6,7 +6,7 @@
         <main class="foundedPage" data-scroll="fullPage">
             <section class="topBox">
                 <div class="CW">
-                    <h2 class="TC-01">
+                    <h2 class="TC-02">
                         상생 물류 산업의 시작<br/>
                         바로고 허브
                     </h2>
@@ -17,118 +17,120 @@
                 </div>
             </section>
 
-            <section class="reasonArea" data-scrollAni="opacity">
-                <div class="CW">
-                    <div class="textArea">
-                        <h2 class="TC-02">
-                            바로고와 함께하는 이유
-                        </h2>
-                        <div class="progressArea">
-                            <div class="progressBar">
-                                <span></span>
+            <section class="reasonArea" data-scrollAni="fixed">
+                <div>
+                    <div class="CW">
+                        <div class="textArea">
+                            <h2 class="TC-02">
+                                바로고와 함께하는 이유
+                            </h2>
+                            <div class="progressArea">
+                                <div class="progressBar">
+                                    <span></span>
+                                </div>
+                                <ul data-scroll="target">
+                                    <li class="active">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content1"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content2"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content3"))?>
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul data-scroll="target">
-                                <li class="active">
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content1"))?>
-                                    </p>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content2"))?>
-                                    </p>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content3"))?>
-                                    </p>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
-                    <ul class="imgArea" data-scroll="target">
-                        <li class="active">
-                            <div class="swiper foundedSlider">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand01.png" alt="">
-                                        <div>
-                                            <span>주문 금액 32,000원</span>
-                                            <p>주문이 들어왔습니다</p>
+                        <ul class="imgArea" data-scroll="target">
+                            <li class="active">
+                                <div class="swiper foundedSlider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand01.png" alt="CU logo">
+                                            <div>
+                                                <span>주문 금액 32,000원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand02.png" alt="">
-                                        <div>
-                                            <span>주문 금액 11,000원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand02.png" alt="Burger King logo">
+                                            <div>
+                                                <span>주문 금액 11,000원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand03.png" alt="">
-                                        <div>
-                                            <span>주문 금액 47,000원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand03.png" alt="McDonald's logo">
+                                            <div>
+                                                <span>주문 금액 47,000원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand04.png" alt="">
-                                        <div>
-                                            <span>주문 금액 21,600원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand04.png" alt="Baskin Robbins logo">
+                                            <div>
+                                                <span>주문 금액 21,600원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand05.png" alt="">
-                                        <div>
-                                            <span>주문 금액 19,800원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand05.png" alt="Ediya logo">
+                                            <div>
+                                                <span>주문 금액 19,800원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand06.png" alt="">
-                                        <div>
-                                            <span>주문 금액 24,800원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand06.png" alt="Paris Baguette logo">
+                                            <div>
+                                                <span>주문 금액 24,800원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand07.png" alt="">
-                                        <div>
-                                            <span>주문 금액 12,000원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand07.png" alt="Dunkin logo">
+                                            <div>
+                                                <span>주문 금액 12,000원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand08.png" alt="">
-                                        <div>
-                                            <span>주문 금액 56,000원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand08.png" alt="olive young logo">
+                                            <div>
+                                                <span>주문 금액 56,000원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand09.png" alt="">
-                                        <div>
-                                            <span>주문 금액 10,800원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand09.png" alt="GS25 logo">
+                                            <div>
+                                                <span>주문 금액 10,800원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="images/founded/brand10.png" alt="">
-                                        <div>
-                                            <span>주문 금액 22,500원</span>
-                                            <p>주문이 들어왔습니다</p>
+                                        <div class="swiper-slide">
+                                            <img src="images/founded/brand10.png" alt="Lotteria logo">
+                                            <div>
+                                                <span>주문 금액 22,500원</span>
+                                                <p>주문이 들어왔습니다</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li><img src="images/founded/reason02.png" alt="안정적 수입 창출"></li>
-                        <li><img src="images/founded/reason03.png" alt="배달 중 문제 신속 해결"></li>
-                    </ul>
+                            </li>
+                            <li><img src="images/founded/reason02.png" alt="안정적 수입 창출"></li>
+                            <li><img src="images/founded/reason03.png" alt="배달 중 문제 신속 해결"></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
            
@@ -136,7 +138,7 @@
             <section class="growthArea" data-eventAni="count">
                 <div class="CW">
                     <div>
-                        <h2 class="TC-02">놀라운 바로고의 성장세</h2>
+                        <h2 class="TC-02">바로고의 놀라운 성장세</h2>
                         <p class="FC-01">
                             <?=nl2br(getValue($content,"depth3_content1"))?>
                         </p>
@@ -175,7 +177,7 @@
                         </p>
                     </div>
                     <div class="imgArea">
-                        <img src="images/founded/companion.png" alt="">
+                        <img src="images/founded/companion.png" alt="BAROGO 강남지사 이미지">
                     </div>
                     <ul>
                         <li>
@@ -219,7 +221,11 @@
 
             <section class="sliderBox">
                 <div class="CW">
-                    <h2 class="TC-02">#바로고 사장님</h2>
+                    <div class="titleArea">
+                        <h2 class="TC-02">#바로고 사장님</h2>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                     <div class="swiper bottomSlider">
                         <div class="swiper-wrapper">
 
@@ -266,26 +272,21 @@
                 </div>
             </section>
 
-            <div class="scrollArea">
-                <div class="scrollBox">
-                    <div class="supportArea">
-                        <div>
-                            <div class="CW">
-                                <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
-                                <b class="FC-01">B2B 브랜드</b>
-                                <span>B2B 브랜드 이미지</span>
-                                <b class="FC-01">주문중개 플랫폼</b>
-                                <span>주문중개 플랫폼 이미지</span>
-                                <b class="FC-01">협업사 & 협력 단체</b>
-                                <span>협업사 & 협력 단체 이미지</span>
-                            </div>
-                        </div>
+            <div class="supportArea">
+                <div>
+                    <div class="CW">
+                        <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
+                        <b class="FC-01">B2B 브랜드</b>
+                        <span>B2B 브랜드 이미지</span>
+                        <b class="FC-01">주문중개 플랫폼</b>
+                        <span>주문중개 플랫폼 이미지</span>
+                        <b class="FC-01">협업사 & 협력 단체</b>
+                        <span>협업사 & 협력 단체 이미지</span>
                     </div>
-
-                    <?php include "footer.php"; ?>
                 </div>
             </div>
         </main>
+        <?php include "footer.php"; ?>
     </div>
     <!-- 허브 창업 컨텐츠 fin -->
 

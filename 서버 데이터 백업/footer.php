@@ -6,7 +6,13 @@
                     <b>회사</b>
                     <ul>
                         <li><a href="../aboutUs">회사 소개</a></li>
-<!--                        <li><a href="">채용</a></li>-->
+                        <?php
+                        if(!empty(getSiteIntoValue($site,"recruiting_url"))){
+                            ?>
+                            <li><a href="<?=getSiteIntoValue($site,"recruiting_url")?>" target="_blank">채용</a></li>
+                            <?php
+                        }
+                        ?>
                         <li><a href="../board-disclosure">공시</a></li>
                     </ul>
                 </li>
@@ -21,27 +27,27 @@
                 <li>
                     <b>지원</b>
                     <ul>
-                        <li><a href="../board-notice">공지사항</a></li>
+                        <li><a href="../news">뉴스</a></li>
                         <li><a href="../board-data">자료실</a></li>
-                        <li><a href="../archive/main">블로그</a></li>
+                        <li><a href="../archive/">블로그</a></li>
                     </ul>
                 </li>
                 <li>
                     <b>이메일 문의</b>
                     <ul>
-                        <li><a href="mailto:partners@barogo.com" title="제휴">partners@barogo.com</a></li>
-                        <li><a href="mailto:communications@barogo.com" title="PR">communications@barogo.com</a></li>
-                        <li><a href="mailto:marketing@barogo.com" title="마케팅">marketing@barogo.com</a></li>
-                        <li><a href="mailto:recruiting@barogo.com" title="채용">recruiting@barogo.com</a></li>
+                        <li><a href="mailto:<?=getSiteIntoValue($site,"partners_email")?>" title="제휴"><?=getSiteIntoValue($site,"partners_email")?></a></li>
+                        <li><a href="mailto:<?=getSiteIntoValue($site,"pr_email")?>" title="PR"><?=getSiteIntoValue($site,"pr_email")?></a></li>
+                        <li><a href="mailto:<?=getSiteIntoValue($site,"marketing_email")?>" title="마케팅"><?=getSiteIntoValue($site,"marketing_email")?></a></li>
+                        <li><a href="mailto:<?=getSiteIntoValue($site,"recruiting_email")?>" title="채용"><?=getSiteIntoValue($site,"recruiting_email")?></a></li>
                     </ul>
                 </li>
             </ul>
 
             <ul class="SNSArea">
-                <li><a href="https://www.facebook.com/barogo.official" target="_blank">페이스북</a></li>
-                <li><a href="https://www.youtube.com/channel/UCI9bXwGvyMeEnvH9MtHpSOQ" target="_blank">유튜브</a></li>
-                <li><a href="https://m.blog.naver.com/PostList.nhn?blogId=barogo_info" target="_blank">블로그</a></li>
-                <li><a href="https://www.instagram.com/barogo_official/?hl=ko" target="_blank">인스타</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"facebook")?>" target="_blank">페이스북</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"youtube")?>" target="_blank">유튜브</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"blog")?>" target="_blank">블로그</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"instagram")?>" target="_blank">인스타</a></li>
             </ul>
         </div>
     </div>
@@ -55,9 +61,9 @@
             </address>
             <p>© 2022 Barogo. All rights reserved. </p>
             <ul>
-                <li><a href="https://barogohq.notion.site/ac3542d1f4dc4729af91c1f6921d215e" target="_blank">배송 표준 약관</a></li>
-                <li><a href="https://barogohq.notion.site/9e9e27f75fda4884965b77e920744849" target="_blank">위치기반 서비스 이용약관</a></li>
-                <li><a href="https://barogohq.notion.site/ab0eb7e839474519ac3eea591ceb6ce1" target="_blank">개인 정보 처리 방침</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"site_agree1")?>" target="_blank">배송 표준 약관</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"site_agree2")?>" target="_blank">위치기반 서비스 이용약관</a></li>
+                <li><a href="<?=getSiteIntoValue($site,"site_agree3")?>" target="_blank">개인 정보 처리 방침</a></li>
             </ul>
         </div>
         <div>

@@ -1,6 +1,6 @@
 <?php include "head.php"; ?>
 <body>
-    <div class="introBox">
+    <!-- <div class="introBox">
         <div class="BG">
 
         </div>
@@ -9,7 +9,7 @@
             <span>FROM</span><br/>
             <span>ANYWHERE</span>
         </p>
-    </div>
+    </div> -->
     <div class="mainPage">
         <?php include "header.php"; ?>
 
@@ -29,26 +29,28 @@
                 </div>
             </section>
 
-            <section class="qualitativeArea" data-scrollAni="fixed">
+            <section class="qualitativeArea">
                 <div>
                     <div class="CW">
-                        <div>
-                            <h2 class="TC-02">
-                                사장님의 정성 그대로<br/>
-                                빠르고 확실하게
-                            </h2>
-                            <div class="progressArea">
-                                <div class="progressBar">
-                                    <span></span>
-                                </div>
-                                <ul data-scroll="target">
-                                    <li class="active">
+                        <h2 class="TC-02">
+                            사장님의 정성 그대로<br/>
+                            빠르고 확실하게
+                        </h2>
+                        <div class="swiper test">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="textArea">
                                         <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
                                         <p class="FC-01">
                                             <?=nl2br(getValue($content,"depth2_content1"))?>
                                         </p>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/delivery/qualitative01.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
                                         <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
                                         <p class="FC-01">
                                             <?=nl2br(getValue($content,"depth2_content2"))?>
@@ -57,27 +59,25 @@
                                             <a <?=homepageLinkCheck(getValue($content,"link1"))?> class="BBTN-download">사장님 프로그램</a>
                                             <a <?=homepageLinkCheck(getValue($content,"link2"))?> class="BBTN-download">사용 설명서</a>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
                                         <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
                                         <p class="FC-01">
                                             <?=nl2br(getValue($content,"depth2_content3"))?>
                                         </p>
-                                    </li>
-                                </ul>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <ul class="imgArea" data-scroll="target" >
-                            <li class="active">
-                                <img src="images/delivery/qualitative01.png" alt="">
-                            </li>
-                            <li>
-                                <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
-                            </li>
-                            <li>
-                                <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </section>

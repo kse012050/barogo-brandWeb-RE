@@ -12,7 +12,7 @@
             <div class="contentArea">
                 <?=stripslashes($data["content"])?>
             </div>
-            <a href="board-notice">목록으로</a>
+            <a href="news">목록으로</a>
         </section>
 
     </div>

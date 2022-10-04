@@ -18,18 +18,18 @@
                         <mark class="">일반 매장 배달대행 문의</mark>
                     </div>
                     <ul class="overLine-right inputArea">
-                        <li>
-                            <label for="">매장명</label>
-                            <input type="text" placeholder="매장명" name="shop_name" autocomplete="off">
+                        <li class="required">
+                            <label for="storeName">매장명</label>
+                            <input type="text" placeholder="매장명" name="shop_name" autocomplete="off" id="storeName">
                         </li>
-                        <li>
-                            <label for="">사업자번호</label>
-                            <input class="digit_number" type="text" placeholder="사업자번호 (숫자 10자리)" name="company_number" maxlength="10" autocomplete="off">
+                        <li class="required">
+                            <label for="businessNumber">사업자번호</label>
+                            <input class="digit_number" type="text" placeholder="사업자번호 (숫자 10자리)" name="company_number" maxlength="10" autocomplete="off" id="businessNumber">
                         </li>
-                        <li>
-                            <label for="">매장 위치</label>
+                        <li class="required">
+                            <label for="storeLocation">매장 위치</label>
                             <div>
-                                <select class="sido" name="si_name[]" id="sido1">
+                                <select class="sido" name="si_name[]" id="sido1" id="storeLocation">
                                     <option value="">시/도</option>
                                     <?php
                                     $optionList = array_reduce($sidoList, function ($arr, $item) {
@@ -49,12 +49,12 @@
                             </div>
                             <input type="text" placeholder="상세 주소 입력" name="address_detail" autocomplete="off">
                         </li>
-                        <li>
-                            <label for="">성함</label>
-                            <input class="hangle" type="text" placeholder="성함" name="name" autocomplete="off">
+                        <li class="required">
+                            <label for="userName">성함</label>
+                            <input class="hangle" type="text" placeholder="성함" name="name" autocomplete="off" id="userName">
                         </li>
-                        <li>
-                            <label for="">연락처</label>
+                        <li class="required">
+                            <label for="mobile1">연락처</label>
                             <div>
                                 <select name="mobile1" id="mobile1">
                                     <option value="010">010</option>
@@ -79,9 +79,9 @@
                                 <input type="text" value="" name="mobile3" id="mobile3" class="digit_number"  maxlength="4" autocomplete="off">
                             </div>
                         </li>
-                        <li>
-                            <label for="">이메일</label>
-                            <input type="text" placeholder="welcome@barogo.com" name="email" autocomplete="off">
+                        <li class="required">
+                            <label for="userEmail">이메일</label>
+                            <input type="email" placeholder="welcome@barogo.com" name="email" autocomplete="off" id="userEmail">
                         </li>
                     </ul>
                 </fieldset>
@@ -112,7 +112,7 @@
                         </li>
                     </ul>
                 </fieldset>
-                <input type="submit" value="제출" class="BTN-arrow" onclick="api('inquiryForm')">
+                <input type="submit" value="제출" onclick="api('inquiryForm')">
             </form>
         </div>
     </div>

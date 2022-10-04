@@ -6,7 +6,7 @@
         <main class="riderPage" data-scroll="fullPage">
             <section class="topBox">
                 <div class="CW">
-                    <h2 class="TC-01">
+                    <h2 class="TC-02">
                         프로답게, 당당하게<br/>
                         바로고 라이더
                     </h2>
@@ -22,7 +22,7 @@
                     <div class="textArea">
                         <h2 class="TC-02">
                             프로를 프로답게<br/>
-                            <mark>바로고 라이더 라이프</mark>
+                            바로고 라이더 라이프
                         </h2>
                         <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
                         <p class="FC-01"><?=getValue($content,"depth2_content1")?><</p>
@@ -37,28 +37,42 @@
                 </div>
             </section>
 
-            <section class="playgroundArea" data-scrollAni="opacity">
-                <div class="CW">
-                    <div class="textArea">
-                        <div>
-                            <h2 class="TC-02">
-                                라이더님만을 위한 놀이터
-                                <mark>바로고 플레이</mark>
-                            </h2>
-                            <p class="FC-01">
-                                당신의 라이딩이 더욱 즐겁고 풍성하도록<br/>
-                                달릴수록 즐거워지는 바로고 플레이!<br/>
-                                오직 바로고에만 있습니다.
-                            </p>
-                        </div>
-                        <div class="progressArea">
-                            <div class="progressBar">
-                                <span></span>
+            <section class="playgroundArea" data-scrollAni="fixed">
+                <div>
+                    <div class="CW">
+                        <div class="textArea">
+                            <div>
+                                <h2 class="TC-02">
+                                    라이더님만을 위한 놀이터<br/>
+                                    바로고 플레이
+                                </h2>
+                                <p class="FC-01">
+                                    당신의 라이딩이 더욱 즐겁고 풍성하도록<br/>
+                                    달릴수록 즐거워지는 바로고 플레이!<br/>
+                                    오직 바로고에만 있습니다.
+                                </p>
                             </div>
-                            <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
-                            <p class="FC-01">
-                                <?=nl2br(getValue($content,"depth3_content1"))?>
-                            </p>
+                            <div class="progressArea">
+                                <div class="progressBar">
+                                    <span></span>
+                                </div>
+                                <ul data-scroll="target">
+                                    <li class="active">
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth3_content1"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
+                                        <p class="FC-01"><?=nl2br(getValue($content,"depth3_content2"))?></p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
+                                        <p class="FC-01"><?=nl2br(getValue($content,"depth3_content3"))?></p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <ul class="imgArea" data-scroll="target">
                             <li class="active">
@@ -113,45 +127,47 @@
                 </div>
             </div>
 
-            <section class="startArea" data-scrollAni="opacity" data-specialAni="bike">
-                <div class="CW">
-                    <div class="textArea">
-                        <h2 class="TC-02">망설이지 말고<mark>바로 시작하세요!</mark></h2>
-                        <div class="progressArea">
-                            <div class="progressBar">
-                                <span></span>
+            <section class="startArea" data-scrollAni="fixed" data-specialAni="bike">
+                <div>
+                    <div class="CW">
+                        <div class="textArea">
+                            <h2 class="TC-02">망설이지 말고<br/>바로 시작하세요!</h2>
+                            <div class="progressArea">
+                                <div class="progressBar">
+                                    <span></span>
+                                </div>
+                                <ul data-scroll="target">
+                                    <li class="active">
+                                        <mark class="TC-03"><?=getValue($content,"depth5_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth5_content1"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth5_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth5_content2"))?>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <mark class="TC-03"><?=getValue($content,"depth5_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth5_content3"))?>
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul data-scroll="target">
-                                <li class="active">
-                                    <mark class="TC-03"><?=getValue($content,"depth5_subject1")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth5_content1"))?>
-                                    </p>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth5_subject2")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth5_content2"))?>
-                                    </p>
-                                </li>
-                                <li>
-                                    <mark class="TC-03"><?=getValue($content,"depth5_subject3")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth5_content3"))?>
-                                    </p>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
-                    <div class="imgArea">
-                        <img src="images/rider/bike.png" alt="오토바이 이미지" data-special="target">
+                        <div class="imgArea">
+                            <img src="images/rider/bike.png" alt="오토바이 이미지" data-special="target">
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="goodsArea">
                 <div class="CW">
-                    <h2 class="TC-02">라이더에게 최적화된 바로고 기능성 굿즈</h2>
+                    <h2 class="TC-02 overLine-left">라이더에게 최적화된 바로고 기능성 굿즈</h2>
                     <ul>
                         <li>
                             <p>전문적</p>
@@ -159,11 +175,11 @@
                             <p>자신감</p>
                             <p>활기</p>
                         </li>
-                        <li><!-- <img src="images/rider/goods01.png" alt="goods image"> --></li>
-                        <li><!-- <img src="images/rider/goods02.png" alt="goods image"> --></li>
-                        <li><!-- <img src="images/rider/goods03.png" alt="goods image"> --></li>
-                        <li><!-- <img src="images/rider/goods04.png" alt="goods image"> --></li>
-                        <li><!-- <img src="images/rider/goods05.png" alt="goods image"> --></li>
+                        <li>바로고 굿즈 이미지</li>
+                        <li>바로고 굿즈 이미지</li>
+                        <li>바로고 굿즈 이미지</li>
+                        <li>바로고 굿즈 이미지</li>
+                        <li>바로고 굿즈 이미지</li>
                     </ul>
                 </div>
             </section>
@@ -178,7 +194,11 @@
 
             <section class="sliderBox">
                 <div class="CW">
-                    <h2 class="TC-02">#바로고 사장님</h2>
+                    <div class="titleArea">
+                        <h2 class="TC-02">#바로고 사장님</h2>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                     <div class="swiper bottomSlider">
                         <div class="swiper-wrapper">
                             <?php
@@ -224,26 +244,21 @@
                 </div>
             </section>
 
-            <div class="scrollArea">
-                <div class="scrollBox">
-                    <div class="supportArea">
-                        <div>
-                            <div class="CW">
-                                <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
-                                <b class="FC-01">B2B 브랜드</b>
-                                <span>B2B 브랜드 이미지</span>
-                                <b class="FC-01">주문중개 플랫폼</b>
-                                <span>주문중개 플랫폼 이미지</span>
-                                <b class="FC-01">협업사 & 협력 단체</b>
-                                <span>협업사 & 협력 단체 이미지</span>
-                            </div>
-                        </div>
+            <div class="supportArea">
+                <div>
+                    <div class="CW">
+                        <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
+                        <b class="FC-01">B2B 브랜드</b>
+                        <span>B2B 브랜드 이미지</span>
+                        <b class="FC-01">주문중개 플랫폼</b>
+                        <span>주문중개 플랫폼 이미지</span>
+                        <b class="FC-01">협업사 & 협력 단체</b>
+                        <span>협업사 & 협력 단체 이미지</span>
                     </div>
-
-                    <?php include "footer.php"; ?>
                 </div>
             </div>
         </main>
+        <?php include "footer.php"; ?>
     </div>
     <!-- 라이더 지원 컨텐츠 fin -->
 

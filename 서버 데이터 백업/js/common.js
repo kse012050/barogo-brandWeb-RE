@@ -2,9 +2,22 @@
 let responsiveWidth = 767;
 $(document).ready(function(){
     // 새로고침 시 최상단 이동
-    setTimeout(function(){
+   /*  setTimeout(function(){
         $('html').scrollTop(0)
-    },300) 
+    },300)  */
+
+    new Swiper(".test", {
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+        },
+        slidesPerView: 1,
+        loop: true,
+      });
 
     // 공통
     common()
@@ -15,22 +28,20 @@ $(document).ready(function(){
     // 허브 창업 페이지
     $('.foundedPage').length > 0 && foundedPage();
 
-    // 허브 창업 페이지
+    // 회사 소개 페이지
     $('.aboutUsPage').length > 0 && aboutUsPage();
 
-    // 풀페이지
-    $('[data-scroll="fullPage"]').length > 0 && fullPage();
-    
+    // 문의 페이지
+    $('.inquiryPage').length > 0 && inquiryPage();
+
     function common(){
         // 인트로
         $('*').hasClass('introBox') && introAni();
 
         // 반응형 로고 , 풀페이지 판단
         resizeLogo();
-        resizeFull();
         $(window).resize(function(){
             resizeLogo();
-            resizeFull();
         });
 
         // 스크롤 공통
@@ -38,6 +49,13 @@ $(document).ready(function(){
      
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
+
+        // 페이지 스크롤 이벤트
+        $('.mainPage').length > 0 && scrollAnimation();
+
+        // 페이지 부분 스크롤 이벤트
+        $('[data-scrollAni="fixed"]').length > 0 && partScroll();
+
 
         // 모바일 메뉴
         mobileMenu();
@@ -65,13 +83,16 @@ $(document).ready(function(){
             })
         }   /* 인트로 fin */
 
+
         // 스크롤시 해더
         function scrollHeader(selector){
             selector.scroll(function(){
                 (selector.scrollTop() > 0) ? $('header').addClass('active') : $('header').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.fixedLink').addClass('active') : $('.fixedLink').removeClass('active');
                 ($(this).scrollTop() > 0) ? $('.topBtn').fadeIn() : $('.topBtn').fadeOut();
-                // ($(this).scrollTop() > 0) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active');
+                if($('.topBtn').length > 0){
+                    ($(this).scrollTop() > $('footer').offset().top - $(window).height()) ? $('.topBtn').addClass('active') : $('.topBtn').removeClass('active')
+                }
             })
         }   /* 스크롤시 해더 fin */
 
@@ -80,14 +101,6 @@ $(document).ready(function(){
             $(window).width() < 1450 ? $('header h1').addClass('active') : $('header h1').removeClass('active');
         }   /* 반응형 로고 fin */
 
-        // 반응형 풀페이지
-        function resizeFull(){
-            if($('[data-scroll="fullPage"]').length > 0 || $('.aboutUsPage').length > 0){
-                $(window).width() < responsiveWidth ? $('body').removeAttr('style') : $('body').css('overflow','hidden');
-            }
-            
-        }
-        
         // 하단 슬라이더
         function bottomSlider(){
             var swiper = new Swiper(".bottomSlider", {
@@ -102,7 +115,11 @@ $(document).ready(function(){
                         slidesPerView: 2,
                         spaceBetween: 25,
                     }
-                }
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
             });
         }   /* 하단 슬라이더 fin */
 
@@ -158,8 +175,7 @@ $(document).ready(function(){
         $('[data-click="drop"] + div li').click(function(e){
             $(this).parent().parent().stop().slideUp();
             $(this).parent().parent().prev().html($(this).html())
-            let hour_price = $('#revenue').attr('data-hour_price').replace(/[^0-9]/g, "");
-            $('#revenue').attr('data-endCount' ,($('[data-date="hour"]').parent().prev().text() * $('[data-date="week"]').parent().prev().text() * hour_price * 4))
+            $('#revenue').attr('data-endCount' ,($('[data-date="hour"]').parent().prev().text() * $('[data-date="week"]').parent().prev().text() * 8095))
             eventAni($(this).parents('[data-eventAni="count"]'));
         })
         // 목록위에서 스크롤 막기
@@ -197,6 +213,9 @@ $(document).ready(function(){
 
     // 회사소개 전용
     function aboutUsPage(){
+        setTimeout(function(){
+            $('html').scrollTop(0)
+        },300) 
         // 회사소개 스크롤 이벤트
         $('[data-scroll="area"]').each(function(){
             // PC 
@@ -340,9 +359,9 @@ $(document).ready(function(){
         graphArea.parent().scroll(function(){
             if(graphArea.offset().top < $(window).height() - graphArea.height() && graphBreak){
                 graphAni();
-                setTimeout(function(){
-                    eventAni(graphArea)
-                },1000)
+                eventAni(graphArea)
+                // setTimeout(function(){
+                // },1000)
                 graphBreak = !graphBreak;
             }
         })  /* 그래프 이벤트 fin */
@@ -405,176 +424,201 @@ $(document).ready(function(){
             }
         })
     }   /* // 회사소개 전용 fin */
-    
-    
-    // 풀페이지
-    function fullPage(){
-        let fullPageList = $('[data-scroll="fullPage"] > *');
-        let touchList = $('[data-scroll="fullPage"] [data-scrollAni="opacity"]');
-        let idx = 0;
 
-        // PC fullPage
-        fullPageList.on('mousewheel',function(e){
-            if($(window).width() < responsiveWidth) return;
-            if($('html').is(':animated')) return;
-            let delta = e.originalEvent.wheelDelta;
-            let targetArea = $(this);
-            let nextTarget;
-            
-            // 해당 영역에 투명도 이벤트가 있을 때
-            if(targetArea.attr('data-scrollAni')){
-                if(scrollAni(targetArea , delta)){
-                    return; 
-                }
-            }
-
-            // 푸터 부분 스크롤 막기
-            if($('.scrollArea > div').scrollTop() > 0){
-                return;
-            }
-
-            // 풀페이지 이동 넘버 설정
-            if(delta > 0 && 0 < idx){
-                nextTarget = $(this).prev();
-                idx--;
-            }else if(delta < 0 && idx < fullPageList.length - 1){
-                nextTarget = $(this).next();
-                idx++;
-            }
-     
-
-            // 라이더 페이지 풀페이지 이동 했을 때
-            if(nextTarget && nextTarget.attr('data-eventAni')){
-                eventAni(nextTarget , delta)
-            }
-            
-            fullPageAni(fullPageList.eq(idx))
-        })
-
-        // PC fullPage fin
-
-        let touchstartX; 
-        let touchstartY; 
-        let touchendX; 
-        let touchendY; 
-
-        // PC , tablet fullPage touch
-        fullPageList.on('touchstart',function(e){
-            if($(window).width() < responsiveWidth) return;
-            touchstartX = e.touches[0].clientX;
-            touchstartY = e.touches[0].clientY;
-        })
+    // 문의 페이지 전용
+    function inquiryPage(){
         
-        fullPageList.on('touchend',function(e){
-            if($(window).width() < responsiveWidth) return;
-            touchendX = e.changedTouches[0].clientX;
-            touchendY = e.changedTouches[0].clientY;
-            if($('html').is(':animated')) return;
-            if(Math.abs(touchstartX - touchendX) > Math.abs(touchstartY - touchendY)){
-                return;
-            }
-            let delta = -(touchstartY - touchendY);
-            let targetArea = $(this);
-            let nextTarget;
-            
-            // 해당 영역에 투명도 이벤트가 있을 때
-            if(targetArea.attr('data-scrollAni')){
-                if(scrollAni(targetArea , delta)){
-                    return; 
-                }
-            }
+        // 문의 페이지 팝업
+        inquiryPopup();
 
-            // 푸터 부분 스크롤 막기
-            if($('.scrollArea > div').scrollTop() > 0){
-                return;
+        // 문의 페이지 팝업
+        function inquiryPopup(){
+            $('[data-click*="popup"]').click(function(e){
+                e.preventDefault();
+                let attrName = $(this).attr('data-click');
+                $('[data-popup="'+attrName+'"]').fadeIn().css('display','flex');
+                $('body').css('overflow','hidden');
+            })
+            $('.popupBox').click(function(){
+                closePopup();
+            })
+            $('.popupBox').on('mousewheel',function(e){
+                e.preventDefault();
+            })
+            $('.popupBox div').click(function(e){
+                e.stopPropagation();
+            })
+
+            $('.popupBox div button').click(function(e){
+                e.preventDefault();
+            })
+
+            $('.popupBox div [data-close]').click(function(){
+                closePopup();
+            })
+
+            $('.popupBox div [data-chk]').click(function(){
+                closePopup();
+                let attrName = $(this).attr('data-chk');
+                $('#' + attrName).prop('checked',true);
+            })
+
+            function closePopup(){
+                $('.popupBox').fadeOut();
+                $('body').removeAttr('style');
             }
+        }   /* 문의 페이지 팝업 fin */
 
-            // 풀페이지 이동 넘버 설정
-            if(delta > 0 && 0 < idx){
-                nextTarget = $(this).prev();
-                idx--;
-            }else if(delta < 0 && idx < fullPageList.length - 1){
-                nextTarget = $(this).next();
-                idx++;
-            }
-     
-
-            // 라이더 페이지 풀페이지 이동 했을 때
-            if(nextTarget && nextTarget.attr('data-eventAni')){
-                eventAni(nextTarget , delta)
-            }
-            
-            fullPageAni(fullPageList.eq(idx))
-        })
-        // PC , tablet fullPage touch fin
-
-        // 모바일 opacity 터치 X축
-        touchList.on('touchstart',function(e){
-            if($(window).width() > responsiveWidth) return;
-            touchstartX = e.touches[0].clientX;
-            touchstartY = e.touches[0].clientY;
-        })
-
-        touchList.on('touchmove',function(e){
-            if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+        // submit 버튼 활성화되지 않으면 클릭 막기
+        $('.inquiryPage input[type="submit"]').click(function(e){
+            if(!$(this).hasClass('active')){
                 e.preventDefault();
             }
         })
 
-        touchList.on('touchend',function(e){
-            if($(window).width() > responsiveWidth) return;
-            touchendX = e.changedTouches[0].clientX;
-            touchendY = e.changedTouches[0].clientY;
-            if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
-                return;
+    }   /* 문의하기 전용 fin */
+    
+    // 페이지 부분 스크롤
+    function partScroll(){
+        if($(window).width() > responsiveWidth){
+            let scrollArea = [];
+            for(let a = 0; a < $('[data-scrollAni="fixed"]').length; a++){
+                scrollArea.push($('[data-scrollAni="fixed"]').eq(a))
             }
+            scrollArea.map((scrollArea2)=>{
+                let scrollFix = scrollArea2.children();
+                let scrollTarget = [];
+                let targetLength = scrollArea2.find('[data-scroll="target"]').length;
+                for(let a = 0; a < targetLength; a++){
+                    scrollTarget.push(scrollArea2.find('[data-scroll="target"]').eq(a).children())
+                }
+                targetLength = scrollTarget[0].length;
+                scrollArea2.css('height', (targetLength + 1) * 1000)
+                let areaOffTop = scrollArea2.offset().top;
+                let areaHeight = scrollArea2.outerHeight();
+                let fixHeight = scrollFix.outerHeight();
+                let scrollHeight = areaHeight - fixHeight;
+                let targetHeight = (scrollHeight) / (targetLength + targetLength - 2);
+                let heightArray = [];
+                for(let a = 0; a < targetLength; a++){
+                    a == 0 && heightArray.push(areaOffTop);
+                    a == 1 && heightArray.push(heightArray[a - 1] + targetHeight);
+                    a > 1 && heightArray.push(heightArray[a - 1] + targetHeight * 2);
+                }
+                let progressHeight = 100 / targetLength;
+                $('.progressBar span').css('height' , progressHeight + '%');
+                
+                $(window).scroll((e)=>{
+                    let scrollValue = $(window).scrollTop();
+        
+                    if((scrollValue > areaOffTop) &&  (scrollValue < areaOffTop + scrollHeight)){
+                        scrollFix.css({
+                            'position':'fixed',
+                            'top' : '0',
+                        });
+                        scrollTarget.map((t)=>{
+                            heightArray.map((h , i)=>{
+                                // t.css('z-index' , 0)
+                                if(i == 0){
+                                    t.eq(i).css('opacity',1 - ((scrollValue - h) / targetHeight))
+                                    // t.eq(i).css('transform','translateY('+( -100 * ((scrollValue - h) / targetHeight)+'px)'))
+                                    // t.eq(i).css('z-index' , 1)
+                                }else if(i == heightArray.length - 1){
+                                    t.eq(i).css('opacity',(scrollValue - (h))/ targetHeight)
+                                    // t.eq(i).css('transform','translateY('+( +100 * (1 - ((scrollValue - h) / targetHeight))+'px)'))
+                                    // t.eq(i).css('z-index' , 1)
+                                }else if(i >= 1){
+                                    let opacity = 1 - Math.abs((((scrollValue - h) / (targetHeight * 2)) * 2) - 1);
+                                    t.eq(i).css('opacity',opacity)
+                                    // t.eq(i).css('transform','translateY('+( -100 * ((((scrollValue - h) / (targetHeight * 2)) * 2) - 1)+'px)'))
+                                }
+                                if(t.eq(i).css('opacity') > 0){
+                                    t.eq(i).css('z-index' , 1)
+                                }else{
+                                    t.eq(i).css('z-index' , 0)
+                                }
+                            })
+                        })
+                        // console.log(((scrollValue - areaOffTop) / scrollHeight));
+                        scrollArea2.find('.progressBar span').css('top' ,((scrollValue - areaOffTop) / scrollHeight) * (100 - progressHeight) + '%');
+                        scrollArea2.find('[data-special="target"]').css(
+                            'transform', 'translateX(' +((((scrollValue - areaOffTop) / scrollHeight) - 1) * -1) * 100 + '%)'
+                        )
+                    }else{
+                        let topValue = 0;
+                        scrollValue > areaOffTop ? topValue = scrollHeight : topValue = 0
+                        scrollFix.css({
+                            'position':'absolute',
+                            'top' : topValue
+                        });
+                    };
+                })
+            })
+        }else{
+            let touchList = $('[data-scroll="fullPage"] [data-scrollAni="fixed"]');
+             // 모바일 opacity 터치 X축
+            touchList.on('touchstart',function(e){
+                if($(window).width() > responsiveWidth) return;
+                touchstartX = e.touches[0].clientX;
+                touchstartY = e.touches[0].clientY;
+            })
 
-            let delta = -(touchstartX - touchendX);
-            let targetArea = $(this);
-            
-            scrollAni(targetArea , delta)
-    
+            touchList.on('touchmove',function(e){
+                if(Math.abs(touchstartX - e.changedTouches[0].clientX) > Math.abs(touchstartY - e.changedTouches[0].clientY)){
+                    e.preventDefault();
+                }
+            })
+
+            touchList.on('touchend',function(e){
+                console.log(3);
+                if($(window).width() > responsiveWidth) return;
+                touchendX = e.changedTouches[0].clientX;
+                touchendY = e.changedTouches[0].clientY;
+                if(Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY)){
+                    return;
+                }
+
+                let delta = -(touchstartX - touchendX);
+                let targetArea = $(this);
+                
+                scrollAni(targetArea , delta)
+        
+            })
+            // 모바일 opacity 터치 X축 fin
+        }
+
+        $('.topBtn').click(function(){
+            $(this).hasClass('active') && $('html').animate({scrollTop : 0});
         })
-        // 모바일 opacity 터치 X축 fin
-    
-        // fullPage 이동 이벤트
-        function fullPageAni(nextTarget){
-            nextTarget.addClass('active').siblings().removeClass('active');
-            $('html').stop().animate({scrollTop : nextTarget.offset().top} , 500)
-        }   /* fullPage 이동 이벤트 fin */
+    } /* 페이지 부분 스크롤 fin */
+
+
+    function scrollAnimation(){
+        $(window).scroll(function(){
+            $('[data-scroll="animation"]').each(function(){
+                if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3)){
+                    $(this).addClass('active');
+                }
+            })
+        })
 
         // 모바일 스크롤시 숫자 카운트
         let countBreak = true;
         $(window).scroll(function(){
-            if($(window).width() < responsiveWidth){
-                $('[data-eventani="count"]').each(function(){
-                    if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBreak){
-                        countAni($(this).find('[data-eventAni="target"]'))
-                        countBreak = !countBreak;
-                    }
-                })
-            }
+            $('[data-eventani="count"]').each(function(){
+                if($(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.3) && countBreak){
+                    countAni($(this).find('[data-eventAni="target"]'))
+                    countBreak = !countBreak;
+                }
+            })
         })  /* 모바일 스크롤시 숫자 카운트 fin */
-
-
-        // fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼
-        $('.topBtn').click(function(){
-            $('html').animate({scrollTop : 0})
-            idx = 0;
-            fullPageList.find('[data-scroll="target"]').each(function(){
-                $(this).children('li').eq(1).addClass('active').siblings().removeClass('active');
-            })
-            fullPageList.each(function(){
-                scrollAni($(this) , 120)
-            })
-        })  /* fullPage (배달대행 , 라이더 , 허브창업) 탑 버튼 fin */
-        
-    } /* 풀페이지 fin */
+    }
     
     // fullPage 안 scroll event
     let aniBreak = false;
     function scrollAni(targetArea , delta){
         if(aniBreak){ return true}
+        console.log(4);
         
         let target = targetArea.find('[data-scroll="target"]');
         let targetList =[]
@@ -603,6 +647,7 @@ $(document).ready(function(){
             aniBreak = !aniBreak;
         }, 1000)
         
+        targetArea.attr('data-scrollAni') == 'fixed' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-scrollAni') == 'opacity' && opacityAni(targetList , idx, targetArea.find('.progressBar'));
         targetArea.attr('data-specialAni') == 'bike' && bikeAni(targetArea , idx);
         targetArea.attr('data-scrollAni') == 'move' && moveAni(targetList , target, idx);
@@ -613,6 +658,7 @@ $(document).ready(function(){
     
     // 투명도 효과
     function opacityAni(list , idx , progress){
+        console.log(5);
         if(progress.find('span').is(':animated')) return;
         if($(window).width() > responsiveWidth){
             progress.find('span').animate({'top':progress.height()  / list[0].length * idx} , 500 , 'linear')
@@ -629,13 +675,11 @@ $(document).ready(function(){
     function bikeAni(targetArea , idx){
         targetList = targetArea.find('[data-special="target"]')
         /* 바이크 이미지 */
-        let targetRight = -(parseInt($('.CW').css('margin-right')) + targetList.width() - 50);
-        /* 바이크 위치 */
 
         if(idx == 0){
-            targetList.css('right',targetRight)
+            targetList.css('right',-50 + "%")
         }else if(idx == 1 ){
-            targetList.css('right',targetRight / 2)
+            targetList.css('right',-25 + "%")
         }else{
             targetList.css('right',0)
         }
@@ -691,7 +735,7 @@ $(document).ready(function(){
         });
     }   /* 숫자 카운팅 fin */
 
-    // 그래프
+    // 캔버스 그래프
     function graphAni(){
         let canvas , ctx , w , h , lines = [];
         function canvasInit(){
@@ -825,8 +869,7 @@ $(document).ready(function(){
         }
         canvasInit();
         drawScene();
-    }
-    
+    }   /* 캔버스 그래프 fin */
     
 })  /* document ready fin */
 
