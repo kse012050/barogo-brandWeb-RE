@@ -14,7 +14,7 @@
         <?php include "header.php"; ?>
 
         <!-- 배달대행 -->
-        <main class="deliveryPage" data-scroll="fullPage">
+        <main class="deliveryPage">
             <!-- 페이지 상단 부분 공통 -->
             <section class="topBox">
                 <div class="CW">
@@ -157,7 +157,7 @@
                             if(checkArray($archives,true)){
                                 foreach ($archives as $archive){
                                     ?>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide" onclick="javascript:location.href='<?=ARCHIVE_URL?>/detail/<?=$archive["board_id"]?>'">
                                         <div class="imgArea" style="background-image: url('<?=$archive["thum_file_path"]?>');"></div>
                                         <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
                                         <p class="FC-01"><?=$archive["subject"]?></p>
@@ -209,6 +209,6 @@
         </main>
         <?php include "footer.php"; ?>
     </div>
-    <a href="deliveryInquiry" class="fixedLink">문의하기</a>
+    <a href="deliveryInquiry" class="fixedLink">바로 문의하기</a>
 </body>
 </html>
