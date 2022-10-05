@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     function common(){
         // 인트로
-        $('*').hasClass('introBox') && introAni();
+        $('.introBox').length > 0 && introAni();
 
         // 반응형 로고 , 풀페이지 판단
         resizeLogo();
@@ -46,7 +46,6 @@ $(document).ready(function(){
         // 버튼 클릭 애니
         $('[class *= "BTN"]').length > 0 && buttonClickAni();
         
-
         // 모바일 메뉴
         mobileMenu();
 
@@ -57,20 +56,37 @@ $(document).ready(function(){
         /* ! 함수 생성 */
         // 인트로
         function introAni(){
-            let introDuration = 1.3;
-            let introDelay = 1;
-            $('.introBox .BG').css({
-                'animationDuration' : introDuration + 's',
-                'animationDelay' : introDelay + 's'
-            });
-            $('.introBox .textArea span').css('animationDelay' , introDelay + 's');
-            $('.introBox .textArea span').eq(0).css('animationDuration' , + introDuration / 3 + introDuration / 10 +'s')
-            $('.introBox .textArea span').eq(1).css('animationDuration' , + introDuration / 2 +'s')
-            $('.introBox .textArea span').eq(2).css('animationDuration' , + introDuration / 3 * 2 +'s')
-            $('.introBox .BG').on('animationend', function(){
-                $('.introBox').css('display','none');
-                $('.deliveryPage > .topBox .imgArea').addClass('active');
+            /* $(window).on('unload',function(){
+                $.removeCookie('introAni')
+                console.log('??');
             })
+            $(window).on('beforeunload',function(){
+                $.removeCookie('introAni')
+                console.log('??');
+            }) */
+            let introDuration = 1;
+            let introDelay = 1;
+            let topDelay = 400;
+            let afterDelay = 0;
+            if($.cookie('introAni') != 'true'){
+                $('.introBox .BG').css({
+                    'animationDuration' : introDuration + 's',
+                    'animationDelay' : introDelay + 's'
+                });
+                $('.introBox .textArea span').css('animationDelay' , introDelay + 's');
+                $('.introBox .textArea span').eq(0).css('animationDuration' , + introDuration / 3 + introDuration / 10 +'s')
+                $('.introBox .textArea span').eq(1).css('animationDuration' , + introDuration / 2 +'s')
+                $('.introBox .textArea span').eq(2).css('animationDuration' , + introDuration / 3 * 2 +'s')
+                afterDelay = ((introDuration / 3 * 2) + introDelay) * 1000;
+                setTimeout(function(){
+                    $('.introBox').remove();
+                }, afterDelay )
+            }
+
+            $('.mainPage .topBox , .mainPage .topBox .CW h2 , .mainPage .topBox .CW a').each(function(i){
+                $(this).css('animation-delay' , (i * topDelay) + afterDelay + 'ms');
+            })
+            $.cookie('introAni' , 'true', {path :'/'});
         }   /* 인트로 fin */
 
 
