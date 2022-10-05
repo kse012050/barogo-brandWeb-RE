@@ -32,7 +32,7 @@ $(document).ready(function(){
         });
 
         // 스크롤 공통
-        ($('.aboutUsPage').length > 0 && $(window).width() > responsiveWidth) ? scrollHeader($('main[data-scroll="area"]').find('[data-scroll="area"]').eq(1)) : scrollHeader($(window));
+        ($('.aboutUsPage').length > 0 && $(window).width() > responsiveWidth) ? scrollHeader($('main[data-scroll="area"]').find('[data-scroll="area"]')) : scrollHeader($(window));
      
         // 메인페이지 하단 슬라이더
         $('.bottomSlider').length > 0 && bottomSlider();
@@ -56,14 +56,6 @@ $(document).ready(function(){
         /* ! 함수 생성 */
         // 인트로
         function introAni(){
-            /* $(window).on('unload',function(){
-                $.removeCookie('introAni')
-                console.log('??');
-            })
-            $(window).on('beforeunload',function(){
-                $.removeCookie('introAni')
-                console.log('??');
-            }) */
             let introDuration = 1;
             let introDelay = 1;
             let topDelay = 400;

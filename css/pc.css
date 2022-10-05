@@ -593,7 +593,7 @@
     .bodyHidden{overflow: hidden;}
 
     [data-scroll="area"]{overflow: hidden; width: 100%; height: 100vh;}
-    [data-scroll="area"].active{width: calc(100% + 1.063rem); overflow: auto; }
+    [data-scroll="area"].active{width: calc(100% + 17px); overflow: auto; }
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 12.500rem; padding-top: 11.875rem;}
     .aboutUsPage .makeArea h2{margin-bottom: 3.750rem;}
@@ -643,16 +643,17 @@
     }
 
     /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
-    .aboutUsPage .toDoArea{position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 5.625rem; box-sizing: border-box;}
-    .aboutUsPage .toDoArea .CW h2{margin-bottom: 1.875rem;}
-    .aboutUsPage .toDoArea .CW > p{margin-bottom: 0px;}
-    .aboutUsPage .toDoArea .CW > div{display: flex; justify-content: space-between; align-items: center;}
-    .aboutUsPage .toDoArea .CW > div .progressArea{position: relative; box-sizing: border-box;}
-    .aboutUsPage .toDoArea .CW > div .progressArea .progressBar{position: absolute; left: 0; top: 0; height: 100%;}
-    .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{height: 25%;}
-    .aboutUsPage .toDoArea .CW > div .progressArea ul li div mark{display: block; margin-bottom: 1.250rem;}
-    .aboutUsPage .toDoArea .CW > div .progressArea ul li div p{color: #666;}
-    .aboutUsPage .toDoArea .CW > div .imgArea{width: 30.000rem;}
+    .aboutUsPage .toDoArea{position: relative; padding: 12.500rem 0;}
+    .aboutUsPage .toDoArea .CW .titleArea{position: relative; }
+    .aboutUsPage .toDoArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -3.125rem; width: 100%; height: 3.125rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
+    .aboutUsPage .toDoArea .CW .titleArea h2{margin-bottom: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider{height: 31.250rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide{display: flex; justify-content: space-between; align-items: center;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 6.25rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 30.000rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-pagination{left: 0; right: auto;}
 
 
 

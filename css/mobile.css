@@ -604,12 +604,16 @@
     }
 
     /* 초연결 생태계를 만들기 위해 바로고가 하는 것 */
-    .aboutUsPage .toDoArea{position: relative; padding-bottom: 7.500rem;}
-    .aboutUsPage .toDoArea .CW h2{margin-bottom: 1.250rem;}
-    .aboutUsPage .toDoArea .CW > p{margin-bottom: 4.375rem;}
-    .aboutUsPage .toDoArea .CW > div{padding-bottom: 10.938rem; position: relative;}
-    .aboutUsPage .toDoArea .CW > div .imgArea{position: absolute; right: 0; bottom: 0; width: 75%;}
-    .aboutUsPage .toDoArea .CW > div .progressArea .progressBar span{width: 25%;}
+    .aboutUsPage .toDoArea{position: relative; margin-bottom: 3.750rem;}
+    .aboutUsPage .toDoArea .CW .titleArea{position: relative; }
+    .aboutUsPage .toDoArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -1rem; width: 100%; height: 1rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
+    .aboutUsPage .toDoArea .CW .titleArea h2{margin-bottom: 1.563rem;}
+    .aboutUsPage .toDoArea .CW .partSlider{height: 25.000rem; padding-top: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-pagination{left: 0; right: auto; top: 1.875rem; transform: translateY(0);}
 
     /* 숫자로 보는 바로고 */
     .aboutUsPage .numberArea{margin-bottom: 7.500rem;}
