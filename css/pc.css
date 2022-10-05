@@ -186,7 +186,7 @@
     .mainPage .topBox{ background-image:  url('../images/common/main-bg2.png') , url('../images/common/main-bg.png'); background-repeat:no-repeat, repeat-x; position: relative; overflow: hidden; 
         opacity: 0; animation: startTopAni 1s forwards;
     }
-    .mainPage .topBox .CW{height: 100%; padding-top: 11.875rem; padding-bottom: 30.938rem;}
+    .mainPage .topBox .CW{height: 100%; padding-top: 11.875rem; padding-bottom: 30.938rem; position: relative; z-index: 10;}
     .mainPage .topBox .CW h2{margin-bottom: 2.500rem; opacity: 0; animation: startTopAni 0.5s 400ms forwards; }
     .mainPage .topBox .CW a{position: relative; z-index: 10; opacity: 0; animation: startTopAni 0.5s 900ms forwards;}
     .mainPage .topBox .imgArea{position: absolute; left: 50%; transform: translateX(-50%); width: 120.000rem; height: 46.875rem; background-repeat: no-repeat; background-size: 100%; text-indent: -9999px; }

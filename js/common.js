@@ -68,7 +68,9 @@ $(document).ready(function(){
             let introDelay = 1;
             let topDelay = 400;
             let afterDelay = 0;
-            if($.cookie('introAni') != 'true'){
+            if($.cookie('introAni') == 'true'){
+                $('.introBox').remove();
+            }else{
                 $('.introBox .BG').css({
                     'animationDuration' : introDuration + 's',
                     'animationDelay' : introDelay + 's'
