@@ -483,6 +483,33 @@ $(document).ready(function(){
                 closePopup();
                 let attrName = $(this).attr('data-chk');
                 $('#' + attrName).prop('checked',true);
+
+                let bChek = true;
+                let allcheck = true;
+                let list = $("input[type=checkbox]");
+                $.each(list, function (idx, item) {
+                    if ($(item).attr('id') !== 'allCheck') {
+                        if (!$(item).prop("checked")) {
+                            allcheck = false;
+                        }
+                        if ($(item).attr('id').startsWith('agree')) {
+                            // 필수 약관동의 , 체크가 안되어 있는 경우
+                            if (!$(item).prop("checked")) {
+                                bChek = false;
+                            }
+                        }
+                    }
+                });
+                if (allcheck) {
+                    $("#allCheck").prop("checked", true);
+                } else {
+                    $("#allCheck").prop("checked", false);
+                }
+
+                // 필수 동의 시 체크
+                if (bChek) $("input[type=submit]").addClass('active');
+                else $("input[type=submit]").removeClass('active');
+
             })
 
             function closePopup(){
