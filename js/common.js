@@ -57,7 +57,7 @@ $(document).ready(function(){
         // 인트로
         function introAni(){
             let introDuration = 1;
-            let introDelay = 1;
+            let introDelay = 1.5;
             let topDelay = 400;
             let afterDelay = 0;
             if($.cookie('introAni') == 'true'){
@@ -71,7 +71,7 @@ $(document).ready(function(){
                 $('.introBox .textArea span').eq(0).css('animationDuration' , + introDuration / 3 + introDuration / 10 +'s')
                 $('.introBox .textArea span').eq(1).css('animationDuration' , + introDuration / 2 +'s')
                 $('.introBox .textArea span').eq(2).css('animationDuration' , + introDuration / 3 * 2 +'s')
-                afterDelay = ((introDuration / 3 * 2) + introDelay) * 1000;
+                afterDelay = ((introDuration / 3 * 2) + introDelay + 0.3) * 1000;
                 setTimeout(function(){
                     $('.introBox').remove();
                 }, afterDelay )
