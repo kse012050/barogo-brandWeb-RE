@@ -98,7 +98,7 @@
     /* 인트로 */
     .introBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1000;}
     .introBox .BG{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: black;
-        animation-name: introBG; 
+        /* animation-name: introBG;  */
         animation-timing-function: linear;
         animation-fill-mode: forwards;
         clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 100%, 100% 100%, 100% 0%);
@@ -518,7 +518,7 @@
     .riderPage .goodsArea{margin-bottom: 12.500rem;}
     .riderPage .goodsArea div h2{display: inline-block; margin-bottom: 7.500rem; padding-top: 5.000rem;}
     .riderPage .goodsArea div ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
-    .riderPage .goodsArea div ul li{width: 23.750rem; height: 23.750rem; }
+    .riderPage .goodsArea div ul li{width: 33.33%; height: 23.750rem; }
     .riderPage .goodsArea div ul li:not(:nth-last-child(-n + 3)){margin-bottom: 1.688rem;}
     .riderPage .goodsArea div ul li p{font-size: 3.000rem; line-height: 1.46; font-weight: 700; color: rgba(0, 0, 0, 0.22);}
     .riderPage .goodsArea div ul li p::before{content: '#';}
@@ -597,7 +597,7 @@
     /* 세상에 활력을 더하는 초연결 생태계를 만듭니다 */
     .aboutUsPage .makeArea{margin-bottom: 12.500rem; padding-top: 11.875rem;}
     .aboutUsPage .makeArea h2{margin-bottom: 3.750rem;}
-    .aboutUsPage .makeArea > div{max-width: 137.500rem; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 5.000rem;}
+    .aboutUsPage .makeArea > div{max-width: 100.000rem; background: url('../images/aboutUs/bannerBG.png') no-repeat center / cover; margin:0 auto 5.000rem;}
     .aboutUsPage .makeArea > div div{height: 36.563rem; display: flex; justify-content: flex-end;}
     .aboutUsPage .makeArea > div div p{font-size: 1.375rem; color: white; line-height: 1.64; width: 33.750rem; padding: 5.625rem 0;}
     .aboutUsPage .makeArea > p{font-size: 1.250rem; line-height: 1.5; color: #111; text-align: center; max-width: 625px; width: calc(100% - 2.500rem); margin: auto auto;}

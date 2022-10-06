@@ -64,6 +64,7 @@ $(document).ready(function(){
                 $('.introBox').remove();
             }else{
                 $('.introBox .BG').css({
+                    'animationName' : 'introBG',
                     'animationDuration' : introDuration + 's',
                     'animationDelay' : introDelay + 's'
                 });
@@ -553,7 +554,7 @@ $(document).ready(function(){
         on:{
             slideChange: function(){
                 if($(this)[0].$el.hasClass('bikeSlider')){
-                    $('.riderPage .startArea .CW .imgArea img').css('transform','translateX('+(2 - $(this)[0].realIndex) * 50+'%)')
+                    $('.riderPage .startArea .CW .imgArea img').css('transform','translateX('+(2 - $(this)[0].realIndex) * (($('.startArea .imgArea').width() + ($(window).width() - $('.CW').width())) / 4)+'px)')
                 }
             }
         }
