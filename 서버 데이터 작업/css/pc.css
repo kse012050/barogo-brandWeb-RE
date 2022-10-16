@@ -124,6 +124,11 @@
         100%{left: calc(100% / 2);  transform: translateX(50%);}
     }
 
+    /* 배너 공통 */
+    .bannerArea{position: relative;}
+    .bannerArea::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 18.750rem; background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);}
+    .bannerArea div{position: relative; z-index: 1;}
+
     /* 해더 */
     header{position: fixed; left: 0; top: 0; width: 100%; padding-top: 3.438rem; z-index: 100; transition-duration: 0.5s; transition-property: padding , box-shadow;}
     header div{display: flex; align-items: center;}
@@ -532,7 +537,7 @@
     /* 배너 */
     .riderPage .bannerArea{height: 50.000rem; background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 5.000rem 0; box-sizing: border-box;}
     .riderPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
-    .riderPage .bannerArea div p{width: 33.438rem; font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white; text-shadow: 0 0 0.625rem black;}
+    .riderPage .bannerArea div p{width: 33.438rem; font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white;}
 
 
     /* ! 허브 창업 */
