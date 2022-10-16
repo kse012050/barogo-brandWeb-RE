@@ -715,8 +715,8 @@
     .aboutUsPage .breandArea .CW .logoArea li{width: 23.750rem;  text-align: center; padding: 2.500rem 2.938rem 3.125rem; border-radius: 1.000rem; background-color: white;  box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1); box-sizing: border-box;}
     .aboutUsPage .breandArea .CW .logoArea li b{color: #111;}
     .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
-    .aboutUsPage .breandArea .CW ul:not(.logoArea){float: left; width: calc((100% - 1.250rem) / 2); margin-bottom: 6.875rem;}
-    .aboutUsPage .breandArea .CW ul:not(.logoArea) li{width: 11.250rem; height: 11.250rem; padding: 1.250rem; border-radius: 0.750rem; box-sizing: border-box; box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
+    .aboutUsPage .breandArea .CW ul:not(.logoArea){float: left; margin-bottom: 6.875rem;}
+    .aboutUsPage .breandArea .CW ul:not(.logoArea) li{width: 13.750rem; height: 13.750rem; padding: 1.250rem; border-radius: 0.750rem; box-sizing: border-box; box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
     .aboutUsPage .breandArea .CW ul:last-of-type + *{clear: both;}
     .aboutUsPage .breandArea .CW .colorArea{margin-right: 1.250rem;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
