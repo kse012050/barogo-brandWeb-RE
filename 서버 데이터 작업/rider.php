@@ -195,7 +195,7 @@
             <section class="sliderBox">
                 <div class="CW">
                     <div class="titleArea">
-                        <h2 class="TC-02">#바로고 사장님</h2>
+                        <h2 class="TC-02">#바로고 라이더</h2>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
