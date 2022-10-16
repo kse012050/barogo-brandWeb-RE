@@ -547,7 +547,7 @@ $(document).ready(function(){
             clickable: true,
             },
             autoplay: {
-                delay: 2500,
+                delay: 1000,
             },
             slidesPerView: 1,
             loop: true,
@@ -560,14 +560,17 @@ $(document).ready(function(){
             }
         });
 
+        let partSliderArray = [];
         $('.partSlider').each(function(i){
+            partSlider.length == undefined ? partSliderArray.push(partSlider) : partSliderArray.push(partSlider[i]);
             $(this).on('touchstart', function(){
-                partSlider[i].autoplay.stop();
+                partSliderArray[i].autoplay.stop();
             });
             $(this).on('touchend', function(){
-                partSlider[i].autoplay.start();
+                partSliderArray[i].autoplay.start();
             });
         })
+  
 
       
     } /* 페이지 부분 스크롤 fin */
