@@ -242,6 +242,62 @@
                             </div>
                         </li>
                         <li>
+                            <input type="checkbox" name="agree2_yn" value="<?=Y?>" id="agree2_yn">
+                            <label for="agree2_yn">개인정보 제 3자 제공 동의 <mark>(필수)</mark></label>
+                            <a href="" data-click="popup02">보기</a>
+                            <div class="popupBox" data-popup="popup02">
+                                <div>
+                                    <strong><mark>개인정보 제 3자 제공 동의</mark></strong>
+                                    <div class="textArea">
+                                        <b>개인정보 제3자 제공 동의서 (필수)</b>
+                                        <p>본인은 귀사가 개인정보를 아래의 내용과 같이 제3자에게 제공하는 것에 동의합니다.</p>
+                                        <ol>
+                                            <li title="개인정보 제3자 제공 내역">
+                                                <div class="tableArea">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2"></th>
+                                                                <th>제공 받는 자</th>
+                                                                <th>제공하는 개인정보 항목</th>
+                                                                <th>제공받는 자의 개인정보 이용 목적</th>
+                                                                <th>제공받는 자의 개인정보 보유 및 이용기간</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>배달대행문의 시</th>
+                                                                <th>일반상점 계약 문의</th>
+                                                                <td><span>바로고와 계약을 체결한 허브</span></td>
+                                                                <td>상점명, 이름, 연락처, 이메일</td>
+                                                                <td><span>서비스 가입 의사 확인, 문의사항 처리</span></td>
+                                                                <td><span>문의 목적 달성시까지</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2">라이더 지원 시</th>
+                                                                <td><span>바로고와 계약을 체결한 허브</span></td>
+                                                                <td>이름, 생년월일, 연락처, 라이더 경력</td>
+                                                                <td><span>지원 의사 확인, 채용 절차 진행</span></td>
+                                                                <td><span>채용 절차 종료일까지</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </li>
+                                            <li title="동의를 거부할 권리 및 동의를 거부할 경우의 불이익">
+                                                <p>귀하는 동의를 거부할 권리가 있으나, 위 사항에 동의하지 않으실 경우 바로고 홈페이지를 통한 서비스 이용의 전부 또는 일부가 불가능할 수 있습니다.</p>
+                                                <p>* 본 동의 이후 동일한 목적 또는 이용범위 내에서 개인정보의 정확성, 최신성을 유지하기 위해 제공하는 경우에는 별도의 추가 동의가 필요하지 않습니다. </p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="btnArea">
+                                        <button data-close="popup02">닫기</button>
+                                        <button data-chk="agree2_yn">동의하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
                             <input type="checkbox" name="marketing_yn" value="<?=Y?>" id="marketing_yn">
                             <label for="marketing_yn">마케팅을 위한 개인정보 수집 이용 동의 <span>(선택)</span></label>
                             <a href="" data-click="popup03">보기</a>
