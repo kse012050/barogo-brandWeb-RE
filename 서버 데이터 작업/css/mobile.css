@@ -451,7 +451,7 @@
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin-left: auto;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin:0 auto;}
     .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
 
 
