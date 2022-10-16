@@ -4,110 +4,114 @@
         <?php include "header.php"; ?>
 
         <main data-scroll="area" class="">
-            <div data-scroll="area" class="b">
-                <div data-scroll="area" class="a active">
-                    <section class="makeArea">
-                        <h2 class="CW TC-01">
-                            세상에 활력을 더하는<br/>
-                            초연결 생태계를 만듭니다.
-                        </h2>
-                        <div>
-                            <div class="CW">
-                                <p>
-                                    바로고는 기존의 배달, 물류산업을 넘어 무한한 연결을 실현하여<br class="mobile"/>
-                                    상생, 성장, 나눔의 新물류 시대를 열어갑니다.
-                                </p>
-                            </div>
-                        </div>
-                        <p>
-                            <?=nl2br(getValue($content,"depth2_content1_a"))?>
-                        </p>
-                        <p>
-                            <?=nl2br(getValue($content,"depth2_content1_b"))?>
-                        </p>
-                        <ul>
-                            <li>
-                                <strong><?=getValue($content,"depth2_subject2")?></strong>
-                                <p>
-                                    <?=nl2br(getValue($content,"depth2_content2"))?>
-                                </p>
-                            </li>
-                            <li>
-                                <strong><?=getValue($content,"depth2_subject3")?></strong>
-                                <p>
-                                    <?=nl2br(getValue($content,"depth2_content3"))?>
-                                </p>
-                            </li>
-                            <li>
-                                <strong><?=getValue($content,"depth2_subject4")?></strong>
-                                <p>
-                                    <?=nl2br(getValue($content,"depth2_content4"))?>
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <p class="metaArea">
-                    <span class="blackColor">LOGISTICS UNIVERSE META</span><mark>LOGISTICS UNIVERSE META</mark><span class="grayColor">LOGISTICS UNIVERSE META</span>
-                    </p>
-
-                    <section class="toDoArea" data-scrollAni="opacity">
+            <div data-scroll="area" class="active">
+                <section class="makeArea">
+                    <h2 class="CW TC-01">
+                        세상에 활력을 더하는<br/>
+                        초연결 생태계를 만듭니다.
+                    </h2>
+                    <div>
                         <div class="CW">
+                            <p>
+                                바로고는 기존의 배달, 물류산업을 넘어 무한한 연결을 실현하여<br class="mobile"/>
+                                상생, 성장, 나눔의 新물류 시대를 열어갑니다.
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        <?=nl2br(getValue($content,"depth2_content1_a"))?>
+                    </p>
+                    <p>
+                        <?=nl2br(getValue($content,"depth2_content1_b"))?>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong><?=getValue($content,"depth2_subject2")?></strong>
+                            <p>
+                                <?=nl2br(getValue($content,"depth2_content2"))?>
+                            </p>
+                        </li>
+                        <li>
+                            <strong><?=getValue($content,"depth2_subject3")?></strong>
+                            <p>
+                                <?=nl2br(getValue($content,"depth2_content3"))?>
+                            </p>
+                        </li>
+                        <li>
+                            <strong><?=getValue($content,"depth2_subject4")?></strong>
+                            <p>
+                                <?=nl2br(getValue($content,"depth2_content4"))?>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <p class="metaArea">
+                    <span class="blackColor">LOGISTICS UNIVERSE META</span><mark>LOGISTICS UNIVERSE META</mark><span class="grayColor">LOGISTICS UNIVERSE META</span>
+                </p>
+
+                <section class="toDoArea">
+                    <div class="CW">
+                        <div class="titleArea">
                             <h2 class="TC-02">초연결 생태계를 만들기 위해 바로고가 하는 것</h2>
                             <p class="FC-01">
                                 바로고는 상점-라이더-고객을 잇는 라스트마일 인프라를 넘어<br/>
                                 수많은 파트너들의 꿈과 기회를 연결하며, Meta Logistics의 시대를 열어갑니다.
                             </p>
-                            <div>
-                                <div class="progressArea">
-                                    <div class="progressBar">
-                                        <span></span>
-                                    </div>
-                                    <ul data-scroll="target">
-                                        <li class="active">
-                                            <div>
-                                                <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
-                                                <p class="FC-01">
-                                                    <?=nl2br(getValue($content,"depth3_content1"))?>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
-                                                <p class="FC-01">
-                                                    <?=nl2br(getValue($content,"depth3_content2"))?>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
-                                                <p class="FC-01">
-                                                    <?=nl2br(getValue($content,"depth3_content3"))?>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <mark class="TC-03"><?=getValue($content,"depth3_subject4")?></mark>
-                                                <p class="FC-01">
-                                                    <?=nl2br(getValue($content,"depth3_content4"))?>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <ul class="imgArea" data-scroll="target">
-                                    <li class="active"><img src="images/aboutUs/toDo01.png" alt=""></li>
-                                    <li><img src="images/aboutUs/toDo02.png" alt=""></li>
-                                    <li><img src="images/aboutUs/toDo03.png" alt=""></li>
-                                    <li><img src="images/aboutUs/toDo04.png" alt=""></li>
-                                </ul>
-                            </div>
                         </div>
-                    </section>
-                </div>
+                         <!-- 슬라이더 -->
+                         <div class="swiper partSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth3_content1"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/aboutUs/toDo01.png" alt="배달대행 플랫폼 이미지">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth3_content2"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/aboutUs/toDo02.png" alt="사륜 물류 배송 서비스 이미지">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth3_content3"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/aboutUs/toDo03.png" alt="도시주방 이미지">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth3_subject4")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth3_content4"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/aboutUs/toDo04.png" alt="배달 패키지 이미지">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- 슬라이더 fin -->
+                    </div>
+                </section>
 
                 <section class="numberArea" data-specialAni="graph" data-eventAni="count">
                     <div class="CW">

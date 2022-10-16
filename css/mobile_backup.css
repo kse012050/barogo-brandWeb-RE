@@ -199,7 +199,7 @@
 
 
     /* 부분 슬라이더 공통 */
-    .partSlider .swiper-wrapper{pointer-events: none;}
+    .partSlider {pointer-events: none;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{pointer-events: all;}
     .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
     .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
@@ -451,7 +451,7 @@
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 100%;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin-left: auto;}
     .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
 
 

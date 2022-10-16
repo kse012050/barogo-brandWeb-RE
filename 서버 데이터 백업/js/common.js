@@ -540,34 +540,25 @@ $(document).ready(function(){
     
     // 페이지 부분 스크롤
     function partSlider(){
-        let partSlider = new Swiper(".partSlider", {
-            direction: "vertical",
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            },
-            autoplay: {
-                delay: 2500,
-            },
-            slidesPerView: 1,
-            loop: true,
-            on:{
-                slideChange: function(){
-                    if($(this)[0].$el.hasClass('bikeSlider')){
-                        $('.riderPage .startArea .CW .imgArea img').css('transform','translateX('+(2 - $(this)[0].realIndex) * (($('.startArea .imgArea').width() + ($(window).width() - $('.CW').width())) / 4)+'px)')
-                    }
+    new Swiper(".partSlider", {
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+        },
+        slidesPerView: 1,
+        loop: true,
+        on:{
+            slideChange: function(){
+                if($(this)[0].$el.hasClass('bikeSlider')){
+                    $('.riderPage .startArea .CW .imgArea img').css('transform','translateX('+(2 - $(this)[0].realIndex) * (($('.startArea .imgArea').width() + ($(window).width() - $('.CW').width())) / 4)+'px)')
                 }
             }
-        });
-
-        $('.partSlider').each(function(i){
-            $(this).on('touchstart', function(){
-                partSlider[i].autoplay.stop();
-            });
-            $(this).on('touchend', function(){
-                partSlider[i].autoplay.start();
-            });
-        })
+        }
+    });
 
       
     } /* 페이지 부분 스크롤 fin */
