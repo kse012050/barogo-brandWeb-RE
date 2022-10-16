@@ -207,7 +207,7 @@
     /* 부분 슬라이더 공통 */
     .partSlider {pointer-events: none;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{pointer-events: all;}
-    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
+    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.3rem; border-radius: 0;}
     .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
     .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
 
@@ -393,11 +393,11 @@
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
     .deliveryPage .qualitativeArea .CW h2{width: 100%; position: relative; z-index: 5;}
     .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 27.500rem; padding-top: 1.875rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.250rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 30rem; padding-top: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea p{letter-spacing: -0.063rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin: 0 auto;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea video{width: 100%;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{margin-top: 1.250rem; display: flex;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div a{display: inline-flex;}
@@ -455,9 +455,9 @@
     .riderPage .playgroundArea .CW .titleArea h2{margin-bottom: 1.563rem;}
     .riderPage .playgroundArea .CW .partSlider{height: 37.500rem; padding-top: 3.125rem; box-sizing: border-box;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin:0 auto;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin:0 auto;}
     .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
 
 
@@ -486,7 +486,7 @@
     .riderPage .startArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .riderPage .startArea .CW .partSlider{height: 10.000rem;}
     .riderPage .startArea .CW .partSlider .swiper-slide{display: flex; align-items: center; padding-left: 1.250rem;}
-    .riderPage .startArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom:1.875rem;}
+    .riderPage .startArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom:1.250rem;}
     .riderPage .startArea .CW .partSlider .swiper-pagination{right: auto; left: 0; top: 50%;}
     .riderPage .startArea .CW .imgArea{width: 70%;}
     .riderPage .startArea .CW .imgArea img{transform: translateX(100%); transition: transform 0.5s;}
@@ -519,8 +519,8 @@
     .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 1.25rem; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea > img{display: block; width: 75%; margin: 0 auto;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.25rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea > img{display: block; width: 85%; margin: 0 auto;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 1.875rem; left: 0; right: auto; transform: translateY(0);}
     .foundedPage .imgArea .foundedSlider{height: 14.688rem; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
@@ -615,11 +615,11 @@
     .aboutUsPage .toDoArea .CW .titleArea{position: relative; }
     .aboutUsPage .toDoArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -1rem; width: 100%; height: 1rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .aboutUsPage .toDoArea .CW .titleArea h2{margin-bottom: 1.563rem;}
-    .aboutUsPage .toDoArea .CW .partSlider{height: 25.000rem; padding-top: 1.875rem;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider{height: 30.000rem; padding-top: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.875rem;;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin: 0 auto;}
     .aboutUsPage .toDoArea .CW .partSlider .swiper-pagination{left: 0; right: auto; top: 1.875rem; transform: translateY(0);}
 
     /* 숫자로 보는 바로고 */
