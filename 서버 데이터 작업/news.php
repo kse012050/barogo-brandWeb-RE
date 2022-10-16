@@ -5,7 +5,7 @@
         <?php include "header.php"; ?>
 
         <section class="CW">
-            <h2>공지사항</h2>
+            <h2>뉴스</h2>
             <ul class="boardArea">
                 <?php
                 if (checkArray($list, true)) {
