@@ -23,7 +23,7 @@
 
     /* 버튼 공통*/
     /* BTN (button) 배경이 들어가는 기본 버튼 */
-    [class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700;}
+    [class |= "BTN"]{ display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 7px 0 white; box-sizing: border-box; font-weight: 700; border-radius: 0.188rem;}
     .BTN-arrow{ color: white; max-width: 16.688rem; line-height: 4.500rem; font-size: 1.250rem;  padding:0 2.500rem; background-color: #fa5014; border: none;}
     .BTN-arrow::after{content: ''; width: 2.875rem; height: 0.625rem; background: url('../images/common/arrow_white.png') no-repeat center / cover; margin-left: 1.875rem;}
     input[type="submit"].BTN-arrow{width: 12.063rem; background:#fa5014 url('../images/common/arrow_white.png') no-repeat right 2.500rem center / 2.875rem;}
@@ -102,6 +102,7 @@
         100%{left: calc(100% / 2);  transform: translateX(50%);}
     }
 
+    
     /* 배너 공통 */
     .bannerArea{position: relative;}
     .bannerArea::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 18.750rem; background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);}
@@ -206,7 +207,7 @@
     /* 부분 슬라이더 공통 */
     .partSlider .swiper-wrapper{pointer-events: none;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{pointer-events: all;}
-    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.5rem; border-radius: 0;}
+    .partSlider .swiper-pagination .swiper-pagination-bullet{height: 2.3rem; border-radius: 0;}
     .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{width: 0.375rem; margin: 0;}
     .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
 
@@ -392,11 +393,11 @@
     .deliveryPage .qualitativeArea .CW{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
     .deliveryPage .qualitativeArea .CW h2{width: 100%; position: relative; z-index: 5;}
     .deliveryPage .qualitativeArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
-    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 27.500rem; padding-top: 1.875rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.250rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider{width: 100%; height: 30rem; padding-top: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.875rem;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea p{letter-spacing: -0.063rem;}
-    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin: 0 auto;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .imgArea video{width: 100%;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div{margin-top: 1.250rem; display: flex;}
     .deliveryPage .qualitativeArea .CW .partSlider .swiper-slide .textArea div a{display: inline-flex;}
@@ -454,9 +455,9 @@
     .riderPage .playgroundArea .CW .titleArea h2{margin-bottom: 1.563rem;}
     .riderPage .playgroundArea .CW .partSlider{height: 37.500rem; padding-top: 3.125rem; box-sizing: border-box;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .riderPage .playgroundArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 100%;}
+    .riderPage .playgroundArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin:0 auto;}
     .riderPage .playgroundArea .CW .partSlider .swiper-pagination{top: 3.125rem; left: 0; right: auto; transform: translateY(0);}
 
 
@@ -473,7 +474,7 @@
     .riderPage .revenueArea .CW .textArea > div > div > div ul{height: 18.750rem; overflow: auto; -webkit-overflow-scrolling:touch;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li{display: block; line-height: 2.500rem; text-align: center; color: white; background-color: #444;}
     .riderPage .revenueArea .CW .textArea > div > div > div ul li:hover{background-color: black;}
-    .riderPage .revenueArea .CW > div:last-child{position: relative; width: 16.250rem; margin-left: auto;}
+    .riderPage .revenueArea .CW > div:last-child{position: relative; width: 17rem; margin-left: auto;}
     .riderPage .revenueArea .CW > div:last-child p{position: absolute; left: 0; top: -3.750rem; width: 11.875rem; height: 3.438rem; padding: 0.750rem 1.250rem; font-weight: 700; color: white; text-align: center;  box-sizing: border-box; background: url('../images/rider/tagbox.png') no-repeat center / 11.875rem;}
     .riderPage .revenueArea .CW > div:last-child span{font-size: 2.688rem; font-weight: 700;}
     .riderPage .revenueArea .CW > div:last-child span::before{content: '₩ ';}
@@ -485,7 +486,7 @@
     .riderPage .startArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .riderPage .startArea .CW .partSlider{height: 10.000rem;}
     .riderPage .startArea .CW .partSlider .swiper-slide{display: flex; align-items: center; padding-left: 1.250rem;}
-    .riderPage .startArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom:1.875rem;}
+    .riderPage .startArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom:1.250rem;}
     .riderPage .startArea .CW .partSlider .swiper-pagination{right: auto; left: 0; top: 50%;}
     .riderPage .startArea .CW .imgArea{width: 70%;}
     .riderPage .startArea .CW .imgArea img{transform: translateX(100%); transition: transform 0.5s;}
@@ -509,7 +510,7 @@
     /* 배너 */
     .riderPage .bannerArea{background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 5.000rem 0;}
     .riderPage .bannerArea div{height: 33.750rem; display: flex; align-items: flex-end; padding: 2.500rem 1.250rem; box-sizing: border-box;}
-    .riderPage .bannerArea div p{width: 100%; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white;}
+    .riderPage .bannerArea div p{width: 33.438rem; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white;}
 
     /* ! 허브 창업 */
     /* 바로고와 함께하는 이유 */
@@ -518,8 +519,8 @@
     .foundedPage .reasonArea .CW h2::before{content: ''; position: absolute; left: 0; bottom: -1.8rem; width: 100%; height: 1.875rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .foundedPage .reasonArea .CW .partSlider{height: 31.250rem; padding-top: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{padding-left: 1.25rem; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
-    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea > img{display: block; width: 75%; margin: 0 auto;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.25rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea > img{display: block; width: 85%; margin: 0 auto;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{top: 1.875rem; left: 0; right: auto; transform: translateY(0);}
     .foundedPage .imgArea .foundedSlider{height: 14.688rem; position: relative;}
     .foundedPage .imgArea .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
@@ -614,11 +615,11 @@
     .aboutUsPage .toDoArea .CW .titleArea{position: relative; }
     .aboutUsPage .toDoArea .CW .titleArea::before{content: ''; position: absolute; left: 0; bottom: -1rem; width: 100%; height: 1rem; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg); z-index: 10;}
     .aboutUsPage .toDoArea .CW .titleArea h2{margin-bottom: 1.563rem;}
-    .aboutUsPage .toDoArea .CW .partSlider{height: 25.000rem; padding-top: 1.875rem;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider{height: 30.000rem; padding-top: 1.875rem;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea{padding-left: 1.250rem; margin-bottom: 1.875rem;;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea mark{display: block; margin-bottom: 1.250rem;}
     .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .textArea p{color: #666;}
-    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 75%; margin: 0 auto;}
+    .aboutUsPage .toDoArea .CW .partSlider .swiper-slide .imgArea{width: 85%; margin: 0 auto;}
     .aboutUsPage .toDoArea .CW .partSlider .swiper-pagination{left: 0; right: auto; top: 1.875rem; transform: translateY(0);}
 
     /* 숫자로 보는 바로고 */

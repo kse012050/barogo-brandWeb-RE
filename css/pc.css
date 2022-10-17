@@ -1,4 +1,4 @@
-.CW{width: calc(100% - 40px); max-width: 1180px; margin: 0 auto;}
+.CW{width: calc(100% - 2.500rem); max-width: 1180px; margin: 0 auto;}
 
 @media screen and (min-width : 768px) and (max-width : 1220px) {
     html{font-size: 1.3114vw;}
@@ -454,7 +454,7 @@
     /* 배너 */
     .deliveryPage .bannerArea{height: 50.000rem; background: url('../images/delivery/bottom-delivery.png') no-repeat center / cover; padding: 5.000rem 0; box-sizing: border-box;}
     .deliveryPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
-    .deliveryPage .bannerArea div p{width: 31.250rem; font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white;}
+    .deliveryPage .bannerArea div p{font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white;}
 
 
     /* ! 라이더 지원 */
@@ -537,7 +537,7 @@
     /* 배너 */
     .riderPage .bannerArea{height: 50.000rem; background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 5.000rem 0; box-sizing: border-box;}
     .riderPage .bannerArea div{height: 100%; display: flex; align-items: flex-end;}
-    .riderPage .bannerArea div p{width: 33.438rem; font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white; }
+    .riderPage .bannerArea div p{font-size: 1.500rem; font-weight: 700; line-height: 1.5; color: white;}
 
 
     /* ! 허브 창업 */
@@ -717,17 +717,18 @@
     .aboutUsPage .breandArea .CW ul li b{display: block; font-weight: 700; margin-bottom: 0.938rem;}
     .aboutUsPage .breandArea .CW ul li p{line-height: 1.33;}
     .aboutUsPage .breandArea .CW .logoArea{margin-bottom: 5.000rem;}
-    .aboutUsPage .breandArea .CW .logoArea li{width: 23.750rem;  text-align: center; padding: 2.500rem 2.938rem 3.125rem; border-radius: 1.000rem; background-color: white;  box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1); box-sizing: border-box;}
+    .aboutUsPage .breandArea .CW .logoArea li{width: 23.750rem;  text-align: center; padding: 2.500rem 2rem 2.4rem; border-radius: 1.000rem; background-color: white;  box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1); box-sizing: border-box;}
     .aboutUsPage .breandArea .CW .logoArea li b{color: #111;}
     .aboutUsPage .breandArea .CW .logoArea li img{width: 100%;}
     .aboutUsPage .breandArea .CW ul:not(.logoArea){float: left; margin-bottom: 6.875rem;}
     .aboutUsPage .breandArea .CW ul:not(.logoArea) li{width: 13.750rem; height: 13.750rem; padding: 1.250rem; border-radius: 0.750rem; box-sizing: border-box; box-shadow: 0 0.125rem 1.250rem 0 rgba(0, 0, 0, 0.1);}
     .aboutUsPage .breandArea .CW ul:last-of-type + *{clear: both;}
-    .aboutUsPage .breandArea .CW .colorArea{margin-right: 1.250rem;}
+    .aboutUsPage .breandArea .CW .colorArea{width: 43.750rem; margin-right: 1.250rem;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(1){background-color: #fa5014;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(2){background-color: #000000;}
     .aboutUsPage .breandArea .CW .colorArea li:nth-child(3){background-color: #ffffff;}
     .aboutUsPage .breandArea .CW .colorArea :is(li:nth-child(1) , li:nth-child(2)){color: white;}
+    .aboutUsPage .breandArea .CW .secondaryArea{width: 28.750rem;}
     .aboutUsPage .breandArea .CW .secondaryArea li:nth-child(1){color: white; background-color: #2d3ce6;}
     .aboutUsPage .breandArea .CW .secondaryArea li:nth-child(2){background-color: #dcdcdc;}
     .aboutUsPage .breandArea .CW > a{width: 10.938rem; margin:0 auto;}
