@@ -547,7 +547,7 @@ $(document).ready(function(){
             clickable: true,
             },
             autoplay: {
-                delay: 2500,
+                delay: 1000,
             },
             slidesPerView: 1,
             loop: true,
@@ -570,6 +570,8 @@ $(document).ready(function(){
                 partSliderArray[i].autoplay.start();
             });
         })
+  
+
       
     } /* 페이지 부분 스크롤 fin */
 

@@ -509,7 +509,7 @@
     /* 배너 */
     .riderPage .bannerArea{background: url('../images/rider/bottom-rider.png') no-repeat center / cover; padding: 5.000rem 0;}
     .riderPage .bannerArea div{height: 33.750rem; display: flex; align-items: flex-end; padding: 2.500rem 1.250rem; box-sizing: border-box;}
-    .riderPage .bannerArea div p{width: 33.438rem; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white;}
+    .riderPage .bannerArea div p{width: 100%; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: white;}
 
     /* ! 허브 창업 */
     /* 바로고와 함께하는 이유 */
