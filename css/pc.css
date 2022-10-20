@@ -226,6 +226,7 @@
     [data-scrollAni="opacity"] [data-scroll="target"] li mark{display: block; margin-bottom: 1.875rem;}
 
     /* 부분 슬라이더 공통 */
+    .partSlider{overflow: hidden;}
     .partSlider .swiper-pagination .swiper-pagination-bullet{height: 3.125rem; border-radius: 0;}
     .partSlider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
     .partSlider .swiper-pagination .swiper-pagination-bullet-active{background-color: #fa5014;}
@@ -551,8 +552,9 @@
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea{align-self: center; padding-left: 6.250rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .textArea mark{display: block; margin-bottom: 1.875rem;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea{align-self: center; width: 31.875rem;}
+    .foundedPage .reasonArea .CW .partSlider > .swiper-wrapper > .swiper-slide .imgArea video{width: 100%;}
     .foundedPage .reasonArea .CW .partSlider > .swiper-pagination{right: auto; left: 0;}
-    .foundedPage .reasonArea .CW .partSlider .foundedSlider{width: 31.875rem; height: 30.500rem; position: relative;}
+    .foundedPage .reasonArea .CW .partSlider .foundedSlider{width: 31.875rem; height: 30.500rem; position: relative; overflow: hidden;}
     .foundedPage .reasonArea .CW .partSlider .foundedSlider::before ,.foundedPage .foundedSlider::after{content: ''; position: absolute; left: 0; width: 100%; height: 7.750rem; z-index: 5;} 
     .foundedPage .reasonArea .CW .partSlider .foundedSlider::before{top: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff); transform: rotate(-180deg);}
     .foundedPage .reasonArea .CW .partSlider .foundedSlider::after{bottom: 0; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);}
@@ -617,8 +619,8 @@
     .aboutUsPage .makeArea ul li p{font-size: 1.250rem; line-height: 1.5; color: #111;}
 
     /* META LOGISTIS UNIVERSE */
-    .aboutUsPage .metaArea{font-size: 6.250rem; font-weight: 700; white-space: nowrap; overflow: hidden;}
-    .aboutUsPage .metaArea :is(span , mark){display: inline-block; animation-duration: 30s; animation-timing-function: linear; animation-iteration-count: infinite;}
+    .aboutUsPage .metaArea{font-size: 4.250rem; font-weight: 700; white-space: nowrap; overflow: hidden;}
+    .aboutUsPage .metaArea :is(span , mark){display: inline-block; font-family: termina, sans-serif; animation-duration: 30s; animation-timing-function: linear; animation-iteration-count: infinite;}
     .aboutUsPage .metaArea span.blackColor{animation-name: textAni1; animation-delay: -30s;}
     .aboutUsPage .metaArea mark{animation-name: textAni2; animation-delay: -20s;}
     .aboutUsPage .metaArea span.grayColor{color: lightgray; animation-name: textAni3; animation-delay: -10s;}
@@ -690,7 +692,7 @@
     .aboutUsPage .roadArea .CW .textArea .yearArea ol li:not(:last-child){margin-bottom: 3.750rem;}
     .aboutUsPage .roadArea .CW .textArea .yearArea ol li.active{color: black;}
     .aboutUsPage .roadArea .CW .monthArea{position: relative; width: 42.500rem;}
-    .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0; padding-top: 5.000rem;}
+    .aboutUsPage .roadArea .CW .monthArea > ol{position: absolute; right: 0; top: 0; width: 100%; padding-top: 5.000rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li strong{display: block; font-size: 1.875rem; font-weight: 700; margin-bottom: 3.438rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li:not(:last-child){margin-bottom: 7.500rem;}
     .aboutUsPage .roadArea .CW .monthArea > ol > li ol li{font-size: 1.250rem; display: flex; flex-wrap: wrap; align-items: flex-end;}
