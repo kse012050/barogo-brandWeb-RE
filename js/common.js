@@ -1,11 +1,12 @@
 
 let responsiveWidth = 767;
 $(document).ready(function(){
-    // 새로고침 시 최상단 이동
-   /*  setTimeout(function(){
-        $('html').scrollTop(0)
-    },300)  */
-
+    // ie 일 때 클래스 넣기
+    var ua = window.navigator.userAgent;
+    if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+        $('.topBox').addClass('ie')
+    }
+    
     // 공통
     common()
     
@@ -56,6 +57,14 @@ $(document).ready(function(){
         /* ! 함수 생성 */
         // 인트로
         function introAni(){
+            // 임시 메인 팝업
+            $('.mainPage .popupBox').length > 0 && $('body').css('overflow','hidden');
+            $('[data-close]').click(function(){
+                var attrName = $(this).attr('data-close');
+                $('[data-popup='+attrName+']').fadeOut();
+                $('body').removeAttr('style');
+            })
+
             let introDuration = 1;
             let introDelay = 1.5;
             let topDelay = 400;
@@ -108,15 +117,16 @@ $(document).ready(function(){
                 slidesPerView: "auto",
                 slidesPerView: 2,
                 breakpoints: {
-                    300: {
+                    768: {
                         slidesPerView: 1,
                         spaceBetween: 10,
                     },
-                    768: {
+                    10000: {
                         slidesPerView: 2,
                         spaceBetween: 25,
                     }
                 },
+                // spaceBetween: 25,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
@@ -552,7 +562,6 @@ $(document).ready(function(){
                 disableOnInteraction : false
             },
             slidesPerView: 1,
-            
             loop: true,
             on:{
                 slideChange: function(){

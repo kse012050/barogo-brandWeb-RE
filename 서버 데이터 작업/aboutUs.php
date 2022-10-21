@@ -5,7 +5,7 @@
         if ( preg_match("/Trident*/", $userAgent &&  preg_match("/rv:11.0*/", $userAgent &&  preg_match("/Gecko*/", $userAgent) ) ) ) {
         }else{
             ?>
-            <script src="js/test.js"></script>
+            <script src="js/aboutUs-graph.js"></script>
             <?php 
         }
     ?>
