@@ -177,21 +177,23 @@
     /* 바텀 공통 */
     footer .bottomArea{padding: 3.125rem 0;}
     footer .bottomArea p{font-size: 0.750rem; color: #999;}
-    footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-end;}
-    footer .bottomArea div:first-of-type h2{width: 8.125rem; margin-bottom: 0.625rem;}
-    footer .bottomArea div:first-of-type h2 img{width: 100%;}
-    footer .bottomArea div:first-of-type address{display: flex; margin-bottom: 0.313rem;}
-    footer .bottomArea div:first-of-type address p:not(:last-of-type){margin-right: 0.625rem;}
-    footer .bottomArea div:first-of-type > p{margin-bottom: 1.250rem;}
-    footer .bottomArea div:first-of-type ul{display: flex;}
-    footer .bottomArea div:first-of-type ul li:not(:last-of-type){margin-right: 1.250rem;}
-    footer .bottomArea div:first-of-type ul li a{font-size: 0.875rem;}
-    footer .bottomArea div:first-of-type ul li:not(:first-child) a{font-weight: 700;}
-    footer .bottomArea div:nth-of-type(2) b{display: block; font-size: 0.750rem; margin-bottom: 0.625rem;}
-    footer .bottomArea div:nth-of-type(2) > a{display: flex; align-items: flex-start; font-size: 1.125rem; font-weight: 700; line-height: 1.2; text-align: left; margin-bottom: 1rem;}
-    footer .bottomArea div:nth-of-type(2) > a::before{content: ''; width: 2.625rem; height: 2.625rem; background: url('../images/common/kakao.png') no-repeat center / cover; margin-right: 0.8rem;}
-    footer .bottomArea div:nth-of-type(2) p{line-height: 1.25;}
-    footer .bottomArea div:nth-of-type(2) p :is(a , span){margin-left: 0.8rem;}
+    footer .bottomArea{display: flex; justify-content: space-between; align-items: flex-start;}
+    footer .bottomArea > div:first-of-type h2{width: 8.125rem; margin-bottom: 0.625rem;}
+    footer .bottomArea > div:first-of-type h2 img{width: 100%;}
+    footer .bottomArea > div:first-of-type address{display: flex; margin-bottom: 0.313rem;}
+    footer .bottomArea > div:first-of-type address p:not(:last-of-type){margin-right: 0.625rem;}
+    footer .bottomArea > div:first-of-type > p{margin-bottom: 1.250rem;}
+    footer .bottomArea > div:first-of-type ul{display: flex;}
+    footer .bottomArea > div:first-of-type ul li:not(:last-of-type){margin-right: 1.250rem;}
+    footer .bottomArea > div:first-of-type ul li a{font-size: 0.875rem;}
+    footer .bottomArea > div:first-of-type ul li:not(:first-child) a{font-weight: 700;}
+    footer .bottomArea > div:first-of-type div{display: flex; align-items: center; font-size: 0.750rem; margin-top: 1.250rem;}
+    footer .bottomArea > div:first-of-type div img{width: 3rem; margin-right: 0.3rem;}
+    footer .bottomArea > div:nth-of-type(2) b{display: block; font-size: 0.750rem; margin-bottom: 0.625rem;}
+    footer .bottomArea > div:nth-of-type(2) > a{display: flex; align-items: flex-start; font-size: 1.125rem; font-weight: 700; line-height: 1.2; text-align: left; margin-bottom: 1rem;}
+    footer .bottomArea > div:nth-of-type(2) > a::before{content: ''; width: 2.625rem; height: 2.625rem; background: url('../images/common/kakao.png') no-repeat center / cover; margin-right: 0.8rem;}
+    footer .bottomArea > div:nth-of-type(2) p{line-height: 1.25;}
+    footer .bottomArea > div:nth-of-type(2) p :is(a , span){margin-left: 0.8rem;}
     @media screen and (max-width : 1900px) {
         :is(.mainPage , .aboutUsPage) footer .bottomArea{padding-bottom: 9.375rem ;}
     }

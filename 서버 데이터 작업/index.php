@@ -1,5 +1,5 @@
 <?php include "head.php"; ?>
-<body>
+<body class="bodyHidden">
     <div class="introBox">
         <div class="BG">
 
@@ -13,98 +13,155 @@
     <div class="mainPage">
         <?php include "header.php"; ?>
 
-        <div class="popupBox" data-popup="mainPopup">
-            <div>
-                <strong><mark>[서비스 장애 사과문]</mark></strong>
-                <div class="textArea">
-                    <p>
-                        안녕하세요 바로고입니다.
-                        20일 저녁 시간에 발생한 서버 장애로 많은 분들께 불편과 심려를 끼쳐드린 점에 대해 머리 숙여 사과드립니다.
-                    </p>
-                    <p>
-                        현재까지 파악된 바에 따르면 서버 장애의 주된 원인은 국내외 IP를 통한 디도스 공격인 것으로 보이며, 바로고는 디도스 공격 직후 유입 IP를 차단하고 관련 장비를 교체하는 등 대응 상황반을 가동하여 복구에 총력을 다하였으나, 완전한 복구가 지연되고 있는 상황입니다.
-                    </p>
-                    <p>
-                        갑작스러운 서버 장애로 인하여 피해를 드리게 된 점 다시 한 번 사과드리며, 조속히 서버를 정상화하고 피해 보상안을 마련하는 등 후속조치를 최대한 빠르게 진행하겠습니다.
-                    </p>
-                    <p>
-                        불편을 드린 점 다시 한 번 송구드리며, 임직원 모두 최선을 다하겠습니다.
-                    </p>
-                </div>
-                <div class="btnArea">
-                    <button data-close="mainPopup">닫기</button>
-                </div>
-                </div>
-        </div>
+        <?php
+        if(getSiteIntoValue($site,"popup_exposure_yn") == Y){
+            $comment    = getSiteIntoValue($site,"popup_content");
+            $commentArr = explode("\n",$comment);
 
-        <!-- 배달대행 -->
-        <main class="deliveryPage">
-            <!-- 페이지 상단 부분 공통 -->
-            <section class="topBox">
-                <div class="CW">
-                    <h2 class="TC-02">
-                        무엇이든 어디서나<br/>
-                        배달은 누구보다 확실하게
-                    </h2>
-                    <a href="deliveryInquiry" class="BTN-arrow">바로 문의하기</a>
-                </div>
-                <div class="imgArea">
-                    배달대형문의 이미지
-                </div>
-            </section>
-
-            <section class="qualitativeArea">
-                <div class="CW">
-                    <h2 class="TC-02">
-                        사장님의 정성 그대로<br/>
-                        빠르고 확실하게
-                    </h2>
-                    <div class="swiper partSlider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="textArea">
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content1"))?>
-                                    </p>
-                                </div>
-                                <div class="imgArea">
-                                    <img src="images/delivery/qualitative01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="textArea">
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content2"))?>
-                                    </p>
-                                    <div>
-                                        <a <?=homepageLinkCheck((checkArrayVal("file1",$content)?getValue($content,"file1"):getValue($content,"link1")))?> class="BBTN-download">사장님 프로그램</a>
-                                        <a <?=homepageLinkCheck((checkArrayVal("file2",$content)?getValue($content,"file2"):getValue($content,"link2")))?> class="BBTN-download">사용 설명서</a>
-                                    </div>
-                                </div>
-                                <div class="imgArea">
-                                    <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="textArea">
-                                    <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
-                                    <p class="FC-01">
-                                        <?=nl2br(getValue($content,"depth2_content3"))?>
-                                    </p>
-                                </div>
-                                <div class="imgArea">
-                                    <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+            $popupComment = "";
+            foreach ($commentArr as $value){
+                $popupComment .= "<p>".$value."</p>";
+            }
+            ?>
+            <div class="popupBox" data-popup="mainPopup">
+                <div>
+                    <strong><mark><?=getSiteIntoValue($site,"popup_title")?></mark></strong>
+                    <div class="textArea">
+                        <?=$popupComment?>
+                    </div>
+                    <div class="btnArea">
+                        <button data-close="mainPopup">닫기</button>
                     </div>
                 </div>
-            </section>
+            </div>
+            <?php
+        }
+        ?>
 
-            <section class="mindArea">
+
+        <!-- 배달대행 -->
+        <main class="deliveryPage" data-scroll="area">
+            <div data-scroll="area" class="active">
+                <!-- 페이지 상단 부분 공통 -->
+                <section class="topBox">
+                    <div class="CW">
+                        <h1 class="TC-02">
+                            무엇이든 어디서나<br/>
+                            배달은 누구보다 확실하게
+                        </h1>
+                        <a href="deliveryInquiry" class="BTN-arrow">바로 문의하기</a>
+                    </div>
+                    <div class="imgArea">
+                        배달대형문의 이미지
+                    </div>
+                    <span></span>
+                </section>
+
+                <section class="qualitativeArea" data-scrollAni="move">
+                    <div class="CW">
+                        <h2 class="TC-02">
+                            사장님의 정성 그대로<br/>
+                            빠르고 확실하게
+                        </h2>
+
+                        <div>
+                            <ul class="pageBox" data-scroll="target">
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul data-scroll="target" class="scrollSlider">
+                                <li class="active">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content1"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/delivery/qualitative01.png" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content2"))?>
+                                        </p>
+                                        <div class="btnArea">
+                                            <a <?=homepageLinkCheck((checkArrayVal("file1",$content)?getValue($content,"file1"):getValue($content,"link1")))?> title="바로고 사장님 프로그램 다운로드" class="BBTN-download">사장님 프로그램</a>
+                                            <a <?=homepageLinkCheck((checkArrayVal("file2",$content)?getValue($content,"file2"):getValue($content,"link2")))?> title="바로고 사장님 프로그램 사용 설명서" class="BBTN-download">사용 설명서</a>
+                                        </div>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content3"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        
+                        
+                        
+
+                        <!-- <div class="swiper partSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject1")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content1"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <img src="images/delivery/qualitative01.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject2")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content2"))?>
+                                        </p>
+                                        <div>
+                                            <a <?=homepageLinkCheck((checkArrayVal("file1",$content)?getValue($content,"file1"):getValue($content,"link1")))?> class="BBTN-download">사장님 프로그램</a>
+                                            <a <?=homepageLinkCheck((checkArrayVal("file2",$content)?getValue($content,"file2"):getValue($content,"link2")))?> class="BBTN-download">사용 설명서</a>
+                                        </div>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative01.mp4" autoplay muted loop></video>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="textArea">
+                                        <mark class="TC-03"><?=getValue($content,"depth2_subject3")?></mark>
+                                        <p class="FC-01">
+                                            <?=nl2br(getValue($content,"depth2_content3"))?>
+                                        </p>
+                                    </div>
+                                    <div class="imgArea">
+                                        <video src="video/delivery/qualitative03.mp4" autoplay muted loop></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div> -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- <section class="mindArea">
                 <div class="CW">
                     <div class="imgArea">
                         <img src="images/delivery/mind.png" alt="사장님의 따뜻한 마음 그대로 이미지">
@@ -114,11 +171,10 @@
                         <p class="FC-01">
                             <?=nl2br(getValue($content,"depth3_content1"))?>
                         </p>
-                        <!-- <p class="FC-01">배달 전문가가 우리 메뉴에 꼭 맞는<br/>패키지를 추천해드립니다.</p> -->
                         <a <?=homepageLinkCheck((checkArrayVal("file3",$content)?getValue($content,"file3"):getValue($content,"link3")))?> class="BBTN-go">패키지 더 알아보기</a>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="knowHowArea">
                 <div class="CW">
@@ -128,8 +184,8 @@
                             <?=nl2br(getValue($content,"depth4_content1"))?>
                         </p>
                         <ul>
-                            <li><a <?=homepageLinkCheck((checkArrayVal("file4",$content)?getValue($content,"file4"):getValue($content,"link4")))?> class="BBTN-subscribe">바로레터 구독하기</a></li>
-                            <li><a <?=homepageLinkCheck((checkArrayVal("file5",$content)?getValue($content,"file5"):getValue($content,"link5")))?> class="BBTN-download">트랜드 리포트</a></li>
+                            <li><a <?=homepageLinkCheck((checkArrayVal("file4",$content)?getValue($content,"file4"):getValue($content,"link4")))?> title="바로레터 구독하기" class="BBTN-subscribe">바로레터 구독하기</a></li>
+                            <li><a <?=homepageLinkCheck((checkArrayVal("file5",$content)?getValue($content,"file5"):getValue($content,"link5")))?> title="바로고 딜리버리 리포트 다운로드" class="BBTN-download">딜리버리 리포트</a></li>
                         </ul>
                     </div>
                     <div class="imgArea">
@@ -143,7 +199,7 @@
                     <div class="imgArea">
                         <img src="images/delivery/distribution.png" alt="프리미엄 라스트마일 물류 서비스 이미지" data-scroll="target">
                     </div>
-                    <div class="textArea overLine-right">
+                    <div class="textArea overLine-right-active">
                         <h2 class="TC-02">
                             기업 고객을 위한<br/>
                             프리미엄 라스트마일 물류 서비스
@@ -168,53 +224,62 @@
                 </div>
             </div>
 
-            <section class="sliderBox">
-                <div class="CW">
-                    <div class="titleArea">
-                        <h2 class="TC-02">#바로고 사장님</h2>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                    <div class="swiper bottomSlider">
-                        <div class="swiper-wrapper">
-                            <?php
-                            if(checkArray($archives,true)){
-                                foreach ($archives as $archive){
-                                    ?>
-                                    <div class="swiper-slide" onclick="javascript:location.href='<?=ARCHIVE_URL?>/detail/<?=$archive["board_id"]?>'">
-                                        <div class="imgArea" style="background-image: url('<?=$archive["thum_file_path"]?>');"></div>
-                                        <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
-                                        <p class="FC-01"><?=$archive["subject"]?></p>
-                                    </div>
-                                    <?php
+            <?php
+            $content_exposure_yn = getValue($content,"content_exposure_yn");
+            if($content_exposure_yn != N){
+                ?>
+                <section class="sliderBox">
+                    <div class="CW">
+                        <div class="titleArea">
+                            <h2 class="TC-02">바로고 사장님</h2>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div class="swiper bottomSlider">
+                            <div class="swiper-wrapper">
+                                <?php
+                                if(checkArray($archives,true)){
+                                    foreach ($archives as $archive){
+                                        ?>
+                                        <div class="swiper-slide" onclick="javascript:location.href='<?=ARCHIVE_URL?>/detail/<?=$archive["board_id"]?>'" style="cursor: pointer">
+                                            <div class="imgArea" style="background-image: url('<?=imageDomainCheck($archive["thum_file_path"])?>');"></div>
+                                            <mark class="FC-01">#<?=$archive["tag_name"]?></mark>
+                                            <p class="FC-01"><?= stripslashes($archive["subject"]) ?></p>
+                                        </div>
+                                        <?php
+                                    }
                                 }
-                            }
-                            ?>
+                                ?>
 
-<!--                            <div class="swiper-slide">-->
-<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
-<!--                                <mark class="FC-01">#Film</mark>-->
-<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
-<!--                            </div>-->
-<!--                            <div class="swiper-slide">-->
-<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
-<!--                                <mark class="FC-01">#Film</mark>-->
-<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
-<!--                            </div>-->
-<!--                            <div class="swiper-slide">-->
-<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
-<!--                                <mark class="FC-01">#Film</mark>-->
-<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
-<!--                            </div>-->
-<!--                            <div class="swiper-slide">-->
-<!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
-<!--                                <mark class="FC-01">#Film</mark>-->
-<!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
-<!--                            </div>-->
+                                <!--                            <div class="swiper-slide">-->
+                                <!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+                                <!--                                <mark class="FC-01">#Film</mark>-->
+                                <!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+                                <!--                            </div>-->
+                                <!--                            <div class="swiper-slide">-->
+                                <!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+                                <!--                                <mark class="FC-01">#Film</mark>-->
+                                <!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+                                <!--                            </div>-->
+                                <!--                            <div class="swiper-slide">-->
+                                <!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+                                <!--                                <mark class="FC-01">#Film</mark>-->
+                                <!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+                                <!--                            </div>-->
+                                <!--                            <div class="swiper-slide">-->
+                                <!--                                <div class="imgArea" style="background-image: url('images/common/sample.png');"></div>-->
+                                <!--                                <mark class="FC-01">#Film</mark>-->
+                                <!--                                <p class="FC-01">당신은 나의 영웅, 바로고가 응원합니다.</p>-->
+                                <!--                            </div>-->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <?php
+            }
+
+            ?>
+
 
             <div class="supportArea">
                 <div>
@@ -222,7 +287,7 @@
                         <mark class="TC-03" title="대한민국 대표 브랜드들이 바로고와 함께 합니다">대한민국 대표 브랜드들이 바로고와 함께 합니다</mark>
                         <b class="FC-01">B2B 브랜드</b>
                         <span>B2B 브랜드 이미지</span>
-                        <b class="FC-01">주문중개 플랫폼</b>
+                        <b class="FC-01">주문 중개 플랫폼</b>
                         <span>주문중개 플랫폼 이미지</span>
                         <b class="FC-01">협업사 & 협력 단체</b>
                         <span>협업사 & 협력 단체 이미지</span>
@@ -230,8 +295,8 @@
                 </div>
                 <button class="topBtn">최상단으로 이동</button>
             </div>
+            <?php include "footer.php"; ?>
         </main>
-        <?php include "footer.php"; ?>
     </div>
     <a href="deliveryInquiry" class="fixedLink">바로 문의하기</a>
 </body>

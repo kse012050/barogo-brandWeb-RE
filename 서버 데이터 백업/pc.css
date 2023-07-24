@@ -710,7 +710,6 @@
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea{min-height: 13.000rem; width: 31.250rem; padding-left: 6.25rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea mark{display: block; margin-bottom: 1.875rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea p{color: #666;}
-    .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea a{margin-top: 1.5rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .imgArea{width: 30rem;}  
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .imgArea *{width: 100%;}
 
