@@ -663,7 +663,7 @@
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li:not(:last-child){margin-bottom: 5rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea{margin-bottom: 1.25rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea mark{display: block; margin-bottom: 1.25rem;}
-    .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea a{margin-top: 1rem;}
+    .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .textArea a{width: 8rem; margin-top: 1rem;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .imgArea{text-align: center;}
     .aboutUsPage .toDoArea .CW > div:not(.titleArea) ul.scrollSlider li .imgArea :is(img , video){width: 80%;}
 
