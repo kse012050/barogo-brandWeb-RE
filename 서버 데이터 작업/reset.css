@@ -32,7 +32,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	color: #222;
 }
 ol, ul {
 	list-style: none;
@@ -79,8 +78,40 @@ input[type="search"]::-webkit-search-results-decoration{
 }
 
 a{text-decoration: none; color: inherit; display: inline-block;}
+.policyPage a:visited{color: inherit !important; text-decoration: none !important;}
 
 button{background-color: transparent; border: none; cursor: pointer; padding: 0; font: inherit; color: black;}
 
 mark{background-color: transparent;}
+
+:is(.detailPage , .policyPage) .contentArea *:not(font){font-family: 'Pretendard' !important; all: revert;}
+:is(.detailPage , .policyPage) .contentArea *:not(img){line-height: 1.8 !important;}
+
+:is(.detailPage , .policyPage) .contentArea table{
+	display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+	border: 1px solid #ececec;
+	width: 100%;
+}
+:is(.detailPage , .policyPage) .contentArea table tbody{
+	display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+:is(.detailPage , .policyPage) .contentArea table tbody tr{
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+:is(.detailPage , .policyPage) .contentArea table tbody tr td{
+	display: table-cell;
+    vertical-align: inherit;
+	border: 1px solid #ececec;
+	padding: 5px 3px;
+	text-align: center;
+} 
 
