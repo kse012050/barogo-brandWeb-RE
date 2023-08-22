@@ -85,14 +85,19 @@ button{background-color: transparent; border: none; cursor: pointer; padding: 0;
 mark{background-color: transparent;}
 
 :is(.detailPage , .policyPage) .contentArea *:not(font){font-family: 'Pretendard' !important; all: revert;}
-:is(.detailPage , .policyPage) .contentArea *:not(img){line-height: 1.8 !important;}
+/* :is(.detailPage , .policyPage) .contentArea *:not(img){line-height: 1.8 !important;} */
 
+:is(.detailPage , .policyPage) .contentArea div:has( > table){overflow: auto;}
+:is(.detailPage , .policyPage) .contentArea div:has( > table)::-webkit-scrollbar{width: 0.313rem; height: 0.375rem; background-color: rgba(0, 0, 0, 0.1); -webkit-appearance: none; }
+:is(.detailPage , .policyPage) .contentArea div:has( > table)::-webkit-scrollbar-track{background-color: rgba(0, 0, 0, 0.1);}
+:is(.detailPage , .policyPage) .contentArea div:has( > table)::-webkit-scrollbar-thumb {background: #fa5014;}
+:is(.detailPage , .policyPage) .contentArea > ol{padding: 0; list-style: none;}
 :is(.detailPage , .policyPage) .contentArea table{
 	display: table;
     box-sizing: border-box;
     text-indent: initial;
     border-spacing: 2px;
-	border: 1px solid #ececec;
+	border: 1px solid #ececec !important;
 	width: 100%;
 }
 :is(.detailPage , .policyPage) .contentArea table tbody{
@@ -110,7 +115,7 @@ mark{background-color: transparent;}
 :is(.detailPage , .policyPage) .contentArea table tbody tr td{
 	display: table-cell;
     vertical-align: inherit;
-	border: 1px solid #ececec;
+	border: 1px solid #ececec !important;
 	padding: 5px 3px;
 	text-align: center;
 } 
