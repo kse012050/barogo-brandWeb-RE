@@ -4,7 +4,7 @@
     <div class="policyPage">
     <?php include "../header.php"; ?>
     <main class="CW">
-        <h2>위치기반서비스이용약관</h2>
+        <h2>위치기반 서비스 이용약관</h2>
         <!-- 에디터 기능 contentArea 클래스 추가-->
         <div>
             <ol>
@@ -215,11 +215,12 @@
                     </ol>
                 </li>
             </ol>
+            <br>
             <p>
                 부칙<br>
                 (시행일) 이 약관은 2023년 8월 25일부터 시행합니다.
             </p>
-            <a href="https://barogohq.notion.site/3451f5ed0ed644829828ae9e23eabba3" target="_blank">이전 버전 보기</a> (시행일: 2016년 2월 1일)
+            <a href="https://barogohq.notion.site/3564d8103ba345958e75e31fc9fe62e4" target="_blank">이전 버전 보기</a>
         </div>
     </main>
     <?php include "../footer.php"; ?>
