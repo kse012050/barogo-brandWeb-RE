@@ -763,7 +763,7 @@
 
     /* BAROGO Breand identity */
     .aboutUsPage{margin-bottom: 12.500rem;}
-    .aboutUsPage .breandArea{padding: 12.188rem 0 12.813rem; background-color: #f9f9f9;}
+    .aboutUsPage .breandArea{padding: 12.188rem 0 12.813rem; background-color: #f9f9f9; margin-top: 5rem;}
     .aboutUsPage .breandArea .CW h2{font-size: 2.625rem; font-weight: 700; float: left; margin-right: 10.000rem;}
     .aboutUsPage .breandArea .CW div{float: left; width: 34.375rem; margin-bottom: 7.500rem;}
     .aboutUsPage .breandArea .CW div p{font-size: 1.250rem; line-height: 1.5; color: #111;}
